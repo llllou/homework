@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            *{
+                padding:0;
+                margin:0;
+            }
+            li{
+                list-style:none;
+            }
+            a{
+                text-decoration:none;
+            }
+            .body{
+                width:290px;
+                height:110px;
+                background:skyblue;
+                margin:50px auto;
+            }
+            .bodyUl{
+                /*width:290px;*/
+                height:25px;
+                /*background:red;*/
+                line-height:20px;
+            }
+            .bodyUl li{
+                float:left;
+                width:40px;
+                margin:5px 9px 0 8px;
+                text-align:center;
+
+            }
+            .bodyUl li.current{
+                border-bottom:2px solid #ff4400;
+                font-weight:bold;
+            }
+            .bodyUl li a{
+                font-size:13px;
+                color:#3c3c3c;
+            }
+            .bodyUl li:hover a{
+                font-size:15px;
+                color:#ff4400;
+            }
+            .wrap{
+                width:290px;
+                height:80px;
+                /*background:yellow;*/
+                margin:5px 0 0 0;
+                overflow:hidden;
+            }
+            .wrap div{
+                display:none;
+            }
+            .wrap ul{
+                width:280px;
+                height:60px;
+                /*background:red;*/
+                float:left;
+                margin:10px 0 0 5px;
+            }
+            .wrap .wrapOneUl{
+                display:block;
+            }
+            .wrap ul li{
+                width:140px;
+                float:left;
+                margin:10px 0 0 0 ;
+            }
+            .wrap ul li a{
+                color:#3c3c3c;
+            }
+            .wrap ul li:hover a{
+                color:#ff4400;
+            }
+            .wrap ul .wrapOneLi{
+                width:280px;
+            }
+            .wrap .wrapOneA{
+                color:#ff4400;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="body">
+            <ul id="bodyUl" class="bodyUl">
+                <li class="current"><a href="#">公告</a></li>
+                <li><a href="#">规则</a></li>
+                <li><a href="#">论坛</a></li>
+                <li><a href="#">安全</a></li>
+                <li><a href="#">公益</a></li>
+            </ul>
+            <div id="wrap"class="wrap">
+                <div style="display:block;">
+                    <ul class="wrapOneUl">
+                        <li class="wrapOneLi"><a href="#"class="wrapOneA">“理想生活上天猫” 天猫全面升级定义未来商业</a></li>
+                        <li><a href="#">淘宝造物节汇108神店</a></li>
+                        <li><a href="#">天猫618理想生活狂欢节</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="#">成人用品行业标准变更</a></li>
+                        <li><a href="#">全球购市场管理规范变更</a></li>
+                        <li><a href="#">新增淘宝网农药行业标准</a></li>
+                        <li><a href="#">自检自查实施细则变更</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="#"class="wrapOneA">淘大法务规则特训营</a></li>
+                        <li><a href="#">淘宝招募志愿者</a></li>
+                        <li><a href="#">如何做好内容营销</a></li>
+                        <li><a href="#">如何做好内容营销</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="#"class="wrapOneA">120元删差评信吗</a></li>
+                        <li><a href="#"class="wrapOneA">用错个词被罚上万</a></li>
+                        <li><a href="#"class="wrapOneA">免单、返现那些事</a></li>
+                        <li><a href="#"class="wrapOneA">这样的投诉你怕不怕</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="#"class="wrapOneA">跑赢房价的商家爱心</a></li>
+                        <li><a href="#">致百万商家的感谢信</a></li>
+                        <li><a href="#">闲鱼公益上线招募NGO</a></li>
+                        <li><a href="#">公益宝贝卖家发票索取</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var bodyUl=document.getElementById("bodyUl")
+        var bodyUlLis=bodyUl.getElementsByTagName("li");
+        var wrap=document.getElementById("wrap");
+        var oDivs=wrap.getElementsByTagName("div");
+
+        for(var i=0;i<bodyUlLis.length;i++){
+
+            bodyUlLis[i].index=i;
+
+            bodyUlLis[i].onmouseover=function(){
+
+                for(var j=0;j<bodyUlLis.length;j++){
+                    bodyUlLis[j].className="";
+                    oDivs[j].style.display="none";
+                }
+
+                this.className="current";
+
+                oDivs[this.index].style.display="block";
+            }
+        }
+    </script>
+</html>

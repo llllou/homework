@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>carrousel</title>
+    <style type="text/css">
+        *{
+            padding:0;
+            margin:0;
+            background: #f6f6f6;
+        }
+        li{
+            list-style: none;
+        }
+        .carousel{
+            width:520px;
+            height:280px;
+            margin: 50px auto;
+            overflow: hidden;
+            border: 3px solid #f6f6f6;
+            position: relative;
+        }
+        .carousel ul li{
+            display: none;
+        }
+        .carousel ul li.current{
+            display: block;
+        }
+        .btn span{
+            position: absolute;
+            width:24px;
+            height: 36px;
+            top:130px;
+            cursor: pointer;
+            background-color: rgba(0,0,0,0.2);
+            font-size: 20px;
+            text-align: center;
+            line-height: 36px;
+            color: white;
+            display: none;
+        }
+        .carousel:hover span{
+            display: block;
+        }
+        .btn span:hover{
+            background-color: rgba(0,0,0,0.4);
+        }
+        .carousel .leftBtn{
+            left: 0px;
+        }
+
+        .carousel .rgtBtn{
+            right: 0px;
+        }
+        .carousel .circles{
+            position: absolute;
+            bottom: 10px;
+            width: 80px;
+            height: 15px;
+            left: 40%;
+            background-color: rgba(250,250,250,0.4);
+            border-radius: 10px;
+        }
+        .carousel .circles ol{
+            list-style: none;
+        }
+        .carousel .circles ol li{
+            float: left;
+            width: 8px;
+            height: 8px;
+            margin:3px 4px;
+            background: rgba(155,155,155,0.8);
+            border-radius:50%;
+            cursor:pointer;
+        }
+        .carousel .circles ol li.current{
+            background: orangered;
+        }
+    </style>
+</head>
+<body>
+<div class="carousel">
+    <div id="imageList" class="imageList">
+        <ul>
+            <li class="current"><a href="#"><img src="images/1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/3.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/4.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/5.jpg" alt=""></a></li>
+        </ul>
+    </div>
+    <div class="btn">
+        <span id="leftBtn" class="leftBtn"><</span>
+        <span id="rgtBtn" class="rgtBtn">></span>
+    </div>
+    <div id="circles" class="circles">
+        <ol>
+            <li class="current"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    var leftBtn = document.getElementById("leftBtn");
+    var rgtBtn = document.getElementById("rgtBtn");
+    var imageList = document.getElementById("imageList").getElementsByTagName("li");
+    var circles = document.getElementById("circles").getElementsByTagName("li");
+
+
+    var img_dix=0;
+    leftBtn.onclick=function () {
+        img_dix--;
+        if(img_dix<0){
+            img_dix=4;
+        }
+        chang();
+    }
+    rgtBtn.onclick=function () {
+        img_dix++;
+        if(img_dix>4){
+            img_dix=0;
+        }
+        chang();
+    }
+    for(i=0;i<circles.length;i++){
+        (function (i) {
+            circles[i].onclick=function () {
+                img_dix=i;
+                chang();
+            }
+        })(i)
+    }
+    function chang() {
+        for(i=0;i<imageList.length;i++){
+            imageList[i].className="";
+        }
+        imageList[img_dix].className="current";
+        for(i=0;i<circles.length;i++){
+            circles[i].className="";
+        }
+        circles[img_dix].className="current";
+    }
+</script>
+</html>

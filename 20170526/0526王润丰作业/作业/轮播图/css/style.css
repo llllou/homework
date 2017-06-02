@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+.carousel{
+    width: 520px;
+    height: 280px;
+    margin: 50px auto 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel .imagesList li{
+    display: none;
+}
+
+.carousel .imagesList li.active{
+    display: block;
+}
+
+.carousel .btn span{
+    display: block;
+    width: 24px;
+    height: 36px;
+    color: #fff;
+    font: 18px/36px '宋体';
+    font-weight: bolder;
+    text-align: center;
+    background: rgba(0,0,0,.3);
+    position: absolute;
+    top: 50%;
+    margin-top: -18px;
+    user-select: none;
+    cursor: pointer;
+    transition: .3s;
+    opacity:0;
+}
+
+.carousel:hover .btn span{
+    opacity: 1;
+}
+
+.carousel .btn span:hover{
+    background: rgba(0,0,0,.5);
+}
+
+.carousel .btn span.prevBtn{
+    left: 0;
+}
+.carousel .btn span.nextBtn{
+    right: 0;
+}
+
+.carousel .circle{
+    width: 65px;
+    height: 13px;
+    background: rgba(255,255,255,.5);
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    margin-left: -32px;
+    border-radius: 10px;
+    padding-left: 3px;
+}
+
+.carousel .circle li{
+    width: 9px;
+    height: 9px;
+    background: #b7b7b7;
+    border-radius: 50%;
+    float: left;
+    margin-right: 4px;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+.carousel .circle li.active{
+    background: #f40;
+}
+

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0 auto;
+        }
+        ul{
+            list-style: none;
+            border:1px solid black;
+            width: 282px;
+            height: 40px;
+            border-bottom: none;
+        }
+        li{
+            float: left;
+            line-height: 35px;
+            width: 35px;
+            text-align: center;
+            margin-left: 13px;
+        }
+        div{
+            border:1px solid black;
+            width: 282px;
+            height: 200px;
+            padding-top: 50px;
+            display: none;
+        }
+        li.bg{
+            border-bottom: 1px solid blue;
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="bg">公告</li>
+        <li>论坛</li>
+        <li>规则</li>
+        <li>安全</li>
+        <li>公益</li>
+    </ul>
+    <div style="display: block">
+        <p>理想生活上天猫"天猫全面升级定义未来商业</p>
+        <p>淘宝造物节汇108神店 天猫618理想生活狂欢节</p>
+    </div>
+    <div>
+        <p>成人用品行业标准变更全球购市场管理规范变</p>
+        <p>更新增淘宝网农药行业标准自检自查实施细则变更</p>
+    </div>
+    <div>
+        <p>淘大法务规则特训营淘宝招募志愿者</p>
+        <p>如何做好内容营销十八纸颠覆家具想象</p>
+    </div>
+    <div>
+        <p>120元删差评信吗用错个词被罚上万</p>
+        <p>免单、返现那些事这样的投诉你怕不怕</p>
+    </div>
+    <div>
+        <p>跑赢房价的商家爱心致百万商家的感谢信</p>
+        <p>闲鱼公益上线招募NGO公益宝贝卖家发票索取</p>
+    </div>
+</body>
+<script type="text/javascript">
+    var lis =document.getElementsByTagName("li");
+    var divs =document.getElementsByTagName("div");
+    for(var i=0;i<lis.length;i++){
+        lis[i].index = i;
+        lis[i].onmouseover=function(){
+            for(var j=0;j<lis.length;j++){
+                lis[j].className="";
+                divs[j].style.display="none";
+            }
+            this.className="bg";
+            divs[this.index].style.display="block";
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <div id="box">
+         <p><input type="checkbox" />吃饭</p>
+         <p><input type="checkbox" />吃饭</p>
+         <p><input type="checkbox" />吃饭</p>
+         <p><input type="checkbox" />吃饭</p>
+         <p><input type="checkbox" />吃饭</p>
+         <input type="button" id="btn" value="选择" />
+     </div>
+     <script type="text/javascript">
+     // 找对象
+     var Inputs = document.getElementById("box").getElementsByTagName('input');
+     var btn = document.getElementById("btn");
+     // 信号源
+     var index = 0;
+     // 按钮事件
+     btn.onclick = function(){
+        index =index == 0 ? 1:0;
+
+        index =index == 0 ?"":"checkbox"
+
+        this.value = index == 0 ?"未选":"已选"
+            for(var i=0;i<Inputs.length;i++){
+
+                Inputs[i].checked= index;
+            }
+        }
+
+     </script>
+    </body>
+</html>

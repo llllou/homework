@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color:black;
+        }
+        .tab{
+            width:290px;
+            margin:50px auto;
+            border:1px solid grey;
+        }
+        .tab .tab-title{
+            height:36px;
+        }
+        .tab .tab-title ul{
+            float:left;
+            width:290px;
+        }
+
+        .tab .tab-title ul li{
+            float:left;
+            height:36px;
+            width:39px;
+            line-height: 36px;
+            text-align: center;
+            margin-left: 16px;
+        }
+        .tab ul li.current{
+            border-bottom: 2px solid red;
+        }
+        .tab .tab-title ul li:hover{
+            font-weight: bold;
+        }
+        .tab .tab-title ul li a:hover{
+            color:rgb(255,68,0);
+        }
+        .tab-content{
+            height:76px;
+        }
+        .tab-content ul{
+            margin-top: 10px;
+            float:left;
+            display: none;
+        }
+        .tab-content ul>li {
+            float: left;
+            width:120px;
+            overflow: hidden;
+            height: 16px;
+            margin-left: 8px;
+            margin-top: 6px;
+            margin-right: 8px;
+        }
+        .tab-content .other{
+            width:120px;
+            overflow: hidden;
+            height: 16px;
+        }
+        .tab-content ul.current{
+            display:block;
+        }
+        .color{
+            color:rgb(255,68,0);
+        }
+    </style>
+</head>
+<body>
+    <div id="tab" class="tab">
+        <div id="tab-title" class="tab-title">
+            <ul >
+                <li class="current"><a href="#">公告</a></li>
+                <li><a href="#">规则</a></li>
+                <li><a href="#">论坛</a></li>
+                <li><a href="#">安全</a></li>
+                <li><a href="#">公益</a></li>
+            </ul>
+        </div>
+        <div id="tab-content" class="tab-content">
+            <div>
+                <ul class="current">
+                    <li class="color"><a href="#">“理想生活上天猫” 天猫全面升级定义未来商业</a></li>
+                    <li><a href="#">淘宝造物节汇108神店</a></li>
+                    <li><a href="#">天猫618理想生活狂欢节</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">成人用品行业标准变更</a></li>
+                    <li><a href="#">全球购市场管理规范变更</a></li>
+                    <li><a href="#">新增淘宝网农药行业标准</a></li>
+                    <li><a href="#">自检自查实施细则变更</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">淘大法务规则特训营</a></li>
+                    <li><a href="#">淘宝招募志愿者</a></li>
+                    <li><a href="#">如何做好内容营销</a></li>
+                    <li><a href="#">十八纸颠覆家具想象</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">120元删差评信吗</a></li>
+                    <li><a href="#">用错个词被罚上万</a></li>
+                    <li><a href="#">免单、返现那些事</a></li>
+                    <li><a href="#">这样的投诉你怕不怕</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">跑赢房价的商家爱心</a></li>
+                    <li><a href="#">致百万商家的感谢信</a></li>
+                    <li><a href="#">闲鱼公益上线招募NGO</a></li>
+                    <li><a href="#">公益宝贝卖家发票索取</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        var titleLis=document.getElementById('tab-title').getElementsByTagName('li');
+        var contentLis=document.getElementById('tab-content').getElementsByTagName('ul');
+
+        for(var i=0;i<titleLis.length;i++){
+            titleLis[i].index=i;
+            titleLis[i].onmouseover=function(){
+                for(var j=0;j<contentLis.length;j++){
+                    contentLis[j].className='';
+                    titleLis[j].className='';
+                }
+                contentLis[this.index].className='current';
+                titleLis[this.index].className='current';
+            }
+        }
+    </script>
+</body>
+</html>

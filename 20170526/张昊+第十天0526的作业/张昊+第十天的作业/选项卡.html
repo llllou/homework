@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{
+            background:#f7f7f8;
+        }
+        *{
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #container{
+            width:290px;
+            height: 109px;
+            background: #ffffff;
+            margin: 50px auto;
+            font-size: 12px;
+            overflow: hidden;
+        }
+        #nav>a {
+            display:inline-block;
+            width: 39px;
+            height: 22px;
+            border-bottom: 2px solid transparent;
+            text-align: center;
+            color:#3c3c3c;
+            line-height: 22px;
+            margin-left: 13px;
+        }
+        #nav>a.nav-a{
+            font-weight: bold;
+            border-bottom: 2px solid #f40;
+        }
+        #container ul li{
+            width: 270px;
+            height: 60px;
+            margin: 15px 0 15px;
+            display: none;
+        }
+        #container ul li a{
+            color:black;
+            line-height: 30px;
+            padding-left: 10px;
+        }
+        #container ul li .red{
+            color:#ff4400;
+        }
+        #container ul li a:hover{
+            color:#ff4400;
+        }
+        #container ul li.containerLi{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="nav">
+            <a href="#" class="nav-a">公告</a>
+            <a href="#">规则</a>
+            <a href="#">论坛</a>
+            <a href="#">安全</a>
+            <a href="#">公益</a>
+        </div>
+        <ul>
+            <li class="containerLi">
+                <a href="#" class="red">“理想生活上天猫” 天猫全面升级定义未来商业</a><br>
+                <a href="#">淘宝造物节汇108神店</a>
+                <a href="#">天猫618理想生活狂欢节</a>
+            </li>
+            <li>
+                <a href="#" class="red">成人用品行业标准变更</a>
+                <a href="#">全球购市场管理规范变</a><br>
+                <a href="#">新增淘宝网农药行业标</a>
+                <a href="#">自检自查实施细则变更</a>
+            </li>
+            <li>
+                <a href="#" class="red">淘大法务规则特训营</a>
+                <a href="#">淘宝招募志愿者</a><br>
+                <a href="#">如何做好内容营销</a>
+                <a href="#">十八纸颠覆家具想象</a>
+            </li>
+            <li>
+                <a href="#" class="red">120元删差评信吗</a>
+                <a href="#">用错个词被罚上万</a><br>
+                <a href="#">免单、返现那些事</a>
+                <a href="#">这样的投诉你怕不怕</a>
+            </li>
+            <li>
+                <a href="#" class="red">跑赢房价的商家爱心</a>
+                <a href="#" class="red">致百万商家的感谢信</a><br>
+                <a href="#">闲鱼公益上线招募NGO</a>
+                <a href="#">公益宝贝卖家发票索取</a>
+            </li>
+        </ul>
+    </div>
+</body>
+    <script type="text/javascript">
+        var navA = document.getElementById("nav").getElementsByTagName("a");
+        var containerLists = document.getElementsByTagName("li");
+
+        for(var i = 0 ;i < navA.length;i++){
+            navA[i].index=i;
+            navA[i].onclick=function () {
+                for(var j = 0 ; j < navA.length;j++){
+                    navA[j].className="";
+                    containerLists[j].className="";
+                }
+                navA[this.index].className="nav-a";
+                containerLists[this.index].className="containerLi";
+            }
+        }
+    </script>
+</html>

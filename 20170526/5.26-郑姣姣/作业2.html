@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			a{
+				text-decoration: none;
+			}
+			#body{
+				width: 260px;
+				height: 50px;
+				overflow: hidden;
+				margin-top:10px;
+			}
+			#canver{
+				width: 280px;
+				height: 90px;
+				background: plum;
+				margin: 50px auto;
+			}
+			#body div{
+				width: 245px;
+				height: 50px;
+				line-height: 25px;
+				display: none;
+				text-align: center;
+				margin-left: 15px;
+			}
+			#body div span:hover{
+				color:#FF4400;
+			}
+			#body div span{
+				margin-right: 5px;
+			}
+			.box ul{
+				list-style: none;
+			}
+			.box ul li{
+				float: left;
+				margin-left: 20px;
+				font-size:15px ;
+				
+			}
+			.box ul li a:hover{
+				color:#FF4400;
+				border-bottom: 2px solid #FF4400;
+			}
+			.box ul li .current{
+				color:#F40;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="canver">
+			<div id="box" class="box">
+				<ul>
+					<li class="current"><a href="">公告</a></li>
+					<li><a href="">规则</a></li>
+					<li><a href="">论坛</a></li>
+					<li><a href="">安全</a></li>
+					<li><a href="">公益</a></li>
+				</ul>
+			</div><br/>
+			<div id="body">
+				<div id="body1" class="body1" style="display: block;">
+					<span>跑赢房价的商家爱心</span>
+					<span>致百万商家的感谢信</span>
+					<span>闲鱼公益上线招募NGO</span>
+					<span>公益宝贝卖家发票</span>
+				</div>
+				<div>
+					<span>“理想生活上天”</span>
+					<span>全面升级定义未来商业</span>
+					<span>淘宝造物节汇108</span>
+					<span>天猫618理想生活狂欢</span>
+				</div>
+				<div>
+					<span>淘大法务规则特训营</span>
+					<span>淘宝招募志愿者</span><br/>
+					<span>如何做好内容营销</span>
+					<span>十八纸颠覆家具想象</span>
+				</div>
+				<div>
+					<span>成人用品行业标准变</span>
+					<span>全球购市场管理规范变</span>
+					<span>更新增淘宝网农药行</span>
+					<span>准自检自查实施细</span>
+				</div>
+				<div>
+					<span>120元删差评信吗</span>
+					<span>用错个词被罚上万</span><br/>
+					<span>免单、返现那些事</span>
+					<span>这样的投诉你怕不怕</span>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		var Lis=document.getElementById("box").getElementsByTagName("li");
+		var divs=document.getElementById("body").getElementsByTagName("div");
+		for(var i=0;i<Lis.length;i++){
+			Lis[i].index=i;
+			Lis[i].onmouseover=function(){
+				for(var j=0;j<Lis.length;j++){
+					Lis[j].className="";
+					divs[j].style.display="none";
+				}
+				this.className="current";
+				divs[this.index].style.display="block";
+			}
+		}
+	</script>
+</html>

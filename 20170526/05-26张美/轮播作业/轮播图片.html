@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css" media="screen">
+        	*{
+        		margin:0;
+        		padding:0;
+        	}
+			.carousel{
+				width:520px;
+				height:280px;
+				margin:300px auto;
+				overflow: hidden;
+				position: relative;
+			}
+			.carousel ul{
+				list-style: none;
+			}
+			.carousel ul li{
+				display: none;
+			}
+			.carousel ul li.current{
+				display: block;
+			}
+			.carousel:hover span{
+				display: block;
+			}
+			.carousel span{
+				position: absolute;
+				width:13px;
+				height:22px;
+				top:120px;
+				cursor:pointer;
+				opacity: 0.4;
+				display: none;
+			}
+			.carousel span:hover{
+				opacity: 0.7;
+			}
+			.carousel .leftBtn{
+				background:#bfbfbf url(img/36.png);
+				left:10px;
+			}
+			.carousel .rightBtn{
+				background:#bfbfbf url(img/35.png);
+				right:10px;
+			}
+			.carousel .circles{
+				position: absolute;
+				bottom:10px;
+				width:125px;
+				height:13px;
+				left:50%;
+				margin-left:-50px;
+				background:#c8cbcd;
+				border-radius: 20px;
+				opacity: 0.3;
+			}
+			.carousel .circles:hover{
+				opacity: 0.7;
+			}
+			.carousel .circles ol{
+				list-style: none;
+			}
+			.carousel .circles ol li{
+				float:left;
+				width:13px;
+				height:13px;
+				margin-left:10px;
+				border-radius: 50%;
+				cursor:pointer;
+				background:#ebe4e2;
+			}
+			.carousel .circles ol li.current{
+				background: #ff3c00;
+			}
+
+        </style>
+    </head>
+    <body>
+    	<div class="carousel">
+    		<div id="imagesList" class="imagesList">
+    			<ul>
+    				<li class="current"><a href="#"><img src="img/9.webp" alt=""></a></li>
+    				<li><a href="#"><img src="img/1.webp" alt=""></a></li>
+    				<li><a href="#"><img src="img/3.jpg" alt=""></a></li>
+    				<li><a href="#"><img src="img/4.jpg" alt=""></a></li>
+    				<li><a href="#"><img src="img/5.jpg" alt=""></a></li>
+    			</ul>
+    		</div>
+    		<div class="btns">
+    			<span class="leftBtn" id="leftBtn"></span>
+    			<span class="rightBtn" id="rightBtn"></span>
+    		</div>
+    		<div class="circles" id="circles">
+    			<ol>
+    				<li class="current"></li>
+    				<li></li>
+    				<li></li>
+    				<li></li>
+    				<li></li>
+    			</ol>
+    		</div>
+    	</div>
+    </body>
+    <script type="text/javascript">
+    	var imagesList = document.getElementById("imagesList");
+    	var imagesListLis= document.getElementById("imagesList").getElementsByTagName("li");
+    	var leftBtn=document.getElementById("leftBtn");
+    	var rightBtn=document.getElementById("rightBtn");
+    	var circlesLis=document.getElementById("circles").getElementsByTagName("li");
+
+    	var img_idx=0;
+    	leftBtn.onclick=function(){
+    		img_idx--
+    		if(img_idx<0){
+    			img_idx=4;
+    		}
+    		now();
+    	}
+    	rightBtn.onclick=function(){
+    		 img_idx++
+    		if( img_idx>4){
+    			img_idx=0;
+    		}
+    		now();
+    	}
+    	for(var i=0; i<circlesLis.length; i++){
+    		(function(i){
+    			circlesLis[i].onmouseover=function(){
+    				img_idx=i;
+    				now()
+    			}
+    		})(i)
+    	}
+    	function now(){
+    		for(var i=0; i<imagesListLis.length; i++){
+    			imagesListLis[i].className="";
+    		}
+    			imagesListLis[img_idx].className="current";
+
+    		for(var i=0; i<circlesLis.length; i++){
+    			circlesLis[i].className="";
+    		}
+    			circlesLis[img_idx].className="current";
+    	}
+    </script>
+</html>

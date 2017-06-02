@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+             *{
+                padding: 0;
+                margin:0;
+             }
+             #oDiv{
+                  width: 520px;
+                  height: 280px;
+                  margin: 50px auto;
+                  overflow:hidden;
+                  position:relative; 
+             }
+             ul{
+                  list-style-type:none;
+             }
+             ul li{
+                  display: none;
+             }
+             ul li.current{
+                   display:block;
+             }
+             span{
+                position: absolute;
+                width:24px;
+                height:36px;line-height:36px;
+                top:50%;
+              
+                cursor:pointer;
+                background-color:rgba(0,0,0,.2);
+                color:#fff;
+                font-size:18px;
+                text-align:center;
+
+                 }
+              span.leftBtn{
+                 left: 0;
+              }
+              span.rightBtn{
+                 right: 0;
+              }
+               ol{
+                list-style-type: none;
+                width:85px;
+                height: 20px;
+                position: absolute;
+                left:45%;
+                top: 80%;
+            }
+            ol li{
+                float: left;
+                width: 13px;
+                height:13px;
+                margin-right: 2px;
+                margin-left: 2px;
+                background:gray;
+                border-radius: 50%;
+                cursor:pointer;
+                 background-color:rgba(255,255,255,.7);
+
+            }
+             ol li.current{
+                background: orange;
+            }
+        </style>
+    </head>
+    <body>
+          <div id="oDiv">
+              <ul class="photo" id = "photo">  
+                  <li class="current"><a href="#"><img src="1.jpg" ></a></li>
+                  <li><a href="#"><img src="2.jpg"></a></li>
+                  <li><a href="#"><img src="3.jpg"></a></li>
+                  <li><a href="#"><img src="4.jpg"></a></li>
+                  <li><a href="#"><img src="5.jpg"></a></li>
+              </ul>
+              <div class="btns" id="btns">
+                  <span class="leftBtn" id="leftBtn">&lt</span>
+                  <span class="rightBtn" id="rightBtn">&gt</span>
+                 
+              </div>
+              <div class="circles" id="circles">
+                <ol>
+                    <li class="current"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+            </div>
+        </div>
+    </body>
+      <script type="text/javascript">
+             var leftBtn = document.getElementById("leftBtn");
+             var rightBtn = document.getElementById("rightBtn")
+             var circlesLis = document.getElementById("circles").getElementsByTagName("li");
+            var photo = document.getElementById("photo");
+            console.log(photo);
+            var  photoLis=document.getElementById("photo").getElementsByTagName("li");
+            //信息量
+               var img_idx=0;
+               leftBtn.onclick=function(){
+                    img_idx--;
+                    if(img_idx<0){
+                        img_idx=4;
+                    }
+                    chengPic()
+               }
+                var img_idx=0;
+               rightBtn.onclick=function(){
+                    img_idx++;
+                    if(img_idx>4){
+                        img_idx=0;
+                    }
+                    chengPic()
+               }
+               //小圆点的监听，要批量添加
+                for(var i = 0;i<circlesLis.length;i++){
+                    (function(i){
+                        circlesLis[i].onmouseover = function(){
+
+                            //改变信号量
+                            img_idx = i;
+
+                            //调用业务函数
+                            chengPic();
+                        }
+                    })(i)
+             }
+                function chengPic(){
+                   //去掉所有图片li的current类名
+            for(var i = 0; i<photoLis.length;i++){
+               photoLis[i].className = "";
+            }
+
+            //把当前信号量的图片li加上current类名
+           photoLis[img_idx].className="current";
+
+
+
+            //去掉所有小圆点li current类名
+            for(var i=0;i<circlesLis.length;i++){
+
+                circlesLis[i].className = "";
+
+            }
+
+            //把当前信号量的小圆点加上currnet类名
+            circlesLis[img_idx].className = "current";
+        }
+
+      </script>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <style>
+        *{
+            margin:0;padding:0;
+        }
+        .xuanxiangka {
+            width:300px;height:180px;background:#f1f1f1;
+        }
+        .tablist {
+            height:30px;
+        }
+        .tablist>li {
+            float:left;margin-right:20px;list-style:none;height:30px;line-height:30px;
+        }
+        .tablist>li:hover a{
+            color:red;font-weight:bold;
+        }
+        .gonggao {
+            color:#ff4400;border-bottom:2px solid #ff4400;
+        }
+        .mayun {
+            width:300px;height:150px;overflow:hidden;
+        }
+        .mayun>li {
+            list-style:none;width:300px;height:150px;display:none;background:gray;
+        }
+        .mayun>li>a {
+            float:left;width:150px;text-decoration:none;margin-top:20px;
+        }
+        .myzfb>a {
+            color:red;
+        }
+
+    </style>
+<body>
+    <div class="xuanxiangka">
+        <ul id="tablist" class="tablist">
+            <li class="gonggao">
+                <a href="">公告</a>
+            </li>
+            <li><a href="">规则</a></li>
+            <li><a href="">论坛</a></li>
+            <li><a href="">安全</a></li>
+            <li><a href="">公益</a></li>
+        </ul>
+        <ul id="mayun" class="mayun">
+            <li class="myzfb">
+                <a href="">马云接阿根廷总统座上嘉宾</a>
+                <a href="">马云接连根廷总统座上嘉宾</a>
+                <a href="">马云接阿廷总统座上嘉宾</a>
+                <a href="">马云为阿廷总统座上嘉宾</a>
+            </li>
+            <li><a href="">马云：用10年布局拉美 智利女总统也来点赞</a></li>
+            <li><a href="">公益宝贝卖假发票索取</a></li>
+            <li><a href="">至百万商家的感谢信</a></li>
+            <li><a href="">sfegaaahhhhh</a></li>
+        </ul>
+    </div>
+    <script>
+
+        var  oNav= document.getElementById("tablist");
+        var Inputs =oNav.getElementsByTagName('li');
+        var oMayun = document.getElementById('mayun');
+        var oDivs = oMayun.getElementsByTagName('li');
+        //第一种方法：
+       /* var last =  Inputs[0];
+        for (var i = 0;i < Inputs.length; i++) {
+            Inputs[i].index = i;
+            Inputs[i].onmouseover= function () {
+                last.className = "";
+              //  oDivs[last.index].style.display = "";
+                oDivs[last.index].style.display = "";
+                oDivs[last.index].className = "";
+                last = this;
+                this.className = "gonggao";
+                oDivs[this.index].style.display = "block";
+                oDivs[last.index].className = "myzfb";
+            }
+        }*/
+       //第二种方法
+       /* for (var i = 0;i < Inputs.length; i++) {
+            Inputs[i].index = i;
+            Inputs[i].onmouseover= function () {
+                for (var j = 0;j < Inputs.length; j++) {
+                    Inputs[j].className = "";
+                    oDivs[j].style.display = "";
+                    oDivs[j].className = "";
+                }
+                this.className = "gonggao";
+                oDivs[this.index].style.display = "block";
+                oDivs[this.index].className = "myzfb";
+            }
+        }*/
+        //第三种方法
+        for (var i = 0;i < Inputs.length; i++) {
+            (function (i) {
+                Inputs[i].onmouseover = function () {
+                    for (var j = 0;j < Inputs.length; j++) {
+                        Inputs[j].className = "";
+                        oDivs[j].style.display = "";
+                        oDivs[j].className = "";
+                    }
+                    this.className = "gonggao";
+                    oDivs[i].style.display = "block";
+                    // oDivs[i].className = "myzfb";
+                }
+
+            })(i)
+        }
+
+    </script>
+</body>
+</html>

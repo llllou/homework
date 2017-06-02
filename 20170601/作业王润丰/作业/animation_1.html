@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        div{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+            left: 200px;
+            top: 200px;
+            opacity: .2;
+        }
+
+        .oDiv1{
+            background-color: #dda0dd;
+        }
+
+        .oDiv2{
+            background-color: #eee8aa;
+        }
+
+        .oDiv3{
+            background-color: #b0e0e6;
+        }
+    </style>
+</head>
+<body>
+    <div class="oDiv1" id="oDiv1"></div>
+    <div class="oDiv2" id="oDiv2"></div>
+    <div class="oDiv3" id="oDiv3"></div>    
+</body>
+<script type="text/javascript">
+    var oDiv1 = document.getElementById("oDiv1");
+    var oDiv2 = document.getElementById("oDiv2");
+    var oDiv3 = document.getElementById("oDiv3");
+
+    animation(oDiv1,{"left":500,"top":200,"opacity":1},1600);
+    animation(oDiv2,{"left":200,"top":800,"opacity":1},2600);
+    animation(oDiv3,{"left":500,"top":300,"opacity":1},3600);
+
+    function animation(elem, targetJSON, time){
+        if(window.navigator.userAgent.indexOf("MSIE") == -1){
+            var interval = 10;
+        }else{
+            var interval = 50;
+        }
+
+        var semaphoreJSON = {};
+
+        for(var k in targetJSON){
+            semaphoreJSON[k] = parseFloat(fetchComStyle(elem,k));
+        }
+
+        var maxcount = time/interval;
+
+        var count = 0;
+
+        var stepJSON = {};
+        for(var k in targetJSON){
+            targetJSON[k] = parseFloat(targetJSON[k]);
+            stepJSON[k] = (targetJSON[k] - semaphoreJSON[k])/maxcount;
+        }
+
+        var timer = setInterval(function(){
+            for(var k in semaphoreJSON){
+                semaphoreJSON[k] += stepJSON[k];
+
+                if(k != "opacity"){
+                    elem.style[k] = semaphoreJSON[k] + "px";
+                }else{
+                    elem.style[k] = semaphoreJSON[k];
+                    elem.style.filter = "alpha(opacity=" + (semaphoreJSON[k]*100) + ")"
+                }
+            }
+
+            count ++;
+            if(count == maxcount){
+                clearInterval(timer);
+            }
+        },interval);
+
+        function fetchComStyle(obj, property){
+            if(window.getComputedStyle){
+                return window.getComputedStyle(obj)[property];
+            }else{
+                return obj.currentStyle[property];
+            }
+        }
+
+    }
+</script>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/index.css">
+        <!-- <style type="text/css">
+            /**{
+                margin:0;
+                padding:0;
+            }
+            .carousel{
+                width:672px;
+                height: 350px;
+                margin:50px auto;
+                overflow: hidden;
+                position:relative;
+            }
+            .carousel ul{
+                list-style: none;
+            }
+            .carousel ul li{
+                display:none;
+            }
+            .carousel ul li.current{
+                display:block;
+            }
+            .carousel span{
+                position: absolute;
+                width:55px;
+                height:55px;
+                top:130px;
+                cursor:pointer;
+            }
+            .carousel .leftBtn{
+                background: url(images/slide-btnL.png);
+                left:10px;
+            }
+            .carousel .rightBtn{
+                background:url(images/slide-btnR.png);
+                right: 10px;
+            }
+            .carousel .circles{
+                position: absolute;
+                bottom:40px;
+                width:200px;
+                height:17px;
+                left:50%;
+                margin-left: -50px;
+            }
+            .carousel .circles ol{
+                list-style: none;
+            }
+            .carousel .circles ol li{
+                float:left;
+                width:17px;
+                height:17px;
+                margin-right: 13px;
+                background:gold;
+                border-radius: 50%;
+                cursor:pointer;
+            }
+            .carousel .circles ol li.current{
+                background:purple;
+            }*/
+        </style> -->
+    </head>
+    <body>
+        <div class="carousel">
+            <div id="imagesList" class="imagesList">
+                <ul>
+                    <li class="current"><a href="#"><img src="img/13.jpg" alt="" /></a></li>
+                    <li><a href="#"><img src="img/2.jpg" alt="" /></a></li>
+                    <li ><a href="#"><img src="img/3.jpg" alt="" /></a></li>
+                    <li><a href="#"><img src="img/4.jpg" alt="" /></a></li>
+                    <li><a href="#"><img src="img/7.jpg" alt="" /></a></li>
+                </ul>
+            </div>
+            <div class="btns">
+                <span class="leftBtn" id="leftBtn"></span>
+                <span class="rightBtn" id="rightBtn"></span>
+            </div>
+            <!-- div.circles#circles>ol>li*5 -->
+            <div class="circles" id="circles">
+                <ol>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li  class="current"></li>
+                </ol>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var leftBtn = document.getElementById("leftBtn");
+        var rightBtn = document.getElementById("rightBtn");
+        var circlesLis = document.getElementById("circles").getElementsByTagName("li");
+        var imagesList = document.getElementById("imagesList");
+        var imagesListLis = document.getElementById("imagesList").getElementsByTagName("li");
+        
+        var img_idx = 0;
+        
+        rightBtn.onclick = function(){
+            
+            img_idx++; 
+
+            if(img_idx>4){
+                img_idx=0;
+            }
+
+            chengPic();
+        }
+    
+        leftBtn.onclick = function(){
+            
+            img_idx--;
+
+            if(img_idx<0){
+                img_idx=4;
+            }
+
+            chengPic();
+        }
+
+        for(var i = 0;i<circlesLis.length;i++){
+            
+            circlesLis[i].index=i;
+            circlesLis[i].onmouseover = function(){
+
+                    img_idx = this.index;
+
+                    chengPic();
+                }
+
+        }
+
+        function chengPic(){
+
+            for(var i = 0; i<imagesListLis.length;i++){
+                imagesListLis[i].className = "";
+            }
+
+            imagesListLis[img_idx].className="current";
+
+            for(var i=0;i<circlesLis.length;i++){
+
+                circlesLis[i].className = "";
+            }
+
+            circlesLis[img_idx].className = "current";
+        }
+    </script>
+</html>

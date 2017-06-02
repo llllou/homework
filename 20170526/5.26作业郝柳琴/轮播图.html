@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #carousel{
+            width:960px;
+            height: 300px;
+            background-color: aqua;
+            margin: 50px auto;
+        }
+        span{
+            position: absolute;
+            width: 55px;
+            height: 55px;
+            top:175px;
+            cursor:pointer;
+        }
+        #left{
+            background: url("images/slide-btnL.png");
+            left:220px;
+        }
+        #right{
+            background: url("images/slide-btnR.png");
+            right:220px;
+        }
+        ol{
+            width: 396px;
+            height: 50px;
+            background-color: rgba(111,111,111,0.1);
+            position: absolute;
+            top:300px;
+            left:50%;
+            margin-left: -198px;
+            list-style: none;
+            border-radius: 20px;
+        }
+        ol li{
+            width: 20px;
+            height: 20px;
+            /*background: #fcd;*/
+            border-radius: 50%;
+            float:left;
+            margin-top: 15px;
+            margin-left: 12px;
+        }
+        /*ol li.yell{*/
+            /*background: yellow;*/
+        /*}*/
+    </style>
+</head>
+<body>
+    <div id="carousel">
+        <img src="images/u=2310556280,3222762872&fm=23&gp=0.jpg" alt="">
+        <img src="images/u=1660138183,1040754863&fm=23&gp=0.jpg" alt="">
+        <img src="images/u=2239279740,2073825608&fm=23&gp=0.jpg" alt="">
+        <img src="images/u=570752979,850988284&fm=23&gp=0.jpg" alt="">
+        <img src="images/下载%20(1).jpg" alt="">
+        <img src="images/下载.jpg" alt="">
+        <img src="images/u=1876707596,1588618309&fm=23&gp=0.jpg" alt="">
+        <img src="images/u=2074487365,4011206374&fm=23&gp=0.jpg" alt="">
+        <img src="images/u=1204277101,2446081865&fm=23&gp=0.jpg" alt="">
+        <img src="images/u=2702594514,2090741741&fm=23&gp=0.jpg" alt="">
+        <img src="images/u=403939243,2749104425&fm=23&gp=0.jpg" alt="">
+        <img src="images/u=4099700295,1827171987&fm=23&gp=0.jpg" alt="">
+    </div>
+    <span id="left"></span>
+    <span id="right"></span>
+    <ol></ol>
+    <script type="text/javascript" src="jquery-2.1.4/jquery.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("img").hide(); //先让所有图片隐藏
+            $("img").eq(0).show();//让第一张图片显示
+
+//            $("#carousel").mouseover(function(){
+//                $("span").show();
+//            });
+//            $("#carousel").mouseout(function(){
+//                $("span").hide();
+//            });
+            //信号量
+            var index = 0;
+            //左边轮播
+            $("#left").click(function(){
+                index--;
+                if(index<0)index=$("img").length-1;
+                $("img").hide();
+//                alert(index);
+                $("img").eq(index).show();
+            });
+            //右边轮播
+            $("#right").click(function(){
+                index++;
+                if(index>$("img").length-1)index=0;
+                $("img").hide();
+//                alert(index);
+                $("img").eq(index).show();
+            });
+            //在span标签后边添加ol标签
+//            $("span").after("<ol></ol>")
+            //在ol标签中添加li标签
+            for(var i=0;i<$("img").length;i++){
+                $("ol").append("<li></li>");
+            }
+
+            $("li").css("background","#fcd");//让所有小圆点为这个颜色
+            $("li").eq(0).css("background","yellow");//第一个小圆点为黄色
+
+            //小圆点对应的图片改变
+            for(var j = 0;j<$("img").length;j++){
+                (function(j){
+                   $("li").eq(j).mouseover(function(){
+                       index=j;
+                   $("img").hide();
+                   $("img").eq(index).show();
+                   $("li").css("background","#fcd");
+                   $("li").eq(index).css("background","yellow");
+
+                   })
+                })(j);
+            }
+
+
+            //定时器
+            var carous = setInterval(function(){
+               index++;
+//                $("img").eq(i).index = i;
+                if( index> $("img").length-1)index=0;
+                $("img").hide(0);
+                $("img").eq(index).show();
+                $("li").css("background","#fcd");
+                $("li").eq(index).css("background","yellow");
+            },1000)
+        })
+//        while(){
+//
+//        }
+    </script>
+</body>
+</html>

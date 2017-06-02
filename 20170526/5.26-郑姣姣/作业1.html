@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 520px;
+				height: 280px;
+				margin: 50px auto;
+				overflow: hidden;
+				position: relative;
+			}
+			.box ul{
+				list-style: none;
+			}
+			.box ul li{
+					display: none;
+			}
+			.box ul li.current{
+				display: block;
+			}
+			.box span{
+				position: absolute;
+				width: 55px;
+				height: 55px;
+				top: 115px;
+				cursor: pointer;
+			}
+			.box .leftBtn{
+				left: 1px;
+				background: url(img/slide-btnL.png);
+			}
+			.box .rightBtn{
+				right: 1px;
+				background: url(img/slide-btnR.png);
+			}
+			.box .circles{
+				position: absolute;
+				bottom: 10px;
+				width: 147px;
+				height: 15px;
+				left: 50%;
+				margin-left: -70px;
+				border-radius:20px;
+				background: rgba(255,255,255,0.7);
+			}
+			.box .circles ol{
+				list-style: none;
+			}
+			.box .circles ol li{
+				float: left;
+				width: 15px;
+				height: 15px;
+				margin-right: 3px;
+				margin-left: 3px;
+				background: #ccc;
+				border-radius:50%;
+				cursor: pointer;
+			}
+			.box .circles ol li.current{
+				background: #F40;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div id="imgList" class="imgList">
+				<ul>
+					<li class="current"><a href="#"><img src="img/1.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/2.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/3.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/4.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/5.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/6.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/7.jpg" alt="" /></a></li>
+				</ul>
+			</div>
+			<div id="btn">
+				<span id="leftBtn" class="leftBtn"></span>
+				<span id="rightBtn" class="rightBtn"></span>
+			</div>
+			<div id="circles" class="circles">
+				<ol>
+					<li class="current"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var leftBtn=document.getElementById("leftBtn");
+		var rightBtn=document.getElementById("rightBtn");
+		var imgList=document.getElementById("imgList").getElementsByTagName("li");
+		var circlesLis=document.getElementById("circles").getElementsByTagName("li");
+		
+		var oimg=0;
+		rightBtn.onclick=function(){
+			oimg++;
+			if(oimg>6){
+				oimg=0;
+			}
+			change();
+		}
+		leftBtn.onclick=function(){
+			oimg--;
+			if(oimg<0){
+				oimg=6;
+			}
+			change();
+		}
+		for(var i=0;i<circlesLis.length;i++){
+			(function(i){
+				circlesLis[i].onclick=function(){
+					oimg=i;
+					change();
+				}
+			})(i)
+		}
+		
+		function change(){
+			//图片
+			for(var i=0;i<imgList.length;i++){
+				imgList[i].className="";
+			}
+			imgList[oimg].className="current";
+			//小圆点
+			for(var j=0;j<circlesLis.length;j++){
+				circlesLis[j].className="";
+			}
+			circlesLis[oimg].className="current";
+		}
+	</script>
+</html>

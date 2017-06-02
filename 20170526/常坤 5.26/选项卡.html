@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        .oBox{
+            width: 290px;
+            height: 98px;
+            margin: 50px auto;
+            border:3px solid rgb(241,241,241) ;
+        }
+        .oBox .oUl{
+            width: 290px;
+            height: 24px;
+        }
+        .oBox .oUl li{
+            float: left;
+            width: 39px;
+            height: 22px;
+            line-height: 22px;
+            text-align: center;
+            margin: 0 9px;
+            cursor: pointer;
+        }
+        .oBox .oUl li:hover{
+            color: rgb(255,68,0);
+        }
+        .oBox .oUl .current{
+            border-bottom: 2px solid rgb(255,68,0);
+            font-weight: bold;
+        }
+        .oBox .content{
+            width: 270px;
+            height: 50px;
+            margin: 10px;
+            overflow: hidden;
+        }
+        .oBox .content div{
+            width: 270px;
+            height: 50px;
+            display: none;
+        }
+        .oBox .content div p{
+            width: 260px;
+            height: 25px;
+            line-height: 25px;
+        }
+        .oBox .content div p .long{
+            width: 260px;
+        }
+        .oBox .content div p a{
+            float: left;
+            width: 130px;
+            height: 25px;
+            line-height: 25px;
+        }
+        .oBox .content div p a:hover{
+            color: rgb(255,68,0);
+        }
+        .oBox .content div p .oColor{
+            color: rgb(255,68,0);
+        }
+    </style>
+</head>
+<body>
+    <div class="oBox" id="oBox">
+        <ul class="oUl" id="oUl">
+            <li class="current">公告</li>
+            <li>规则</li>
+            <li>论坛</li>
+            <li>安全</li>
+            <li>公益</li>
+        </ul>
+        <div id="content" class="content">
+            <div style="display: block">
+                <p><a href="#" class="oColor long">"理想生活上天猫"天猫全面升级定义未来商业</a></p>
+                <p><a href="#">淘宝造物节汇108神店</a><a href="#">天猫618理想生活狂欢节</a></p>
+            </div>
+            <div >
+                <p><a href="#">"成人用品行业标准变更</a><a href="#">全球购市场管理规范变更</a></p>
+                <p><a href="#">新增淘宝网农药行业标准</a><a href="#">自检自查实施细则变更</a></p>
+            </div>
+            <div >
+                <p><a href="#">淘大法务规则特训营</a><a href="#">淘宝招募志愿者</a></p>
+                <p><a href="#">如何做好内容营销</a><a href="#">十八纸颠覆家具想象</a></p>
+            </div>
+            <div >
+                <p><a href="#" class="oColor">120元删差评信吗</a><a href="#" class="oColor">用错个词被罚上万</a></p>
+                <p><a href="#">免单、返现那些事</a><a href="#">这样的投诉你怕不怕</a></p>
+            </div>
+            <div >
+                <p><a href="#" class="oColor">跑赢房价的商家爱心</a><a href="#">致百万商家的感谢信</a></p>
+                <p><a href="#">闲鱼公益上线招募NGO</a><a href="#">公益宝贝卖家发票索取</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var oUlLists=document.getElementById("oUl").getElementsByTagName("li");
+    var contentDivs=document.getElementById("content").getElementsByTagName("div");
+
+    for(var i=0;i<oUlLists.length;i++){
+        //编号
+        oUlLists[i].index=i;
+        oUlLists[i].onmouseover=function () {
+            for(var i=0;i<oUlLists.length;i++){
+                oUlLists[i].className="";
+                contentDivs[i].style.display="none";
+            }
+            this.className="current";
+            contentDivs[this.index].style.display="block";
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        div{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: skyblue;
+            position: absolute;
+            left: 200px;
+            top: 200px;
+            opacity: .2;
+        }
+    </style>
+</head>
+<body>
+    <div id="oDiv1"></div>
+    <div id="oDiv2"></div>
+    <div id="oDiv3"></div>    
+</body>
+<script type="text/javascript">
+    var oDiv1 = document.getElementById("oDiv1");
+    var oDiv2 = document.getElementById("oDiv2");
+    var oDiv3 = document.getElementById("oDiv3");
+
+    animation(oDiv1, {
+        "left": 500,
+        "top": 200,
+        "opacity": 1
+    }, 1600);
+    animation(oDiv2, {
+        "left": 200,
+        "top": 800,
+        "opacity": 1
+    }, 2600);
+    animation(oDiv3, {
+        "left": 500,
+        "top": 300,
+        "opacity": 1
+    }, 3600);
+
+    function animation(elem, target, time){
+        if(window.navigator.userAgent.indexOf("MSIE") == -1){
+            var interval = 10;
+        }else{
+            var interval = 50;
+        }
+
+        var semaphore = {};
+        var step = {};
+        var maxcount = time/interval;
+        var count = 0;
+
+        for(var k in target){
+            semaphore[k] = parseFloat(fetchComStyle(elem,k));
+            step[k] = (target[k] -semaphore[k])/maxcount;
+        }
+
+        var timer = setInterval(function(){
+            for(var k in semaphore){
+                semaphore[k] += step[k];
+
+                if(k != "oacity"){
+                    elem.style[k] = semaphore[k] + "px";
+                }else{
+                    elem.style[k] = semaphore[k];
+                    elem.style.filter = "alpha(opacity=" + semaphore[k]*100 + ")";
+                }
+            }
+
+            count ++;
+            if(count == 50){
+                setInterval(function(){
+                    elem.style[top] += 1;
+                },10)
+            }
+            if(count == maxcount){
+                clearInterval(timer);
+            }
+        })
+    }
+
+    function fetchComStyle(obj,property){
+        if(window.getComputedStyle){
+            return window.getComputedStyle(obj)[property];
+        }else{
+            return obj.currentStyle[property];
+        }
+    }
+
+
+</script>
+</html> 

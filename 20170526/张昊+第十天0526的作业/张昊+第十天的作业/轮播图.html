@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style:none;
+        }
+        .carousel{
+            width:520px;
+            height: 280px;
+            margin: 50px auto;
+            border: 3px solid #888;
+            overflow: hidden;
+            position: relative;
+        }
+        #image ul li{
+            display: none;
+        }
+        #image ul li.images-sp{
+            display:block;
+        }
+        #But>span{
+            display: block;
+            width: 35px;
+            height: 55px;
+            background:rgba(0,0,0,0.5);
+            position: absolute;
+            top: 40%;
+            color: #ffffff;
+            font-size: 30px;
+            line-height: 55px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #leftbut{
+            left: 0;
+        }
+        #rightbut {
+            right: 0;
+        }
+        #circles ul{
+            width: 200px;
+            height: 20px;
+            background:rgba(220,220,220,0.7);
+            border-radius: 20px;
+            position: absolute;
+            bottom: 10px;
+            left: 30%;
+        }
+        #circles ul li{
+            width: 15px;
+            height: 15px;
+            background:#cccccc;
+            border-radius: 50%;
+            float:left;
+            margin: 3px 12px;
+            cursor: pointer;
+        }
+        #circles ul li.cirList{
+            background:#ff4411;
+        }
+    </style>
+</head>
+<body>
+<div class="carousel">
+    <div id="image">
+        <ul>
+            <li class="images-sp"><a href="#"><img src="images/1.webp" alt=""></a></li>
+            <li><a href="#"><img src="images/2.webp" alt=""></a></li>
+            <li><a href="#"><img src="images/3.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/4.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/5.jpg" alt=""></a></li>
+        </ul>
+    </div>
+    <div id="But" style="display: none">
+        <span id="leftbut"><</span>
+        <span id="rightbut">></span>
+    </div>
+    <div id="circles">
+        <ul>
+            <li class="cirList"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+</body>
+    <script type="text/javascript">
+        var leftbut = document.getElementById("leftbut");
+        var rightbut = document.getElementById("rightbut");
+        var images = document.getElementById("image").getElementsByTagName("li");
+        var circles = document.getElementById("circles").getElementsByTagName("li");
+        var But = document.getElementById("But");
+        var imgs = document.getElementById("image").getElementsByTagName("img");
+        for(var t = 0; t < imgs.length;t++){
+            imgs[t].onmouseover=function () {
+                But.style.display="block";
+            };
+            imgs[t].onmouseout=function () {
+                But.style.display="none";
+            };
+        };
+        leftbut.onmouseover=function () {
+            But.style.display="block";
+        };
+        leftbut.onmouseout=function () {
+            But.style.display="none";
+        };
+        rightbut.onmouseover=function () {
+            But.style.display="block";
+        };
+        rightbut.onmouseout=function () {
+            But.style.display="none";
+        };
+        var str = 0;
+        leftbut.onclick=function () {
+            str--;
+            fun();
+        };
+        rightbut.onclick=function () {
+            str++;
+            fun();
+        };
+        for(var j = 0 ; j < circles.length;j++){
+            circles[j].index=j;
+            circles[j].onmouseover=function () {
+                str = this.index;
+                fun();
+            }
+        }
+        function fun() {
+            if(str > 4) str = 0;
+            if(str < 0) str = 4;
+            for(var i = 0 ; i < images.length;i++){
+                images[i].className="";
+                circles[i].className="";
+            }
+            images[str].className="images-sp";
+            circles[str].className="cirList";
+        }
+    </script>
+</html>

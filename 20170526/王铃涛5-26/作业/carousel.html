@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .carousel{
+            width:520px;
+            height:280px;
+            margin: 50px auto;
+            position:relative;
+        }
+        .imgList{
+            height:280px;
+            overflow: hidden;
+        }
+
+        .carousel ul li{
+            list-style: none;
+            width:520px;
+            height:280px;
+            display: none;
+        }
+        .carousel ul li.current{
+            display:block;
+        }
+        .Btns>span{
+            display: inline-block;
+            width:24px;
+            height:36px;
+            cursor: pointer;
+        }
+        #leftBtn{
+            background: url(images/slide-btnL.png) no-repeat 0 0/24px 36px ;
+            opacity: 0.6;
+            position:absolute;
+            left:0;
+            bottom:40%;
+            /*display: none;*/
+        }
+        #rightBtn{
+            background: url(images/slide-btnR.png) no-repeat 0 0/24px 36px;
+            opacity: 0.6;
+            position: absolute;
+            right:0;
+            bottom:40%;
+            /*display: none;*/
+        }
+        .circle{
+            width:65px;
+            height:12px;
+            background: rgba(94,94,70,0.4);
+            border-radius:4px;
+            position:absolute;
+            left:220px;
+            bottom:16px;
+        }
+        .circle li{
+            list-style: none;
+            float:left;
+            width:9px;
+            height:9px;
+            margin-top: 1px;
+            border-radius: 50%;
+            margin-left: 2px;
+            margin-right: 2px;
+            cursor: pointer;
+            background:rgb(183,183,183);
+        }
+        .circle li.current{
+            background: rgb(255,68,0);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="carousel" id="carousel">
+        <div id="imgList" class="imgList">
+            <ul >
+                <li class="current"><a href="#"><img src="images/a.png" alt=""></a></li>
+                <li><a href="#"><img src="images/b.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/c.webp" alt=""></a></li>
+                <li><a href="#"><img src="images/d.webp" alt=""></a></li>
+                <li><a href="#"><img src="images/e.webp" alt=""></a></li>
+            </ul>
+        </div>
+        <div id="Btns" class="Btns">
+            <span class="leftBtn" id="leftBtn"></span>
+            <span class="rightBTn" id="rightBtn"></span>
+        </div>
+        <div id="circle" class="circle">
+            <ol>
+                <li class="current"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </div>
+    <script>
+        var imgLis=document.getElementById('imgList').getElementsByTagName('li');
+        var leftBtn=document.getElementById('leftBtn');
+        var rightBtn=document.getElementById('rightBtn');
+        var circleLis=document.getElementById('circle').getElementsByTagName('li');
+        var imgList=document.getElementById('imgList');
+
+        var number=0;
+        rightBtn.onclick=function(){
+            number++;
+            changeImg();
+        };
+        leftBtn.onclick=function(){
+            number--;
+            changeImg();
+        };
+//        imgList.onmouseout=function(){
+//            leftBtn.style.display='none';
+//            rightBtn.style.display='none';
+//        };
+//        imgList.onmouseover=function(){
+//            leftBtn.style.display='block';
+//            rightBtn.style.display='block';
+//        };
+        for(var i=0;i<circleLis.length;i++){
+            circleLis[i].index=i;
+
+
+            circleLis[i].onclick=function(){
+                number=circleLis[this.index].index;
+                console.log(number);
+                changeImg();
+            };
+//            (function(i){
+//                circleLis[i].onclick=function() {
+//                    number =i
+//                    changeImg();
+//                }
+//            })(i);
+        }
+        function changeImg(){
+            if(number > 4){
+                number=0;
+            }
+            if(number < 0){
+                number=4;
+            }
+            for(var i=0;i<imgLis.length;i++){
+                imgLis[i].className='';
+                circleLis[i].className='';
+            }
+            imgLis[number].className='current';
+            circleLis[number].className='current';
+
+        }
+    </script>
+</body>
+</html>

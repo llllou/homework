@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无缝隙方式轮播图</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+            .Box{
+                width: 500px;
+                height: 260px;
+                border: 3px solid salmon;
+                margin: 100px auto;
+                position: relative;
+                /*overflow:hidden;*/
+            }
+            .Watch{
+                width: 5000px;
+                position: absolute;
+                top:0;
+                left: 0;
+            }
+        .Watch ul{
+            list-style: none;
+        }
+        .Watch ul li{
+            float: left;
+            width:500px;
+            height: 100%;
+        }
+        .Watch ul li img{
+            width: 500px;
+            height: 260px;
+        }
+        #But1{
+            width: 55px;
+            height: 55px;
+            display:inline-block;
+            position: absolute;
+            left:0 ;
+            top:100px;
+            background: url("images/slide-btnL.png");
+        }
+        #But2{
+            width: 55px;
+            height: 55px;
+            display:inline-block;
+            position: absolute;
+            right:0;
+            top:100px;
+            background: url("images/slide-btnR.png");
+        }
+    </style>
+</head>
+<body>
+<div class="Box" id="Box">
+    <div class="Watch" id="Watch">
+        <ul>
+            <li><a href=""><img src="images/1.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/2.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/3.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/4.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/5.jpg" alt=""></a></li>
+        </ul>
+    </div>
+    <span id="But1"></span>
+    <span id="But2"></span>
+</div>
+
+</body>
+<script>
+    var Watch=document.getElementById("Watch");
+    var LisUl=Watch.getElementsByTagName("ul")[0];
+    var Lis=Watch.getElementsByTagName("li");
+    var Li=Watch.getElementsByTagName("li")[0];
+    var But1=document.getElementById("But1");
+    var But2=document.getElementById("But2");
+    var Newleft=0;
+    var timer;
+    var Lislength=Lis.length;
+    alert(Lis[0].offsetWidth);
+    move();
+    LisUl.innerHTML+=LisUl.innerHTML;
+    But1.onclick=function () {
+        
+    };
+    function move() {
+         clearInterval("timer");
+        timer=setInterval(function () {
+            Newleft+= -500;
+            if(Newleft<-500*Lislength){
+                Newleft=0;
+//                Watch.style.transition=0+"s";
+            }
+            if(Newleft>0){
+                Newleft=-500*Lislength;
+            }else{
+                Watch.style.transition=1+"s";
+            }
+            Watch.style.left=Newleft+"px";
+        },2000)
+    }
+
+</script>
+</html>

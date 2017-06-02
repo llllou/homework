@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 35px;
+            color: #222;
+
+            border-radius:50% ;
+        }
+        .bigBox{
+            width: 550px;
+            height: 360px;
+            border-radius: 50%;
+            margin: 0 auto;
+            border: 1px solid gray;
+            position: relative;
+            overflow: hidden;
+        }
+        .inBox{
+            width: 8000px;
+            height: 360px;
+            position: absolute;
+            left: 0;
+            top:0;
+
+        }
+        img{
+            float: left;
+            width: 550px;
+            height: 360px;
+            border-radius: 50%;
+        }
+        #oLeft{
+            position: absolute;
+            top: 160px;
+            left: 410px;
+            cursor: pointer;
+            background: rgba(111,111,111,.5);
+            color: #cccccc;
+            border: 1px solid gray;
+        }
+
+        #oRight{
+            position: absolute;
+            top: 160px;
+            right: 410px;
+            cursor: pointer;
+            color: #cccccc;
+            border: 1px solid gray;
+            background: rgba(111,111,111,.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="bigBox" class="bigBox">
+        <div id="inBox" class="inBox">
+            <img src="img/11.jpg" alt="">
+            <img src="img/12.jpg" alt="">
+            <img src="img/13.jpg" alt="">
+            <img src="img/14.jpg" alt="">
+            <img src="img/15.jpg" alt="">
+            <img src="img/16.jpg" alt="">
+            <img src="img/17.jpg" alt="">
+        </div>
+    </div>
+    <div id="oRight">></div>
+    <div id="oLeft"><</div>
+</body>
+<script type="text/javascript">
+    var inBox=document.getElementById("inBox");
+    var oImgs=inBox.getElementsByTagName("img");
+    var oRight=document.getElementById("oRight");
+    var oLeft=document.getElementById("oLeft");
+
+
+    var num=0;
+    var oLength=oImgs.length;
+    inBox.innerHTML+=inBox.innerHTML;
+    setInterval(function(){
+        num-=550;
+        if(num<-550*oLength+550){
+            inBox.style.transition=1+"s";
+            num=0;
+        }else {
+            inBox.style.transition=1+"s";
+        }
+        inBox.style.left=num+"px";
+
+    },3000);
+
+
+
+    var num =0;
+    var str2=-550*oLength;
+    oLeft.onclick=function(){
+        num-=550;
+        if(num > 0){
+            num=str2;
+        }
+        fun2();
+    }
+    oRight.onclick=function(){
+
+        num+=550;
+        if(num >0){
+            num=str2;
+        }
+
+        fun2();
+
+    }
+
+    function fun2() {
+        inBox.style.transition=0+"s";
+        inBox.style.left=num+"px";
+    }
+</script>
+</html>

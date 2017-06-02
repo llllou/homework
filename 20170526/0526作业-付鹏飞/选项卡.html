@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .box{
+            width:300px;
+            height:130px;
+            margin: 10px auto;
+            border: 1px solid #cccccc;
+        }
+        .box ul li{
+            float: left;
+            width: 40px;
+            height: 27px;
+            line-height: 30px;
+            text-align: center;
+            margin: 0 10px;
+            cursor:pointer;
+        }
+        .box ul li.boxUlLi{
+            border-bottom: 3px solid red;
+        }
+        #boxUl{
+            width:100%;
+            height:30px;
+        }
+        #wrap{
+            width:100%;
+            height:100px;
+        }
+        #wrap div{
+            display: none;
+        }
+        #wrap div p{
+            height: 40px;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="boxUl" id="boxUl">
+        <ul>
+            <li class="boxUlLi">公告</li>
+            <li>规则</li>
+            <li>论坛</li>
+            <li>安全</li>
+            <li>公益</li>
+        </ul>
+    </div>
+    <div id="wrap">
+        <div style="display: block;">
+            <p>　“理想生活上天猫” 天猫全面升级定义未来商业</p><p>　　淘宝造物节汇108神店  天猫618理想生活狂欢节</p>
+        </div>
+        <div>
+            <p>　“成人用品行业标准变更” 全球购市场管理规范</p><p>　　新增淘宝网农药行业标准  自检自查实施细则变更</p>
+        </div>
+        <div>
+            <p>　“淘大法务规则特训营” 淘宝招募志愿者</p><p>　　如何做好内容营销  十八纸颠覆家具想象</p>
+        </div>
+        <div>
+            <p>　“120元删差评信吗” 用错个词被罚上万</p><p>　　免单、返现那些事  这样的投诉你怕不怕</p>
+        </div>
+        <div>
+            <p>　“跑赢房价的商家爱心” 致百万商家的感谢信</p><p>　　闲鱼公益上线招募NGO  公益宝贝卖家发票索取</p>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    var boxUl = document.getElementById("boxUl").getElementsByTagName("li");
+    var wrap = document.getElementById("wrap");
+    var oDivs = wrap.getElementsByTagName("div");
+
+    for(i=0;i<boxUl.length;i++){
+        boxUl[i].index= i;
+        boxUl[i].onmouseover=function(){
+            for(j=0;j<boxUl.length;j++){
+                boxUl[j].className="";
+                oDivs[j].style.display="none";
+            }
+            this.className="boxUlLi";
+            oDivs[this.index].style.display = "block";
+        }
+    }
+</script>
+</html>

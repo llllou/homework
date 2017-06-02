@@ -1,0 +1,155 @@
+<!lOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ol {
+            list-style: none;
+        }
+
+        .carousel {
+            margin: 50px 30%;
+        }
+
+        .Span {
+            width: 520px;
+            position: relative;
+        }
+
+        #rightSpan {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background-image: url("image/slide-btnR.png");
+            background-size: 25px 25px;
+            float: right;
+            position: absolute;
+            top: 110px;
+            right: 10px;
+        }
+
+        #leftSpan {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background-image: url("image/slide-btnL.png");
+            background-size: 25px 25px;
+            float: left;
+            position: absolute;
+            top: 110px;
+            left: 10px;
+        }
+
+        #imgList > ul > li {
+            display: none;
+        }
+
+        #imgList > ul > li.show {
+            display: block;
+        }
+
+        #rub > ol > li.show {
+            background: gold;
+        }
+
+        #rub > ol > li {
+            float: left;
+            width: 12px;
+            height: 12px;
+            background: firebrick;
+            border-radius: 50%;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        #rub {
+            width: 85px;
+            height: 12px;
+            margin-left: 16%;
+            position: absolute;
+            top: 310px;
+        }
+    </style>
+</head>
+<body>
+<div class="carousel">
+    <div class="Span">
+        <spsn id="rightSpan"></spsn>
+        <span id="leftSpan"></span>
+    </div>
+    <biv id="imgList">
+        <ul>
+            <li class="show"><a href="#"><img src="image/111.jpg" alt=""></a></li>
+            <li><a href="#"><img src="image/222.webp" alt=""></a></li>
+            <li><a href="#"><img src="image/333.jpg" alt=""></a></li>
+            <li><a href="#"><img src="image/444.webp" alt=""></a></li>
+            <li><a href="#"><img src="image/555.jpg" alt=""></a></li>
+        </ul>
+    </biv>
+    <div id="rub">
+        <ol>
+            <li class="show"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    var rightSpan = document.getElementById("rightSpan");
+    var leftSpan = document.getElementById("leftSpan");
+    var imgList = document.getElementsByTagName("li");
+    var rub = document.getElementById("rub").getElementsByTagName("li");
+    //信号量
+    var wei = 0;
+    //右按钮
+    rightSpan.onclick = function () {
+        wei++;
+        if (wei > 4) {
+            wei = 0;
+        }
+        yewu()
+    };
+    //左按钮
+    leftSpan.onclick = function () {
+        wei--;
+        if (wei < 0) {
+            wei = 4;
+        }
+        yewu();
+    };
+    //业务
+    function yewu() {
+        for (var i = 0; i < imgList.length; i++) {
+            imgList[i].className = "";
+        }
+            imgList[wei].className = "show";
+
+        for (var i = 0; i < rub.length; i++) {
+            rub[i].className = "";
+        }
+            rub[wei].className = "show";
+
+    }
+    for (var i = 0; i < rub.length; i++) {
+
+        (function (i) {
+            rub[i].onclick=function(){
+                wei = i;
+                yewu();
+        }
+        })(i)
+    }
+</script>
+</html>

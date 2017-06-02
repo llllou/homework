@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>5.26作业</title>
+        <style>
+             *{
+                margin:0;
+                padding: 0;
+             }
+             li{
+                list-style: none;
+             }
+             .exothecium{
+                width: 521px;
+                height: 281px;
+                overflow:hidden;
+                margin: 70px auto;
+             }
+             .exothecium img{
+                width: 521px;
+                height: 281px;
+             }
+             .exothecium li{
+                display: none;
+             }
+             .exothecium li.images{
+                display:block;
+             }
+             input{
+                width: 25px;
+                height: 36px;
+                background: rgba(000,000,000,0.5);
+                position: absolute;
+                top:196px;
+                font-size: 20px;
+                color: white;
+                border: none;
+                outline:none;
+                cursor:pointer;
+             }
+             .leftBut{
+                left: 423px;
+             }
+             .rightBut{
+                right: 422px;
+             }
+             ol{
+                width: 70px;
+                height: 15px;
+                background:rgba(250,250,250,0.7);
+                border-radius: 10px;
+                position: absolute;
+                top:323px;
+                left: 650px;
+                list-style: none;
+             }
+             .spotBackground li{
+                display: block;
+                float: left;
+                width: 10px;
+                height: 10px;
+                border-radius:50%;
+                margin-left: 1px;
+                margin-right: 3px;
+                background: #ccc;
+                margin-top: 2px;
+                cursor:pointer;
+             }
+             .spotBackground li.spot{
+                background: #f81;
+             }
+        </style>
+    </head>
+    <body>
+    <div class="exothecium">
+            <div class="nexine" id="nexine">
+                        <ul>
+                            <li class="images"><a href="#"><img src="image/2b.jpg" alt=""></a></li>
+                            <li><a href="#"><img src="image/3.jpg" alt=""></a></li>
+                            <li><a href="#"><img src="image/5.jpg" alt=""></a></li>
+                            <li><a href="#"><img src="image/8f.jpg" alt=""></a></li>
+                            <li><a href="#"><img src="image/QQ图片20170526190623.jpg" alt=""></a></li>
+                        </ul>
+                        <input type="button" id="leftBut" value="<" class="leftBut">
+                        <input type="button" id="rightBut" value=">" class="rightBut">
+                        <ol id="spotBackground" class="spotBackground">
+                                    <li class="spot"></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                        </ol>
+            </div>
+    </div>
+    </body>
+    <script>
+     var images=document.getElementById("nexine").getElementsByTagName("li");
+     var leftBut=document.getElementById("leftBut");
+     var rightBut=document.getElementById("rightBut");
+     var Spots=document.getElementById("spotBackground").getElementsByTagName("li");
+       var num=0;
+       leftBut.onclick=function(){
+            num--;
+            if(num<0){
+                num=4;
+            }
+            fun();
+       }
+       rightBut.onclick=function(){
+            num++;
+            if(num>4){
+                num=0;
+            }
+            fun();
+       }
+       for(var j=0;j<Spots.length;j++){
+                (function(a){
+                       Spots[a].onclick=function(){
+                             num=a;
+                             fun();
+                       }
+
+                })(j);
+       }
+       function fun(){
+                for(var i=0;i<images.length;i++){
+                    images[i].className="";
+                }
+                images[num].className="images";
+                for(var k=0;k<Spots.length;k++){
+                    Spots[k].className=" ";
+                }
+                Spots[num].className="spot";
+       }
+
+
+    </script>
+</html>

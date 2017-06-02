@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            *{
+                padding:0;
+                margin:0;
+            }
+            li{
+                list-style:none;
+            }
+            .body{
+                width:520px;
+                height:280px;
+                background:skyblue;
+                margin:50px auto;
+                position:relative;
+                overflow:hidden;
+
+            }
+
+            .body ul li{
+                display:none;
+            }
+            .body ul li.current{
+                display:block;
+            }
+            #leftBtn{
+                position:absolute;
+                top:115px;
+                cursor:pointer;
+            }
+            #leftBtn img{
+                opacity:0.7;
+            }
+            #rightBtn img{
+                opacity:0.7;
+            }
+            #rightBtn{
+                position:absolute;
+                left:490px;
+                top:115px;
+                cursor:pointer;
+            }
+            #bodyDivOne ol{
+                width:80px;
+                height:14px;
+                background:rgba(255,255,255,0.5);
+                border-radius:15px;
+                position:absolute;
+                left:220px;
+                top:245px;
+
+            }
+            #bodyDivOne ol li{
+                width:10px;
+                height:10px;
+                background:rgba(255,255,255,0.8);
+                border-radius:50%;
+                float:left;
+                margin:2px 3px;
+            }
+            #bodyDivOne ol li.current{
+                background:#ff4400;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="body">
+            <div id="bodyDiv">
+                <ul>
+                    <li class="current"><a href="#"><img src="image/1.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="image/4.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="image/6.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="image/5.webp" alt=""></a></li>
+                    <li><a href="#"><img src="image/2.webp" alt=""></a></li>
+                </ul>
+            </div>
+            <div id="leftBtn"><img src="image/slide-btnL1.png" alt=""></div>
+            <div id="rightBtn"><img  src="image/slide-btnR1.png" alt=""></div>
+            <div id="bodyDivOne">
+                <ol>
+                    <li class="current"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+            </div>
+        </div>
+    </body>
+    <script>
+        var bodyDiv=document.getElementById("bodyDiv");
+        var bodyDivLis=bodyDiv.getElementsByTagName("li");
+        var leftBtn=document.getElementById("leftBtn");
+        var rightBtn=document.getElementById("rightBtn");
+        var bodyDivOne=document.getElementById("bodyDivOne");
+        var bodyDivOneLis=bodyDivOne.getElementsByTagName("li");
+
+        var img_idx=0;
+        leftBtn.onclick=function(){
+            img_idx--;
+            if(img_idx<0){
+                img_idx=4;
+            }
+            changePic();
+        }
+        rightBtn.onclick=function(){
+            img_idx++;
+            if(img_idx>4){
+                img_idx=0;
+            }
+            changePic();
+        }
+        for(var i=0;i<bodyDivOneLis.length;i++){
+            (function(i){
+                bodyDivOneLis[i].onclick=function(){
+                    img_idx=i;
+                    changePic();
+                }
+            })(i);
+        }
+
+        function changePic(){
+            for(var i=0;i<bodyDivLis.length;i++){
+                bodyDivLis[i].className="";
+            }
+            bodyDivLis[img_idx].className="current";
+
+            for(var i=0;i<bodyDivOneLis.length;i++){
+                bodyDivOneLis[i].className="";
+            }
+            bodyDivOneLis[img_idx].className="current";
+        }
+    </script>
+</html>

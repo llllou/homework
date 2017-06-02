@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+     .center{
+         width: 300px;
+         height: 300px;
+         border: 1px solid red;
+         margin: auto;
+     }
+        .top{
+            margin-top: 30px;
+            height: 30px;
+            line-height: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .top>a{
+            margin-left: 15px;
+            color: black;
+            font-size: 15px;
+
+        }
+        .top a:hover{
+            border-bottom:2px solid #ff5500 ;
+            color: #ff5500;
+        }
+        .bottom{
+            width: 270px;
+            height: 35px;
+            /*overflow: hidden;*/
+        }
+        .bottom ul{
+            width:300px;
+            height:237px;
+            display: none;
+        }
+        .bottom ul li{
+            float: left;
+            margin-left: 10px;
+        }
+        .first{
+            color: #ff5500;
+        }
+    </style>
+</head>
+<body><div class="center">
+    <div class="top" id="top">
+        <a class="first" href="">公告</a>
+        <a href="">规则</a>
+        <a href="">论坛</a>
+        <a href="">安全</a>
+        <a href="">公益</a>
+    </div>
+    <div class="bottom" id="bottom">
+        <ul style="display:block">
+            <li>“理想生活上天猫” 天猫全面升级定义未来商业</li>
+            <li>淘宝造物节汇108神店</li>
+            <li>天猫618理想生活狂欢节</li>
+        </ul>
+        <ul>
+            <li>成人用品行业标准变更</li>
+            <li>全球购市场管理规范变</li>
+            <li>新增淘宝网农药行业标</li>
+            <li>自检自查实施细则变更</li>
+        </ul>
+        <ul>
+            <li>十八纸颠覆家具想象</li>
+            <li>十八纸颠覆家具想象</li>
+            <li>十八纸颠覆家具想象</li>
+            <li>十八纸颠覆家具想象</li>
+        </ul>
+        <ul>
+            <li>这样的投诉你怕不怕</li>
+            <li>这样的投诉你怕不怕</li>
+            <li>这样的投诉你怕不怕</li>
+            <li>这样的投诉你怕不怕</li>
+        </ul>
+        <ul>
+            <li>致百万商家的感谢信</li>
+            <li>致百万商家的感谢信</li>
+            <li>致百万商家的感谢信</li>
+            <li>致百万商家的感谢信</li>
+        </ul>
+    </div>
+
+</div>
+</body>
+<script type="text/javascript">
+    var oTop=document.getElementById("top").getElementsByTagName("a");
+    var oBottom=document.getElementById("bottom").getElementsByTagName("ul");
+
+    for(var i=0;i<oTop.length;i++){
+        oTop[i].index=i;
+        oTop[i].onmouseover=function () {
+            for(var j=0;j<oTop.length;j++){
+                oTop[j].className="";
+                oBottom[j].style.display="none";
+            }
+            this.className="first";
+            oBottom[this.index].style.display="block";
+        }
+    }
+
+</script>
+</html>

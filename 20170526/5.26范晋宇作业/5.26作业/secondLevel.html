@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>二级菜单</title>
+        <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .outline{
+            width: 290px;
+            height: 110px;
+            margin: 130px auto;
+            border-top: 2px solid #ccc;
+            border-bottom: 2px solid #ccc;
+            overflow: hidden;
+        }
+        .outlTop{
+            width: 290px;
+            height: 36px;
+        }
+        li{
+            width: 40px;
+            height: 21px;
+            float: left;
+            font-size: 14px;
+            text-align: center;
+            padding-top:15px;
+            margin: 0 9px;
+            border-bottom: 3px solid transparent;
+            cursor:pointer;
+        }
+        li.buttons:hover{
+            font-weight: 900;
+            color: #ff4400;
+            border-bottom: 3px solid #f40;
+        }
+        .outline div{
+            width: 290px;
+            height: 74px;
+            line-height: 25px;
+            display: none;
+        }
+        .outline div.matter{
+            display: block;
+        }
+        .matter span{
+            cursor:pointer;
+            margin-right: 20px;
+        }
+        .matter span:hover{
+              color:#f40;
+        }
+        .outline div .specialText{
+            color: #f40;
+        }
+
+        </style>
+    </head>
+    <body>
+            <div id="outline" class="outline">
+                    <ul class="outlTop">
+                            <li class="buttons">公告</li>
+                            <li>规则</li>
+                            <li>论坛</li>
+                            <li>安全</li>
+                            <li>公益</li>
+                    </ul>
+                    <div class="matter">
+                            <span class="specialText">理想生活上天猫，天猫全面升级定义未来商业</span><br/>
+                            <span>淘宝造物节汇108神店</span>
+                            <span>天猫618理想生活狂欢节</span>
+                    </div>
+                    <div>
+                            <span>成人用品行业标准变更</span>
+                            <span>全球购市场管理规范变</span><br/>
+                            <span>新增淘宝网农药行业标</span>
+                            <span>自检自查实施细则变更</span>
+                    </div>
+                    <div>
+                            <span>淘大法务规则特训营</span>
+                            <span>淘宝招募自愿者</span><br/>
+                            <span>如何做好内容营销</span>
+                            <span>十八纸颠覆家具想象</span>
+                    </div>
+                    <div>
+                            <span class="specialText">120元删差评信吗</span>
+                            <span class="specialText">用错个词被罚上万元</span><br/>
+                            <span>免单、返现那些事</span>
+                            <span>这样的投诉你怕不怕</span>
+                    </div>
+                    <div>
+                            <span class="specialText">跑赢房价的商家爱心</span>
+                            <span>致百万商家的感谢信</span><br/>
+                            <span>闲鱼公益上线招募NGO</span>
+                            <span>公益宝贝卖家发票索取</span>
+                    </div>
+            </div>
+    </body>
+    <script>
+       var buttons=document.getElementById("outline").getElementsByTagName("li");
+       var texts=document.getElementById("outline").getElementsByTagName("div");
+       var sum=0;
+       for(var i=0;i<buttons.length;i++){
+                (function(a){
+                         buttons[a].onmouseover=function(){
+                             sum=a;
+                             fun()
+                         }
+                })(i);
+       }
+       function fun(){
+            for(var j=0;j<buttons.length;j++){
+                buttons[j].className="";
+            }
+               buttons[sum].className="buttons";
+          for(var k=0;k<texts.length;k++){
+               texts[k].className="";
+          }
+           texts[sum].className="matter";
+       }
+
+    </script>
+</html>

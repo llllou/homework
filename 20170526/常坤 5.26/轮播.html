@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        li{
+            list-style: none;
+        }
+        .carousel{
+            width: 520px;
+            height: 280px;
+            border:5px solid rgb(241,241,241);
+            margin: 50px auto;
+            position: relative;
+        }
+        .carousel .imagesList{
+            width: 520px;
+            height: 280px;
+            overflow: hidden;
+
+        }
+        .carousel .imagesList li{
+            display: none;
+        }
+        .carousel .imagesList .current{
+            display: block;
+        }
+        .carousel .btns{
+            width: 520px;
+            height: 36px;
+            position: absolute;
+            top: 132px;
+            display: none;
+        }
+        .carousel .btns .leftBtn{
+            width: 24px;
+            height: 36px;
+            float: left;
+            line-height: 36px;
+            color:white;
+            background: rgba(1,1,1,.3);
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .carousel .btns .leftBtn:hover{
+            background: rgba(1,1,1,.6);
+        }
+        .carousel .btns .rightBtn{
+            width: 24px;
+            height: 36px;
+            float: right;
+            line-height: 36px;
+            color:white;
+            background: rgba(1,1,1,.3);
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .carousel .btns .rightBtn:hover{
+            background: rgba(1,1,1,.6);
+        }
+        .carousel .circles{
+            width: 65px;
+            height: 13px;
+            border-radius: 10px;
+            position: absolute;
+            bottom: 15px;
+            height: 13px;
+            text-align: center;
+            font-size: 0;
+            left: 50%;
+            margin-left: -39px;
+            background-color: rgba(255,255,255,.3);
+        }
+        .carousel .circles li{
+            display: inline-block;
+            margin: 2px;
+            padding-top: 9px;
+            width: 9px;
+            height: 0;
+            border-radius: 50%;
+            background: #B7B7B7;
+            cursor: pointer;
+        }
+        .carousel .circles .current{
+            background: rgb(255,68,0);
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="imagesList" id="imagesList">
+            <ul>
+                <li class="current"><a href="#"><img src="img/aaa.jpg" alt=""></a></li>
+                <li><a href="#"><img src="img/bbb.jpg" alt=""></a></li>
+                <li><a href="#"><img src="img/ccc.jpg" alt=""></a></li>
+                <li><a href="#"><img src="img/ddd.jpg" alt=""></a></li>
+                <li><a href="#"><img src="img/eee.jpg" alt=""></a></li>
+            </ul>
+        </div>
+        <div class="btns" id="btns">
+            <span class="leftBtn" id="leftBtn"><</span>
+            <span class="rightBtn" id="rightBtn">></span>
+        </div>
+        <div class="circles" id="circles">
+            <ol>
+                <li class="current"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var imagesList=document.getElementById("imagesList");
+    var imagesListLis=imagesList.getElementsByTagName("li");
+    var leftBtn=document.getElementById("leftBtn");
+    var rightBtn=document.getElementById("rightBtn");
+    var circlesLis=document.getElementById("circles").getElementsByTagName("li");
+    var btns=document.getElementById("btns");
+
+    imagesList.onmousemove=function () {
+        btns.style.display="block";
+    }
+    imagesList.onmouseout=function () {
+        btns.style.display="none";
+    }
+    btns.onmousemove=function () {
+        btns.style.display="block";
+    }
+    btns.onmouseout=function () {
+        btns.style.display="none";
+    }
+
+    //信号量
+    var str=0;
+
+    //leftBtn监听
+    leftBtn.onclick=function () {
+        str--;
+        if(str<0){
+            str=4;
+        }
+        chang();
+    }
+    rightBtn.onclick=function () {
+        str++;
+        if(str>4){
+            str=0;
+        }
+        chang();
+    }
+
+    for(var j=0;j<circlesLis.length;j++){
+        (function (j) {
+            circlesLis[j].onclick=function () {
+                str=j;
+                chang();
+            }
+        })(j)
+    }
+
+
+    //业务
+    function chang() {
+        for(var i=0;i<imagesListLis.length;i++){
+            imagesListLis[i].className="";
+        }
+        imagesListLis[str].className="current";
+
+        for(var i=0;i<circlesLis.length;i++){
+            circlesLis[i].className="";
+        }
+        circlesLis[str].className="current";
+    }
+</script>
+</html>
