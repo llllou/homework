@@ -1,0 +1,574 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+em,i{
+    font-style: normal;
+}
+
+body{
+    margin: 0 auto;
+    overflow-x: hidden;
+    position: relative;
+}
+/*导航*/
+nav{
+    width: 1349px;
+    height: 100px;
+    background: rgba(0,0,0,.5);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+}
+
+nav .container{
+    width: 1135px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+nav img{
+    margin-top: 21px;
+    float: left;
+}
+
+nav .mainMenu{
+    float: right;
+}
+
+nav .mainMenu > li{
+    height: 100px;
+    line-height: 100px;
+    color: #fff;
+    padding: 0 14px;
+    float: left;
+    position: relative;
+}
+
+nav .mainMenu > li > a{
+    color: #fff;
+}
+
+nav .mainMenu > li:hover > a{
+    color: #fcb941;
+}
+
+nav .pages ul{
+    width: 109px;
+    height: 70px;
+    font-size: 13px;
+    background: #fcb941;
+    position: absolute;
+    top: 63px;
+    left: 0;
+    display: none;
+}
+
+nav .pages em{
+    display: inline-block;
+    border: 4px solid transparent;
+    border-top-color: #fff;
+}
+
+nav .mainMenu > li:hover em{
+    border-top-color: #fcb941;
+}
+
+nav .pages .visible{
+    display: block;
+}
+
+nav .pages li{
+    padding-left: 15px;
+    line-height: 35px;
+}
+
+nav .pages li a{
+    color: #000;
+}
+
+nav .pages li:hover a{
+    color: #fff;
+}
+
+nav .contact img{
+    margin: 39px 3px 0 0;
+}
+
+/*轮播图*/
+.dot{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(../images/dot.png);
+}
+
+.banner{
+    width: 1349px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.banner .images {
+    width: 1349px;
+    height: 800px;
+    overflow: hidden;
+}
+
+.banner .images img{
+    width: 1349px;
+    display: none;
+}
+
+.banner .images img.active{
+    display: block;
+}
+
+.banner .sideBtn{
+    width: 100%;
+    height: 45px;
+    position: absolute;
+    top: 50%;
+    margin-top: 22px;
+    z-index: 50;
+    user-select: none;
+}
+
+.banner .sideBtn .prev{
+    cursor: pointer;
+    float: left;
+}
+
+.banner .sideBtn .next{
+    cursor: pointer;
+    float: right;
+}
+
+.banner .midBtn{
+    width: 118px;
+    height: 35px;
+    background: rgba(0,0,0,.5);
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    bottom: 128px;
+    margin-left: -63px;
+    padding-left: 8px;
+    z-index: 50;
+}
+
+.banner .midBtn em{
+    display: block;
+    margin-top: 13px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    float: left;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.banner .midBtn .active{
+    background: #fcb941;
+}
+
+/*内容部分*/
+section > div{
+    width: 1349px;
+    padding-top: 62px;
+    margin: 0 auto;
+    position: relative;
+}
+
+section .title{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+section .welcome{
+    height: 656px;
+}
+
+section .welcome .content{
+    width: 1112px;
+    height: 365px;
+    margin: 118px auto 0;
+}
+
+section .welcome .content div{
+    width: 524px;
+    height: 349px;
+    border: 8px solid #e4e4e4;
+}
+
+section .welcome .content .ride{
+    float: left;
+    background: url(../images/2.jpg);
+    background-size: cover;
+}
+
+section .welcome .content .walk{
+    float: right;
+    background: url(../images/3.jpg);
+    background-size: cover;
+}
+
+section .welcome .article{
+    color: #999;
+    line-height: 24px;
+    text-align: center;
+    margin-top: 39px;
+}
+
+section .services{
+    height: 394px;
+    background: #fcb941;
+}
+
+section .services .content{
+    width: 1088px;
+    margin: 118px auto 0;
+}
+
+section .services li{
+    width: 234px;
+    height: 206px;
+    margin-right: 50px;
+    float: left;
+}
+
+section .services li.noMarg{
+    margin: 0;
+}
+
+section .services em{
+    display: block;
+    width: 97px;
+    height: 97px;
+    border-radius: 50%;
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-left: 68.5px;
+}
+
+section .services em.lorem{
+    background-image: url(../images/serv_0.png);
+}
+
+section .services em.ut{
+    background-image: url(../images/serv_1.png);
+}
+
+section .services em.maec{
+    background-image: url(../images/serv_2.png);
+}
+
+section .services em.phas{
+    background-image: url(../images/serv_3.png);
+}
+
+section .services h5{
+    margin: 32px 0 22px 0;
+    text-align: center;
+    color: #000;
+}
+
+section .services p{
+    font-size: 13px;
+    line-height: 23px;
+    color: #000;
+    text-align: center;
+}
+
+section .feedBack{
+    height: 455px;
+    background: url(../images/demo.png);
+    position: relative;
+}
+
+section .feedBack .content{
+    width: 1109px;
+    height: 247px;
+    margin: 118px auto 0;
+    position: relative;
+}
+
+section .feedBack .content ul{
+    display: none;
+}
+
+section .feedBack .content ul.active{
+    display: block;
+}
+
+section .feedBack .content li{
+    width: 345px;
+    float: left;
+    margin-right: 32px;
+}
+
+section .feedBack .content li.noMarg{
+    margin: 0;
+}
+
+section .feedBack .content p{
+    width: 329px;
+    height: 90px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 26px;
+    background: rgba(0,0,0,.7);
+    position: relative;
+    padding: 17px 0 0 16px;
+}
+
+section .feedBack .content p em{
+    display: block;
+    border: 9px solid transparent;
+    border-top-color: rgba(0,0,0,.7);
+    position: absolute;
+    bottom: -18px;
+    left: 93px;
+
+}
+
+section .feedBack .content img{
+    width: 54px;
+    height: 54px;
+    margin: 32px 0 0 78px;
+    float: left;
+}
+
+section .feedBack .content h5{
+    width: 180px;
+    font-size: 14px;
+    color: #fcb941;
+    float: left;
+    margin: 32px 0 0 8px;
+}
+
+section .feedBack .content span{
+    color: #fff;
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+section .feedBack .chanList{
+    position: absolute;
+    left: 50%;
+    bottom: 74px;
+    margin-left: -22px;
+}
+
+section .feedBack .chanList em{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,152,0,.5);
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+section .feedBack .chanList em.active{
+    background: rgb(255,152,0);
+}
+
+section .subscribe{
+    height: 232px;
+}
+
+section .subscribe .content{
+    width: 1105px;
+    height: 50px;
+    margin: 118px auto 0;
+}
+
+section .subscribe .content input{
+    width: 476px;
+    height: 48px;
+    text-indent: 1em;
+    border: 1px solid #fcb941;
+    background: #fdf3e0;
+    margin-right: 17px;
+}
+
+section .subscribe .content ::-webkit-input-placeholder{
+    color: #b5b4b1;
+}
+
+
+section .subscribe .content input.btn{
+    width: 105px;
+    height: 50px;
+    color: #fff;
+    text-indent: 0;
+    border: 0;
+    background: #000;
+    margin: 0;
+    cursor: pointer;
+}
+
+section .subscribe .info{
+    width: 800px;
+    height: 400px;
+    background: #fdf3e0;
+    border: 1px solid #fcb941;
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    margin-left: -400px;
+    z-index: 1001;
+}
+
+section .subscribe .info h5{
+    font-size: 50px;
+    color: #000;
+    text-align: center;
+    margin: 62px 0;
+}
+
+section .subscribe p{
+    width: 380px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+section .subscribe .info span{
+    color: #b5b4b1;
+}
+
+section .subscribe .info span.detail{
+    font-size: 25px;
+    color: #fcb941;
+    margin-left: 50px;
+}
+
+section .subscribe .info em{
+    display: block;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 50px;
+    color: #fff;
+    background: #000;
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    margin-left: -50px;
+    user-select: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+section .subscribe .info em:hover{
+    color: #fdf3e0;
+    background: #fcb941;
+}
+
+.blackBg{
+    background: rgba(0,0,0,.5);
+    position:absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    cursor: default;
+}
+
+/*底部*/
+footer{
+    height: 417px;
+    margin: 0 auto;
+    background: #000;
+    color: #fff;
+}
+
+footer .container{
+    width: 1123px;
+    height:270px;
+    margin: 0 auto;
+    padding: 62px 0 0 18px;
+}
+
+footer .container > div{
+    margin-right: 29px;
+    float: left;
+}
+
+footer .container > div.noMarg{
+    margin-right: 0;
+}
+
+footer .container h5{
+    font-size: 22px;
+}
+
+footer .container p{
+    margin-top: 25px;
+    color: #929394;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+footer .container p em{
+    display: inline-block;
+    width: 17px;
+    height: 16px;
+    background: url(../images/twitter.png);
+    margin-right: 15px;
+    position: relative;
+    top: 2px;
+}
+
+footer .container p a{
+    color: #fcb941;
+}
+
+footer .container ul{
+    margin-top: 5px;
+}
+
+footer .container li{
+    width: 70px;
+    height: 46px;
+    border: 2px solid #fff;
+    float: left;
+    margin: 16px 16px 0 0;
+}
+
+footer .container img{
+    width: 70px;
+    height: 46px;
+}
+
+footer .cobyright{
+    height: 84px;
+    border-top: 1px solid #232323;
+    text-align: center;
+    line-height: 100px;
+    color: #929394;
+}
+
+
+
+

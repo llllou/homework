@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style  type="text/css">
+        *{
+            margin: 0;
+            padding:0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #ffffff;
+        }
+        body>ul>li{
+            width: 10%;
+            height: 50px;
+            background:#3c3c3c;
+            float:left;
+            color: #ffffff;
+            line-height: 50px;
+            text-align: center;
+        }
+        .oneList-sp{
+            background:#f41;
+        }
+        div{
+            width:10%;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            float:left;
+            display:none;
+            left: 0;
+        }
+        div ul li{
+            width:inherit;
+            height: 50px;
+            background:#888;
+            color:#fdf3e0;
+            text-align: center;
+            line-height: 50px;
+        }
+        div ul li:hover{
+            background: #ff4411;
+        }
+    </style>
+</head>
+<body>
+    <ul id="oneList">
+        <li><a href="#">1</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">8</a></li>
+        <li><a href="#">9</a></li>
+        <li><a href="#">10</a></li>
+    </ul>
+    <div class="twoList">
+        <ul>
+            <li><a href="#">一1</a></li>
+            <li><a href="#">二1</a></li>
+            <li><a href="#">三1</a></li>
+            <li><a href="#">四1</a></li>
+            <li><a href="#">五1</a></li>
+        </ul>
+    </div>
+    <div class="twoList">
+        <ul>
+            <li><a href="#">一2</a></li>
+            <li><a href="#">二2</a></li>
+            <li><a href="#">三2</a></li>
+            <li><a href="#">四2</a></li>
+            <li><a href="#">五2</a></li>
+        </ul>
+    </div>
+    <div class="twoList">
+        <ul>
+            <li><a href="#">一3</a></li>
+            <li><a href="#">二3</a></li>
+            <li><a href="#">三3</a></li>
+            <li><a href="#">四3</a></li>
+            <li><a href="#">五3</a></li>
+        </ul>
+    </div>
+    <div class="twoList">
+        <ul>
+            <li><a href="#">一4</a></li>
+            <li><a href="#">二4</a></li>
+            <li><a href="#">三4</a></li>
+            <li><a href="#">四4</a></li>
+            <li><a href="#">五4</a></li>
+        </ul>
+    </div>
+    <div class="twoList">
+        <ul>
+            <li><a href="#">一5</a></li>
+            <li><a href="#">二5</a></li>
+            <li><a href="#">三5</a></li>
+            <li><a href="#">四5</a></li>
+            <li><a href="#">五5</a></li>
+        </ul>
+    </div>
+    <div class="twoList">
+        <ul>
+            <li><a href="#">一6</a></li>
+            <li><a href="#">二6</a></li>
+            <li><a href="#">三6</a></li>
+            <li><a href="#">四6</a></li>
+            <li><a href="#">五6</a></li>
+        </ul>
+    </div>
+    <div class="twoList">
+        <ul>
+            <li><a href="#">一7</a></li>
+            <li><a href="#">二7</a></li>
+            <li><a href="#">三7</a></li>
+            <li><a href="#">四7</a></li>
+            <li><a href="#">五7</a></li>
+        </ul>
+    </div>
+    <div class="twoList">
+        <ul>
+            <li><a href="#">一8</a></li>
+            <li><a href="#">二8</a></li>
+            <li><a href="#">三8</a></li>
+            <li><a href="#">四8</a></li>
+            <li><a href="#">五8</a></li>
+        </ul>
+    </div>
+    <div class="twoList">
+        <ul>
+            <li><a href="#">一9</a></li>
+            <li><a href="#">二9</a></li>
+            <li><a href="#">三9</a></li>
+            <li><a href="#">四9</a></li>
+            <li><a href="#">五9</a></li>
+        </ul>
+    </div>
+    <div class="twoList">
+        <ul>
+            <li><a href="#">一10</a></li>
+            <li><a href="#">二10</a></li>
+            <li><a href="#">三10</a></li>
+            <li><a href="#">四10</a></li>
+            <li><a href="#">五10</a></li>
+        </ul>
+    </div>
+</body>
+    <script type="text/javascript">
+        var oneLists = document.getElementById("oneList").getElementsByTagName("li");
+        var twoLists = document.getElementsByTagName("div");
+        for(var t = 0;t < oneLists.length;t++) {
+            oneLists[t].index=t;
+            oneLists[t].onmouseover = function () {
+                for (var i = 0; i < oneLists.length; i++) {
+                    oneLists[i].className = "";
+                    twoLists[i].style.display="none";
+            }
+                this.className = "oneList-sp";
+                var sum = 0;
+                for(var j = 0 ; j < this.index;j++){
+                    sum += 10;
+                }
+                twoLists[this.index].style.display="block";
+                twoLists[this.index].style.left=sum+"%";
+            }
+        }
+        for(var h = 0 ; h < oneLists.length;h++){
+            twoLists[h].index=h;
+            twoLists[h].onmouseover=function () {
+                this.style.display="block";
+                oneLists[this.index].className="oneList-sp";
+        };
+            twoLists[h].onmouseout=function () {
+                this.style.display="none";
+                oneLists[this.index].className="";
+            }
+        }
+    </script>
+</html>

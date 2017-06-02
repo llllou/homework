@@ -1,0 +1,116 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul li{
+				list-style: none;
+			}
+			#oneList{
+				width: 800px;
+				height: 40px;
+				background: gold;
+				margin: 10 auto;
+				position: relative;
+			}
+			#oneList span{
+				display: block;
+				float: left;
+				font-size: 20px;
+				padding: 0 60px;
+				line-height: 40px;
+				cursor: pointer;
+			}
+			.twoList{
+				position: absolute;
+				top:40px;
+				width:120px;
+				height: 150px;
+				background: palegreen;
+				display: none;
+			}
+			.twoList li{
+				font-size: 15px;
+				line-height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="oneList">
+			<span class="spans">炒菜
+				<ul class="twoList">
+					<li class="lis">麻辣香锅</li>
+					<li>红烧茄子</li>
+					<li>酸菜鱼</li>
+					<li>板栗烧仔鸡</li>
+					<li>菠萝估佬肉</li>
+				</ul>
+			</span>
+			<span class="spans">盖饭
+				<ul class="twoList">
+					<li class="lis">土豆丝盖饭</li>
+					<li>干煸豆角盖饭</li>
+					<li>西红柿鸡蛋盖饭</li>
+					<li>香菇油菜盖饭</li>
+					<li>红烧茄子盖饭</li>
+				</ul>
+			</span>
+			<span class="spans">面条
+				<ul class="twoList">
+					<li class="lis">炸酱面</li>
+					<li>西红柿鸡蛋面条</li>
+					<li>切丁面条</li>
+					<li>炸酱面</li>
+					<li>酸汤面</li>
+				</ul>
+			</span>
+			<span class="spans">汤
+				<ul class="twoList">
+					<li class="lis">疙瘩汤</li>
+					<li>醪糟汤</li>
+					<li>蛋花汤</li>
+					<li>疙瘩汤</li>
+					<li>菠萝估佬肉</li>
+				</ul>
+			</span>
+			<span class="spans">砂锅
+				<ul class="twoList">
+					<li class="lis">砂锅面</li>
+					<li>豆腐砂锅</li>
+					<li>海鲜砂锅</li>
+					<li>菌类砂锅</li>
+					<li>素砂锅</li>
+				</ul>
+			</span>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var spans=document.getElementsByClassName("spans");
+		var twoList=document.getElementsByClassName("twoList");
+		var lis=document.getElementsByTagName("li");
+		
+		for(var i=0;i<spans.length;i++){
+			spans[i].index=i;
+			spans[i].onmouseover=function(){
+				this.style.color="red"
+				twoList[this.index].style.display="block"
+				
+			}
+			spans[i].onmouseout=function(){
+				this.style.color="black"
+				twoList[this.index].style.display="none"
+			}
+			for(var j=0;j<lis.length;j++){
+				lis[j].onmouseover=function(){
+					this.style.color="#fff"
+				}
+				lis[j].onmouseout=function(){
+					this.style.color="red"
+				}
+			}
+		}	
+	</script>

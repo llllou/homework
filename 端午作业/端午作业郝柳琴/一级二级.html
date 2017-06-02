@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration:none;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        ul{
+            width: 500px;
+            height: 21px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: gray;
+        }
+        ul>li {
+            /*background-color: red;*/
+            width:100px;
+            float:left;
+            text-align: center;
+        }
+        a{
+            color: white;
+        }
+        ol{
+            display: none;
+        }
+        ol li{
+            background-color: #737373;
+            color: white;
+        }
+        a:hover{
+            display: block;
+            width: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li class="nav"><a href="">水果</a>
+        <ol>
+            <li>苹果</li>
+            <li>香蕉</li>
+            <li>橘子</li>
+            <li>草莓</li>
+            <li>菠萝</li>
+        </ol>
+    </li>
+    <li class="nav"><a href="">汽车</a>
+        <ol>
+            <li>本田</li>
+            <li>法拉利</li>
+            <li>兰博基尼</li>
+            <li>奔驰</li>
+            <li>奥拓</li>
+        </ol>
+    </li>
+    <li class="nav"><a href="">手机</a>
+        <ol>
+            <li>苹果</li>
+            <li>华为</li>
+            <li>联想</li>
+            <li>维沃</li>
+            <li>小米</li>
+        </ol>
+    </li>
+    <li class="nav"><a href="">香水</a>
+        <ol>
+            <li>香奈儿</li>
+            <li>兰蔻</li>
+            <li>古资</li>
+            <li>浪凡</li>
+            <li>娇兰</li>
+        </ol>
+    </li>
+    <li class="nav"><a href="">服装</a>
+        <ol>
+            <li>芬迪</li>
+            <li>阿玛尼</li>
+            <li>爱马仕</li>
+            <li>拉夏贝尔</li>
+            <li>佐丹奴</li>
+        </ol>
+    </li>
+</ul>
+</body>
+    <script type="text/javascript">
+        var nav = document.getElementsByClassName("nav");
+        var ol = document.getElementsByTagName("ol");
+
+        for(var i=0;i<nav.length;i++){
+            nav[i].index = i;
+            nav[i].onmouseover = function(){
+                ol[this.index].style.display="block";
+                this.style.backgroundColor = "red";
+            }
+            nav[i].onmouseout = function(){
+                ol[this.index].style.display="none";
+                this.style.backgroundColor = "gray";
+            }
+
+
+            var olLis = document.getElementsByTagName("ol")[i].getElementsByTagName("li");
+            for(var j=0;j<olLis.length;j++){
+                olLis[j].onmouseover = function(){
+                    this.style.backgroundColor = "purple";
+                }
+                olLis[j].onmouseout = function(){
+                    this.style.backgroundColor = "gray";
+                }
+            }
+
+        }
+    </script>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css"> 
+            * { 
+                margin: 0; 
+                padding: 0 
+            } 
+            li{
+                list-style: none;
+            }
+            a{
+                text-decoration: none;
+            }
+            .one,.two,.three.four,.five,li { 
+                display: block; 
+                background: blue; 
+                text-align: center; 
+                height: 30px; 
+                width: 80px; 
+            } 
+            .one,.two,.three.four,.five,li:hover { 
+                cursor: pointer; 
+            } 
+            a { 
+                color: white; 
+            } 
+            .one,.two,.three,.four,.five { 
+                float: left; 
+                padding: 0; 
+                position: absolute; 
+            } 
+            .one { 
+                left: 20px; 
+            } 
+            .two { 
+                left: 120px; 
+            } 
+            .three { 
+                left: 220px; 
+            } 
+            .four{
+                left:320px;
+            }
+            .five{
+                left: 420px;
+            }
+            #area,#time,#age,#meal,#game { 
+                float: left; 
+                text-align: center; 
+                height: 30px; 
+                width: 80px; 
+                margin-left: 20px; 
+            } 
+            </style>
+            <script> 
+                window.onload=function(){ 
+                var oNavi=document.getElementById("navi"); 
+                var hide1=document.getElementById("hide"); 
+                
+                var hide2=hide1.getElementsByTagName("li") 
+                var Aul=oNavi.getElementsByTagName("ul") 
+                var index =0; 
+                for( var i=0;i<hide2.length;i++) 
+                { 
+                    hide2[i].index = i; 
+                    hide2[i].onmouseover = function(){ 
+                        //alert(this.index);
+                        Aul[this.index].style.display="block";
+                       Aul[this.index].onmouseover = function(){
+                            this.style.display="block";
+                        } 
+                    } 
+                    
+                    hide2[i].onmouseout=function(){
+                        Aul[this.index].style.display="none"; 
+                        Aul[this.index].onmouseout = function(){
+                            this.style.display="none";
+                        } 
+                    }
+                } 
+            } 
+            </script> 
+    </head>
+    <body>
+    <div id="navi"> 
+    <div id="hide"> 
+        <li id="area"><a href="#">地区</a></li> 
+        <li id="age"><a href="#">年龄</a></li> 
+        <li id="time"><a href="#">时间</a></li> 
+        <li id="meal"><a href="#">吃饭</a></li>
+        <li id="game"><a href="#">游戏</a></li>
+        <div style="clear: both"></div> 
+    </div> 
+    <ul style="display:none" class="one"> 
+        <li><a href="#">1</a></li> 
+        <li><a href="#">2</a></li> 
+        <li><a href="#">3</a></li> 
+        <li><a href="#">4</a></li> 
+        <li><a href="#">5</a></li> 
+    </ul> 
+    <ul style="display:none" class="two"> 
+        <li><a href="#">1</a></li> 
+        <li><a href="#">2</a></li> 
+        <li><a href="#">3</a></li> 
+        <li><a href="#">4</a></li> 
+        <li><a href="#">5</a></li> 
+    </ul> 
+    <ul style="display:none" class="three"> 
+        <li><a href="#">1</a></li> 
+        <li><a href="#">2</a></li> 
+        <li><a href="#">3</a></li> 
+        <li><a href="#">4</a></li> 
+        <li><a href="#">5</a></li> 
+    </ul> 
+    <ul style="display:none" class="four"> 
+        <li><a href="#">1</a></li> 
+        <li><a href="#">2</a></li> 
+        <li><a href="#">3</a></li> 
+        <li><a href="#">4</a></li> 
+        <li><a href="#">5</a></li> 
+    </ul> 
+    <ul style="display:none" class="five"> 
+        <li><a href="#">1</a></li> 
+        <li><a href="#">2</a></li> 
+        <li><a href="#">3</a></li> 
+        <li><a href="#">4</a></li> 
+        <li><a href="#">5</a></li> 
+    </ul> 
+    </div> 
+    </body>
+</html>

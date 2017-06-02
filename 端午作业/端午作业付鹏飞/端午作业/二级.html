@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二级</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            height: 600px;
+            color: #ffffff;
+        }
+        .list{
+            width: 100%;
+            height:50px;
+            background: #000000;
+            margin: 10px auto 0px;
+        }
+        #list ul{
+            width: 70%;
+            margin: 0 auto;
+            float: right;
+        }
+        #list li{
+            float: left;
+            list-style: none;
+            width:15%;
+            height:50px;
+            margin: 0 1px;
+        }
+        #list li div{
+            width: 100%;
+            height:50px;
+            background: #000000;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        #list li span{
+            display:inline-block;
+            width:100%;
+            height: 80px;
+            background: gray;
+            display: none;
+        }
+        #list li span p:hover{
+            background: #000;
+        }
+        #list li span p{
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+        img{
+            float: left;
+            width: 150px;
+            height:50px;
+            margin-left: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="list" id="list">
+        <img src="images/lol.png" alt="">
+        <ul id="nav">
+            <li>
+                <div class="listtwo">我的淘宝</div>
+                <span style=""><p>已买到的宝贝</p><p>我的宝贝</p></span>
+            </li>
+            <li>
+                <div>购物车</div>
+                <span><p>购物情况</p><p>已卖出的宝贝</p></span>
+            </li>
+            <li>
+                <div>收藏夹</div>
+                <span><p>收藏的宝贝</p><p>收藏的店铺</p></span>
+            </li>
+            <li>
+                <div>卖家中心</div>
+                <span><p>免费开店</p><p>已卖出的宝贝</p></span>
+            </li>
+            <li>
+                <div>联系客服</div>
+                <span><p>消费者客服</p><p>卖家客服</p></span>
+            </li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript">
+    var odiv=document.getElementById("nav").getElementsByTagName("div");
+    var span=document.getElementById("nav").getElementsByTagName("span");
+
+    for(var i=0;i<odiv.length;i++){
+        odiv[i].index = i;
+        odiv[i].onmouseover = function(){
+            for(var z=0;z<odiv.length;z++){
+                span[z].style.display = "none";
+            }
+            span[this.index].style.display = "block";
+        }
+        odiv[i].onmouseout=function(){
+            for(var z=0;z<odiv.length;z++){
+                span[z].style.display = "none";
+            }
+            span[this.index].style.display = "none";
+        }
+    }
+
+</script>
+</html>

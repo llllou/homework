@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .clear:after{
+            display: block;
+            height:0;
+            clear:both;
+            visibility: hidden;
+            content:'';
+        }
+        .clear{
+            zoom:1;
+        }
+        list{
+            list-style: none;
+        }
+        li{
+            list-style:none;
+        }
+        a{
+            text-decoration: none;
+            color:#000;
+        }
+        .top>ul{
+            width:400px;
+            float:left;
+            margin-left:400px;
+        }
+        .firstList>li{
+            float:left;
+            width:20%;
+            text-align: center;
+            background:grey;
+            line-height: 40px;
+        }
+        .firstList li a{
+            color:#000;
+            font-family: '华文楷体';
+            font-size:16px;
+        }
+        .firstList>li .twoList{
+            text-align: left;
+            width:200px;
+            background:rgba(255,255,255,0.5);
+            line-height: 20px;
+            color:#fff;
+            font-family:'华文楷体';
+            font-size:14px;
+            display: none;
+            position: absolute;
+            box-shadow: 5px 5px 4px rgba(255,255,255,0.6) ;
+        }
+        .firstList>li .twoList li{
+            line-height:30px;
+        }
+        .firstList>li .twoList li>img{
+            float:left;
+            margin-right:10px;
+            margin-left: 10px;
+            margin-top:10px;
+        }
+        .firstList>li .twoList li a{
+            display: inline-block;
+            margin-top:10px;
+            color:#fff;
+            height:30px;
+        }
+        .firstList>li .twoList li:hover{
+            background: orange;
+        }
+        .content{
+            height:80px;
+            background:blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="clear top">
+        <ul class="firstList" id="firstList">
+            <li>
+                <a href="#">我的淘宝</a>
+                <div class="twoList">
+                    <h3>Wmingren</h3>
+                    <p>恭喜您！您已成为淘宝网的VIP金牌会员</p>
+                </div>
+            </li>
+            <li>
+                <a href="#">用户信息</a>
+                <div class="twoList">
+                    <h3>Wmingren</h3>
+                    <p>昵称：<em>Wmingren</em></p>
+                    <p>所在地址：<em>北京</em></p>
+                </div>
+            </li>
+            <li>
+                <a href="#">购物车</a>
+                <div class="twoList">
+                    <ul>
+                        <li>
+                            <img src="images/yi.jpg" alt="">
+                            <h3>红豆薏米粥</h3>
+                            <span>南农出品 必属精品</span>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">收藏夹</a>
+                <div class="twoList">
+                    <ul>
+                        <li>
+                            <a href="#">神舟z7 pro</a>
+                        </li>
+                        <li>
+                            <a href="#">雅士利牛奶</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </li>
+            <li>
+                <a href="#">联系客服</a>
+                <div class="twoList">
+                    <ul>
+                        <li><a href="#">卖家客服</a></li>
+                        <li><a href="#">平台客服</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="content"></div>
+</body>
+<script>
+    var lis=document.getElementById('firstList').getElementsByTagName('li');
+    for(var i=0;i<lis.length;i++){
+        lis[i].index=i;
+        lis[i].onmouseover=function(){
+            var twoList=lis[this.index].getElementsByTagName('div')[0];
+            twoList.style.display='block';
+            lis[this.index].style.background='#fff';
+        };
+        lis[i].onmouseout=function(){
+            var twoList=lis[this.index].getElementsByTagName('div')[0];
+            twoList.style.display='none';
+            lis[this.index].style.background='grey';
+        };
+    }
+</script>
+</html>

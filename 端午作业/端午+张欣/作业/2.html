@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        *{
+            margin:0px;
+            padding: 0;
+        }
+            ul{
+                list-style: none;
+                /*float:left;*/
+
+            }
+            .a>li{
+                float:left;
+                width: 100px;
+                height: 20px;
+                background: #f60;
+                border:2px solid green;
+                text-align: center;
+            }
+            .a .one .er {
+                    height: 160px;
+                    width: 104px;
+                    background: gray;
+            }
+            .a .one .er li{
+                width: 104px;
+                height: 30px;
+                border-bottom: 2px solid blue;
+            }
+            .a .one .er li:hover{
+                background: rgba(4,4,4,0.5);
+                color:#e3e;
+            }
+            ul li .er{
+                display: none;
+            }
+
+        </style>
+    </head>
+    <body>
+            <ul class="a">
+                    <li class="one">零食
+                        <ul class="er" >
+                            <li>辣条</li>
+                            <li>干吃面</li>
+                            <li>酸奶</li>
+                            <li>饮料</li>
+                            <li>薯片</li>
+                        </ul>
+                    </li >
+                    <li class="one">衣服
+                        <ul class="er">
+                            <li>裙子</li>
+                            <li>半袖</li>
+                            <li>裤子</li>
+                            <li>连衣裤</li>
+                            <li>三件套</li>
+                        </ul>
+                    </li>
+                    <li class="one">网站
+                        <ul class="er" >
+                            <li>百度</li>
+                            <li>腾讯</li>
+                            <li>淘宝</li>
+                            <li>中关村</li>
+                            <li>京东</li>
+                        </ul>
+                    </li>
+                    <li class="one">好车
+                        <ul class="er">
+                            <li>劳斯莱斯</li>
+                            <li>恩佐·法拉利</li>
+                            <li>兰博基尼</li>
+                            <li>奔驰SLR </li>
+                            <li>宝马</li>
+                        </ul>
+                    </li>
+                    <li class="one">运动器材
+                        <ul class="er">
+                            <li>跑步机</li>
+                            <li>登山机</li>
+                            <li>哑铃</li>
+                            <li>跳绳</li>
+                            <li>篮球</li>
+                        </ul>
+                    </li>
+            </ul>
+    </body>
+    <script>
+            var ol=document.getElementsByClassName("one");
+            var er=document.getElementsByClassName("er");
+            for(var i=0; i<ol.length; i++){
+                ol[i].index=i;
+                ol[i].onmouseover=function(){
+                    er[this.index].style.display="block";
+                }
+                ol[i].onmouseout=function(){
+                    er[this.index].style.display="none";
+                }
+            }
+
+    </script>
+</html>

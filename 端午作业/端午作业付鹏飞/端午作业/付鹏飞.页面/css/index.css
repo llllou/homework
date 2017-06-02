@@ -1,0 +1,446 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+header{
+    width: 100%;
+    height: 800px;
+    background: pink;
+    position: relative;
+}
+ header #oImg{
+    width:100%;
+    height: 800px;
+    background: red;
+     position: absolute;
+}
+header #oImg img{
+    width:100%;
+    height:800px;
+}
+header #oImg li{
+    display: none;
+    width: 100%;
+    height:800px;
+}
+header #oImg .oImgLi{
+    display: block;
+}
+#round{
+    width: 195px;
+    height: 21px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 30px;
+    left: 43%;
+}
+#round li{
+    width:17px;
+    height:17px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 2px 11px;
+    float: left;
+}
+#round .roundLi{
+    background: orange;
+}
+header .btn{
+    display: none;
+}
+header:hover .btn{
+    display: block;
+}
+
+header .btn .leftBtn{
+    top:45%;;
+    position: absolute;
+    display: inline-block;
+    width:30px;
+    height: 50px;
+    left: 10px;
+    background: rgba(0,0,0,0.3);
+}
+header .btn .leftBtn:hover{
+     background: rgba(0,0,0,0.5);
+ }
+header .btn .rgtBtn{
+    top:45%;;
+    position: absolute;
+    display: inline-block;
+    width:30px;
+    height: 50px;
+    right: 10px;
+    background: rgba(0,0,0,0.3);
+}
+header .btn .rgtBtn:hover{
+    background: rgba(0,0,0,0.5);
+}
+header .btn img{
+    width:30px;
+    height: 50px;
+}
+header .nav{
+    width:100%;
+    height: 120px;
+    position: absolute;
+    background: rgba(0,0,0,0.6);
+    color: #ffffff;
+}
+.nav .navLeft{
+    width:150px;
+    height:100%;
+    margin-left: 130px;
+    float: left;
+}
+.nav .navLeft h1{
+    font-size: 40px;
+    line-height: 70px;
+    padding-top: 5px;
+}
+.nav .navLeft span{
+    font-size: 20px;
+    letter-spacing:13px;
+}
+.nav .navList{
+    width: 450px;
+    height: 100%;
+    float: left;
+    margin-left: 290px;
+}
+.nav .navList>li{
+    height: 100%;
+    width: 90px;
+    float: left;
+    line-height: 120px;
+    text-align: center;
+}
+.nav .navList li a{
+    color: #ffffff;
+}
+.nav .navList li a:hover{
+    color: orange;
+}
+#twoList{
+    width:130px;
+    height:90px;
+    background: orange;
+    line-height: 45px;
+    text-align: left;
+    margin-top: -40px;
+    margin-left: -10px;
+}
+#twoList a{
+    color: #000;
+    padding-left: 10px;
+}
+#twoList a:hover{
+    color: #ffffff;
+}
+.navRgt{
+    width: 310px;
+    height: 100%;
+    line-height: 120px;
+    float: left;
+    margin-left: 100px;
+
+}
+.navRgt a{
+    color: #ffffff;
+    margin-right: 15px;
+}
+section{
+    width: 100%;
+    height: 2420px;
+}
+.welcome{
+    width: 1340px;
+    height:830px;
+    margin: 0px auto;
+}
+.welcome h2{
+    font-size: 50px;
+    color: orange;
+    width: 100%;
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+}
+.welcome div{
+    width: 640px;
+    height:440px;
+    border: 10px solid #e4e4e4;
+    float: left;
+    transition:1s;
+}
+.welcome .list_one{
+    background: url("../images/2.jpg") no-repeat center center;
+    background-size: 100% 100%;
+    margin-right: 20px;
+}
+.welcome .list_one:hover{
+    background-size: 110% 110%;
+}
+.welcome .list_two{
+    background: url("../images/3.jpg") no-repeat center center;
+    background-size: 100% 100%;
+}
+.welcome .list_two:hover{
+    background-size: 110% 110%;
+}
+.welcome .text{
+    text-align: center;
+    margin-top: 40px;
+    display: inline-block;
+    width: 100%;
+}
+.welcome .text p{
+    color: #aeaeae;
+}
+.services{
+    width: 100%;
+    height:540px;
+    background: #fcb941;
+}
+.services h1{
+    color: #ffffff;
+    font-size: 40px;
+    height: 200px;
+    line-height: 200px;
+    width: 100%;
+    text-align: center;
+}
+.services ul{
+    width: 1200px;
+    height:277px;
+    margin: 0 auto;
+}
+.services ul li{
+    width:300px;
+    height: 277px;
+    float: left;
+    text-align: center;
+}
+.services ul li em{
+    display: inline-block;
+    width:100px;
+    height:100px;
+    background: black;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 120px;
+}
+.services ul li em:hover{
+    background: orange;
+    box-shadow: 0px 0px 10px 10px #000;
+}
+.services ul li h4{
+    height: 100px;
+    line-height: 100px;
+}
+.services ul li p{
+    width:250px;
+    margin: 0 auto;
+}
+.feedback{
+    width:100%;
+    height:700px;
+    background: url("../images/4.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+.feedback h2{
+    width:100%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 40px;
+    height: 200px;
+    line-height: 200px;
+}
+.feedback>div{
+    width:1300px;
+    height:350px;
+    margin: 0 auto;
+    display: none;
+}
+.feedback div li{
+    width:410px;
+    height: 350px;
+    float: left;
+    margin-right: 22px;
+}
+.feedback div li p{
+    width:370px;
+    height:100px;
+    background: rgba(0,0,0,0.4);
+    font-size: 18px;
+    color: #ffffff;
+    padding: 20px 0 0 20px;
+}
+.feedback div li .poople{
+    display: inline-block;
+    width:250px;
+    height:60px;
+    margin: 60px auto;
+}
+.feedback div li .poople img{
+    width:60px;
+    height:60px;
+    float: left;
+    margin-right: 10px;
+
+}
+.feedback div li .poople span{
+    color: orange;
+}
+.feedback div li .poople a{
+    color: #ffffff;
+}
+.feedback #feedRound{
+    width: 50px;
+    height:21px;
+    margin: 60px auto;
+}
+.feedback #feedRound li{
+    width:15px;
+    height:15px;
+    background: #ffffff;
+    border-radius: 50%;
+    float: left;
+    margin: 3px 5px;
+}
+.feedback #feedRound .Rounds{
+    background: orange;
+}
+/*信息输入框*/
+.from{
+    width:100%;
+    height:350px;
+    position: relative;
+}
+.from h1{
+    width:100%;
+    text-align: center;
+    height:200px;
+    line-height: 200px;
+    font-size: 35px;
+}
+.from #leftText{
+    width: 500px;
+    height:50px;
+    border:1px solid orange;
+    margin-left: 100px;
+}
+.from #rgtText{
+    width: 500px;
+    height:50px;
+    border:1px solid orange;
+    margin-left: 110px;
+}
+.from #btn{
+    width: 100px;
+    height:50px;
+    background: #000;
+    color: #ffffff;
+    margin-left: 50px;
+}
+.from #xinxi{
+    width:500px;
+    height:160px;
+    border: 1px solid orange;
+    background: #ffffff;
+    position: absolute;
+    top:40%;
+    left: 30%;
+}
+.from #xinxi p{
+    font-size: 30px;
+    height: 80px;
+    line-height: 80px;
+}
+/*脚部*/
+footer{
+    width:100%;
+    height:551px;
+    background: #000;
+}
+.footLeft{
+    width:400px;
+    height:350px;
+    float: left;
+    margin: 50px 0 0 100px;
+}
+.footLeft h1{
+    color: #ffffff;
+    height: 100px;
+    line-height: 100px;
+}
+.footLeft p{
+    color: #e4e4e4;
+    margin-top: 20px;
+}
+.footCenter{
+    width:400px;
+    height:350px;
+    float: left;
+    margin: 50px 0 0 80px;
+}
+.footCenter h1{
+    color: #ffffff;
+    height: 100px;
+    line-height: 100px;
+}
+.footCenter p{
+    color: #e4e4e4;
+    margin-top: 20px;
+}
+.footCenter p a{
+    color: orange;
+}
+.footCenter p em{
+    margin-right: 25px;
+}
+.footRgt{
+    width:500px;
+    height:350px;
+    float: left;
+    margin: 50px 0 0 80px;
+}
+.footRgt h1{
+    color: #ffffff;
+    height: 100px;
+    line-height: 100px;
+}
+.footRgt ul{
+    width: 500px;
+    height:200px;
+}
+.footRgt li{
+    float: left;
+    width:90px;
+    height:60px;
+    margin: 10px 5px;
+    border: 3px solid #ffffff;
+}
+.footRgt li img{
+    width:90px;
+    height:60px;
+}
+.footBtm{
+    width:100%;
+    height:80px;
+    float: left;
+    margin-top: 70px;
+    text-align: center;
+    border-top: 1px solid #696969;
+}
+.footBtm p{
+    line-height: 80px;
+    color: #e4e4e4;
+}

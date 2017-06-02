@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/secondLevel.css">
+</head>
+<body>
+    <div id="first-menu" class="clear">
+        <ul>
+            <li><a href="#">我的淘宝</a></li>
+            <li><a href="#">用户信息</a></li>
+            <li><a href="#">购物车</a></li>
+            <li><a href="#">收藏夹</a></li>
+            <li><a href="#">联系客服</a></li>
+        </ul>
+    </div>
+    <div id="second-menu">
+        <ul>
+            <li class="myTaobao directLi">
+                <h3>Wmingren</h3>
+                <p>恭喜您！您已成为淘宝网的VIP金牌会员</p>
+            </li>
+            <li class="userInfo directLi">
+                <h3>Wmingren</h3>
+                <p>昵称：<em>Wmingren</em></p>
+                <p>所在地址：<em>北京</em></p>
+            </li>
+            <li class="cart directLi">
+                <ul>
+                    <li>
+                        <img src="images/yi.jpg" alt="">
+                        <h3>红豆薏米粥</h3>
+                        <p>南农出品 必属精品</p>
+                    </li>
+                    <li>
+                        <img src="images/yi.jpg" alt="">
+                        <h3>红豆薏米粥</h3>
+                        <p>南农出品 必属精品</p>
+                    </li>
+                </ul>
+            </li>
+            <li class="favorite directLi">
+                <ul>
+                    <li>
+                        <a href="#">神舟z7 pro</a>
+                    </li>
+                    <li>
+                        <a href="#">雅士利牛奶</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="customService directLi">
+                <ul>
+                    <li><a href="#">卖家客服</a></li>
+                    <li><a href="#">平台客服</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var twoLis=document.getElementById('second-menu').getElementsByClassName('directLi');
+        var firstLis=document.getElementById('first-menu').getElementsByTagName('li');
+
+        for(var i=0;i< firstLis.length;i++){
+            firstLis[i].index=i;
+            firstLis[i].onmouseover=function(){
+                twoLis[this.index].style.display='block';
+                this.style.background='orange';
+            };
+            firstLis[i].onmouseout=function(){
+                twoLis[this.index].style.display='none';
+                this.style.background='grey';
+            };
+            twoLis[i].onmouseover=function(){
+              this.style.display='block';
+            };
+            twoLis[i].index=i;
+            twoLis[i].onmouseout=function(){
+                this.style.display='none';
+                firstLis[this.index].style.background='grey';
+            };
+        }
+
+    </script>
+</body>
+</html>

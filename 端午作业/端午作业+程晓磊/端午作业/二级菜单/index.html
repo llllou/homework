@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div>图片
+    <ul style="display: none">
+    <li>图片</li>
+    <li>图片</li>
+    <li>图片</li>
+    <li>图片</li>
+    <li>图片</li>
+</ul>
+</div>
+
+<div>新闻
+    <ul style="display: none">
+    <li>新闻</li>
+    <li>新闻</li>
+    <li>新闻</li>
+    <li>新闻</li>
+    <li>新闻</li>
+    </ul>
+</div>
+<div>贴吧
+    <ul style="display: none">
+    <li>新闻</li>
+    <li>新闻</li>
+    <li>新闻</li>
+    <li>新闻</li>
+    <li>新闻</li>
+</ul>
+</div>
+<div>小说
+    <ul style="display: none">
+        <li>新闻</li>
+        <li>新闻</li>
+        <li>新闻</li>
+        <li>新闻</li>
+        <li>新闻</li>
+    </ul>
+</div>
+<div>头条
+    <ul style="display:no">
+        <li>新闻</li>
+        <li>新闻</li>
+        <li>新闻</li>
+        <li>新闻</li>
+        <li>新闻</li>
+    </ul>
+</div>
+</body>
+<script>
+    var oDiv=document.getElementsByTagName("div");
+    var oUl=document.getElementsByTagName("ul") ;
+//    var oLi1=oUl[0].getElementsByTagName("li");
+//    var oLi2=oUl[1].getElementsByTagName("li");
+//    var oLi3=oUl[2].getElementsByTagName("li");
+//    var oLi4=oUl[3].getElementsByTagName("li");
+//    var oLi5=oUl[4].getElementsByTagName("li");
+    for(var i=0;i<oDiv.length;i++){
+        (function fun1(i) {
+            oDiv[i].onmouseover=function () {
+                for(j=0;j<oDiv.length;j++){
+                    oUl[j].style.display="none";
+                }
+                oUl[i].style.display="block";
+            }
+            oDiv[i].onmouseout=function (){
+                oUl[i].style.display="none";
+            }
+        })(i);
+    }
+
+
+</script>
+</html>

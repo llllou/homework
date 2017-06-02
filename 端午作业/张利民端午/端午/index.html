@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <style type="text/css">
+            *{
+                margin:0;
+                padding:0;
+            }
+            .carousel{
+                width:80%;
+                height: 350px;
+                margin:50px auto;
+                overflow: hidden;
+                position:relative;
+            }
+            .carousel ul{
+                list-style: none;
+            }
+            .carousel ul li{
+                display:none;
+            }
+            .carousel ul li.current{
+                display:block;
+            }
+            .carousel span{
+                position: absolute;
+                width:55px;
+                height:55px;
+                top:130px;
+                cursor:pointer;
+            }
+            .carousel .leftBnt{
+                background: url(image/prev.png);
+                left:10px;
+            }
+            .carousel .rightBnt{
+                background:url(image/next.png);
+                right: 10px;
+            }
+            .carousel .circles{
+                position: absolute;
+                bottom:40px;
+                width:200px;
+                height:17px;
+                left:50%;
+                margin-left: -50px;
+            }
+            .carousel .circles ol{
+                list-style: none;
+            }
+            .carousel .circles ol li{
+                float:left;
+                width:17px;
+                height:17px;
+                margin-right: 13px;
+                background:gold;
+                border-radius: 50%;
+                cursor:pointer;
+            }
+            .carousel .circles ol li.current{
+                background:purple;
+            }
+      </style>
+    </head>
+    <body>
+      <div class="carousel">
+        <div id="imageList" class="imageList">
+          <ul>
+            <li class="current"><a href="#"><img src="image/1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="image/4.jpg" alt=""></a></li>
+            <li><a href="#"><img src="image/11.jpg" alt=""></a></li>
+            <li><a href="#"><img src="image/12.jpg" alt=""></a></li>
+            <li><a href="#"><img src="image/13.jpg" alt=""></a></li>
+          </ul>
+        </div>
+        <div class="Bnt">
+          <span class="leftBnt" id="leftBnt"></span>
+          <span class="rightBnt" id="rightBnt"></span>
+        </div>
+        <div id="circles" class="circles">
+          <ol>
+            <li class="current"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ol>
+        </div>
+      </div>
+    </body>
+    <script type="text/javascript">
+    //得到所有元素，得到左按钮、右按钮、每个小圆点，每个图片所在li
+        var leftBtn = document.getElementById("leftBtn");
+        var rightBtn = document.getElementById("rightBtn");
+        var circlesLis = document.getElementById("circles").getElementsByTagName("li");
+        var imageList = document.getElementById("imageList");
+        var imageListLis = document.getElementById("imageList").getElementsByTagName("li");
+
+        //信号量
+        var img_idx = 0;
+        //右边按钮监听
+        rightBnt.onclick = function(){
+            //信号量++
+            img_idx++;  //取值区间 0,1,2,3,4
+
+            if(img_idx>4){
+                img_idx=0;
+            }
+            //调用业务
+            chengPic();
+        }
+        //左边按钮监听
+        leftBnt.onclick = function(){
+            //信号量--
+            img_idx--;
+            //判断信号量小于0时候返回最后一张
+            if(img_idx<0){
+                img_idx=4;
+            }
+            //调用业务
+            chengPic();
+        }
+
+        //小圆点的监听，要批量添加
+        for(var i = 0;i<circlesLis.length;i++){
+
+            circlesLis[i].index = i;
+            circlesLis[i].onmouseover = function(){
+
+                    //改变信号量
+                    img_idx = this.index;
+
+                    //调用业务函数
+                    chengPic();
+                }
+        }
+
+        //具体业务函数，根据当前的信号量的值，来切换图片
+        function chengPic(){
+
+            //去掉所有图片li的current类名,小圆点li current类名
+            for(var i = 0; i<imageListLis.length;i++){
+                imageListLis[i].className = "";
+                 circlesLis[i].className = "";
+            }
+
+            //把当前信号量的图片li加上current类名,小圆点加上currnet类名
+            imageListLis[img_idx].className="current";
+             circlesLis[img_idx].className = "current";
+        }
+    </script>
+</html>

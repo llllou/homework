@@ -1,0 +1,489 @@
+*{
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+li{
+    list-style: none;
+}
+.clear:after{
+    display:block;
+    content:'';
+    height:0;
+    clear:both;
+    visibility: hidden;
+}
+.clear{
+    zoom: 1;
+}
+header{
+    position:relative;
+    z-index: 1;
+}
+nav{
+    height:102px;
+    background: rgba(0,0,0,0.5);
+}
+nav>a{
+    float:left;
+    display:inline-block;
+    margin-top: 26px;
+    width:132px;
+    color:white;
+    font-family: 'Merienda One', cursive;
+    font-size:38px;
+    margin-left: 105px;
+}
+nav a>span{
+    display:block;
+    font-size:16px;
+    font-weight:bold;
+}
+nav>ul{
+    float:left;
+    margin-left: 280px;
+    margin-top: 43px;
+}
+nav>ul>li{
+    float:left;
+    margin-right:29px;
+}
+nav>ul>li a{
+    color:#fff;
+    font-size:14px;
+    font-weight: bold;
+}
+nav>ul>li>a:hover{
+    color:#fcb941;
+}
+nav ul>li em{
+    display:inline-block;
+    width:17px;
+    height:17px;
+    margin-left: 6px;
+    background: url(../images/arrow_state_grey_expanded.png)  no-repeat center 5px/17px 17px;
+}
+nav>ul>li{
+    position: relative;
+}
+nav>ul>li #twoList{
+    width:111px;
+    height:71px;
+    /*margin-top: 4px;*/
+    position:absolute;
+    left:-15px;
+    background: #fcb941;
+    display: none;
+}
+nav>ul>li #twoList li{
+    line-height: 32px;
+}
+nav>ul>li #twoList li a{
+    margin-left: 16px;
+    color:#000;
+}
+nav .rightEm{
+    display: inline-block;
+    margin-top:43px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 25px;
+}
+nav .rightEm a{
+    color:white;
+}
+nav .rightEm a:hover{
+    color:#fcb941;
+}
+
+nav .rightEm em{
+    display:inline-block;
+    width:17px;
+    height:17px;
+    float:left;
+    margin-right: 6px;
+}
+nav .emailEm{
+    background: url(../images/Mail_128px_1187230_easyicon.net.ico) no-repeat center 1px/17px ;
+}
+nav .phoneEm{
+    background: url(../images/phone_32px_1071844_easyicon.net.ico) no-repeat center 1px/17px ;
+}
+
+
+section .carousel{
+    position:absolute;
+    top:-102px;
+}
+section .carousel .imgList ul{
+    height:720px;
+    overflow: hidden;
+}
+section .carousel .imgList ul>li{
+    display: none;
+}
+section .carousel .imgList ul>li img{
+    width:100%;
+    height:720px;
+}
+section .carousel  .leftBtn{
+    width:50px;
+    height:45px;
+    background: url(../images/prev.png) no-repeat -8px center rgba(0,0,0,0.5);
+    border-radius: 4px;
+    position:absolute;
+    top:372px;
+    left:50px;
+    cursor: pointer;
+}
+section .carousel  .rightBtn{
+    width:50px;
+    height:50px;
+    background: url(../images/next.png) no-repeat 8px center rgba(0,0,0,0.5);
+    border-radius: 4px;
+    position: absolute;
+    top:372px;
+    right:50px;
+    cursor: pointer;
+}
+section .carousel .imgList ul>li.current{
+    display:block;
+}
+section .carousel .circle{
+    width:126px;
+    height:38px;
+    background: rgba(0,0,0,0.5);
+    border-radius:38px;
+    line-height: 38px;
+    position:absolute;
+    left:622px;
+    bottom:130px;
+}
+section .carousel .circle ol{
+    margin-left: 16px;
+}
+section .carousel .circle li{
+    float:left;
+    width:12px;
+    height: 12px;
+    background: #fff;
+    margin-right: 9px;
+    margin-top:13px;
+    border-radius:50%;
+    cursor: pointer;
+}
+section .carousel .circle li.current{
+    background: #fcb941;
+}
+
+section .midContent{
+    margin-top: 578px;
+    text-align: center;
+}
+section .midContent .mid-imgs{
+    margin-left: 121px;
+    /*overflow: hidden;*/
+}
+section .midContent .mid-imgs div{
+    float:left;
+    width:524px;
+    height:350px;
+    transition: 1s;
+    border:8px solid #e4e4e4;
+    margin-right: 30px;
+}
+section .midContent .mid-imgs .left{
+    background-image:url(../images/2.jpg) ;
+    background-repeat: no-repeat;
+    background-size:100%;
+}
+section .midContent .mid-imgs .right{
+    background-image:url(../images/3.jpg) ;
+    background-repeat: no-repeat;
+    background-size:100%;
+}
+section .midContent .mid-imgs .left:hover{
+    background-size:110%;
+    background-position: center center;
+}
+section .midContent .mid-imgs .right:hover{
+    background-size:110%;
+    background-position: center center;
+}
+section .midContent .mid-title{
+    color:#fcb941;
+    font-size:46px;
+    font-family:'Merienda One', cursive ;
+}
+section .midContent .mid-imgs{
+    margin-top: 72px;
+}
+section .midContent .mid-imgs img{
+    margin-right: 31px;
+    border:7px solid #e4e4e4;
+}
+section .midContent .mid-introduce{
+    margin-top:40px;
+    font-size:14px;
+    color:#c5c5c5;
+    line-height: 42px;
+}
+section .midService{
+    margin-top: 50px;
+    background: #fcb941;
+    height:454px;
+}
+section .midService>p{
+    width:300px;
+    float:left;
+    margin:70px 526px;
+    font-size:46px;
+    font-family:'Merienda One', cursive;
+    color:#fff;
+}
+section .midService ul{
+    margin-left: 130px;
+    float:left;
+}
+section .midService ul li{
+    float:left;
+    width:249px;
+    height:220px;
+    text-align: center;
+    margin-right: 10px;
+}
+section .midService ul li div{
+    width:90px;
+    height:90px;
+    border-radius: 50%;
+    margin:0 auto;
+    background-image: url(../images/home.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #000;
+}
+section .midService ul li div:hover{
+    background-color: #4159df;
+}
+section .midService ul li .flower{
+    background: url(../images/home.png) no-repeat  center center #000 ;
+}
+section .midService ul li p{
+    font-size: 13px;
+    font-weight:bold;
+    color:#000;
+    margin-top:32px;
+    margin-bottom:30px;
+}
+
+section .midFeedback{
+    height:516px;
+    background: url(../images/4.jpg) no-repeat;
+    position:relative;
+}
+section .midFeedback>p{
+    font-size:46px;
+    width:222px;
+    float: left;
+    margin:62px 566px;
+    color:#fff;
+    font-family:'Merienda One', cursive ;
+}
+section .midFeedback>div{
+    margin-top:24px;
+    float:left;
+    height:197px;
+}
+section .midFeedback>div ul.current{
+    display:block;
+}
+section .midFeedback ul{
+    margin-left:121px;
+    display: none;
+}
+section .midFeedback ul li{
+    float:left;
+    width:348px;
+    height:194px;
+    margin-right:32px;
+}
+section .midFeedback ul li .feedback-describe{
+    background:#413326;
+    color:#fff;
+    height:106px;
+}
+section .midFeedback ul li .feedback-describe p{
+    float:left;
+    margin-left: 16px;
+    line-height: 30px;
+    font-size: 14px;
+    margin-top: 8px;
+}
+section .midFeedback ul li .triangle{
+    width:0;
+    height:0;
+    border-top:10px solid #413326;
+    border-right:10px solid transparent;
+    border-left:10px solid transparent;
+    margin-left:92px;
+}
+section .midFeedback ul li .feedback-content{
+    margin-left:78px;
+    margin-top:23px;
+}
+section .midFeedback ul li .feedback-content img{
+    float:left;
+    width:54px;
+    vertical-align: top;
+}
+section .midFeedback ul li .feedback-content div{
+    float:left;
+    width:84px;
+}
+section .midFeedback ul li .feedback-content p{
+    margin-left: 10px;
+    color:#f49711;
+    font-weight: bold;
+    font-size: 14px;
+}
+section .midFeedback ul li .feedback-content span{
+    display: block;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color:#fff;
+}
+section .midFeedback ol{
+    width:54px;
+    height:20px;
+    position:absolute;
+    left:656px;
+    bottom:50px;
+}
+section .midFeedback ol li{
+    float:left;
+    width:14px;
+    height:14px;
+    background: rgba(255,152,0,0.5);
+    margin-right: 13px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+section .midFeedback ol li.current{
+    background: rgb(255,152,0);
+}
+section .midSubscrib{
+    height:294px;
+    position:relative;
+}
+section .midSubscrib>p{
+    width:364px;
+    margin:62px auto;
+    font-size:46px;
+}
+section .midSubscrib div{
+    margin-left: 105px;
+}
+section .midSubscrib div input{
+    width:476px;
+    height:48px;
+    border:2px solid rgb(255,125,0);
+    margin-right:23px;
+}
+section .midSubscrib #submit{
+    float:right;
+    display: inline-block;
+    height:50px;
+    width:105px;
+    line-height: 50px;
+    text-align: center;
+    background: #000;
+    color:#FFF;
+    font-size:14px;
+    margin-right:118px;
+    cursor: pointer;
+}
+section .midSubscrib #appendDiv{
+    position:absolute;
+    margin:0;
+    left:500px;
+    top:48px;
+    width:200px;
+    height:100px;
+    border:1px solid red;
+    background:#9f9f9f;
+    display: none;
+}
+section .midSubscrib #appendDiv #appendName{
+    font-size:16px;
+    margin-top: 15px;
+    font-style: italic;
+    margin-left: 10px;
+}
+section .midSubscrib #appendDiv #appendEmail{
+    font-size:16px;
+    margin-top: 20px;
+    font-style: italic;
+    margin-left: 10px;
+}
+section .midSubscrib #appendDiv span{
+    margin-left:10px;
+    color:#fcb941;
+}
+footer{
+    height:418px;
+    background: #0f1215;
+}
+footer .footer-top{
+    height:333px;
+    margin-left:118px;
+}
+footer .footer-top>div{
+    margin-top:70px;
+    float:left;
+    margin-right:40px;
+}
+footer .footer-top>div h2{
+    color:#fff;
+}
+footer .footer-top>div p{
+    margin-top: 14px;
+    color:#828384;
+    line-height: 30px;
+}
+footer .footer-top>div p em{
+    display:inline-block;
+    width:14px;
+    height:14px;
+    background: url(../images/twitter2.png) no-repeat center center/14px 14px #bbbbbb;
+}
+footer .footer-top>div p span{
+    color:#d8a03a;
+}
+footer .footer-top .footer-top-right ul{
+    margin-top:3px;
+    width:356px;
+}
+footer .footer-top .footer-top-right ul li{
+    float:left;
+    margin-right:16px;
+    margin-top:16px;
+    border:2px solid #fff;
+}
+footer .footer-top .footer-top-right ul li img{
+    width:69px;
+    height:46px;
+}
+footer .footer-bottom{
+    line-height:84px;
+    color:#828384;
+    font-weight: bold;
+    text-align: center;
+}
+
+hr{
+    border:0.5px solid #232323
+}

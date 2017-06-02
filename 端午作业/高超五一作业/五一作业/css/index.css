@@ -1,0 +1,512 @@
+*{
+    margin: 0;
+    padding:0;
+    font-size: 12px;
+}
+li{
+    list-style: none;
+}
+em{
+    font-style:normal;
+}
+
+a{
+    text-decoration: none;
+}
+
+.banner{
+    width: 100%;
+    height: 608px;
+    background:url(../images/1.jpg);
+    opacity: 0.9;
+    /*background-size:100% 768px;*/
+    /*overflow: hidden;*/
+    background-position:0 -100px ;
+    position: relative;
+}
+.banner:hover{
+
+}
+#LeftBut{
+    position: absolute;
+    left:20px;
+    top: 320px ;
+    cursor: pointer;
+}
+#RightBut{
+    position: absolute;
+    right:20px;
+    top: 320px;
+    cursor: pointer;
+}
+#Small{
+    width: 100px;
+    height:20px;
+    background-color: rgba(0,0,0,0.6);
+    border-radius:40px;
+    position: absolute;
+    bottom:50px;
+    left: 630px;
+
+}
+#Small li{
+    margin: 5px -7px 0 13px;
+    width: 10px;
+    height: 10px;
+    background-color: beige;
+    border-radius:50%;
+    float: left;
+}
+ #Small .SmallOne{
+    background-color: darkorange;
+ }
+.nav{
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0,0,0,0.5);
+}
+.navLeft{
+    float: left;
+    height: 100px;
+    width: 300px;
+    text-align: right;
+}
+.navLeft h1{
+    color: white;
+    font-size: 30px;
+    margin-top:24px ;
+    cursor: pointer;
+}
+.navLeft p{
+    color: white;
+}
+.navLeft p span{
+    margin:0 2px 0 6px ;
+}
+.navCenter{
+    float: left;
+    height: 100%;
+    width: 700px;
+    line-height:100px;
+    position: relative;
+}
+.navCenter ul{
+    margin-left:240px ;
+}
+.navCenter ul li{
+    float: left;
+    margin: 0 40px 0 0;
+}
+.navCenter ul li a{
+    color: white;
+}
+#navCenterShadow{
+    width: 85px;
+    height: 50px;
+    background-color: rgba(0,0,0,0.5);
+    /*background-color: darkorange;*/
+    position:absolute;
+    left:463px;
+    top:58px;
+    line-height: 24px;
+    display: none;
+}
+#navCenterShadow em{
+    display: block;
+    color: white;
+    margin-left: 8px;
+    cursor: pointer;
+}
+#navCenterShadow em:hover{
+    color: darkorange;
+}
+.navRight{
+    float: right;
+    width: 348px;
+    height:100%;
+    line-height: 100px;
+}
+.navRight span{
+    color: white;
+    margin-right: 25px;
+}
+.News{
+    width:100%;
+    height:715px;
+}
+.News h1{
+    width: 100%;
+    height: 170px;
+    text-align: center;
+    line-height: 170px;
+    font-size: 35px;
+    color: darkorange;
+}
+#LeftImg{
+    display: inline-block;
+    width: 525px;
+    height: 330px;
+    border:5px solid darkgrey;
+    margin: 0 30px 0 120px;
+    background: url("../images/2.jpg")no-repeat;
+    background-size: 100%;
+    transition:1s;
+}
+#LeftImg:hover{
+    background-size: 110%;
+    background-position:center center ;
+}
+#RightImg{
+    display: inline-block;
+    width: 525px;
+    height: 330px;
+    border:5px solid darkgrey;
+    background: url("../images/3.jpg") no-repeat;
+    background-size: 100%;
+    transition:1s;
+}
+#RightImg:hover{
+    background-size: 110%;
+    background-position:center center ;
+}
+.News p{
+    width: 1138px;
+    height:80px;
+    text-align: center;
+    margin:40px  0 0 105px ;
+    color: darkgrey;
+    line-height: 22px;
+    font-size: 13px;
+}
+.shop{
+    width: 100%;
+    height:450px;
+    background-color:#fcb941 ;
+
+}
+.shop h2{
+    width: 100%;
+    height:145px;
+    text-align: center;
+    line-height: 145px;
+    color: white;
+    font-size: 35px;
+}
+.shop ul{
+    margin-left: 175px;
+}
+.shop ul li{
+    width: 235px;
+    height: 300px;
+    float: left;
+    margin: 0 10px;
+    text-align: center;
+}
+.shop ul li:hover span{
+    transition: 0.5s;
+    border: 5px solid #fcb941;
+    box-shadow: 0px 0px 5px 5px;
+}
+#imgpic{
+    background:url("../images/b.png")no-repeat center center;
+    background-color: #212121;
+ }
+#imgpicOne{
+    background:url("../images/c.png")no-repeat center center;
+    background-color: #212121;
+}
+#imgpicTwo{
+    background:url("../images/d.png")no-repeat center center;
+    background-color: #212121;
+}
+.shop ul li span{
+    display: block;
+    width: 90px;
+    height: 90px;
+    border-radius:50%;
+    margin: 30px auto;
+    background:url("../images/a.png")no-repeat center center;
+    background-color: #212121;
+    border: 5px solid #fcb941;
+}
+.shop ul li em{
+    font-weight: 800;
+    color: #212121;
+    letter-spacing: 1px;
+}
+.shop ul li p{
+    margin-top:30px ;
+    line-height: 20px;
+
+}
+.List{
+    width:100%;
+    height: 510px;
+    background: url("../images/4.jpg") no-repeat ;
+    background-size:100% 510px;
+    position: relative;
+}
+.List h2{
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    color: white;
+    font-size: 35px;
+}
+#Box{
+    height:260px;
+    position: relative;
+    overflow: hidden;
+}
+
+.BoxSum{
+    width: 1120px;
+    height:260px;
+    margin: 0 auto;
+    /*display: none;*/
+}
+/*.BoxShn{*/
+    /*display: block;*/
+/*}*/
+.BoxSum ul{
+    height: 100%;
+}
+.BoxSum ul li{
+    float: left;
+    height: 100%;
+    width: 350px;
+    margin: 0 11px 0 10px ;
+}
+.BoxSumTwo{
+    height: 100px;
+    width: 100%;
+    padding-top: 1px;
+    background-color: rgba(0,0,0,0.5);
+
+}
+.BoxSumTwo i{
+    position: absolute;
+    bottom:-9px;
+    left: 116px;
+    display: inline-block;
+    width: 18px;
+    height: 9px;
+    background:url("../images/e.png") no-repeat;
+}
+.BoxSumTwo p{
+    height: 60px;
+    width: 80%;
+    text-align: left;
+    margin: 21px 0 0 26px;
+    color: white;
+}
+.BoxSumOne{
+    width: 160px;
+    height: 60px;
+    margin: 30px auto;
+}
+.BoxSumOne img{
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-right:10px ;
+    cursor:pointer;
+}
+.BoxSumOne em{
+    display: inline-block;
+    color: darkorange;
+    margin: 5px 0 2px 0;
+    cursor:pointer;
+}
+.BoxSumOne span{
+    color: white;
+    cursor:pointer;
+}
+#SmallTwo{
+    /*width: 40px;*/
+    height: 14px;
+    position: absolute;
+    bottom:6px;
+    left: 47%;
+}
+#SmallTwo ul li{
+    float: left;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color:rgba(255,255,255,0.8);
+    margin:0px 5px;
+}
+ #SmallTwo ul .Smalltwo-d{
+     background-color: darkorange;
+ }
+
+.Link{
+    width: 100%;
+    height: 290px;
+    position: relative;
+}
+.Link h1{
+    width: 100%;
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+    color: #212121;
+    font-size: 35px;
+
+}
+#LinkO{
+    width: 475px;
+    height: 45px;
+    border:1px solid darkorange;
+    margin-left: 100px;
+    margin-right: 20px;
+    color: gainsboro;
+    padding-left: 10px;
+    background-color: #fdf3e0;
+    outline: none;
+}
+#LinkT{
+    width: 475px;
+    height: 45px;
+    border:1px solid darkorange;
+    color: gainsboro;
+    padding-left: 10px;
+    margin-right: 20px;
+    margin-top: -20px;
+    background-color: #fdf3e0;
+    outline: none;
+}
+#LinkS{
+    width: 100px;
+    height: 47px;
+    background-color: #212121;
+    position: absolute;
+    right: 129px;
+    border:none;
+    color: white;
+    outline: none;
+}
+#LinkF{
+    position: absolute;
+    left: 442px;
+    top:44px;
+    width: 390px;
+    height:200px;
+    background-color: rgba(0,0,0,0.8);
+    display: none;
+}
+#LinkF h2{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 20px;
+}
+#LinkF p{
+    margin: 27px 0 0 80px;
+    color: white;
+}
+#LinkF button{
+    color: white;
+    background-color: #212121;
+    outline: none;
+    margin: 20px 0 0 265px;
+}
+
+.Copy{
+    width: 100%;
+    height: 415px;
+    background-color: #212121;
+}
+.Copy-top{
+    width: 100%;
+    height: 330px;
+    border-bottom: 1px solid gainsboro;
+    padding: 1px;
+}
+.Copy-top ul{
+    margin-left:100px;
+    margin-top:50px ;
+}
+.Copy-topO{
+    float: left;
+    width: 345px;
+    height:200px;
+}
+.Copy-topO h4{
+    color: white;
+    font-size: 20px;
+    margin-bottom:20px ;
+    cursor:pointer;
+}
+.Copy-topO p{
+    color: white;
+    margin-bottom:20px ;
+    line-height: 20px;
+}
+.Copy-topO span{
+    color: white;
+    line-height: 20px;
+}
+.Copy-topT{
+    margin-left:50px;
+    margin-right:30px;
+    float: left;
+    width: 355px;
+    height: 236px;
+}
+.Copy-topT h4{
+    color: white;
+    font-size: 20px;
+    cursor:pointer;
+}
+.Copy-topT p{
+    line-height: 20px;
+    margin:20px 0;
+    color: white;
+}
+.Copy-topT p a{
+    color: darkorange;
+}
+.Copy-topT span{
+    color: white;
+}
+.Copy-topT span img{
+    margin-right: 15px;
+}
+.Copy-topS{
+    width: 370px;
+    height: 180px;
+    float: left;
+}
+.Copy-topS h4{
+    color: white;
+    font-size: 20px;
+    margin-bottom:20px ;
+    cursor:pointer;
+}
+.Copy-topS ul{
+    width: 100%;
+    margin:0 0 0 0 ;
+}
+.Copy-topS ul li{
+    float: left;
+    width: 69px;
+    height: 45px;
+    border:2px solid white;
+    margin: 0 16px 16px 0;
+}
+.Copy-topS ul li img{
+    width: 69px;
+    height: 45px;
+}
+.Copy-bottom{
+    height: 85px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    line-height: 85px;
+}

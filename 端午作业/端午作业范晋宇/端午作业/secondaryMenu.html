@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>二级菜单</title>
+        <style>
+               *{
+                  margin: 0;
+                  padding: 0;
+               }
+                li{
+                    list-style: none;
+                }
+                 .stair{
+                       width: 500px;
+                       height: 50px;
+                       background-color: blue;
+                 }
+                 .stair-text{
+                       float: left;
+                       width: 100px;
+                       height: 50px;
+                       line-height: 50px;
+                       text-align: center;
+                 }
+                 .second ul{
+                      width: 100px;
+                      height: 250px;
+                      float: left;
+                      display: none;
+                      position: absolute;
+                      top:50px;
+                 }
+                 .second ul li{
+                      width: 98px;
+                      height: 48px;
+                      background-color: #eee;
+                      border:1px solid #aaa;    
+                      line-height: 50px;      
+                      text-align: center;     
+                 }
+                 .second ul li:hover{
+                      background-color: black;
+                      color: white;
+                 }
+
+        </style>
+    </head>
+    <body>
+            <ul id="stair" class="stair" >
+                        <li  class="stair-text" >一级一
+                                    
+                        </li>
+                        <li  class="stair-text">一级二
+                                    
+                        </li>
+                        <li  class="stair-text">一级三
+                                    
+                        </li>
+                        <li  class="stair-text">一级四
+                                    
+                        </li>
+                        <li  class="stair-text">一级五
+                                    
+                        </li>
+            </ul>
+            <div id="second" class="second">
+            <ul >
+                        <li>二级一</li>
+                        <li>二级二</li>
+                        <li>二级三</li>
+                        <li>二级四</li>
+                        <li>二级五</li>
+            </ul>
+            <ul>
+                        <li>二级一</li>
+                        <li>二级二</li>
+                        <li>二级三</li>
+                        <li>二级四</li>
+                        <li>二级五</li>
+            </ul>
+            <ul >
+                        <li>二级一</li>
+                        <li>二级二</li>
+                        <li>二级三</li>
+                        <li>二级四</li>
+                        <li>二级五</li>
+            </ul>
+            <ul >
+                        <li>二级一</li>
+                        <li>二级二</li>
+                        <li>二级三</li>
+                        <li>二级四</li>
+                        <li>二级五</li>
+            </ul>
+            <ul>
+                        <li>二级一</li>
+                        <li>二级二</li>
+                        <li>二级三</li>
+                        <li>二级四</li>
+                        <li>二级五</li>
+            </ul>
+            </div>
+
+    </body>
+    <script>
+            var oStair=document.getElementById("stair").getElementsByTagName("li");
+            var second=document.getElementById("second").getElementsByTagName("ul");
+
+            for(var i=0;i<oStair.length;i++){               
+                        (function(a){
+                                    oStair[a].index=a;
+                                    oStair[a].onmouseover=function(){
+                                             second[a].style.display="block";
+                                             second[a].style.left=100*(a)+"px";       
+                                    }
+                                    oStair[a].onmouseout=function(){
+                                             second[a].style.display="none";
+                                    }
+
+                       })(i)  
+           }
+           for(var j=0;j<second.length;j++){
+                           (function(j){
+                                    second[j].onmouseover=function(){
+                                             second[j].style.display="block";
+                                    }
+                                    second[j].onmouseout=function(){
+                                             second[j].style.display="none";
+                                    }
+                          })(j);
+           }
+
+
+    </script>
+</html>

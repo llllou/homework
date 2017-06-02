@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            *{
+                margin:0;
+                padding:0;
+            }
+            .carousel .p1{
+                width: 100%;
+                height: 844px;
+                
+            }
+            .carousel{
+               width: 100%;
+                height: 844px;
+                /*margin:50px auto;*/
+                /*overflow: hidden;*/
+                position:relative;
+            }
+            .carousel ul{
+                list-style: none;
+            }
+            .carousel ul li{
+                display:none;
+            }
+            .carousel ul li.current{
+                display:block;
+            }
+            .carousel span{
+                position: absolute;
+                width:55px;
+                height:45px;
+                top:390px;
+                cursor:pointer;
+            }
+            .carousel .leftBtn{
+                background: url(img/prev.png);
+                left:50px;
+            }
+            .carousel .rightBtn{
+                background:url(img/next.png);
+                right: 50px;
+            }
+            .carousel .circles{
+                position: absolute;
+                bottom:40px;
+                width:200px;
+                height:17px;
+                left:50%;
+                margin-left: -50px;
+            }
+            .carousel .circles ol{
+                list-style: none;
+            }
+            .carousel .circles ol li{
+                float:left;
+                width:17px;
+                height:17px;
+                margin-right: 13px;
+                background:#fff;
+                border-radius: 50%;
+                cursor:pointer;
+            }
+            .carousel .circles ol li.current{
+                background:gold;
+            } 
+            #nav{
+                width: 100%;
+                height: 120px;
+                background: rgba(0,0,0,0.5);
+                position: absolute;
+                top:0px;
+            }
+            #nav .L{
+                width: 160px;
+                height: 70px;
+                color:#fff;
+                margin:30px 0 0 125px;
+            }
+            #nav .L .p1{
+                font-size: 40px;
+            }
+             #nav .L .p2{
+                letter-spacing: 15px;
+                color:#fff;
+                margin-top: -790px;
+             }
+            table{
+                width: 475px;
+                height: 30px;
+                margin-left: 600px;
+                margin-top:-60px;
+                color:#fff;
+            }
+            table .wu td:hover{
+                color:#f60;
+                text-decoration: underline;
+            }
+            table .wu td{
+                width: 95px;
+                height: 30px;
+            }
+            table .wu td ul{
+                width: 90px;
+                height: 60px;
+                background: gray;
+            }
+            table .wu td ul li{
+                color:black;
+                width: 90px;
+                height: 30px;
+                background: #E3E;
+            }
+          /* #nav .one td{
+                background: #f60;
+                color:green;
+                width: 95px;
+                height: 30px;
+                font-size: 14px;
+                display:none;
+            }*/
+            #nav .xin{
+                width: 180px;
+                height: 30px;
+                float:right;
+                margin-right: 270px;
+                margin-top:-25px;
+            }
+             #nav .xin img{
+                margin-top: 5px;
+             }
+             #nav .xin .e{
+                margin-top: -345px;
+                color:#fff;
+                margin-left: 10px;
+             }
+               #nav .hua{
+                width: 180px;
+                height: 30px;
+                float:right;
+                margin-right: -370px;
+                margin-top:-25px;
+               }
+               #nav .hua img{
+                        margin-top: 5px;    
+               }
+               #nav .hua .a{
+                margin-top: -345px;
+                color:#fff;
+                margin-left: 5px;
+             }
+             .C{
+                width: 100%;
+                height: 210px;
+                text-align: center;
+                line-height: 210px;
+             }
+             .C h3{
+                font-size: 60px;
+                color:#f60;
+             }
+             .two{
+                width: 100%;    
+                height: 350px;
+             }
+              .two .oDiv1{
+                width: 520px;
+                height: 300px;
+                border:5px solid gray;
+                background-image: url(img/2.jpg);
+                background-size:100%;
+                transition: 1s;
+                margin-left: 250px;
+                float:left;
+            }
+             .two .oDiv1:hover{
+                background-size:105%;
+                background-position: center center;
+            }
+            .two .oDiv2{
+                width: 520px;
+                height: 300px;
+                border:5px solid gray;
+                background-image: url(img/3.jpg);
+                background-size:100%;
+                transition: 1s;
+                margin-left: 830px;
+            }
+             .two .oDiv2:hover{
+                background-size:105%;
+                background-position: center center;
+            }
+            .About{
+                width: 100%;
+                height: 155px;
+            }
+            .About .zi{
+                width: 1110px;
+                height: 155px;
+                margin-left: 250px;
+                font-size: 14px;
+                color:gray;
+            }
+            .About .zi p{
+                margin-top: 10px;
+            }
+            .About .zi .last{
+                text-align: center;
+            }
+            .serve{
+                width: 100%;
+                height: 507px;
+                background: #fcb941;
+            }
+            .serve .head{
+                width: 1140px;
+                height: 52px;
+                margin:0 auto;
+                padding-top:80px;
+            }
+            .serve .head h3{
+                font-size: 3em;
+                text-align: center;
+                color:#fff;
+
+            }
+            .serve .ds{
+                width: 1360px;
+                height: 325px;
+                margin-top: 50px;
+                margin-left: 120px;
+                list-style: none;
+            }
+            .serve .ds li{
+                float:left;
+            }
+            .serve .ds .s1{
+                width: 285px;
+                height: 325px;
+                margin-left: 55px;
+            }
+            .serve .ds .s1 .circle{
+                width: 88px;
+                height: 88px;
+                background: #444;
+                margin:0 auto;
+                border-radius:50%;
+            }
+            .serve .ds .s1 .circle:hover{
+                background: #f60;
+            }
+            .serve .ds .s1 .circle img{
+                margin:30px 28px auto;
+                background: #fff;
+                border-radius:50%;
+            }
+            .serve .ds .s1 h5{
+                text-align: center;
+                font-size: 1em;
+                text-transform: uppercase;
+                margin-top:3em;
+            }
+            .serve .ds .s1 p{
+                text-align: center;
+                margin-top:50px;
+            }
+            .wish{
+                width: 100%;
+                height: 620px;
+                background-image:url(img/4.jpg);
+            }
+             .wish .head{
+                width: 1140px;
+                height: 52px;
+                margin:0 auto;
+                padding-top:80px;
+            }
+            .wish .head h3{
+                font-size: 3em;
+                text-align: center;
+                color:#fff;
+            }
+            .wish .feed{
+                width: 1350px;
+                height: 320px;
+                /*background: #abc;*/
+                margin:110px 0 0 100px;
+            }
+            .wish .feed ul li{
+                list-style: none;
+                width: 410px;
+                height: 255px;
+                /*background: yellowgreen;*/
+                margin-left: 40px;
+                float:left;
+            }
+            .wish .feed ul li .feedtop{
+                width: 410px;
+                height: 130px;
+                background: rgba(0,0,0,0.4);
+            }
+            .wish .feed ul li .feedtop p{
+                line-height: 30px;
+                margin-left: 30px;
+                color:#fff;
+            }
+            .wish .feed ul li img{
+                width: 64px;
+                height: 64px;
+                margin-left: 90px;
+                margin-top:30px;
+                float:left;
+            }
+            .wish .feed ul li .clearfix{
+                width: 130px;
+                height: 64px;
+                /*background: #e2e;*/
+                 margin-left: 154px;
+                margin-top:30px;
+            }
+            .wish .feed ul li .clearfix h5{
+                font-size:18px;
+                color:#c87908;
+            }
+            .wish .feed ul li .clearfix p{
+                color:#fff;
+            }
+            .wish .C{
+                width: 50px;
+                height: 15px;
+                background: rgba(0,0,0,0.4);
+                border-radius: 35%;
+                margin:0 auto;
+            }
+            .wish .C1{
+                width: 12px;
+                height: 12px;
+                background: #d28d32;
+                border-radius: 50%;
+                float:left;
+                margin-left:8px;
+            }
+            .sub{
+                width: 100%;
+                height: 350px;
+                position: relative;
+            }
+             .sub .head{
+                width: 1140px;
+                height: 52px;
+                margin:0 auto;
+                padding-top:70px;
+            }
+            .sub .head h3{
+                font-size: 3em;
+                text-align: center;
+            }
+            .sub .in{
+                width: 1400px;
+                height: 65px;
+                margin: 90px 0 0 125px;
+            }
+            .sub .in input{
+                width: 567px;
+                height: 60px;
+                border: 2px solid #fdcf7c;
+                background: #fdf3e0;
+                font-size: 25px;
+                color:gray;
+                float:left;
+            }
+            .sub .in #n2{
+                margin-left: 25px;
+                float:left;
+            }
+             .sub .in #n3{
+                width: 130px;
+                height: 64px;
+                background: #000;
+                color:#fff;
+                border:none;
+                margin-left:20px;
+             }   
+             .sub .alert{
+                width: 200px;
+                height: 180px;
+                background: #f60;
+                margin-left: 612px;
+                margin-top: -160px;
+                position: absolute;
+                display: none;
+             }
+             .sub .alert img{
+                width: 16px;
+                height: 16px;
+                float:right;
+                clear:both;
+             }
+             .sub .alert p{
+                margin-top: 5px;
+             }
+             /*最后黑色部分*/
+             .footer{
+                width: 100%;
+                height: 395px;
+                background: #000;
+                border-bottom:2px solid #373739;
+             }
+             .footer .left{
+                width: 407px;
+                height: 245px;
+                margin-left:137px;
+                margin-top: 75px;
+                float:left;
+             }
+             .footer .left h4{
+                font-size: 20px;
+                color:#fff;
+             }
+             .footer .left p{
+                margin-top: 20px;
+                color:#fff;
+             }
+            .footer .center{
+                width: 410px;
+                height: 270px;
+                margin-left: 55px;
+                margin-top: 75px;
+                color:#fff;
+                float:left;
+            }
+              .footer .center h4{
+                font-size: 20px;
+             }
+             .footer .center .p1{
+                     margin-top: 20px;
+                     line-height: 10px;
+                     color:#f60;
+             }
+            .footer .center .ri{
+                height: 50px;
+                line-height: 50px;
+            }
+            .footer .center .ri2{
+                height: 50px;
+                line-height: 50px;
+            }
+            .footer .right{
+                width: 407px;
+                height: 245px;
+                margin-left: 55px;
+                margin-top: 75px;
+                color:#fff;
+                float:left;
+            }
+            .footer .right h4{
+                 font-size: 20px;
+                color:#fff;
+            }
+            .footer .right a img{
+                width: 89px;
+                height: 70px;
+                border:2px solid #fff;
+                margin-left: 5px;
+            }
+            .lat{
+                width: 100%;
+                height: 100px;
+                background: #000;
+                color:gray;
+                text-align: center;
+                line-height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+      
+        <div class="carousel">
+            <div id="imagesList" class="imagesList">
+                <ul>
+                    <li class="current"><a href="#"><img src="img/1.jpg" alt="" class="p1"/></a></li>
+                    <li><a href="#"><img src="img/4.jpg" alt="" class="p1"/></a></li>
+                    <li ><a href="#"><img src="img/2.jpg" alt="" class="p1"/></a></li>
+                    <li><a href="#"><img src="img/3.jpg" alt="" class="p1"/></a></li>
+                    <li><a href="#"><img src="img/6.jpg" alt="" class="p1"/></a></li>
+                </ul>
+                
+            </div>
+            <div id="nav">
+                    <div class="L">
+                        <p class="p1">perfect</p>
+                        <p class="p2">TRAVEL</p>
+                    </div>
+                    <table>
+                            <tr class="wu" id="wu">
+                                <td >Home 
+                                        <!--     <ul>
+                                                <li>Icons</li>
+                                                <li>short Codes</li>
+                                            </ul> -->
+                                </td>
+                                <td>About
+                                        <!-- <ul>
+                                                <li>Icons</li>
+                                                <li>short Codes</li>
+                                        </ul> -->
+                                </td>
+                                <td>Gallery
+                                       <!--  <ul>
+                                                <li>Icons</li>
+                                                <li>short Codes</li>
+                                        </ul> -->
+                                </td>
+                                <td>Pages
+                                       <!--  <ul>
+                                                <li>Icons</li>
+                                                <li>short Codes</li>
+                                        </ul> -->
+                                </td>
+                                <td>Contact
+                                        <!-- <ul>
+                                                <li>Icons</li>
+                                                <li>short Codes</li>
+                                        </ul> -->
+                                </td>
+                            </tr>
+                            <!-- <tr class="one" id="er">
+                                            <td>Icons</td>
+                                            <td>Icons</td>
+                                            <td>Icons</td>
+                                            <td>Icons</td>
+                                            <td>Icons</td>
+                            </tr>  
+                            <tr class="one" id="ji">
+                                <td>short Codes</td>
+                                <td>short Codes</td>
+                                <td>short Codes</td>
+                                <td>short Codes</td>
+                                <td>short Codes</td>
+                            </tr>   -->
+                    </table>
+                    <div class="xin">
+                        <img src="img/email.png" alt="">
+                        <span class="e">@example.com</span>
+                    </div>
+                    <div class="hua">
+                        <img src="img/phone.png" alt="">
+                        <span class="a">+123456892</span>
+                    </div>
+            </div>
+            <div class="btns">
+                <span class="leftBtn" id="leftBtn"></span>
+                <span class="rightBtn" id="rightBtn"></span>
+            </div>
+            <div class="circles" id="circles">
+                <ol>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li  class="current"></li>
+                </ol>
+            </div>
+        </div> 
+        <!-- 欢迎 -->
+        <div class="C"><h3>welcome</h3></div>
+        <div class="two">
+                <div class="oDiv1"></div>
+                <div class="oDiv2"></div>
+        </div>
+        <!-- 文字 -->
+        <div class="About">
+            <div class="zi">
+                <p>Nam libero tempore cum soluta est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facerc possimus omnis optio cumque nihil impedit quo</p>
+                <p>minus id quod maxime placeat facere possimus.Sed ut perspiciatis unde omnis iste natus error sit volupatem accusantiumdolorenque laudantium,totam ren aperiam</p>
+                <p class="last">eaque ipsa quae ab illo inventore veritatls et quasl architecto beatae vitae</p>
+            </div>
+        </div>
+        <!-- 我们的服务 -->
+       
+        <div class="serve">
+                        <div class="head">
+                            <h3>Our Services</h3>
+                        </div>
+                        <ul class="ds">
+                            <li>
+                                <div class="s1">
+                                    <div class="circle">
+                                        <img src="img/h.ico" alt="">
+                                    </div>
+                                    <h5>Lorem ipsum</h5>
+                                    <p>Itaque earum rerum hic a sapiente delectus in auctor sapien.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="s1">
+                                    <div class="circle">
+                                        <img src="img/b.ico" alt="">
+                                    </div>
+                                    <h5>Ut non lacus</h5>
+                                    <p>Itaque earum rerum hic a sapiente delectus in auctor sapien.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="s1">
+                                    <div class="circle">
+                                        <img src="img/t.ico" alt="">
+                                    </div>
+                                    <h5>Maecenas rutrum</h5>
+                                    <p>Itaque earum rerum hic a sapiente delectus in auctor sapien.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="s1">
+                                    <div class="circle">
+                                        <img src="img/e.ico" alt="">
+                                    </div>
+                                    <h5>Phasellus gravida</h5>
+                                    <p>Itaque earum rerum hic a sapiente delectus in auctor sapien.</p>
+                                </div>
+                            </li>
+                        </ul>
+        </div>
+        <!-- 心愿墙 -->
+        <div class="wish">
+                <div class="head">
+                            <h3>Feedback</h3>
+                </div>
+                <div class="feed" id="feed">
+                    <ul>
+                        <li>
+                            <div class="feedtop">
+                                <p> Sed semper leo metus, a lacinia eros semper</p> 
+                                <p>at. Etiam sodales orci sit amet vehicula 
+                                <p>pellentesque.</p> 
+                            </div>
+                            <img src="img/f1.jpg" alt="">
+                            <div class="clearfix">
+                                <h5>Steven Wilson</h5>
+                                <p>Vestibulum</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="feedtop">
+                                <p> Sed semper leo metus, a lacinia eros semper</p> 
+                                <p>at. Etiam sodales orci sit amet vehicula 
+                                <p>pellentesque.</p> 
+                            </div>
+                            <img src="img/f2.jpg" alt="">
+                            <div class="clearfix">
+                                <h5>Steven Wilson</h5>
+                                <p>Vestibulum</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="feedtop">
+                                <p> Sed semper leo metus, a lacinia eros semper</p> 
+                                <p>at. Etiam sodales orci sit amet vehicula 
+                                <p>pellentesque.</p> 
+                            </div>
+                            <img src="img/f3.jpg" alt="">
+                            <div class="clearfix">
+                                <h5>Steven Wilson</h5>
+                                <p>Vestibulum</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 圆圈 -->
+                <div class="C" id="C">
+                    <div class="C1" id="C1"></div>
+                    <div class="C1" id="C1"></div>
+                </div>
+        </div>
+        <!-- 填写姓名 -->
+        <div class="sub">
+                <div class="head">
+                        <h3>Subscribe  Here</h3>
+                </div>
+                <div class="in">
+                    <input type="text" value="Name" id="n1">
+                    <input type="text" value="Emall" id="n2">
+                    <input type="button" value="SUBSCRIBE" id="n3">
+                </div>
+                <div class="alert" id="alert">
+                    <img src="img/close.png" alt="" id="photo">
+                    <p id="na">姓名：</p>
+                    <p id="emall">邮箱：</p>
+                </div>
+        </div>
+        <!-- 黑色 -->
+        <div class="footer">
+                <div class="left">
+                    <h4>History of Agriculture</h4>
+                    <p>服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念服务理念</p>
+                </div>
+                <div class="center">
+                    <h4>Twitter Posts</h4>
+                    <p class="p1">Ut aut reiciendis voluptatibus maiores</p>
+                    <p class="p2">http://example.com alias,ut aut reiciendis</p>
+                    <div class="ri">02 days ago</div>
+                    <p>Itaque earum rerum hic tenetur a sapiente delectus</p>
+                    <p>http://mail.com ut aut voluptatibus</p>
+                    <div class="ri2">02 days ago</div>
+                </div>
+                <div class="right">
+                    <h4>Popular  Items</h4>
+                    <a href="#"><img src="img/5.jpg" alt=""></a>
+                    <a href="#"><img src="img/6.jpg" alt=""></a>
+                    <a href="#"><img src="img/7.jpg" alt=""></a>
+                    <a href="#"><img src="img/8.jpg" alt=""></a>
+                    <a href="#"><img src="img/9.jpg" alt=""></a>
+                    <a href="#"><img src="img/10.jpg" alt=""></a>
+                    <a href="#"><img src="img/2.jpg" alt=""></a>
+                    <a href="#"><img src="img/3.jpg" alt=""></a>
+                </div>
+        </div>
+        <div class="lat">
+                <p>Copyright © 2017.Company name All rights reserved.</p>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var leftBtn = document.getElementById("leftBtn");
+        var rightBtn = document.getElementById("rightBtn");
+        var circlesLis = document.getElementById("circles").getElementsByTagName("li");
+        var imagesList = document.getElementById("imagesList");
+        var imagesListLis = document.getElementById("imagesList").getElementsByTagName("li");
+
+        var img_idx = 0;
+        rightBtn.onclick = function(){
+            img_idx++;  
+            if(img_idx>4){
+                img_idx=0;
+            }
+            chengPic();
+        }
+        leftBtn.onclick = function(){
+            img_idx--;
+            if(img_idx<0){
+                img_idx=4;
+            }
+            chengPic();
+        }
+        for(var i = 0;i<circlesLis.length;i++){
+            (function(i){
+                circlesLis[i].onmouseover = function(){
+                    img_idx = i;
+                    chengPic();
+                }
+            })(i)
+        }
+        function chengPic(){
+            for(var i = 0; i<imagesListLis.length;i++){
+                imagesListLis[i].className = "";
+            }
+            imagesListLis[img_idx].className="current";
+            for(var i=0;i<circlesLis.length;i++){
+                circlesLis[i].className = "";
+            }
+            circlesLis[img_idx].className = "current";
+        }
+        // 二级
+        // var one=document.getElementById("wu").getElementsByTagName("td");
+        // var  er=document.getElementById("er").getElementsByTagName("td");
+        // var  ji=document.getElementById("ji").getElementsByTagName("td");
+
+        // for(var i=0; i<one.length; i++){
+        //     one[i].index=i;
+        //     one[i].onmouseover=function(){
+        //             er[this.index].style.display="block";
+        //             ji[this.index].style.display="block";
+        //     }
+        //      one[i].onmouseout=function(){
+        //             er[this.index].style.display="none";
+        //             ji[this.index].style.display="none";
+        //     }
+        // }
+            var name=document.getElementById("n1");
+            var emall=document.getElementById("n2");
+            var but=document.getElementById("n3");
+            var p1=document.getElementById("na");
+            var p2=document.getElementById("emall");
+            var photo=document.getElementById("photo");
+            var div=document.getElementById("alert");
+
+            p1.innerText="姓名 : "+na.value;
+            p2.innerText="Emall : "+emall.value;
+            photo.onclick=function(){
+                    div.style.display="none";
+            }
+            but.onclick=function(){
+                div.style.display="block";
+            }
+
+    </script>
+</html>

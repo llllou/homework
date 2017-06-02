@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+#OneList{
+    width: 100%;
+    height: 40px;
+    background-image: linear-gradient(to top,#299e01, #41b403,#59ca06);
+    margin-top: 100px;
+}
+#OneList ul{
+    width: 900px;
+    height: 100%;
+    margin: 0 auto;
+}
+#OneList ul li{
+    float: left;
+    width: 98px;
+    height: 100%;
+    text-align: center;
+    line-height: 40px;
+}
+#OneList ul  a{
+    color: white;
+}
+#OneList ul li.OneList-One{
+    background-image: linear-gradient(to bottom,#ffffff,#e9e8ea);
+}
+#OneList ul li.OneList-One a{
+    color: black;
+}
+#TwoList{
+    width: 100%;
+    height: 30px;
+    background-image: linear-gradient(to bottom,#ffffff,#e9e8ea);
+}
+#TwoList ul{
+    width: 900px;
+    height: 100%;
+    margin: 0 auto;
+
+}
+#TwoList ul .TwoList-One{
+    width:98px;
+    height: 100%;
+    text-align: center;
+    line-height: 30px;
+    /*display: block;*/
+    visibility:visible;
+}
+#TwoList ul li{
+    float: left;
+    width:98px;
+    height: 100%;
+    text-align: center;
+    line-height: 30px;
+    /*display: none;*/
+    visibility:hidden;
+}
+#TwoList ul li a{
+    color: black;
+}
+#TwoList ul li a:hover{
+    color: #fcb941;
+}

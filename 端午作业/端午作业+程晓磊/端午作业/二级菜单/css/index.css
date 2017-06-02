@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin:0;
+}
+li{
+    list-style:none;
+}
+div{
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    margin-left: 10px;
+    background: #c77405;
+    float: left;
+}
+
+div li{
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+
+    background: #cccccc;
+    /*display:none ;*/
+}
+li:hover{
+    background: red;
+} 

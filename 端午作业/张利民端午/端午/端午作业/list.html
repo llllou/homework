@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            *{
+                padding:0;
+                margin:0;
+            }
+            li{
+                list-style:none;
+            }
+            #contact{
+                width:90px;
+                height:200px;
+                background:skyblue;
+                position:absolute;
+                left:800px;
+                top:60px;
+                display:none;
+            }
+            #contact li:hover{
+                color:gray;
+                background:yellow;
+
+            }
+            .nav{
+                width:1000px;
+                height:60px;
+                background:skyblue;
+                margin:0 auto;
+
+            }
+            .nav img{
+                width:250px;
+                height:70px;
+                margin-left:60px;
+            }
+            #navUl{
+                float:right;
+                height:60px;
+                width:500px;
+                /*background:yellow;*/
+                line-height:60px;
+
+            }
+            #navUl li{
+                float:left;
+                font-size:17px;
+                width:90px;
+                cursor:pointer;
+                text-align:center;
+            }
+            #navUl .navUlLis{
+                background:gray;
+                color:white;
+                float:left;
+                font-size:17px;
+                width:90px;
+                cursor:pointer;
+                text-align:center;
+            }
+            #contact ul li{
+                width:90px;
+                height:40px;
+                font-size:15px;
+                line-height:40px;
+                text-align:center;
+                background:gray;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav">
+            <img src="2.jpg" alt="">
+            <ul id="navUl">
+                <li class="navUlLi">官网首页</li>
+                <li class="navUlLi">游戏资料</li>
+                <li class="navUlLi">商城专区</li>
+                <li class="navUlLi">竞技中心</li>
+                <li class="navUlLi">活动中心</li>
+            </ul>
+        </div>
+        <div id="contact">
+            <ul>
+                <li>官网首页</li>
+                <li>游戏资料</li>
+                <li>商城专区</li>
+                <li>竞技中心</li>
+                <li>活动中心</li>
+            </ul>
+        </div>
+    </body>
+    <script>
+        var navUlLis=document.getElementById("navUl").getElementsByTagName("li");
+        var contact=document.getElementById("contact");
+        var ul=contact.getElementsByTagName("li");
+
+        for(var i=0;i<navUlLis.length;i++){
+            navUlLis[i].index=i;
+            navUlLis[i].onmouseover=function(){
+                for(var j=0;j<navUlLis.length;j++){
+                    navUlLis[j].className="";
+
+                }
+                contact.style.display="block";
+                this.className="navUlLis";
+                contact.style.left=800+(this.index)*90+"px";
+            }
+            navUlLis[i].onmouseout=function(){
+                contact.style.display="none";
+            }
+        }
+        contact.onmouseover=function(){
+            contact.style.display="block";
+        }
+        contact.onmouseout=function(){
+            contact.style.display="none";
+        }
+
+    </script>
+</html>

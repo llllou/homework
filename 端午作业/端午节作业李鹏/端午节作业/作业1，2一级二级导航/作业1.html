@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;padding:0;
+        }
+        #oneList {
+            height:32px;
+            margin-top: 50px;
+        }
+        .oDiv {
+            background-color:orange;
+        }
+        #oneList>div {
+            float:left;width:60px;height:30px;border:1px solid grey;
+            line-height:30px;text-align:center;font-size:16px;
+        }
+        #twoList {
+           width:310px;font-size:0;
+        }
+        #twoList>ul {
+            list-style:none;font-size:14px;text-align:center;
+            width:60px;;position:absolute;display:none;
+        }
+        #twoList>ul li {
+           height:30px;line-height:30px;width:60px;border:1px solid gray;
+        }
+        #twoList>ul li:hover {
+            background:greenyellow;color:red;
+        }
+        .active {
+            color:greenyellow;background-color:orange;
+        }
+
+
+    </style>
+    <script>
+        window.onload = function () {
+            var oneList = document.getElementById("oneList").getElementsByTagName("div");
+            var twoList = document.getElementById("twoList").getElementsByTagName("ul");
+            //方法1
+               /* var last = oneList[0];
+                for (var i = 0;i < oneList.length; i++) {
+                    oneList[i].index = i;
+                    oneList[i].onmouseover = function () {
+                       last.style.backgroundColor= ""
+                       twoList[last.index].style.display = "";
+                        last = this;
+                        this.style.backgroundColor = "orange";
+                        twoList[this.index].style.display = "block";
+                        twoList[this.index].style.marginLeft = [this.index]*62+"px"//
+                    }
+                    oneList[i].onmouseout = function () {
+                        this.style.backgroundColor = "";
+                        twoList[this.index].style.display = "none";
+                    }
+                    twoList[i].onmouseover=function(){
+                        this.style.display="block";
+                    }
+                    twoList[i].onmouseout=function(){
+                        this.style.display="none";
+                    }
+                }*/
+            //方法2
+           /* for (var i = 0;i < oneList.length; i++) {
+                oneList[i].index = i;
+                oneList[i].onmouseover = function () {
+                    for (var j = 0;j < oneList.length; j++) {
+                        oneList[j].style.backgroundColor= ""
+                        twoList[j].style.display = "";
+                    }
+                    this.style.backgroundColor = "orange";
+                    twoList[this.index].style.display = "block";
+                    twoList[this.index].style.marginLeft = [this.index]*62+"px"//
+                }
+                oneList[i].onmouseout = function () {
+                    this.style.backgroundColor = "";
+                    twoList[this.index].style.display = "none";
+                }
+                twoList[i].onmouseover=function(){
+                    this.style.display="block";
+                }
+                twoList[i].onmouseout=function(){
+                    this.style.display="none";
+                }
+            }*/
+            //方法3
+            for (var i = 0;i < oneList.length; i++) {
+                (function (i) {
+                    oneList[i].onmouseover = function () {
+                        for (var j = 0;j < oneList.length; j++) {
+                            oneList[j].style.backgroundColor= "";
+                            oneList[j].className = "";
+                           twoList[j].style.display = "";
+
+                        }
+                        this.style.backgroundColor = "orange";
+                        twoList[i].style.display = "block";
+                        twoList[i].style.marginLeft = i*62+"px"//可以通过改变它的margin-left来实现一一对应的效果
+                    }
+                    oneList[i].onmouseout = function () {
+                        this.style.backgroundColor = "";
+                        twoList[i].style.display = "none";
+                    }
+                    twoList[i].onmouseover=function(){
+                        this.style.display="block";
+                    }
+                    twoList[i].onmouseout=function(){
+                        this.style.display="none";
+                    }
+
+                })(i);
+            }
+
+        }
+        var a = [3,2,1,6,9,4];
+       // a.splice(2,2,"a","b"
+        a[2.00] = "a"; a[3] = "b"; a[4] = "c";
+        console.log(a[2])
+    </script>
+</head>
+<body>
+    <div id="oneList">
+        <div class="oDiv">图片</div>
+        <div >图片</div>
+        <div >图片</div>
+        <div >图片</div>
+        <div >图片</div>
+    </div>
+    <div id="twoList">
+        <ul >
+            <li>微博1</li>
+            <li>汽车1</li>
+            <li>美食1</li>
+        </ul>
+        <ul >
+            <li>微博2</li>
+            <li>汽车2</li>
+            <li>美食2</li>
+        </ul>
+        <ul >
+            <li>微博3</li>
+            <li>汽车3</li>
+            <li>美食3</li>
+        </ul>
+        <ul >
+            <li>微博4</li>
+            <li>汽车4</li>
+            <li>美食4</li>
+        </ul>
+        <ul >
+            <li>微博5</li>
+            <li>汽车5</li>
+            <li>美食5</li>
+        </ul>
+    </div>
+</body>
+
+</html>
