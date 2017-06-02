@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+//        function rev(a) {
+//            var sum = "";
+//            do{
+//                var i = ((a-a%10)/10);
+//                var b = a%10;
+//                a = i ;
+//                sum += b;
+//            }while (i > 0);
+//            alert(sum);
+//        }
+//        var p = prompt("请输入一个数字");
+//        rev(p);
+        function rev(sum){
+            for(var i = 1 ;true; i++){
+                if (parseInt(sum/Math.pow(10,i)) == 0){
+                    return i;
+                }
+            }
+        }
+        function cun(sum) {
+            var s = 0;
+            var t = rev(sum);
+            for (var i = 1 ; i <= t ; i++){
+                s +=parseInt(sum/Math.pow(10,i-1))%10*Math.pow(10,t-i);
+            }
+            return s;
+        }
+        console.log(cun(123));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

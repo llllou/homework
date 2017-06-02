@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="javascript">
+             var boss="唐僧",HP=10000,gongjili=600;
+             var hero="猴子",HP1=8000,gongjili1=700;
+            
+              while(true){
+                console.log(boss+"攻击了"+hero);
+                HP1=HP1-gongjili;
+                console.log(hero+"的HP减少了"+gongjili);
+                
+                console.log(hero+"攻击了"+boss);
+                HP=HP-gongjili1;
+                console.log(boss+"的HP减少了"+gongjili1);
+                if(HP1<=3000){
+                    console.log("发动技能！血量增加100");
+                    HP1+=100;
+                }
+
+                if(HP<=0){
+                    console.log(boss+"失败了！");
+                    break;
+                }
+                if(HP1<=0){
+                    console.log(hero+"失败了！");
+                    break;
+                }
+            }
+            
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

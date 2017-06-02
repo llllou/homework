@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+             var yx="皮卡丘",hp=500;g=120;n=0;z=parseInt(Math.random()*200+1);
+             var yx1="猪八戒",hp1=600;g1=110;n1=0;
+             var yx2="奥巴马",hp2=700;g2=100;n2=0;
+             var boss="关爷爷",Bhp=3000;Bg=parseInt(Math.random()*300+1);Bn=0;
+             while(true){
+                if(hp>0&&Bhp>0){
+                    console.log(yx+"用十万伏特电击了"+boss);
+                    Bhp=Bhp-g;
+                    Bn=Bn+g-20;
+                    console.log("对"+boss+"造成了"+g+"点伤害！"+boss+"怒气上升为"+Bn,boss+"血量为"+Bhp);
+                }
+                if(hp1>0&&Bhp>0){
+                    console.log(yx1+"用耙子搂了"+boss);
+                    Bhp=Bhp-g1;
+                    Bn=Bn+g1-20;
+                    console.log("对"+boss+"造成了"+g1+"点伤害！"+boss+"怒气上升为"+Bn,boss+"血量为"+Bhp);
+                }
+                if(hp2>0&&Bhp>0){
+                    console.log(yx2+"掏出连狙狙了"+boss);
+                    Bhp=Bhp-g2;
+                    Bn=Bn+g2-20;
+                    console.log("对"+boss+"造成了"+g2+"点伤害！"+boss+"怒气上升为"+Bn,boss+"血量为"+Bhp);
+                }
+                if(Bhp>0){
+                    console.log(boss+"进行分裂攻击");
+                    hp-=30;hp1-=30;hp2-=30;
+                    n+=10;n1+=10;n2+=10;
+                    console.log("对"+yx,yx1,yx2+"造成了30点伤害！"+yx,yx1,yx2+"怒气上升为"+n,n1,n2,yx,yx1,yx2+"血量为"+hp,hp1,hp2);
+                }
+                    
+                    if(Bn>=500&&Bhp>0){
+                        console.log(boss+"怒气冲破云霄达到500以上！发动技能“黑龙波”对"+yx1,yx2,yx+"造成"+Bg+"伤害！");
+                        hp-=Bg; hp1-=Bg; hp2-=Bg;
+                        n=n+Bg/2;
+                        n1=n1+Bg/2;
+                        n2=n2+Bg/2;
+                        Bn=Bn-500;
+                        console.log("关爷爷怒气值为"+Bn);
+                        console.log(yx,yx1,yx2+"怒气上升为"+n,n1,n2+"血量剩余"+hp,hp1,hp2);
+                    }
+                    if(n>=150&&hp!=0){
+                        console.log(yx+"怒气达到150以上！发动技能，“卖萌”。将为"+yx,yx1,yx2+"恢复"+z+"血量");
+                        hp+=z; hp1+=z; hp2+=z;
+                        n-=200;
+
+                    }
+                        if(n1>=200&&hp1!=0){
+                        console.log(yx1+"怒气达到200以上！发动技能，“怒吼”。"+yx,yx1,yx2+"攻击力增加20!");
+                        g+=20; g1+=20; g2+=20;
+                        n1-=200;
+                    }
+                     if(n2>=230&&hp2!=0){
+                        console.log(yx2+"怒气达到230以上！发动技能，“速射”"+yx2+"攻击速度增加1倍！");
+                        g2=g2*1.5;
+                        n2-=200;
+                    }
+                    if(Bhp<=0){
+                        console.log("关爷爷阵亡");
+                        alert("关爷爷阵亡，猜猜他是谁？");
+                        break;
+                    }
+                    if(hp<=0){
+                        console.log(yx+"阵亡");
+                        var yx=null,hp=null;g=null;n=null;z=null;
+                    }
+                     if(hp1<=0){
+                        console.log(yx1+"阵亡");
+                        var yx1=null,hp1=null;g1=null;n1=null;
+                    }
+                     if(hp2<=0){
+                        console.log(yx2+"阵亡");
+                        var yx2=null,hp2=null;g2=null;n2=null;
+
+                    }
+                    if(hp<=0&&hp1<=0&&hp2<=0){
+                        
+                        alert("集体阵亡少侠请从新来过");
+                        break;
+                    }
+             }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

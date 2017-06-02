@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>亲密数</title>
+    <script type="text/javascript">
+        function divisor(n){
+            var sum = 0;
+            for(var i = 1; i < n; i ++){
+                if(n%i == 0){
+                    sum += i;
+                }
+            }
+            return sum;
+        }
+
+        function amiNum(){
+            for(var i = 1; i <= 3000; i ++){
+                for(var j = 1; j <= 3000; j ++){
+                    var n;
+                    if(i == j || i == n){
+                        continue;
+                    }else if(divisor(i) == j && divisor(j) == i){
+                        console.log(i + "和" + j);
+                        n = j;
+                    }
+                }
+            }
+            return "以上是3000以内的亲密数";
+        }
+
+        console.log(amiNum());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

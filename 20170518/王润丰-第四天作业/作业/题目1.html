@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阶乘1</title>
+    <script type="text/javascript">
+        function sum(n){
+            var num = 1;
+            var sum = 0;
+            for(var i = 1; i <= n; i ++){
+                num *= i;
+                sum += num;
+            }
+            return sum;
+        }
+        console.log("我将计算1!+2!+3!+4!+ …… + n!的和");
+        console.log(sum(parseInt(prompt("请输入一个数字n"))));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

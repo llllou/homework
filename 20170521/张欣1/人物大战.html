@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script>
+        var renwu1="女王", HP1=10000,gongjili1=1000;
+        var renwu2="游乐",HP2=8000,gongjili2=800;
+        var renwu3="小蓝",HP3=5000,gongjili3=600;
+        var renwu4="黑魔仙",HP4=6000,gongjili4=700;
+        while(true){
+            console.log(renwu4+"攻击了"+renwu3);
+            HP3=HP3-gongjili4;
+            console.log(renwu4+"的HP4减少了"+gongjili4);
+            console.log(renwu2+"攻击了"+renwu1);
+            HP1=HP1-gongjili2;
+            console.log(renwu2+"的HP减少了"+gongjili2);
+
+            console.log(renwu2+"攻击了"+renwu4);
+            HP2=HP2-gongjili4;
+            console.log(renwu4+"的HP减少了"+gongjili4);
+
+            console.log(renwu4+"攻击了"+renwu1);
+            HP1=HP1-gongjili4;
+            console.log(renwu4+"的HP减少了"+gongjili4);
+            if(HP3<=3000){
+                console.log("发动技能!血量增加100");
+
+            }
+            if(HP1<=0){
+                console.log(renwu2+"失败了");
+                break;
+            }
+             if(HP2<=0){
+                console.log(renwu2+"失败了！");
+                break;
+            }else {
+                console.log(renwu1+"赢了"); 
+            }
+            if(HP1>=5000){
+                console.log(renwu1+"赢了");
+                break;
+            }
+            if (HP4<=0){
+                console.log(renwu4+"失败了！");
+            }
+           
+        }
+                </script>
+    </head>
+    <body>
+    </body>
+</html>

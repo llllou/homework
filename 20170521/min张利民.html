@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <script  type="text/javascript" >
+            var boss = [
+                {name:"校长",energy:10000},
+                {name:"教务主任",energy:8000},
+                {name:"系主任",energy:6000},
+                {name:"辅导员",energy:5000},
+                {name:"任课老师",energy:12000}
+            ];
+            var hero = [
+                {name:"张丽",energy:7000},
+                {name:"王强",energy:7000},
+                {name:"志刚",energy:7000}
+            ];
+            var n = prompt("选择一个英雄(0:张丽，1:王强, 2:志刚)","");
+            var h = hero[n];
+            var b = boss[Math.floor(Math.random() * boss.length)];
+            var i = 1;
+            while(true){
+                var hit = Math.floor(Math.random() * 800);
+                var bit = Math.floor(Math.random() * 1000);
+                h.energy -= bit;
+                b.energy -= hit;
+                if(b.energy > 0 && h.energy <= 0){
+                    alert("winner is boss");
+                    break;
+                }else if(h.energy > 0 && b.energy <= 0){
+                    alert("winner is hero");
+                    break;
+                }else if(h.energy <= 0 && b.energy <= 0){
+                    alert("DRAW GAME");
+                    break;
+                }
+                alert("第" + i++ + "次回合, 英雄: " + h.name + "的能量剩余: " + h.energy + ", 怪兽"+ b.name +"的能量剩余: " + b.energy);
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

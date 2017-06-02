@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            function rev(a)
+            {
+                var cound=0;
+                while(true)
+                {
+                    a/=10;
+                    cound++;
+                    if(a>=0&&a<10){
+                        break;
+                    }
+                }
+                return cound;
+            }
+            var num=prompt("输入一个数!");
+            j=rev(num);
+            var sum=0;
+            var k=0;
+            for(var i=j;i>=0;i--){
+                    sum+=parseInt(num/(Math.pow(10,i)))*Math.pow(10,k);
+                    num=num%Math.pow(10,i);
+                    k++;
+            }console.log(sum);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

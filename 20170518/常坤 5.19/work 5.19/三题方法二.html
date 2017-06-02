@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function rev(num){
+				var sum=0;
+				var i,j;
+				while(true){
+					j=num%10;
+					if(num==0){
+						break;
+					}else{
+						sum=sum*10+j;
+					}num=parseInt(num/10);
+				}
+				return sum;
+			}var b=prompt("输入一个数!");
+			alert("逆序为"+rev(b));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

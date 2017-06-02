@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>大战三百回合</title>
+    <script>
+        var hbl = ["韩宝利", 10000, 1000, 1000*parseInt(Math.random() * 3.4 + 1.2) ,1000*parseInt(Math.random() * 4 + 3)];
+        var zlm =["张利民", 20000,  500, "百分比伤害" , 500*parseInt(Math.random() * 4 + 6)];
+
+
+        while(zlm[1] >= 0 && hbl[1] >= 0){
+            switch (parseInt(Math.random()*3+2)){
+                case 2:
+                    document.write("--------------------------------韩宝利回合------------------------------"+"<br />")
+                    document.write(hbl[0] + "对" + zlm[0] + "发起普通攻击" + "<br />");
+                    zlm[1] = zlm[1] - hbl[2];
+                    document.write(zlm[0] + "的血量减少了" + hbl[2] + "点, 剩余" + zlm[1] + "点血量" + "<br />");
+                    if(zlm[1] <= 0) {
+                        document.write("韩宝利胜利")
+                        break;
+                    }
+
+                    document.write("---------------------------------张利民回合---------------------------"+"<br />")
+                    document.write(zlm[0] + "对" + hbl[0] + "发起普通攻击" + "<br />");
+                    hbl[1] = hbl[1] - zlm[2];
+                    document.write(zlm[0]+"普通攻击"+hbl[0]+"血量减少500"+hbl[0]+"剩余血量为"+hbl[1]+"<br />");
+                    if(hbl[1] <= 0){
+                        document.write("张利民胜利")
+                        break;
+                    }
+
+                break;
+                case 3:
+                    document.write("--------------------------------韩宝利的回合开始----------"+"<br />")
+                    document.write(hbl[0] + "对" + zlm[0] + "发起技能随机伤害" + "<br />");
+                    zlm[1] = zlm[1] - hbl[3];
+                    document.write(zlm[0] + "的血量减少了" + hbl[3] + "点, 剩余" + zlm[1] + "点血量" + "<br />");
+                    if(zlm[1] <= 0) {
+                        document.write("韩宝利胜利")
+                        break;
+                    }
+
+                    document.write("--------------------------------------张利民的回合开始-----------------------"+"<br />")
+                    document.write(zlm[0] + "对" + hbl[0] + "发起技能百分比伤害" + "<br />");
+                    hbl[1] = parseInt(hbl[1] *0.6);
+                    document.write(hbl[0] + "的血量减少了" + parseInt(hbl[1] *0.6) + "点, 剩余" + hbl[1] + "点血量" + "<br / >");
+                    if(hbl[1] <= 0){
+                        document.write("张利民胜利")
+                        break;
+                    }
+                break;
+                case 4:
+                    document.write("------------------------------------韩宝利的回合开始----------------------"+"<br />")
+                    document.write(hbl[0] + "对" + zlm[0] + "发起大招终极刺杀" + "<br />");
+                    zlm[1] = zlm[1] - hbl[4];
+                    document.write(zlm[0] + "的血量减少了" + hbl[4] + "点, 剩余" + zlm[1] + "点血量" + "<br />");
+                    if(zlm[1] <= 0) {
+                        document.write("韩宝利胜利")
+                        break;
+                    }
+
+
+                    document.write("-------------------张利民的回合开始--------------------"+"<br />")
+                    if(zlm[1] <= 0) {
+                        document.write("韩宝利胜利")
+                        break;
+                    }
+                    document.write(zlm[0] + "对自己" + "释放超级大奶" + "<br />");
+                    zlm[1] = zlm[1] + zlm[4];
+                    document.write(zlm[0] + "的血量恢复了" + zlm[4] + "点, 剩余" + zlm[1] + "点血量" + "<br />");
+                break;
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//       while(true) {
+//               switch (parseInt(Math.random() * 3 + 2)) {
+//                   case 2:
+//
+//                        if (zlm <= 0) {
+//                            document.write(hbl[0] + "获胜");
+//                        } else {
+//                            document.write("----------------韩宝利的回合开始------------------"+"<br />")
+//                            document.write(hbl[0] + "对" + zlm[0] + "发起普通攻击" + "<br />");
+//                            zlm[1] = zlm[1] - hbl[2];
+//                            document.write(zlm[0] + "的血量减少了" + hbl[2] + "点, 剩余" + zlm[1] + "点血量" + "<br />");
+//                        }
+//                       break;
+//
+//                   case 3:
+//                       document.write("韩宝利的回合开始"+"<br />")
+//                       document.write(hbl[0] + "对" + zlm[0] + "发起技能随机伤害" + "<br />");
+//                       zlm[1] = zlm[1] - hbl[3];
+//                       document.write(zlm[0] + "的血量减少了" + hbl[3] + "点, 剩余" + zlm[1] + "点血量" + "<br />");
+//                       break;
+//                   case 4:
+//                       document.write("韩宝利的回合开始"+"<br />")
+//                       document.write(hbl[0] + "对" + zlm[0] + "发起大招终极刺杀" + "<br />");
+//                       zlm[1] = zlm[1] - hbl[4];
+//                       document.write(zlm[0] + "的血量减少了" + hbl[4] + "点, 剩余" + zlm[1] + "点血量" + "<br />");
+//                       break;
+//               }
+//
+//
+//           if (hbl[1] > 0) {
+//               document.write("张利民的回合开始"+"<br />")
+//               switch (parseInt(Math.random() * 3 + 2)) {
+//                   case 2:
+//                       document.write(zlm[0] + "对" + hbl[0] + "发起普通攻击" + "<br />");
+//                       hbl[1] = hbl[1] - zlm[2];
+//                       document.write(hbl[0] + "的血量减少了" + zlm[2] + "点, 剩余" + hbl[1] + "点血量" + "<br />");
+//                       break;
+//                   case 3:
+//                       document.write(zlm[0] + "对" + hbl[0] + "发起技能百分比伤害" + "<br />");
+//                       hbl[1] = parseInt(hbl[1] *0.6);
+//                       document.write(hbl[0] + "的血量减少了" + parseInt(hbl[1] *0.6) + "点, 剩余" + hbl[1] + "点血量" + "<br />");
+//                       break;
+//                   case 4:
+//                       document.write(zlm[0] + "对自己" + "释放超级大奶" + "<br />");
+//                       zlm[1] = zlm[1] + zlm[4];
+//                       document.write(zlm[0] + "的血量恢复了" + zlm[4] + "点, 剩余" + zlm[1] + "点血量" + "<br />");
+//                       break;
+//               }
+//           }else if (hbl[1] <= 0){
+//               document.write(zlm[0]+"获胜");
+//           }
+//       }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

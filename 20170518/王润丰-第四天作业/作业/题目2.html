@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阶乘2</title>
+    <script type="text/javascript">
+        // function fac(m){
+        //     if(m>0){
+        //         var temp = 1;
+        //         for(var i = 1; i <= m; i ++){
+        //             temp *= i;
+        //         }
+        //         return temp;
+        //     }else{
+        //         return 0;
+        //     }
+        // }
+
+        // function result(){
+        //     var x,y,z;
+        //     for(var i = 100; i < 1000; i ++){
+        //         x = fac(parseInt(i/100)%10);
+        //         y = fac(parseInt(i/10)%10);
+        //         z = fac(i%10);
+        //         if(i == x + y + z){
+        //             console.log(i);
+        //         }
+        //     }
+        //     return "该三位数等于其每位数字的阶乘之和"
+        // }
+
+        // console.log(result());
+
+        function fac(m){
+            if(m > 0){
+                var temp = 1;
+                for(var i = 1; i <= m; i ++){
+                    temp *= i;
+                }
+                return temp;
+            }else{
+                return 0;
+            }
+        }
+
+
+        //获得各个位数阶乘之和的函数
+        function result(n){
+            var x,sum;
+            for(var i = Math.pow(10,n-1); i < Math.pow(10,n); i ++){
+                sum = 0;
+                for(var j = 1; j < n; j ++){
+                    x = fac(parseInt(i/Math.pow(10,j))%10);
+                    sum += x;
+                }
+                sum += fac(i%10);
+                if(i == sum){
+                    return i;
+                }
+            }
+        }
+
+        var input = parseInt(prompt("请输入n，我将列举n位数中，各个数位数字的阶乘之和等于其本身的数字"));
+        console.log(result(input));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

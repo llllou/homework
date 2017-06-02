@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script>
+             var heroOne="路飞",hp=120000,atk=parseInt(Math.random()*201+500),def=100;
+             var heroTwo="凯多",HP=100000,ATK=parseInt(Math.random()*201+1000),DEF=200;
+
+             while(true){
+                  console.log(heroOne+"攻击了"+heroTwo);
+                  DEF-=20;
+                  HP=HP-atk
+                  atk+=5;
+                  console.log(heroTwo+"的HP减少了"+atk);
+
+                  console.log(heroTwo+"攻击了"+heroOne);
+                  def-=10;
+                  hp=hp-ATK
+                  ATK+=2;
+                  console.log(heroOne+"的HP减少了"+ATK);
+
+
+                  if(atk>650){
+                      alert("路飞蓄力一击！");
+                  }
+                  if(ATK>1100){
+                      alert("凯多蛮牛冲撞！");
+                  }
+
+
+                  if(hp>=9000){
+                         console.log("一档！防御增加3、攻击力增加20！");
+                         def+=3;
+                         atk+=2;
+                  }
+                  else if(hp>=6000){
+                         console.log("二挡！防御增加2、攻击力增加100！");
+                         def+=2;
+                         atk+=10;
+                  }
+                  else if(hp>=3000){
+                         console.log("三档！防御增加1、攻击力增加100！");
+                         def+=1;
+                         atk+=20;
+                  }
+                  else if(hp>=2000){
+                         console.log("四挡！攻击力增加150！");
+                         atk+=150;
+                  }
+                  else if(hp>=600){
+                         console.log("五挡！攻击力增加10000！");
+                         atk+=10000;
+                  }
+
+                  if(HP<30000){
+                         console.log("武装色！防御增加50、攻击力增加20！");
+                         def+=50;
+                         atk+=10;
+                  }
+                  else if(HP<10000){
+                         console.log("龟形态！防御增加100、攻击力增加50！");
+                         def+=100;
+                         atk+=20;
+                         // break;
+                  }
+                  else if(HP<5000){
+                         console.log("暴怒！攻击力增加700！");
+                         atk+=600;
+                  }
+                  if(hp<=500){
+                      console.log(heroOne+"战败");
+                      break;
+                  }
+                  if(HP<4000){
+                      console.log(heroTwo+"战败");
+                      break;
+                  }
+
+             }
+ 
+
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

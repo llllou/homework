@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        console.log("鸣人、佐助、小樱大战大蛇丸。");
+        var mingren = "鸣人",HP1 = 700,ATK1 = parseInt(Math.random()*(150-100))+100,SP1= 100,S1 = 1,SM1 = 1;
+        var zuozhu = "佐助",HP2 = 800,ATK2 = parseInt(Math.random()*(200-150))+150,SP2= 0,S2 = 1,SM2 = 1;
+        var xiaoying = "小樱",HP3 = 900,ATK3 = parseInt(Math.random()*(300-200))+200,SP3 = 200,S3 = 2,SM3 = 2;
+        var dashewan = "大蛇丸",HP4 = 3000,ATK4 =parseInt(Math.random()*(400-300))+300,SP4 = 500,S4 = 5;
+        while (true){
+           //小樱技能
+            if(HP3 > 0) {
+                if (SP3 > 0 && HP3 > 0) {
+                    HP1 = HP1 + 100;
+                    HP2 = HP2 + 100;
+                    SP3 = SP3 - 100;
+                    console.log(xiaoying + "发动回复技能" + mingren + zuozhu + "生命回复100");
+                }
+                if (HP1 <= 0 && S3 > 0) {
+                    HP1 = HP1 + (parseInt(Math.random() * (300 - 200)) + 200) * 2;
+                    ATK1 = 200;
+                    S3--;
+                    console.log(xiaoying + "重生了" + mingren + "并回复了" + ((parseInt(Math.random() * (300 - 200)) + 200) * 2) + "生命值");
+                } else if (HP2 <= 0 && S3 > 0) {
+                    HP2 = HP2 + (parseInt(Math.random() * (300 - 200)) + 200) * 2;
+                    ATK1 = 300;
+                    S3--;
+                    console.log(xiaoying + "重生了" + zuozhu + "并回复了" + ((parseInt(Math.random() * (300 - 200)) + 200) * 2) + "生命值");
+                } else if (HP3 <= 0 && S3 > 1) {
+                    HP3 = HP3 + (parseInt(Math.random() * (300 - 200)) + 200) * 3;
+                    ATK3 = ATK3*2;
+                    S3--;
+                    console.log(xiaoying + "重生并强化了自己" + "并回复了" + ((parseInt(Math.random() * (300 - 200)) + 200) * 3) + "生命值");
+                }
+            }
+            //鸣人技能
+            if(HP1 > 0) {
+                if (HP1 <= 500 && S1 >= 0) {
+                    HP4 = HP4 - parseInt(ATK1 * 3 / 0.7);
+                    S1--;
+                    console.log(mingren + "发动影分身技能对" + dashewan + "造成" + parseInt(ATK1 * 3 / 0.8) + "伤害" + "大蛇丸当前生命剩余" + HP4);
+                }
+                if(SP1 >=300){
+                    HP1=HP1+500;
+                    ATK1 = 150;
+                    SP1 -= 300;
+                    console.log(mingren+"怒气爆发，变身后生命值加"+500+"，攻击力加"+150);
+                }
+            }
+            //佐助技能
+            if(HP3 > 0){
+                if(SP2 >=500){
+                    HP2=HP2+400;
+                    ATK2 = 200;
+                    SP2 -= 200;
+                    console.log(zuozhu+"怒气爆发，变身后生命值加"+500+"，攻击力加"+200);
+                }
+                if (HP2 <= 400 && S1 >= 0) {
+                    HP4 = HP4 - parseInt(ATK2 * 2);
+                    S1--;
+                    console.log(zuozhu + "发动雷切技能对" + dashewan + "造成" + parseInt(ATK2*2) + " 的伤害" + "大蛇丸当前生命剩余" + HP4);
+                }
+            }
+            //大蛇丸技能
+            if(HP4 > 0){
+                if(HP4 < 1000){
+                    HP4 = HP4 +200;
+                }
+                if(SP4 >= 1000){
+                    HP1 = HP1-ATK4;
+                    HP2 = HP2-ATK4;
+                    HP3 = HP3-ATK4;
+                    SP4 -= 1000;
+                    console.log(dashewan+"发动潜影多蛇手技能对小樱、佐助、鸣人造成了"+ATK4+"点群攻伤害。"+
+                        mingren+"生命剩余"+HP1+zuozhu+"生命剩余"+HP2+xiaoying+"生命剩余"+HP3);
+                }
+                if(HP4 < 500 && S4 > 1){
+                    HP4 += 1000;
+                    ATK4 += 300;
+                    S4--;
+                    console.log(dashewan+"蜕变为白磷大蛇，攻击力大幅提升");
+                }
+            }
+            //判断是否阵亡。
+            var sum = 0;
+            if(HP1 <= 0 && SM1 > 0){
+                console.log("鸣人阵亡。");
+                HP1 = 0;
+                ATK1 = 0;
+                SM1--;
+                sum++;
+            }
+            if(HP2 <= 0 && SM2 > 0){
+                console.log("佐助阵亡。");
+                HP2 = 0;
+                ATK2 = 0;
+                SM2--;
+                sum++;
+            }
+            if(HP3 <= 0 && SM3 > 1){
+                console.log("小樱抗住了最后一击。");
+                ATK3 = ATK4*0.5;
+                HP3 = 200;
+                SM3--;
+                sum++;
+            }
+            if(HP3 <= 0 && SM3 > 0){
+                console.log("小樱阵亡。");
+                HP3 = 0;
+                ATK3 = 0;
+                SM3--;
+                sum++;
+            }
+            if(HP4 <= 0 ){
+                console.log("大蛇丸阵亡。");
+                console.log("大蛇丸失败了。");
+                break;
+            }
+            if(SM1+SM2+SM3==0 ){
+                console.log("鸣人、佐助、小樱失败了。");
+                break;
+            }
+            if(HP1+HP2+HP3>0 && HP4 <= 0){
+                console.log("鸣人、佐助、小樱胜利了。");
+                break;
+            }
+            HP4 = HP4-(ATK1+ATK2+ATK3);
+            SP2 = SP2+ATK3;
+            SP4 = SP4+ATK1+ATK2+ATK3;
+            console.log(mingren+zuozhu+"和"+xiaoying+"合力攻击了"+dashewan+"造成了"+(ATK1+ATK2+ATK3)+"点伤害，大蛇丸当前生命值剩余"+HP4);
+            HP1 = HP1-parseInt(ATK4/3);
+            SP1 = SP1+parseInt(ATK4/3);
+            HP2 = HP2-parseInt(ATK4/3);
+            HP3 = HP3-parseInt(ATK4/3);
+            SP4 = SP4+ATK4;
+            console.log(dashewan+"大蛇丸发动攻击对"+mingren+zuozhu+xiaoying+"造成"+parseInt(ATK4/3)+"的平均伤害。"+
+                mingren+"生命剩余"+HP1+zuozhu+"生命剩余"+HP2+xiaoying+"生命剩余"+HP3);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

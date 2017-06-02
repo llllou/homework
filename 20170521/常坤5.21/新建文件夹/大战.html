@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var hero1="侠客",HPa=1700;
+			var hero2="刺客",HPb=1600;
+			var q=parseInt(Math.random()*150+1);
+			while(true){
+				var c=parseInt(Math.random()*5+1);
+				document.write(hero1+"选择技能" + "<br>");
+				if(c==1||c==2||c==3){
+					if(c==1){
+						document.write(hero1+"使用技能伏魔刀法向"+hero2+"发出了攻击" + "<br>");
+						var q=parseInt(Math.random()*150+1);
+						for(;q<100;){
+							q=parseInt(Math.random()*150+1);
+						}
+						HPb-=q;
+						if(q>140){
+							document.write("恭喜！暴击伤害" + "<br>");
+						}
+						document.write(hero2+"的血减少了"+q +"目前血量为"+HPb+ "<br>");
+					}
+					else if(c==2){
+						document.write(hero1+"使用技能破斧沉舟向"+hero2+"发出了攻击" + "<br>");
+						var q=parseInt(Math.random()*200+1);
+						for(;q<150;){
+							q=parseInt(Math.random()*200+1);
+						}
+						HPb-=q;
+						if(q>180){
+							document.write("恭喜！暴击伤害" + "<br>");
+						}
+						document.write(hero2+"的血减少了"+q +"目前血量为"+HPb+ "<br>");
+					}else{
+						document.write(hero1+"使用技能六脉神剑向"+hero2+"发出了攻击" + "<br>");
+						var q=parseInt(Math.random()*250+1);
+						for(;q<200;){
+							q=parseInt(Math.random()*250+1);
+						}
+						HPb-=q;
+						if(q>240){
+							document.write("恭喜！暴击伤害" + "<br>");
+						}
+						document.write(hero2+"的血减少了"+q +"目前血量为"+HPb+ "<br>");
+					}
+				}else{
+					document.write(hero1+"技能发动错误！" + "<br>");
+				}
+				if(HPb<=0){
+                    document.write(hero2+"失败了！!!!!!!!!!!!!!!!!!");
+                    break;
+                }
+//				刺客属性
+				var d=parseInt(Math.random()*4+1);
+				document.write(hero2+"选择技能" + "<br>");
+				if(d==1||d==2||d==3){
+					if(d==1){
+						document.write(hero2+"使用技能飞花剑雨向"+hero1+"发出了攻击" + "<br>");
+						var z=parseInt(Math.random()*180+1);
+						for(;z<120;){
+							z=parseInt(Math.random()*180+1);
+						}
+						HPa-=q;
+						if(z>170){
+							document.write("恭喜！暴击伤害" + "<br>");
+						}
+						document.write(hero1+"的血减少了"+q+"目前血量为"+HPa + "<br>");
+					}else if(d==2){
+						document.write(hero2+"使用技能万影迷踪拳向"+hero1+"发出了攻击" + "<br>");
+						var z=parseInt(Math.random()*210+1);
+						for(;z<150;){
+							z=parseInt(Math.random()*210+1);
+						}
+						HPa-=q;
+						if(z>190){
+							document.write("恭喜！暴击伤害" + "<br>");
+						}
+						document.write(hero1+"的血减少了"+q+"目前血量为"+HPa + "<br>");
+					}else{
+						document.write(hero2+"使用技能冷嘲热讽向"+hero1+"发出了攻击" + "<br>");
+						var z=parseInt(Math.random()*270+1);
+						for(;z<230;){
+							z=parseInt(Math.random()*270+1);
+						}
+						HPa-=q;
+						if(z>260){
+							document.write("恭喜！暴击伤害" + "<br>");
+						}
+						document.write(hero1+"的血减少了"+q+"目前血量为"+HPa + "<br>");
+					}
+				}else{
+					document.write(hero2+"技能发动错误！"+"<br/>");
+				}
+				if(HPa<=0){
+                    document.write(hero1+"失败了！!!!!!!!!!!!!!!!");
+                    break;
+                }
+                
+			}
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

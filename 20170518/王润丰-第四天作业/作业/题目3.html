@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒置</title>
+    <script type="text/javascript">
+        var input = prompt("请输入一个数字，我可以将他前后倒置");
+        var n = parseInt(input);
+        var l = input.length
+        function rev(sum){
+            var sum = 0;
+            var x;
+            for(var i = 1; i < l; i ++){
+                x = parseInt(n/Math.pow(10,i))%10;
+                sum += x * Math.pow(10,l-i-1);
+            }
+            sum += n%10*Math.pow(10,l-1);
+            return sum;
+        }
+        console.log(rev(n));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function jiecheng(a){
+				var ji=1;
+				for(var i=a;i>=1;i--){
+					ji*=i;
+				}
+				return ji;
+			}
+			var ge,shi,bai;
+			function fun(b){
+				bai=parseInt(b/100);
+		        shi=parseInt(b/10)%10;
+		        ge=b%10;
+		        sum=jiecheng(bai)+jiecheng(shi)+jiecheng(ge);
+		        return sum;
+			}
+			for(var num=100;num<=999;num++){
+				if(num==fun(num)){
+					console.log(num);
+				}
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

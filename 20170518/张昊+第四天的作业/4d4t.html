@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+//        function ys(a){
+//            var sum = 0;
+//            for(var i = 1 ; i < a ; i++){
+//                if(a%i==0){
+//                    sum += i;
+//                }
+//            }
+//            return sum;
+//        }
+//        for(var A = 1 ; A < 3000 ; A++){
+//            for(var B = 1 ; B < A ; B++){
+//                if(ys(A) == B && ys(B) == A){
+//                    console.log(A+"和"+B);
+//                }
+//            }
+//        }
+        function ys(a) {
+            var sum = 0;
+            for (var i = 1 ; i < a ; i++){
+                if(a % i == 0){
+                    sum += i;
+                }
+            }
+            return sum;
+        }
+        for (var A = 1 ; A < 3000 ; A++){
+            var B = ys(A);
+            if(A ==ys(B) && B != A){
+                console.log(A+"和"+B);
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

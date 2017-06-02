@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+    function jc(a) {
+        var sum = 1;
+        for (var t = 1;  t<= a ; t++){
+            sum *= t;
+        }
+        return sum;
+    }
+    jc(10);
+    for (var i = 100 ; i <= 999 ; i++){
+        var b = parseInt(i / 100);
+        var s = parseInt(i % 100 / 10);
+        var g = parseInt(i % 10);
+        if(jc(b)+jc(s)+jc(g)==i){
+            console.log(i);
+        }
+    }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

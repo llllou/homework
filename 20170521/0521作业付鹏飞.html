@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var P1="德莱文",HP1=5000,gongjili1=800,fang1=100;
+            var P2="后羿",HP2=8000,gongjili2=500,fang2=100;
+
+            while(true){
+                console.log(P1+"攻击了"+P2);
+                HP2=HP2-(gongjili1-fang2);
+                console.log(P2+"受到了来自"+P1+(gongjili1-fang2)+"点伤害");
+
+                console.log(P2+"攻击了"+P1);
+                HP1=HP1-(gongjili2-fang1);
+                console.log(P1+"受到了来自"+P2+(gongjili2-fang1)+"点伤害");
+
+                if (HP1<=2000) {
+                    console.log(P1+"触发被动！攻击提升百分之二十");
+                    gongjili1=gongjili1*0.2+gongjili1;
+                }
+                if (HP2<=3000) {
+                    console.log(P2+"触发被动！防御提升百分之二十，攻击提升百分之十");
+                    fang2=fang2*0.2+fang2;
+                    gongjili2=gongjili2*0.1+gongjili2;
+                }
+                if (HP1<=0) {
+                    console.log("奥买噶！"+P1+"被终结了");
+                    break;
+                }
+                if (HP2<=0) {
+                    console.log("好可惜！"+P2+"还是不敌"+P1);
+                    break;
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

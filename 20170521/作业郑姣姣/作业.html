@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+        
+                var hero1="狄仁杰",gongji1=800,hp1=12000;fangyu=200;
+                var hero2="荆轲",gongji2=850,hp2=11000;fangyu=250;
+                var hero3="鲁班",gongji3=550,hp3=9000;fangyu=280;
+                var hero4="曹操",gongji4=620,hp4=9800;fangyu=180;
+                while(true){
+                    console.log(hero1+"攻击了"+hero2);
+                    hp2=hp2-gongji2;
+                    console.log(hero2+"的血减少了"+gongji1);
+                    console.log(hero2+"攻击了"+hero1);
+                    hp1=hp1-gongji1;
+                    console.log(hero1+"的血减少了"+gongji2);
+                    console.log(hero3+"攻击了"+hero4);
+                    hp4=hp4-gongji4;
+                    console.log(hero4+"的血减少了"+gongji3);
+                    console.log(hero4+"攻击了"+hero3);
+                    hp3=hp3-gongji3;
+                    console.log(hero3+"的血减少了"+gongji4);
+                    if(hp2<=1000){
+                        console.log("发动技能！血量增加1000");
+                        hp2+=100;
+                    }
+                    
+                    if(hp1<=0){
+                        console.log(hero1+"战败了！");
+                        break;
+                    }
+                    if(hp2<=0){
+                        console.log(hero2+"战败了！");
+                        break;
+                    }
+                    if(hp3<=0){
+                        console.log(hero3+"战败了！");
+                        break;
+                    }
+                    if(hp4<=0){
+                        console.log(hero4+"战败了！");
+                        break;
+                    }
+                    // if(hp1<=500){
+                    //     console.log("回城");
+                    //     hp1+=10000;
+                    // }
+                }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

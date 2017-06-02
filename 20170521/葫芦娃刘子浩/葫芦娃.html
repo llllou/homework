@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        var yingxiong1 = "葫芦娃",HP=5000,gongjili=500;
+        var yingxiong2 = "奥特曼",HP1=4500,gongjili1=700;
+
+        while(true){
+            console.log(yingxiong1+"攻击了"+yingxiong2+yingxiong2);
+            HP1=HP1-gongjili;
+            console.log(yingxiong2+"的HP减少了"+gongjili+yingxiong2+"血量为"+HP1);
+
+            console.log(yingxiong2+"攻击了"+yingxiong1);
+            HP=HP-gongjili1;
+            console.log(yingxiong1+"的HP减少了"+gongjili1+yingxiong1+"血量为"+HP);
+            if(HP1>=305 && HP1 <=3000){
+                console.log(yingxiong2+"发动技能！逃跑");
+                if(HP1>=305 && HP1 <=3000){
+                    console.log(yingxiong1+"发动技能！追击");
+                }else {
+                    console.log(yingxiong1+"发动技能！追击，失败");
+                    break;
+                }
+            }
+            if(HP1>=600 && HP1<=1200  ){
+                console.log(yingxiong2+"发动技能！X 葫芦娃受到600伤害");
+                HP=HP-gongjili1-600;
+            }
+            if(HP1<=900  ){
+                console.log(yingxiong2+"发动技能！充电宝 攻击力变为1000并每回合回复200HP 不叠加");
+                HP1=HP+200;
+                gongjili1=1000;
+            }
+            if(HP>=600 && HP<=3400 ){
+                console.log(yingxiong1+"发动技能！金刚不坏 每回合回复300HP 不叠加");
+                HP=HP+300;
+            }
+
+            if( HP<=800 ){
+                console.log(yingxiong1+"发动技能！爷爷救我 每回合回复600HP 不叠加");
+                HP=HP+600;
+                console.log(yingxiong1+"血量为"+HP);
+            }
+            if(HP<=0){
+                console.log(yingxiong1+"失败了！胜败乃兵家常事 大侠请重新来过");
+                break;
+            }
+            if(HP1<=0){
+                console.log(yingxiong2+"失败了！胜败乃兵家常事 大侠请重新来过");
+                break;
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

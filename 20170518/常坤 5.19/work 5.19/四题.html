@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function yueshu(a){
+				var sum=0;
+				for(var i=1;i<a;i++){
+					if(a%i==0){
+						sum+=i;
+					}
+				}return sum;
+			}
+			for(var A=0;A<=3000;A++){
+				for(var B=0;B<=A;B++){
+					if(yueshu(A)==B&&yueshu(B)==A){
+						
+						console.log(A+"和"+B+"是亲密数");
+						}
+					}
+			}
+				
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

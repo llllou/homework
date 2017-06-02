@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function fun(a)
+			{
+				var cound=0;
+				while(true)
+				{
+					a/=10;
+					cound++;
+					if(a>=0&&a<10){
+						break;
+					}
+				}
+				return cound;
+			}
+			function rev(num){
+				var j=fun(num);
+				var sum=0;
+				var k=0;
+	            for(var i=j;i>=0;i--){
+	            	sum+=parseInt(num/(Math.pow(10,i)))*Math.pow(10,k);
+	            	num=num%Math.pow(10,i);
+					k++;
+            	}return sum;
+			}
+			var b=prompt("输入一个数!");
+			alert("逆序为"+rev(b));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

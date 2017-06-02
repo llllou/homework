@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+			var hero1='sabor',saborHp=2000,saborAtn=700,saborDef=600;
+			var hero2='baserker',baserkerHp=1800,baserkerAtn=900,baserkerDef=400;
+			var hero3='archer',archerHp=1900,archerAtn=800,archerDef=500;
+			function getPerson(){
+				 var attacker=parseInt(Math.random()*3)+1;
+				 var defender=parseInt(Math.random()*3)+1;
+				 if(attacker == defender){
+				 	getPerson();
+				 
+				 }else{
+				 	var person={
+				 		attack:attacker,
+				 		defend:defender
+				 	};
+				 }
+				 console.log(person);
+			}
+			getPerson();
+
+			while(true){
+				var person=getPerson();
+				var attacker=person.attack;
+				var defender=person.defend;
+				switch(perspn.attack){
+					case 1:
+					if(person.defend == 2){
+						console.log(hero1+'对'+hero2+'发起了攻击');
+						var drop=saborAtn-baserkerDef;
+						console.log(hero2+'的hp减少了'+drop);
+						console.log(hero2+'的hp变为'+(baserkerHp-drop));
+					}else if(person.defend == 3){
+						console.log(hero1+'对'+hero3+'发起了攻击');
+						var drop=saborAtn-archerDef;
+						console.log(hero2+'的hp减少了'+drop);
+						console.log(hero2+'的hp变为'+(archerHp-drop));
+					}
+					break;
+					case 2:
+					if(person.defend == 1){
+						console.log(hero2+'对'+hero1+'发起了攻击');
+						var drop=baserkerAtn-saborDef;
+						console.log(hero1+'的hp减少了'+drop);
+						console.log(hero1+'的hp变为'+(saborHp-drop));
+					}else if(person.defend == 3){
+						console.log(hero2+'对'+hero3+'发起了攻击');
+						var drop=baserkerAtn-archerDef;
+						console.log(hero3+'的hp减少了'+drop);
+						console.log(hero3+'的hp变为'+(archerHp-drop));
+					}
+					break;
+					case 3:
+						if(person.defend == 1){
+						console.log(hero3+'对'+hero1+'发起了攻击');
+						var drop=archerAtn-saborDef;
+						console.log(hero1+'的hp减少了'+drop);
+						console.log(hero1+'的hp变为'+(saborHp-drop));
+					}else if(person.defend == 2){
+						console.log(hero3+'对'+hero2+'发起了攻击');
+						var drop=archerAtn-baserkerDef;
+						console.log(hero2+'的hp减少了'+drop);
+						console.log(hero2+'的hp变为'+(baserkerHp-drop));
+					}
+				}
+				if(saborHp <=0 ){
+					console.log(hero1+'输了');
+				}else if(baserkerHp <= 0){
+					console.log(hero2+'输了');
+				}else if(archerHp <= 0){
+					console.log(hero3+'输了');
+				}
+			}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

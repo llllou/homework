@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var i = "うちは マダラ(宇智波最强的男人)", HP = 2000000, AD = parseInt(Math.random() * 15000 + 10000), nuqi = 0;
+        var l = "おおつつき かぐや(卯之女神)", HP1 = 2000000, AD1 = parseInt(Math.random() * 15000 + 10000), nuqi1 = 0;
+
+
+
+        while (true) {
+            //辉夜的普A
+            console.log(l + "攻击" + i);
+            HP = HP - AD1;
+            console.log(i + "减少了" + AD + "血量");
+            //斑的怒气招
+            while (nuqi < 100) {
+                nuqi=nuqi+parseInt(Math.random()*100);
+                break;
+            }
+            if (nuqi >= 100) {
+                console.log("这是什么表情……我们之间的差距你不是早已领教过了吗？          —————轮墓·边狱")
+                HP = HP - AD1 * 5;
+                console.log(l + "减少了" + AD1 * 5 + "血量");
+                nuqi -= 100;
+            }
+            //斑的普A
+            console.log(i + "攻击" + l);
+            HP1 = HP1 - AD;
+            console.log(l + "减少了" + AD1 + "血量");
+
+            //辉夜的怒气招
+            while (nuqi1 < 100) {
+                nuqi1+=parseInt(Math.random()*100);
+                break;
+            }
+            if (nuqi1 >= 100) {
+                console.log("就在这里，将你彻底消失！                                  ————无限月读")
+                HP1 = HP1 - AD * 5;
+                console.log(i + "减少了" + AD1 * 5 + "血量");
+                nuqi1 -= 100;
+            }
+
+            if (HP<=1300000&&HP1>800000){
+                var iA="完全体须佐能乎",HP00=HP,AD00=parseInt(Math.random()*20000+10000),nuqi=0;
+                iA=i;
+                console.log("真要说有什么东西留下来的话……那就是仇恨.         ————完全体须佐能乎   (ꏿ᷄౪ ꏿ᷄ ̨ )͞ 当时我就惊呆了");
+                console.log("忍术————八尺琼勾玉                                                      ರೃ∀ರೃ装不上去了！！！");
+                HP1=HP1-AD00*4;
+                console.log(l+'受到了很重的伤害'+'大概'+parseInt(AD00*8)+'伤害');
+            }
+
+            if (HP1<=1300000&&HP1>1000000){
+                var lA="尾兽化",HP11=HP1,AD11=parseInt(Math.random()*20000+10000),nuqi=0;
+                lA=l;
+                console.log("我恨你们，羽衣、羽村，你们都是哀家的            —————尾兽化   ╰_ ╯      ");
+                console.log("尾兽化————终焉求道玉                                                       (๑‾᷅^‾᷅๑) 嫌弃你    ");
+                HP00=HP00-AD11*4;
+                console.log(iA+'心灵有些奔溃▄█▀█●给跪了'+'受到了'+AD11*8+'伤害');
+            }
+
+            //最终大招
+            if (HP <= 500000&&HP>100000) {
+                console.log("这世上的事并非皆能如你所愿                                ————地爆天星");
+                HP1 = HP1 - AD * 5;
+                console.log(l+"受到成吨的伤害为"+AD*5);
+            }
+            if (HP1<= 400000&&HP1>100000) {
+                console.log("从哪里来都好，母亲她很强，比谁都强                          ————神·树界降诞");
+                HP = HP - AD1 * 5;
+                console.log(i+"受到巨大的伤害为"+AD1*5);
+            }
+            //结束语
+            if (HP <= 0) {
+                console.log(l + ":我将在这里，把你们全部消灭。")
+                break;
+            }
+            if (HP1 <= 0) {
+                console.log(i + ":这个世界太小了，只够我一个人折腾。");
+                break;
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

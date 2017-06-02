@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+        	var daohang=prompt("异次元人亚波人派出了超兽贝劳克恩袭击地球。作为银河联邦一员的艾斯·奥特曼从佐菲·奥特曼和赛文·奥特曼那里取到了可以证明身份的证据～奥特戒指，并交给了北斗·星司和南·夕子，随后二人加入了超兽攻击队TAC队，肩负起保卫地球的重任。当戒指发光时，两人就合为一体变身为艾斯·奥特曼，抵抗异次元人亚波人及其制造的超兽的攻击。第28集后南·夕子离开地球返回自己的故乡月球，北斗·星司独自一人担负起保卫地球的责任。");
+
+        	var atm="奥特曼",HP1=75000,gongji1=1200;
+
+        	var xgs="小怪兽",HP2=69000,gongji2=1000;
+
+        	var dbs="大BOSS",HP3=70000;gongji3=1500;
+
+        	while(true){
+
+        		console.log(atm+"攻击了"+dbs);
+
+        		HP3=HP3-gongji1;
+
+        		console.log(dbs+"的血量剩余"+HP3);
+
+        		console.log(xgs+"攻击了"+dbs);
+
+        		HP3=HP3-gongji2;
+
+        		console.log(dbs+"的血量剩余"+HP3);
+
+        		console.log(dbs+"攻击了"+atm);
+
+        		HP1=HP1-gongji3;
+
+        		console.log(atm+"的血量剩余"+HP1);       		
+        		console.log(dbs+"攻击了"+xgs);
+
+        		HP2=HP2-gongji3;
+
+        		console.log(xgs+"的血量剩余"+HP2);
+        		
+        		if(HP1<=20000){
+
+        			console.log("奥特曼为透支自己生命值");
+
+        			HP1-=5000;
+        		}
+
+        		if(HP1<=0){
+
+                    console.log("为好伙伴小怪兽增加血量");
+
+                    break;
+                }
+
+        		if(HP2<=24000){
+
+        			console.log("小怪兽发动大招，攻击力增加");
+
+        			HP2+=1000;
+        		}
+
+        		if(HP2<=0){
+
+                    console.log(xgs+"获得诺贝尔大奖");
+
+                    break;
+                }
+
+        		if(HP3<=25000){
+
+        			console.log("大BOSS发动大招，攻击力增加");
+
+        			HP3+=700;
+        		}
+
+        	
+                if(HP3<=0){
+
+                    console.log(dbs+"可惜差一点就打败了小怪兽，最终含泪而终");
+
+                    break;
+                }
+        	}
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

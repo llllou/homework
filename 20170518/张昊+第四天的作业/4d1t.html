@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function jc(a) {
+            var sum = 1 ;
+            for (var i = 1 ; i <= a ;i++){
+                sum *= i;
+                console.log(sum);
+            }
+
+            return sum;
+        }
+        var cnd = 0;
+        for (var a = 1 ; a <= 10 ; a++){
+            cnd += jc(a);
+            console.log(cnd);
+        }
+        console.log(cnd);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

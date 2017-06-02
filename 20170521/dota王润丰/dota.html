@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dota</title>
+    <script type="text/javascript">
+        // 英雄列表
+        // 名称，血量，攻击，护甲，是否被控制（1没被控制，0被控制）
+        var slardar = ["大鱼人",620,55,7,1];
+        var monkeyKing = ["齐天大圣",560,55,6,1]; 
+
+        // 总开关
+        fight(slardar,monkeyKing,slardarSkill,monkeyKingSkill);
+
+        // 随机数
+        function ram(){
+            return parseInt(Math.random()*10);
+        }
+
+        // 战斗开始
+        function fight(heroA,heroB,skillA,skillB){
+            var refHeroA = heroA.concat(),
+                refHeroB = heroB.concat(),
+                normalDamageA, 
+                normalDamageB;
+                // i = 0,
+                // k = 0;
+                // j = 0;
+            
+            while(true){
+                    refHeroA[2] = heroA.concat()[2];
+                    refHeroB[2] = heroB.concat()[2];
+                    refHeroA[3] = heroA.concat()[3];
+                    refHeroB[3] = heroB.concat()[3];
+
+                    // heroA先手攻击
+                    console.log("-------------------" + refHeroA[0] + "的回合" + "-------------------");
+                    if(refHeroA[4] == 1){
+                        skillA(refHeroA,refHeroB);
+                        normalDamageA = damage(refHeroA[2],refHeroB[3]);
+                        refHeroB[1] -= normalDamageA;
+                        if(refHeroB[1] <= 0){
+                            console.log(refHeroA[0] + "打出了最后一击,绝杀!");
+                            console.log(refHeroB[0] + "被打败!" + refHeroA[0] + "获取胜利！");
+                            // refHeroA[1] = heroA.concat()[1];
+                            // refHeroB[1] = heroB.concat()[1];
+                            // j ++;
+                            break;
+                        }
+                        console.log(refHeroB[0] + "受到来自" + refHeroA[0] + "的普攻伤害" + normalDamageA + "点，血量变为" + refHeroB[1]);
+                    }else{
+                        refHeroA[4] = 1;
+                        console.log("本回合" + refHeroA[0] + "被控制住，无法攻击");
+                    }
+                    console.log("");
+
+                    // heroB后手攻击
+                    console.log("-------------------"  + refHeroB[0] + "的回合" + "-------------------");
+                    if(refHeroB[4] == 1){
+                        skillB(refHeroB,refHeroA);
+                        normalDamageB = damage(refHeroB[2],refHeroA[3]);
+                        refHeroA[1] -= normalDamageB;
+                        if(refHeroA[1] <= 0){
+                            console.log(refHeroB[0] + "打出了最后一击,绝杀!");
+                            console.log(refHeroA[0] + "被打败!" + refHeroB[0] + "获取胜利！");
+                            // refHeroA[1] = heroA.concat()[1];
+                            // refHeroB[1] = heroB.concat()[1];
+                            // k ++;
+                            break;
+                        }
+                        console.log(refHeroA[0] + "受到来自" + refHeroB[0] + "的普攻伤害" + normalDamageB + "点，血量变为" + refHeroA[1]);
+                    }else{
+                        refHeroB[4] = 1;
+                        console.log("本回合" + refHeroB[0] + "被控制住，无法攻击");
+                    }
+                    console.log("");
+                    // i ++;
+            }
+            // console.log(k + "和" + (k + j));
+        }
+
+        // 攻击护甲计算
+        function damage(attack,defence){
+            // 护甲降低的伤害
+            var reduceDamage = defence*0.06/(1 + 0.06*defence);
+            // 实际的伤害
+            var takeDamage = parseInt(attack*(1-reduceDamage));
+            return takeDamage;
+        }
+
+        // 大鱼人的技能
+        function slardarSkill(heroA,heroB){
+            var ramSlardar = ram();
+            var damageSlardarSkill = 0;
+            if(ramSlardar > 2 && ramSlardar <= 5){
+                heroB[4] = 0; // 打断
+                damageSlardarSkill = damage(50,heroB[3]); // 给伤害赋值，基础伤害50点
+                heroB[1] -= damageSlardarSkill; // 造成物理伤害
+                console.log("大鱼人使用了鱼人碎击，" + heroB[0] + "受到了" + damageSlardarSkill + "点伤害!");
+            }else if(ramSlardar > 5 && ramSlardar <= 7){
+                heroB[4] = 0; // 打断
+                damageSlardarSkill = damage(25,heroB[3]); // 给伤害赋值，基础伤害25点
+                heroB[1] -= damageSlardarSkill; // 造成物理伤害
+                console.log("大鱼人使用了深海重击，" + heroB[0] + "受到了" + damageSlardarSkill + "点伤害!");
+            }else if (ramSlardar == 9){
+                damageSlardarSkill = 10;
+                heroB[3] -= damageSlardarSkill; //降低护甲
+                console.log("大鱼人开大了！侵蚀雾霭！" + heroB[0] +"的护甲减少" + damageSlardarSkill + "点!!!");
+            }
+        }
+
+        // 齐天大圣的技能
+        function monkeyKingSkill(heroA,heroB){
+            var ramMonkeyKing = ram();
+            var damageMonkeyKingSkill = 0;
+            if(ramMonkeyKing > 2 && ramMonkeyKing <= 4){
+                heroB[4] = 0; // 打断
+                damageMonkeyKingSkill = damage(parseInt(heroA[2]*1.4),heroB[3]); // 基于普攻造成的伤害
+                heroB[1] -= damageMonkeyKingSkill; // 造成物理伤害
+                console.log("齐天大圣使用了棒击大地，" + heroB[0] + "受到了" + damageMonkeyKingSkill + "点伤害!");
+            }else if(ramMonkeyKing > 4 && ramMonkeyKing <= 8 ){
+                damageMonkeyKingSkill = damage(heroA[2]+50,heroB[3]); //攻击加成
+                heroA[1] += parseInt(damageMonkeyKingSkill*0.2); // 吸取造成伤害的20%血量
+                heroB[1] -= damageMonkeyKingSkill; // 造成物理伤害
+                console.log("齐天大圣使用了如意棒法，极大提升了自己的战斗力，" + heroB[0] + "受到了" + damageMonkeyKingSkill + "点伤害!");
+            }else if (ramMonkeyKing == 9){
+                heroA[2] *= 2;
+                heroA[3] += 10; //召唤猴子猴孙，一起对付对手
+                damageMonkeyKingSkill = damage(heroA[2],heroB[3]); // 猴子猴孙们和自己的伤害
+                heroB[1] -= damageMonkeyKingSkill; // 造成物理伤害
+                heroA[2] /= 2;
+                console.log("齐天大圣开大了！召唤猴子猴孙！" + heroB[0] + "受到了" + damageMonkeyKingSkill + "点伤害!!!");
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
