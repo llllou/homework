@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//9、 苹果3元，鸭梨2元，桃子1元，共100个，问情况有多少
+		for(i=1;i <= 66; i++){
+			for(var j = 1;j <= 100-i;j++){
+				for(var k=1;k <=100 -i -j ;k++){
+					if(3*i+2*j+k == 200 && i+j+k == 100){
+						console.log(i,j,k);
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

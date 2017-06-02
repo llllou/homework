@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//7 、输入一个数，判断是否是质数
+		var number=parseInt(prompt('请输入一个数字'));
+		var count=0;
+		for(var i=1;i <= number;i++){
+			if(number % i == 0){
+				count++;
+			}
+		}
+		if(count == 2){
+			console.log('这个数是质数');
+		}else{
+			console.log('这个数不是质数')
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
