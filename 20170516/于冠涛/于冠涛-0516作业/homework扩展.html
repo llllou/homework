@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script>
+            var weight=prompt("请输入您的体重（单位kg）");
+            var height=prompt("请输入您的身高（单位m）");
+            if(weight>0&&height>0){
+                    var BMI=weight/(height*height);
+                    if(BMI<18.5){
+                    alert("您属于过轻，请注意饮食搭配，不要挑食哦~");
+                }else if(BMI>=18.5&&BMI<25){
+                    alert("您属于正常，请继续保持");
+                }else if(BMI>=25&&BMI<28){
+                    alert("您属于过重，请注意饮食健康");
+                }else if(BMI>=28&&BMI<32){
+                    alert("您属于肥胖，请注意健康");
+                }else{
+                    alert("您属于非常肥胖，请当心！");
+                }
+          }else{
+            alert("您有病吧？");
+          }
+                           
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

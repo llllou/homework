@@ -1,0 +1,278 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+em{
+    font-style: normal;
+}
+body{
+    background-image: url(../image/12.jpg);
+    background-size: cover;
+    background-repeat:no-repeat; 
+    background-attachment: fixed;
+}
+.nav{
+    width:100%;
+    height:32px;
+    color:#fff;  
+    font-size:12px;
+}
+ .nav-left{
+    font-size:12px;
+    float: left;
+    height:35px;
+    line-height: 35px;
+    color:#fff;
+}
+.nav-text1{
+    margin-left:15px; 
+}
+.nav-ico{
+    display: inline-block;
+    vertical-align: middle;
+    margin:0 5px;
+}
+.nav-ico2{
+    margin: 0 3px 0 3px;
+    color:#38f;
+}
+.nav-left a{
+    color:#fff;
+}
+.nav-a1{
+    margin: 0 19px 0 10px;
+}
+.nav-a2{
+    margin: 0 17px 0 0;
+}
+.nav-right{
+    float: right;
+     height:35px;
+    line-height: 35px;
+}
+.nav-right a{
+    float: left; 
+    color:white;
+    margin-left:22px;
+}
+ .finaly{
+    width: 87px;
+    height:32px;
+    display: inline-block;
+    background-color:#398bfb;
+    text-align: center;
+}
+section .section-head{
+    width:650px;
+    height: 141px;
+    text-align: center;
+    margin: 0 auto;
+    padding:100px 0 50px;
+}
+.text-logo{
+    width: 213px;
+    height:75px;
+}
+section .section-head input{
+    width:489px;
+    height:42px;
+    border:none;
+    padding:0 40px 0 10px;
+    
+}
+button{
+    width:103px;
+    height:42px;
+    border:none;
+    position: relative;
+    text-align: center;
+/*    position: relative;
+    top:1px;*/
+}
+.text-body{
+    width:950px;
+    height:800px;
+    background-color: rgba(180,180,180,0.5);
+    margin: 0 auto;
+}
+.body-head{
+    width:950px;
+    height:42px;
+    border-bottom: 1px solid #666;
+   /* float: left;*/
+
+}
+.body-head-text{
+    height:42px;
+    line-height: 42px;
+
+}
+.body-head-text li{
+
+    text-align: center;
+    list-style-type:none;
+     float:left;   
+     padding:0 25px; 
+}
+.logo4{
+    display: inline-block;
+    float: right;
+    color:black;
+    position: relative;
+    top:-32px;
+    right:40px;
+    text-decoration: none
+}
+.logo4:hover{
+    color:blue;
+}
+ .body-head-text li:hover{
+    background:rgba(000,000,000,0.4);
+}
+.body-head-text .body-head-text-li{
+    padding-left: 50px
+}
+.a-body{
+    width:620px;
+    height:800px;
+/*    background:red;*/
+    float: left;
+}
+.a-body-wire1{
+    width:210px;
+    height: 0px;
+    background:red;
+    border: 1px solid #666;
+    position:relative;
+   top:13px;
+}
+.a-body-wire2{
+    width:210px;
+    height: 0px;
+    background:red;
+    border: 1px solid #666;
+    position:relative;
+   top:-10px;
+   left:405px;
+}
+.a-body-wire1-text1{
+    font-weight:400px;
+    color:#222;
+    position:relative;
+    left:212px;
+    top:1px;
+   /* margin-left:200px */
+}
+.a-body-text1{
+
+    width:560px;
+    overflow: hidden;
+/*    background: blue;*/
+    margin-top:-23px; 
+    padding: 30px 30px;
+}
+.a-body-text1 img{
+    width:185px;
+    float: left;
+}
+.a-body-text2{
+    text-decoration: none;
+    color:black;
+    font-size:20px;
+}
+.a-body-text2:hover{
+    text-decoration: underline;
+    color:blue;
+    font-variant: underline;
+}
+.a-body-text3{
+    font-size:10px;
+}
+.a-body-text4{
+    white-space: nowrap;
+
+    text-decoration: none;
+    color:black;
+    font-size:20px;
+}
+.a-body-text4:hover{
+    text-decoration: underline;
+    color:blue;
+    font-variant: underline;
+}
+.b-body-text1{
+    width:560px;
+    overflow: hidden;
+/*    background: blue;*/
+    text-overflow:ellipsis;
+    border-top: 2px solid #444;
+    padding: 30px 30px;
+}
+.logo1{
+    font-size: 10px;
+    color:red;
+    border:1px solid #fad;
+    border-radius: 20%;
+}
+.a-hand{
+    width:330px;
+    height:600px;
+
+    float: right;
+}
+.a-hand-onav{
+    width:100%;
+    overflow: hidden;
+
+}
+.a-hand-left{
+    margin:5px 0 20px 10px; 
+    float:left;
+    /*color:black;*/
+}
+.a-hand-right{
+    margin:5px 10px 20px 0px; 
+    font-size: 10px;
+    float:right;
+}
+.a-hand a{
+    margin-right:10px;
+    margin-bottom: 20px; 
+    float:left;
+    font-weight:400px;
+    text-decoration: none;
+    color:#222;
+}
+.a-hand a:hover{
+    text-decoration:underline;
+    color:blue;
+}
+/*.oAtext{
+    width:140px;
+    height:600px;
+    float:left;
+}
+.oAtext2{
+    width:140px;
+    height:600px;
+    float: right;
+}*/
+.logo2{
+    float: left;
+    font-size: 10px;
+    border: 1px solid #fad;
+    color:red;
+    border-radius: 20%;
+}
+.logo3{
+    width: 30px;
+    height:20px;
+  /*  background:red;*/
+    overflow: hidden;
+    position: relative;
+    right:-508px;
+    top:-28px;
+}
+.logo3:hover img{
+    margin:-top:-10px; 
+}

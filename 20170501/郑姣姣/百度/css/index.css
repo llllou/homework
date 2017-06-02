@@ -1,0 +1,254 @@
+*{
+    margin:0;
+    padding: 0;
+}
+em{
+    font-style: normal;
+}
+li{
+    list-style: none;
+}
+body{
+    background-image: url(../image/12.jpg);
+}
+/*nav{
+    width:100%;
+   background:#069;
+}*/
+.nav-left{
+    height:30px;
+    line-height: 30px;
+    float:left;
+}
+.nav-left span,em{
+    color:#fff;
+    margin-left:10px;
+}
+.nav-left img{
+    margin:0 5px;
+    vertical-align: middle;
+    display: inline-block;
+}
+ .nav-left b{
+    color:blue;
+    margin-left:8px;
+}
+.nav-left-zl{
+    margin: 0 4px;
+    vertical-align: middle;
+}
+.nav-left  a{
+    color:#fff;
+    vertical-align: middle;
+    margin:0 8px; 
+}
+.nav-right{
+    float: right;
+    height:30px;
+    line-height: 30px;
+    
+}
+.nav-right a{
+    color:#fff;
+    margin-left:10px;
+}
+.nav-right-last{
+    width:88px;
+    height:35px;
+    display: inline-block;
+    background:blue;
+    text-align: center;
+}
+section{
+    width:100%;
+    height: 400px;
+    overflow: hidden;
+}
+.body{
+    width: 650px;
+    margin:0 auto;
+    text-align: center;
+    padding-top:40px;
+
+}
+.body img{
+    width:250px;
+    height:100px;
+
+}
+.body input{
+    width:475px;
+    height:39px;
+    padding: 0 55px 0 6px;
+}
+.body button{
+    width:100px;
+    height:41px;
+    border:none;
+    position:relative;
+
+}
+.body span{
+    background-image: url(../image/相机.ico);
+    width:30px;
+    height:30px;
+    position:absolute;
+    left:-40px;
+    bottom: 6px;
+}
+#section {
+    width:900px;
+    height: 570px;
+    background:rgba(220,220,220,0.7);
+    margin: 0 auto;
+    margin-top: -150px;
+}
+  .header ul{
+    width:900px;
+    height: 40px;
+    float:left;
+
+ } 
+ .header ul li{
+    width:90px;
+    height: 40px;
+    float:left;
+    font-size: 20px;
+    margin-left: 30px;
+    line-height: 40px;
+    text-align: center;
+ }
+ .header ul li:hover{
+    background:#7e7f88; 
+    font-weight: bold;
+ }
+  .header ul .header-first{
+    width: 100px;
+ }
+ .header ul img{
+    position:relative;
+    left:450px;
+ }
+.left{
+    width:576px;
+    height:530px;
+    float:left;
+}
+.left .left-first-text{
+    height:58px;
+    text-align: center;
+    line-height: 58px;
+    color:#8c8c91;
+}
+.left  .left-second-text p{
+    text-indent: 2em;
+    font-weight: bold;
+}
+.left  .left-second-text .span-first{
+    margin-top: 10px;
+   font-weight: normal;
+   color:#8c8c91;
+}
+.left  .left-second-text .span-first .new{
+     width:18px;
+    height:15px;
+    border:1px solid pink;
+    color:red;
+    border-radius:20% 20% 20% 20%;
+    margin-left: 10px;
+}
+.left  .left-three-text{
+    width:540px;
+    height:90px;
+    border-top: 1px solid #8c8c91;
+    line-height: 30px;
+    margin-top:20px;
+}
+.left  .left-three-text p{
+    display: block;
+    font-weight: bold;
+   text-indent: 2em;
+   display :inline-block;
+}
+.left  .left-three-text .span-second{
+    color:#8c8c91;
+     font-weight: normal;
+}
+.left  .left-three-text .span-second .new{
+    width:18px;
+    height:15px;
+    border:1px solid pink;
+    color:red;
+    border-radius:20% 20% 20% 20%;
+    margin-left: 10px;
+}
+.left  .left-four-text{
+    border-top: 1px solid #8c8c91;
+    border-bottom: 1px solid #8c8c91;
+    width:540px;
+    height:90px;
+     line-height: 30px;
+}
+.left  .left-four-text p{
+    display: block;
+     font-weight: bold;
+    text-indent: 2em;
+}
+.left  .left-four-text .span-three{
+    font-weight: normal;
+    color:#8c8c91;
+}
+.left  .left-four-text .span-three .new{
+    width:18px;
+    height:15px;
+    border:1px solid pink;
+    color:red;
+    border-radius:20% 20% 20% 20%;
+    margin-left: 10px;
+}
+.bottom img{
+    width: 120px;
+    height: 180px;
+    margin-left: 15px;
+      margin-top: 18px;
+}
+.bottom{
+    width:280px;
+    height:180px;
+    float:left;
+    margin-left: 20px;
+
+}
+ .home{
+    width: 220px;
+    height: 100px;
+   float: left;
+   margin:60px 0 0 20px ;
+ }
+  .home p{
+    font-size:20px;
+    text-indent: 2em;
+    color: #fff;
+  }
+.right{
+    width:320px;
+    height:530px;
+    float:right;
+}
+.right .table{
+   font-size: 14px
+}
+.right .table .new{
+    width:18px;
+    height:15px;
+    border:1px solid pink;
+    color:red;
+    border-radius:20% 20% 20% 20%;
+    margin-left: 10px;
+}
+
+
+
+
+
+

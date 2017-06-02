@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css" type="text/css" />
+    <script>
+        window.onload = function () {
+            var oFjd = document.getElementsByClassName("img1");
+            var oUl = document.getElementById("ul");
+            var aimg1 = document.getElementById("img1");
+            var aimg2 = document.getElementById("img2");
+
+            oFjd[0].onmouseover = function () {
+                oUl.style.display = "block";
+            }
+            oFjd[0].onmouseout = function () {
+                oUl.style.display = "none";
+                }
+            aimg1[0].onmouseover = function () {
+                oUl.style.display = "block";
+                aimg1[0].style.background = "rgba(135,140,145,0.4)"
+            }
+            aimg2[0].onmouseover = function () {
+                oUl.style.display = "block";
+                aimg2[0].style.background = "rgba(135,140,145,0.4)"
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="section">
+            <nav>
+                <ul class="nav-left">
+                    <li>中国IT职业教育O2O创新品牌 </li>
+                    <li><a href="">PHP培训</a></li>
+                    <li><a href="">HTML5培训</a></li>
+                    <li><a href="">UI设计培训</a></li>
+                    <li><a href="">Android培训</a></li>
+                    <li class="nav-left-last"><a href="">iOS培训</a></li>
+                </ul>
+                <ul class="nav-right">
+                    <li><img src="image/image/tell.png"/><a href="">400-058-0010</a></li>
+                    <li><a href="">关于我们</a></li>
+                    <li><a href="">企业服务</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-bottom">
+            <div class="border-bottom-left">
+                <img class="logo left" src="image/image/logo.png" alt="" />
+                <img class="left" src="image/image/logo_index2.png" alt="" />
+                <ul class="left">
+                    <li><a href="">首页</a></li>
+                    <li><a href="">在职提升</a></li>
+                    <li><a href="">就业培训</a></li>
+                    <li class="sanjiaoxing">
+                        <a href="">云课堂</a><span></span>
+                        <ul class="nav-2">
+                            <li class="nav-2li1"><a href="">直播课</a></li>
+                            <li class="nav-2li2"><a href="">录播课</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">社区</a></li>
+                </ul>
+            </div>
+            <div class="border-bottom-right">
+                <img class="img2" src="image/image/head-img.png" alt="">
+                <img class="img1" src="image/image/user_pic_middle.gif" alt="">
+                <ul id="ul">
+                    <li ><a href="">账号设置</a></li>
+                    <li><a href="">安全退出</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="banner">
+            <div class="banner-content">
+                <ul>
+                    <li>
+                        <h3>PHP全栈</h3>
+                        <span>CEO授课 高薪就业
+                             <i>></i>
+                        </span>
+                        <div id="content" class="content2">
+                            <ul id="left">
+                                <li  class="one-left1">
+                                    <div class="one-left1-top">
+                                        <img src="image/image/php-course3.png" alt="">
+                                        <p class="p-1">php就业培训班</p>
+                                        <span>学全栈 战高薪 就业八千起</span>
+                                    </div>
+                                </li>
+                                <li class="one-left2">
+                                    <div class="one-left1-top">
+                                        <img src="image/image/php-course4.png" alt="">
+                                        <p>Web全栈在职提高班</p>
+                                        <span>火热报名中...</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div id="right">
+                                <div class="right-top">
+                                    <h5>相关课程</h5>
+                                    <div>
+                                        <a href="">php开发 /</a>
+                                        <a href="">页面架构师 /</a>
+                                        <a href="">c/c++开发 /</a>
+                                        <a href="">计算机网络 /</a>
+                                        <a href="">后端运维 /</a>
+                                        <a href="">Java /Web开发</a>
+                                        <a href="">Go语言</a>
+                                        <a class="sjx-last"href="">数据库</a>
+                                    </div>
+                                </div>
+                                <div class="right-bottom">
+                                    <div class="right-bottom-left">
+                                        <h5>相关课程</h5>
+                                        <ul>
+                                            <li class="li8"><a href="#">初学者 <b>|</b>多线程多进程那些事</a></li>
+                                            <li class="li8"><a href="#">初学者 <b>|</b>加密解密那些事（上）</a></li>
+                                            <li class="li8"><a href="#">初学者 <b>|</b>加密解密那些事（下）</a></li>
+                                            <li class="li8"><a href="#">初学者 <b>|</b>文件上传那些事</a></li>
+                                            <li class="li8"><a href="#">初学者 <b>|</b>快捷的数据处理与方法</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="diannao"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>前端全栈</h3>
+                        <span>缺口50万 前景无限
+                            <i>></i>
+                        </span>
+                        <div id="content2" class="content2">
+                            <ul id="left2">
+                                <li  class="one-left1">
+                                    <div class="one-left1-top">
+                                        <img src="image/image/php-course.png" alt="" style="height:74px;">
+                                        <p class="p-1">php就业培训班</p>
+                                        <span>学全栈 战高薪 就业八千起</span>
+                                    </div>
+                                </li>
+                                <li class="one-left2">
+                                    <div class="one-left1-top">
+                                        <img src="image/image/php-course2.png" alt="">
+                                        <p>Web全栈在职提高班</p>
+                                        <span>火热报名中...</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div id="right2">
+                                <div class="right-top">
+                                    <h5>相关课程</h5>
+                                    <div>
+                                        <a href="">HTML5开发 /</a>
+                                        <a href="">前端开发/</a>
+                                        <a href="">网页三剑客 /</a>
+                                    </div>
+                                </div>
+                                <div class="right-bottom">
+                                    <div class="right-bottom-left">
+                                        <h5>相关课程</h5>
+                                        <ul>
+                                            <li class="li8"><a href="#">初学者  |  浏览器渲染那些事</a></li>
+                                            <li class="li8"><a href="#">初学者  |  React前端页面开发</a></li>
+                                            <li class="li8"><a href="#">初学者  |  Nodejs+Express+Mongodb</a></li>
+                                            <li class="li8"><a href="#">初学者  |  百度地图的前端显示</a></li>
+                                            <li class="li8"><a href="#">初学者  |  项目设计及制作网络爬虫</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="diannao2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>UI全栈</h3>
+                        <span>UI中的实力派
+                            <i>></i>
+                        </span>
+                        <div id="content3" class="content2">
+                            <ul id="left3">
+                                <li  class="one-left1">
+                                    <div class="one-left1-top">
+                                        <img src="image/image/h5_menu.png" alt="" style="height:74px;">
+                                        <p class="p-1">UI设计就业培训班</p>
+                                        <span style="font-size:12px;">UI全栈设计师 聚焦设计 关注未来</span>
+                                    </div>
+                                </li>
+                                <li class="one-left2">
+                                    <div class="one-left1-top">
+                                        <img src="image/image/h5_js.png" alt="">
+                                        <p>UI设计在职提高班</p>
+                                        <span>正在筹备中...</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div id="right3">
+                                <div class="right-top">
+                                    <h5>相关课程</h5>
+                                    <div>
+                                        <a href="">UI设计/</a>
+                                        <a href="">三维设计</a>
+                                    </div>
+                                </div>
+                                <div class="right-bottom">
+                                    <div class="right-bottom-left">
+                                        <h5>相关课程</h5>
+                                        <ul>
+                                            <li class="li8"><a href="#">初学者  |  商业海报制作</a></li>
+                                            <li class="li8"><a href="#">初学者  |  帧动画和视频动画制作</a></li>
+                                            <li class="li8"><a href="#">初学者  |  画笔工具组、人像合成</a></li>
+                                            <li class="li8"><a href="#">初学者  |  UI项目实战 — 快速打造隐私相册写实图标</a></li>
+                                            <li class="li8"><a href="#">初学者  |  第125讲 人像后期处理技法一</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="diannao3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Android全栈</h3>
+                        <span>实力验证 月薪10000+
+                            <i>></i>
+                        </span>
+                        <div id="content4" class="content2">
+                            <ul id="left4">
+                                <li  class="one-left1">
+                                    <div class="one-left1-top">
+                                        <img src="image/image/andrio.png" alt="" style="height:74px;"/>
+                                        <p class="p-1">php就业培训班</p>
+                                        <span>学全栈 战高薪 就业八千起</span>
+                                    </div>
+                                </li>
+                                <li class="one-left2">
+                                    <div class="one-left1-top">
+                                        <img src="image/image/andrio2.png" alt="">
+                                        <p>Android就业培训班</p>
+                                        <span>学全栈 站高薪 就业八千起</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div id="right4">
+                                <div class="right-top">
+                                    <h5>相关课程</h5>
+                                    <div>
+                                        <a href="">Android开发/</a>
+                                        <a href="">Android游戏/</a>
+                                        <a href="">Java开发/</a>
+                                    </div>
+                                </div>
+                                <div class="right-bottom">
+                                    <div class="right-bottom-left">
+                                        <h5>相关课程</h5>
+                                        <ul>
+                                            <li class="li8"><a href="#">初学者  |  第三讲：Android项目实战-蓝牙项目</a></li>
+                                            <li class="li8"><a href="#">初学者  |  第七讲：Android项目实战-蓝牙项目的搭建</a></li>
+                                            <li class="li8"><a href="#">初学者  |  第七讲：Android项目实战-版本控制</a></li>
+                                            <li class="li8"><a href="#">初学者  | 登陆页面的布局和逻辑代码实现</a></li>
+                                            <li class="li8"><a href="#">初学者  |  24小时速成Android开发：考试主窗口布局实现</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="diannao4"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>游戏CG全栈</h3>
+                        <span >零基础学CG 照样年薪20万
+                            <i>></i>
+                        </span>
+                        <div class="content2">5</div>
+                        <div id="content1" class="content2">
+                            <ul id="left1">
+                                <li  class="one-left1">
+                                    <div class="one-left1-top">
+                                        <img src="image/image/game_move.gif" alt="" style="width:113px;height:74px;">
+                                        <p class="p-1">php就业培训班</p>
+                                        <span>学全栈 战高薪 就业八千起</span>
+                                    </div>
+                                </li>
+                                <li class="one-left2">
+                                    <div class="one-left1-top">
+                                        <img src="image/image/game_move2.gif" alt="">
+                                        <p>Web全栈在职提高班</p>
+                                        <span>火热报名中...</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div id="right1">
+                                <div class="right-top">
+                                    <h5>相关课程</h5>
+                                    <div>
+                                        <a href="">php开发 /</a>
+                                        <a href="">页面架构师 /</a>
+                                        <a href="">c/c++开发 /</a>
+                                        <a href="">计算机网络 /</a>
+                                        <a href="">后端运维 /</a>
+                                        <a href="">Java /Web开发</a>
+                                        <a href="">Go语言</a>
+                                        <a class="sjx-last"href="">数据库</a>
+                                    </div>
+                                </div>
+                                <div class="right-bottom">
+                                    <div class="right-bottom-left">
+                                        <h5>相关课程</h5>
+                                        <ul>
+                                            <li class="li8"><a href="#">初学者 <b>|</b>多线程多进程那些事</a></li>
+                                            <li class="li8"><a href="#">初学者 <b>|</b>多线程多进程那些事</a></li>
+                                            <li class="li8"><a href="#">初学者 <b>|</b>多线程多进程那些事</a></li>
+                                            <li class="li8"><a href="#">初学者 <b>|</b>多线程多进程那些事</a></li>
+                                            <li class="li8"><a href="#">初学者 <b>|</b>多线程多进程那些事</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="diannao5"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="wukuai">
+            <ul class="wukuai-one">
+                <li>
+                    <div class="baohankuai">
+                        <div class="wukuai-one1"></div>
+                        <div class="wukuai-one1-text">
+                            <h4>在线学习平台</h4>
+                            <span>最热门的全栈直播课程</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="baohankuai">
+                        <div class="wukuai-one2"></div>
+                        <div class="wukuai-one1-text">
+                            <h4>能力评估系统</h4>
+                            <span>先进的自动化评估系统</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="baohankuai">
+                        <div class="wukuai-one3"></div>
+                        <div class="wukuai-one1-text">
+                            <h4>讲师顾问团队</h4>
+                            <span>集结业界一线专家大牛</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="baohankuai">
+                        <div class="wukuai-one4"></div>
+                        <div class="wukuai-one1-text">
+                            <h4>开班信息一览</h4>
+                            <span>最新最热专业马上开班</span>
+                        </div>
+                    </div>
+                </li>
+                <li style="border-right:none;">
+                    <div class="baohankuai baohankuai5">
+                        <div class="wukuai-one5"></div>
+                        <div class="wukuai-one1-text">
+                            <h4>免费职业规划</h4>
+                            <span>免费规划您的职业前程</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="body">
+            <div class="body-list">
+                <div class="body-list-left">
+                    <div class="body-list-leftL2"><!--1111-->
+                        <div class="list-leftL2-section">
+                            <h4>PHP</h4>
+                            <h5>全栈工程师</h5>
+                            <div class="dxian"></div>
+                        </div>
+                        <div class="list-leftL2-section2">
+                            <p>【面授】PHP全栈精英课程</p>
+                            <p>【直播】后端架构高级课程</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="body-list-center">
+                    <div class="body-list-center-php1">
+                        <div class="list-center-php1-text">
+                            <h4>PHP全栈开发工程师就业班</h4>
+                            <p>CEO授课 高薪就业 点击报名</p>
+                        </div>
+                    </div>
+                    <div class="body-list-center-php2">
+                        <div></div>
+                        <p><span>多线程多进程那些事</span></p>
+                    </div>
+                    <div class="body-list-center-php3">
+                        <div></div>
+                        <p><span>PHP MySQL函数库</span></p>
+                    </div>
+                    <div class="body-list-center-php4">
+                        <div></div>
+                        <p><span>快捷的数据处理与方法（上）</span></p>
+                    </div>
+                    <div class="body-list-center-php5">
+                      <div></div>
+                        <p><span>快捷的数据处理与方法（下）</span></p>
+                    </div>
+                </div>
+                <div class="body-list-right">
+                        <div class="list-right-bt">
+                            <h4>PHP社区交流</h4>
+                            <span>更多 > ></span>
+                        </div>
+                        <ul class="list-right-lb">
+                            <li><a href=""><span>.</span>编程面试的10大算法概念汇总</a></li>
+                            <li><a href=""><span>.</span>67篇PHP开发技术干货~</a></li>
+                            <li><a href=""><span>.</span>Web全栈班学员学习笔记分享</a></li>
+                            <li><a href=""><span>.</span>优才学院全栈工程师课程的10大亮</a></li>
+                            <li><a href=""><span>.</span>优才学院价值近100,000,000元W</a></li>
+                            <li><a href=""><span>.</span>优才学院：我们理解的全栈工程师</a></li>
+                            <li><a href=""><span>.</span>90%的PHP程序员看完这篇文章，</a></li>
+                            <li><a href=""><span>.</span>web全栈工程师课程解读</a></li>
+                        </ul>
+                </div>
+            </div>
+            <div class="body-list">
+                <div class="body-list-left">
+                    <div class="body-list-leftL1"><!--222222222222222222222222222222     是L1-->
+                        <div class="list-leftL1-section">
+                            <h4>H5</h4>
+                            <h5>全栈工程师</h5>
+                            <div class="dxian"></div>
+                        </div>
+                        <div class="list-leftL1-section2">
+                            <p>【面授】H5全栈精英就业课程</p>
+                            <p>【直播】JS全栈高级课程</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="body-list-center">
+                    <div class="body-list-center1">
+                        <div class="list-center1-text">
+                            <h4>前端H5开发工程师就业班</h4>
+                            <p>缺口50万 前景无限 点击报名</p>
+                        </div>
+                    </div>
+                    <div class="body-list-center2">
+                        <div></div>
+                        <p><span>React前端页面开发</span></p>
+                    </div>
+                    <div class="body-list-center3">
+                        <div></div>
+                        <p><span>>Nodejs+Express+Mongodb</span></p>
+                    </div>
+                    <div class="body-list-center4">
+                        <div></div>
+                        <p><span>HTML5 动画设计与页面构成</span></p>
+                    </div>
+                    <div class="body-list-center5">
+                        <div></div>
+                        <p><span>第1122讲 Web前端开发之DO...</span></p>
+                    </div>
+                </div>
+                <div class="body-list-right">
+                    <div class="list-right-bt">
+                        <h4>H5社区交流</h4>
+                        <span>更多 > ></span>
+                    </div>
+                    <ul class="list-right-lb">
+                        <li><a href=""><span>.</span>12 款优秀的 JavaScript MVC 框</a></li>
+                        <li><a href=""><span>.</span>H5前端开发的流程有哪些</a></li>
+                        <li><a href=""><span>.</span>[转]Cordova,APPCan,DCloud,API</a></li>
+                        <li><a href=""><span>.</span>使用Google Closure Compiler</a></li>
+                        <li><a href=""><span>.</span>HTML5开发就业前景分析</a></li>
+                        <li><a href=""><span>.</span>Web前端开发工程师入门须知</a></li>
+                        <li><a href=""><span>.</span>Web前端开发学习的的五个误区</a></li>
+                        <li><a href=""><span>.</span>如何高效学习H5前端开发</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="body-list">
+                <div class="body-list-left">
+                    <div class="body-list-leftL3"><!--33333333333333333333333333333333-->
+                        <div class="list-leftL3-section">
+                            <h4>UI/UE</h4>
+                            <h5>全栈工程师</h5>
+                            <div class="dxian"></div>
+                        </div>
+                        <div class="list-leftL3-section2">
+                            <p>【面授】UI全栈精英课程</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="body-list-center">
+                    <div class="body-list-center-ui1">
+                        <div class="list-center-ui1-text">
+                            <h4>UI/UE全栈设计师就业班</h4>
+                            <p>UI中的实力派 点击报名</p>
+                        </div>
+                    </div>
+                    <div class="body-list-center-ui2">
+                        <div></div>
+                        <p><span>UI项目实战—快速打造隐私</span></p>
+                    </div>
+                    <div class="body-list-center-ui3">
+                        <div></div>
+                        <p><span>商业海报制作</span></p>
+                    </div>
+                    <div class="body-list-center-ui4">
+                        <div></div>
+                        <p><span>第125讲 人像后期处理技法—</span></p>
+                    </div>
+                    <div class="body-list-center-ui5">
+                        <div></div>
+                        <p><span>photoshop 基础实战课</span></p>
+                    </div>
+                </div>
+                <div class="body-list-right">
+                    <div class="list-right-bt">
+                        <h4>UI/UE社区交流</h4>
+                        <span>更多 > ></span>
+                    </div>
+                    <ul class="list-right-lb">
+                        <li><a href=""><span>.</span>【PS案例】三步打造一个折纸图形</a></li>
+                        <li><a href=""><span>.</span>UI设计和Web前端哪个好</a></li>
+                        <li><a href=""><span>.</span>UI设计师就业前景分析</a></li>
+                        <li><a href=""><span>.</span>学习UI设计 步入高薪一族</a></li>
+                        <li><a href=""><span>.</span>UI设计菜鸟如何入门</a></li>
+                        <li><a href=""><span>.</span>UI思维下的APP设计技巧</a></li>
+                        <li><a href=""><span>.</span>UI设计师面试技巧总结</a></li>
+                        <li><a href=""><span>.</span>哪些人可以学习UI设计</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="body-list">
+                <div class="body-list-left">
+                    <div class="body-list-leftL4"><!--4444444444444444-->
+                        <div class="list-leftL4-section">
+                            <h4>Android</h4>
+                            <h5>开发工程师</h5>
+                            <div class="dxian"></div>
+                        </div>
+                        <div class="list-leftL4-section2">
+                            <p>【面授】安卓全栈就业课程</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="body-list-center">
+                    <div class="body-list-center-az1">
+                        <div class="list-center-az1-text">
+                            <h4>Android开发工程师就业班</h4>
+                            <p>实力验证 月薪10000+ 点击报名</p>
+                        </div>
+                    </div>
+                    <div class="body-list-center-az2">
+                        <div></div>
+                        <p><span>优才线下Android公开课：程...</span></p>
+                    </div>
+                    <div class="body-list-center-az3">
+                        <div></div>
+                        <p><span>第130讲 Android App实现第...</span></p>
+                    </div>
+                    <div class="body-list-center-az4">
+                        <div></div>
+                        <p><span>第102讲 现代前端框架思想在...</span></p>
+                    </div>
+                    <div class="body-list-center-az5">
+                        <div></div>
+                        <p><span>【安卓实战】 需求分析...</span></p>
+                    </div>
+                </div>
+                <div class="body-list-right">
+                    <div class="list-right-bt">
+                        <h4>安卓社区交流</h4>
+                        <span>更多 > ></span>
+                    </div>
+                    <ul class="list-right-lb">
+                        <li><span>.</span><a href="">ReactiveX之操作符（Operators</a></li>
+                        <li><span>.</span><a href="">使用Volley上传头像图片</a></li>
+                        <li><span>.</span><a href="">Java中Stack的三种含义</a></li>
+                        <li><span>.</span><a href="">基于Volley和DiskLruCache的缓</a></li>
+                        <li><span>.</span><a href="">Volley系列(1)</a></li>
+                        <li><span>.</span><a href="">Android开发不得不知技巧</a></li>
+                        <li><span>.</span><a href="">浅谈Android开发就业前景</a></li>
+                        <li><span>.</span><a href="">Android开发工程师的三大历练过</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="byxy">
+            <div>
+                <ul class="byxy1">
+                    <li class="li-1"></li>
+                    <li class="li-2"></li>
+                </ul>
+            </div>
+            <div class="byxy2">
+                <ul class="byxy2-left">
+                    <li class="byxy2-left1"></li>
+                    <li class="byxy2-left2"></li>
+                </ul>
+                <ul class="byxy2-right">
+                    <li class="byxy2-right1"></li>
+                    <li class="byxy2-right2"></li>
+                    <li class="byxy2-right3"></li>
+                    <li class="byxy2-right4"></li>
+                    <li class="byxy2-right5"></li>
+                    <li class="byxy2-right6"></li>
+                    <li class="byxy2-right7"></li>
+                    <li class="byxy2-right8"></li>
+                </ul>
+            </div>
+            <div class="byxy3">
+                <ul class="byxy3-left">
+                    <li class="byxy3-left1"></li>
+                    <li class="byxy3-left2"></li>
+                </ul>
+                <ul class="byxy3-right">
+                    <li class="byxy3-right1"></li>
+                    <li class="byxy3-right2"></li>
+                    <li class="byxy3-right3"></li>
+                    <li class="byxy3-right4"></li>
+                    <li class="byxy3-right5"></li>
+                    <li class="byxy3-right6"></li>
+                    <li class="byxy3-right7"></li>
+                    <li class="byxy3-right8"></li>
+                </ul>
+            </div>
+            <div class="byxy4">
+                <ul class="byxy4-left">
+                    <li class="byxy4-left1"></li>
+                    <li class="byxy4-left2"></li>
+                </ul>
+                <ul class="byxy3-right">
+                    <li class="byxy4-right1"></li>
+                    <li class="byxy4-right2"></li>
+                    <li class="byxy4-right3"></li>
+                    <li class="byxy4-right4"></li>
+                    <li class="byxy4-right5"></li>
+                    <li class="byxy4-right6"></li>
+                    <li class="byxy4-right7"></li>
+                    <li class="byxy4-right8"></li>
+                </ul>
+            </div>
+            <div>
+                <ul class="byxy5">
+                    <li class="li-1"></li>
+                    <li class="li-2"></li>
+                </ul>
+            </div>
+            <div class="zgc">
+               <p>优秀毕业学员</p>
+            </div>
+
+        </div>
+    </section>
+    <div id="footNav">
+        <div class="footNav">
+            <div class="footNav-top">
+                <h4>权威推荐</h4>
+                <p>被业界誉为“互联网核心技术岗位人才培养的摇篮”</p>
+            </div>
+            <div class="footNav-bottom">
+                <span class="span-left">&lt;</span>
+                <span class="span-right">&gt;</span>
+                <ul>
+                    <li class="li1-rgba">
+                        <img src="image/image/dennis.png" alt="">
+                        <div class="footNav-bottom-text">
+                            <h4>张平和</h4>
+                            <span></span>
+                            <p>原Yahoo中国总经理，鼎挥投资</p>
+                            <i>合伙人</i>
+                        </div>
+                    </li>
+                    <li class="li2-rgba">
+                        <img class="yangxu" src="image/image/hj.png" alt="" >
+                        <div class="footNav-bottom-text">
+                            <h4>杨旭</h4>
+                            <span class="yx"></span>
+                            <p>和君集团高级合伙人副总裁</p>
+                        </div>
+                    </li>
+                    <li class="li3-rgba">
+                        <img src="image/image/xy.png" alt="">
+                        <div class="footNav-bottom-text">
+                            <h4>赵新宇</h4>
+                            <span class="zxy"></span>
+                            <p>世界邦联合创始人，原中讯通讯</p>
+                            <i>人力总监</i>
+                        </div>
+                    </li>
+                    <li class="footNav-bottom-last">
+                        <img src="image/image/cgt.png" alt="">
+                        <div class="footNav-bottom-text">
+                            <h4>陈广涛</h4>
+                            <span class="cgt"></span>
+                            <p>多业网CEO</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="footer-nav">
+        <div class="footernav-top">
+            <div class="footernav-top-1">
+                <h4>就业企业</h4>
+                <p>合作互联联网企业已达2000多家，其中战略合作知名企业已达200多家</p>
+            </div>
+            <div class="footernav-top-2">
+                <ul>
+                    <li><img src="image/image/part1.png" alt=""></li>
+                    <li><img src="image/image/part2.png" alt=""></li>
+                    <li><img src="image/image/part3.png" alt=""></li>
+                    <li><img src="image/image/part014.png" alt=""></li>
+                    <li class="li5"><img src="image/image/part05.png" alt=""></li>
+                    <li class="li6"><img src="image/image/part6.png" alt=""></li>
+                    <li class="li7"><img src="image/image/part010.png" alt=""></li>
+                    <li class="li8"><img src="image/image/part.png" alt=""></li>
+                    <li class="li9"><img src="image/image/part08.png" alt=""></li>
+                    <li class="li10"><img src="image/image/part9.png" alt=""></li>
+                    <li><img src="image/image/part7.png" alt=""></li>
+                    <li><img src="image/image/part011.png" alt=""></li>
+                    <li><img src="image/image/part12.png" alt=""></li>
+                    <li><img src="image/image/part13.png" alt=""></li>
+                    <li class="li15"><img src="image/image/part04.png" alt=""></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footernav-bottom">
+            <ul>
+                <li style="border-left:2px solid #dcdcdc">
+                    <a class="xbt1" href="">
+                        <div></div>
+                        教学与住宿环境
+                    </a>
+                </li>
+                <li >
+                    <a class="xbt2" href="">
+                        <div></div>
+                        资质荣誉证书
+                    </a>
+                </li>
+                <li >
+                    <a href="" class="xbt3">
+                        <div></div>
+                        定期技术沙龙
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="xbt4">
+                        <div></div>
+                        免费视频教程
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="xbt5">
+                        <div></div>
+                        免费职业规划
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div id="footer">
+        <div class="footer">
+            <div class="footerTop">
+                <div class="footerTop-img">
+                    <div class="footerTop-img1">
+
+                    </div>
+                    <div class="footerTop-img2">
+                        <div class="footerTop-img2-dw"></div>
+                    </div>
+                    <div class="footerTop-img3">
+                        <span>400-058-0010</span>
+                    </div>
+                </div>
+                <ul class="footerTop-text">
+                     <li><a href="">关于我们</a></li>
+                    <li><a href="">联系我们</a></li>
+                    <li><a href="">加入我们</a></li>
+                    <li style="margin-right:0;"><a href="">媒体报道</a></li>
+                </ul>
+            </div>
+            <hr style="width:1000px;margin-top:30px;"  align="center"/>
+            <div class="footerBottom">
+                    <p>© 2017 UCAI Inc. All Rights Reserved 京ICP备13004859号</p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+                var four = parseInt(prompt("请输入工作了几年"));
+                if (four==0) {
+                var four1 =parseInt(prompt("请输入月薪"));
+                if (four1>8000) {
+                    alert(four1*1.2);
+                }else if(four1<=8000){
+                    alert(four1*1);
+                }else{
+                alert("来了不到一年都这么皮！");
+                }
+            }else if(four==1){
+                var four1 =parseInt(prompt("请输入月薪"));
+                if (four1>10000) {
+                    alert(four1*1.7);
+                }else if(four1<=10000){
+                    alert(four1*1.5);
+                }else{
+                alert("干了一年是不想干了哇！");
+                }
+            }else if(four>=2){
+                var four1 =parseInt(prompt("请输入月薪"));
+                if (four1>12000) {
+                    alert(four1*3.2);
+                }else if(four1<=12000){
+                    alert(four1*3);
+                }else{
+                alert("老员工还玩，活够了！");
+                }
+            }else{
+                alert("请认真填，否则没工资！");
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

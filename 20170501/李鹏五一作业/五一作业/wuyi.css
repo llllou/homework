@@ -1,0 +1,193 @@
+*{
+    margin:0;padding:0;
+}
+li {
+    list-style:none;
+}
+a {
+    text-decoration:none;color:black;
+}
+header{
+    width:100%;height:70px;
+}
+.head-nav {
+    height:70px;margin-top:90px;background:#fdfdfd;
+}
+.nav {
+    width:100%; height:42px;background:#44b704;
+}
+.nav-top {
+   line-height:42px;width:940px;height:42px;margin:0 auto;
+}
+.nav-top li {
+    float:left;height:42px;
+}
+.nav-top li a {
+    padding: 0 17px; color:#fff;
+}
+.nav-top li:hover {
+    background:#fdfdfd;
+}
+.nav-top .nav-li2 {
+    background:#fdfdfd;
+}
+.nav-top .nav-li2 a {
+    color:black;
+}
+.nav-top li:hover a{
+    color:black;
+}
+.nav-bottom {
+    line-height:28px;width:940px;height:28px;margin:0 auto;
+}
+.nav .nav-bottom>a{
+    display:inline-block;height:28px;line-height:28px;font-size:12px;margin-right:15px;
+}
+.banner {
+    height:265px;width:940px;background:url(images/ps_03.png) no-repeat center;margin:0 auto;
+}
+section {
+    width:940px;margin:20px auto 0;
+}
+.section-top{
+    height:185px; width:940px;
+}
+.section-topLeft {
+    width:233px;float:left;
+}
+.section-topCenter {
+    width:452px;height:183px;border:1px solid #eee;float:left;margin:0 10px;border-radius:5px;
+}
+ .center-t {
+    height:38px;line-height:38px;background:#f5f5f5;
+}
+ .center-t .centerttt {
+    float:left;  margin-left:14px;
+}
+ .centerttt img {
+    float:left;margin-right:10px;margin-top:14px;
+}
+.centerttt h3 {
+    font-size:16px;float:left;
+}
+.centerttt h3 span {
+    font-size:12px;font-weight:normal;
+}
+.center-t>span {
+    float:right;font-size:14px;
+}
+.clear {
+    clear:both;
+}
+ .fudong{
+     width:452px;
+}
+.fudong .fudong-left {
+  background:url(images/999_03.png) no-repeat;width:138px;
+    height:111px;float:left;margin-left:12px;margin-top:12px;margin-right:20px;
+}
+ .fudong  p {
+   font-size:12px;width:260px;height:120px;float:left;margin-top:12px;text-indent:2em;line-height:19px;
+}
+.section-topRight {
+    width:231px;border:1px solid #eee;float:left;height:183px;border-radius:5px;
+}
+.right1 {
+    width:231px;border:1px solid #eee;height:38px;line-height:38px;background:#f5f5f5;
+}
+.right1 h3 {
+    font-size:16px;
+}
+.right1 h3 span {
+    font-size:12px;font-weight:normal;
+}
+.right1 img {
+    float:left;margin-right:10px;margin-top:14px;margin-left:14px;
+}
+.right2 {
+    height:145px;width:231px;
+}
+.right2-bj {
+    float:right;background:url(images/1234_03.png);width:205px;height:136px;margin-top:7px;
+}
+.section-topRight {
+    height:183px;
+}
+.section-center {
+    width:938px;height:183px;border:1px solid #eee;border-radius:5px;margin-top:15px;margin-bottom:15px;
+}
+.image {
+    height:145px;width:938px;overflow:hidden;
+}
+.image li {
+   height:145px;float:left;margin:0 5px;
+}
+.image li>p {
+    font-size:12px;text-align:center;line-height:15px;
+}
+.image .image1 {
+    background:url(images/images/ps_03.png);width:77px;height:116px;margin-left:8px;margin-top:10px;
+}
+.image .image2 {
+    background:url(images/images/ps2_03.png);width:152px;height:116px;margin-top:10px;
+}
+.image .image3 {
+    background:url(images/images/ps3_03.png);width:152px;height:116px;margin-top:10px;
+}
+.image .image4 {
+    background:url(images/images/ps4_03.png);width:152px;height:116px;margin-top:10px;
+}
+.image .image5 {
+    background:url(images/images/ps5_03.png);width:152px;height:116px;margin-top:10px;
+}
+.image .image6 {
+    background:url(images/images/ps6_03.png);width:176px;height:116px;float:left;margin-right:4px;margin-top:10px;
+}
+.section-bottom {
+    height:275px;
+}
+.bottom-left {
+    width:230px;height:183px;float:left;border:1px solid #eee;
+}
+.bottom-left2 img {
+    margin:14px auto;width:211px;display:block;
+}
+.section-bottom .bottom-center11 {
+    width:456px;geight:183px;float:left;border:1px solid #eee; margin:0 12px;border-radius:5px;
+}
+.bottom-center11 .news {
+    width:456px;height:145px;
+}
+ .newstop img{
+        float:left;margin:10px 15px  5px 10px;
+}
+.newstop .news-text {
+    float:left;width:309px;
+}
+.newstop .news-text p {
+    font-size:12px;line-height:18px;
+}
+.newstop .news-text h4 {
+    font-size:14px;color:#38ab03;margin-top:10px;margin-left:8px;margin-bottom:10px;
+}
+.newsbottom {
+    clear:both;
+}
+.news-list {
+    width:430px;height:50px;background:#f5f5f5;margin: auto ;
+}
+.news-list li {
+    list-style:square inside;height:25px;line-height:25px;margin-left:10px;
+}
+.news-list li a{
+   font-size:12px;
+}
+.news-list li span{
+    float:right;font-size:12px;margin-right:15px;
+}
+.bottom-right {
+    width:222px;height:185px;float:left;
+}
+.bottom-right img {
+    width:223px;height:90px;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var five = prompt("请输入体重(kg)");
+            var six = prompt("请输入身高(m)");
+            var seven = five/Math.pow(six,2);
+            if (seven<18.5) {
+                alert("过轻");
+            }else if(18.5<=seven&&seven<=24.99999){
+                alert("正常");
+            }else if(25<=seven&&seven<=27.999999){
+                alert("过重");
+            }else if(28<=seven&&seven<=31.999999){
+                alert("肥胖");
+            }else if(32<=seven){
+                alert("非常肥胖");
+            }else{
+                alert("什么鬼");
+            }
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

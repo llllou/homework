@@ -1,0 +1,100 @@
+*{margin: 0;
+    padding: 0;
+}
+i,em{
+ font-style: normal;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+header{
+    width: 100%;
+    height: 377px;
+}
+nav{
+    width: 1360px;
+    height: 65px;
+}
+.nav{
+    width:900px;
+    height: 65px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+}
+nav .back{
+    width: 1360px;
+    height: 304px;
+    border-top: 3px solid blue;
+}
+
+.nav  img{
+    margin:13px 5px 0 0;
+    float: left;
+}
+.nav .name{
+    width: 70px;
+    height: 25px;
+    float: left;
+    margin:30px 20px 0 0;
+}
+.nav .nav-t{
+    float: right;
+    width: 350px;
+    height: 20px;
+    background: yellow;
+   margin-top:10px;
+}
+.nav .nav-t li{
+    width:100px;
+    height: 20px;
+    float: left;
+}
+.nav .nav-t li i{
+    font-size: 12px;
+    float:left;
+}
+.nav .nav-t li img{
+    margin-top: 5px;
+}
+.nav .nav-b{
+    width: 750px;
+    height: 30px;
+    float: left;
+    margin-top:10px;
+}
+.nav .nav-b li:hover{
+     float: left;
+     width: 75px;
+     height: 33px;
+     background: red;
+     text-align: center;
+     color: #fff;
+}
+.nav .nav-b li i{
+    float: left;
+    margin:2px 5.5px; 
+}
+section{
+    width: 1360px;
+    height: 1330px;
+}
+.body{
+    width: 710px;
+    height: 1330px;
+    background: green;
+    margin: 0 auto;
+}
+.body .body-1{
+    width: 710px;
+    height: 320px;
+    background: purple;
+}
+.body .body-1 .body-1-T{
+    width: 162px;
+    height: 40px;
+    background: red;
+    margin:0 270px;
+}

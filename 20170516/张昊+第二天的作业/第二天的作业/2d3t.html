@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var a = prompt("请输入年份");
+        if (a % 100 == 0){
+            if(a % 400 == 0){
+                alert("闰年");
+            }else{
+                alert("不闰");
+            }
+        }else if (a % 4 == 0){
+                alert("闰年");
+        }else if (a % 4 == 1) {
+                alert("不闰");
+        }else {
+                alert("请输入年份");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

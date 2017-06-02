@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+            for(var i = 0; i < 100 ; i ++){
+                var a = prompt("请输入一个数字，我将判断它是否能被5、6整除");
+                var b = a/1;
+                if(!b){
+                    alert("这不是一个数字");
+                    console.log(b);
+                }else{
+                    if( a%5 == 0 && a%6 == 0){
+                        alert("这个数同时能被5和6整除");
+                        console.log(a);
+                    }else if(a%5 == 0 && a%6 != 0){
+                        alert("这个数字能被5整除，但是不能被6整除");
+                    }else if(a%5 !=0 && a%6 == 0){
+                        alert("这个数字能被6整除，但是不能被5整除");
+                    }else{
+                        alert("这个数字既不能被5整除，也不能被6整除");
+                    }
+                }
+            }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

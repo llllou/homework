@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+        	var KG=prompt("你的体重是(单位:kg)");
+        	var CM=prompt("你的身高是(单位:m)");
+        	if(KG/(Math.pow(CM,CM))<18.5){
+        		alert("你当前的BMI属于过轻");
+        	}else if(18.5<=KG/(Math.pow(CM,CM))<=24.99999){
+        		alert("你当前的BMI属于正常");
+        	}else if(25<=KG/(Math.pow(CM,CM))<=27.999999){
+        		alert("你当前的BMI属于过重");
+        	}else if(28<=KG/(Math.pow(CM,CM))<=31.999999){
+        		alert("你当前的BMI属于肥胖");
+        	}else if(KG/(Math.pow(CM,CM))>32){
+        		alert("你当前的BMI属于非常肥胖");
+        	}
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

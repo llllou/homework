@@ -1,0 +1,137 @@
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    background:url(../image/12.jpg) ;
+    background-size:cover;
+}
+li{
+    list-style:none;
+}
+em{
+    font-style:normal;
+}
+/*导航条*/
+nav{
+    width:100%;
+    height:32px;
+    line-height:32px;
+    font-size:12px;
+    color:#fff;
+}
+/*导航条-左*/
+.nav-left{
+    width:310px;
+    height::32px;
+    margin-left:15px;
+    float:left;
+}
+/*导航条-左-图*/
+.nav-left-img{
+    display:inline-block;
+    background:url(../image/a1.png) ;
+    width:20px;
+    height:20px;
+    vertical-align:middle;
+    margin-left:-5px;
+}
+.nav-left span{
+    margin-right:8px;
+}
+.nav-left b{
+    margin-right:8px;
+    color:#217dff;
+}
+.nav-left a{
+    margin-right:17px;
+    color:#fff;
+}
+/*导航条-右*/
+.nav-right{
+    float:right;
+}
+.nav-right a{
+    margin-left:20px;
+    color:#fff;
+}
+.nav-right-menu{
+    display:inline-block;
+    width:88px;
+    height:32px;
+    background:#398bfb;
+    text-align:center;
+    text-decoration:none;
+}
+/*页面主体*/
+header{
+    width:100%;
+    height:100%;
+    padding-top:130px;
+}
+.main{
+    width:800px;
+    height:250px;
+    margin:0 auto;
+    text-align:center;
+    line-height:28px;
+}
+.main img{
+    width:300px;
+    height:100px;
+}
+.main input{
+    width:500px;
+    height:40px;
+    padding-right:40px;
+    font-size:18px;
+}
+.main button{
+    width:100px;
+    height:42px;
+    border:none;
+}
+/*下面内容*/
+.clumn{
+    width:895px;
+    height:500px;
+    background:rgba(230,230,230,0.5);
+    margin:0 auto;
+    margin-top:75px;
+}
+/*内容导航栏*/
+.clumn-nav{
+    width:100%;
+    height:38px;
+    float:left;
+    border-bottom:1px solid #9898a1;
+}
+.clumn-nav span{
+    display:inline-block;
+    padding:0px 25px 0px 25px;
+    line-height:38px;
+}
+.clumn-nav span:hover{
+    background:rgba(0,0,0,0.3);
+}
+.clumn-nav-img-right{
+    width:20px;
+    height:20px;
+    float:right;
+    line-height:38px;
+    margin-right:22px;
+}
+/*左边内容*/
+.clume-left{
+    width:587px;
+    height:93%;
+    background:yellow;
+    float:left;
+}
+/*右边内容*/
+.clume-right{
+    width:308px;
+    height:93%;
+    background:green;
+    float:right;
+}

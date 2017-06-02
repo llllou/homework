@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        var a,b;
+        for(var i = 0; i < 100; i ++){
+            a = prompt("请输入一个年份");
+            b = a/1;
+            if(!b){
+                alert("你的输入有误");
+            }else{
+                if(a%100 != 0 && a%4 == 0){
+                    alert("该年份是闰年");
+                }else if(a%400 == 0){
+                    alert("该年份是闰年");
+                }else{
+                    alert("该年份不是闰年");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

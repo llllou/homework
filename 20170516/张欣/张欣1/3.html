@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+                var A=prompt("请输入一个年份");
+                
+                var a=A%100;
+                if (a==0){
+                        if( A%400==0){
+                            var b=prompt("yuexin")
+                            alert("这是一个闰年");
+                        }else{
+                            alert("这不是一个闰年");
+                        }
+                }else if(a!=0){
+                        if(A%4==0){
+                                  alert("这是一个闰年");
+                        }else{
+                            alert("这不是一个闰年");
+                        }
+                }else{
+                        alert("你输入的数字有误");
+                }
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

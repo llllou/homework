@@ -1,0 +1,737 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 13px; 
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+i{
+    font-style: normal;
+}
+
+/*最外*/
+.header{
+    width: 100%;
+    height: 120px;
+    /*background-color: green;*/
+}
+/*导航最外框*/
+.nav{
+    width: 100%;
+    height: 30px;
+    /*background-color: red;*/
+    line-height: 30px;
+}
+/*导航背景*/
+.header .nav .nav-top{
+    width: 1200px;
+    height: 30px;
+    margin: 0 auto;
+    background-color: #f3f3f3;
+}
+/*左边的li*/
+.header .nav .nav-top .nav-left li{
+    float: left;
+    margin-left: 10px;
+    padding-left: 5px;
+    color:#8c9095
+
+}
+/*左边的a*/
+.header .nav .nav-top .nav-left a{
+    color:#8c9095;
+    border-right: 1px solid gray;
+    padding-right: 10px;
+     
+}
+.header .nav .nav-top .nav-left .li-list a{
+    border: none;
+}
+/*右边位置*/
+.header .nav .nav-top .nav-right{
+    float: right;
+    position: relative;
+}
+/*右边li*/
+.header .nav .nav-top .nav-right li{
+    float: left;
+    margin-right: 10px;
+    padding-right: 10px;
+    color: #ff6949;
+
+}
+/*右边的a*/
+.header .nav .nav-top .nav-right a{
+    color:#8c9095;
+}
+/*电话图标*/
+.header .nav .nav-top .nav-right .tell{
+    background: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/tell.png) no-repeat center;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: -40px;
+    z-index: 1px;
+}
+/*信息区*/
+.header-bottom{
+    width: 100%;
+    height: 90px;
+    /*background: blue;*/
+}
+/*信息框*/
+.header-bottom .xinxi{
+    width: 1200px;
+    height: 90px;
+    background-color: #ffffff;
+    margin:0 auto;
+}
+/*信息左*/
+.header-bottom .xinxi .xinxi-left{
+    width: 300px;
+    height:90px;
+    /*background-color: pink;*/
+    display: inline-block;
+    float: left;
+    line-height: 90px;
+}
+/*信息图*/
+.header-bottom .xinxi .xinxi-left .xinxi-tu{
+    width: 175px;
+    height: 42px;
+    margin-left: 0 !important;
+    margin-top: 20px;
+    background: url(http://p10.ucai.cn//static/i3/jiuye2/logo.png) no-repeat center;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/*信息中*/
+.header-bottom .xinxi .xinxi-center{
+    width: 430px;
+    height: 90px;
+    /*background-color: gray;*/
+    display: inline-block;
+    float: left;
+    line-height: 90px;
+}
+/*文本左浮*/
+.header-bottom .xinxi .xinxi-center .xinxi-center-ul li{
+    float: left;
+    margin: 0px 18px 24px 18px;
+}
+.header-bottom .xinxi .xinxi-center .xinxi-center-ul li a{
+    color: #878c91;
+}
+/*信息右*/
+.header-bottom .xinxi .xinxi-right{
+    width: 150px;
+    height: 90px;
+    /*background-color: greenyellow;*/
+    display: inline-block;
+    float: right;
+    line-height: 90px;
+}
+/*铃铛*/
+.header-bottom .xinxi .xinxi-right div .a1{
+    background: url(../image/head-img.png) no-repeat center;
+    
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    margin-top: 28px;
+    margin-left: 10px;
+    position: relative;
+}
+/*头像*/
+.header-bottom .xinxi .xinxi-right div .a2{
+    background: url(../image/user_pic_middle.gif) no-repeat center;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    position: absolute;
+    margin-top: 18px;
+    margin-left: 30px;
+}
+/*内容背景图*/
+section{
+    width:100%; 
+    height:450px;
+    background: url(../image/banner-1.jpg);
+}
+/*内容区*/
+section .section-div{
+    width: 1200px;
+    height: 100%;
+    /*background: gray;*/
+    margin: 0 auto;
+}
+/*导航区*/
+.section .section-div .section-ul{
+    width: 215px;
+    height: 100%;
+    background:rgba(41,108,134,0.3);
+}
+
+.section .section-div .section-ul li{
+    width: 215px;
+    height: 90px;
+    position: relative;
+}
+.section .section-div .section-ul li a{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 17px;
+    color:#fff;
+}
+.section .section-div .section-ul li span{
+    display: block;
+    width: 180px;
+    height: 37px;
+    position: absolute;
+    top: 45px;
+    left: 20px;
+    font-size: 12px;
+    color:#fff;
+    border-bottom: 1px solid #245b72;
+    width: 170px;
+    height: 36px;
+}
+.section .section-div .section-ul li .list-span{
+    border:none;
+}
+/*小箭头*/
+.section .section-div .section-ul li i{
+    display: inline-block;
+    width: 18px;
+    height: 5px;
+    padding: 32px 0 0 175px;
+    color: #fff;
+}
+/*导航内容*/
+.infor{
+    width: 100%;
+    height: 3550px;
+    background: #f5f5f5;
+}
+.infor .infor-background{
+    width: 1200px;
+    height: 150px;
+    /*background: gray;*/
+    margin:0 auto;
+
+}
+.infor .infor-background li{
+    width: 240px;
+    height: 150px;
+    background:#fff;
+    float: left; 
+    position: relative;
+    /*background:blue;*/
+    /*border-bottom: 1px solid red;*/
+}
+.infor .infor-background li div{
+    
+    /*background:pink;   */
+    margin: 25px 0 25px 0;
+    width: 239px;
+    height: 100px;
+    border-right:1px solid #dcdcdc;
+}
+.infor .infor-background li .infor-five{
+    border:none;
+}
+/*小图标*/
+.infor .infor-background li .eye{
+    background: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/infor.png) no-repeat 1px center ;
+    width: 39px;
+    height: 35px;
+    position: absolute;
+    right: 182px;
+    top: 61px;
+}
+.infor .infor-background li .infor-qb{
+    background: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/infor.png) no-repeat -36px;
+    width: 39px;
+    height: 35px;
+    position: absolute;
+    right: 182px;
+    top: 61px;
+    
+}
+.infor .infor-background li .infor-ren{
+    background: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/infor.png) no-repeat -73px center ;
+    width: 39px;
+    height: 35px;
+    position: absolute;
+    right: 182px;
+    top: 61px;
+}
+.infor .infor-background li .infor-zl{
+    background: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/infor.png) no-repeat -110px center;
+    width: 39px;
+    height: 35px;
+    position: absolute;
+    right: 182px;
+    top: 61px;
+}
+.infor .infor-background li .infor-fz{
+    background: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/infor.png) no-repeat -147px center ;
+    width: 39px;
+    height: 35px;
+    position: absolute;
+    right: 182px;
+    top: 61px;
+}
+/*小标题*/
+.infor .infor-background li .infor-book{
+    position: absolute;
+    top: 50px;left: 60px;
+    font-size: 20px;
+}
+/*小内容*/
+.infor .infor-background li  i{
+    position: absolute;
+    top: 80px;left: 60px;
+    font-size: 10px;
+    color:#8c9095;
+}
+/*主内容*/
+.body{
+    width: 100%;
+    height: 400px;
+    /*background:red;*/
+    margin-top: 50px;
+}
+/*内容框架*/
+.body .body-one{
+    width: 1200px;
+    height: 100%;
+    /*background: greenyellow;*/
+    margin:0 auto;
+}
+/*内容通用*/
+/*左*/
+.body .body-one div{
+    height: 100%;
+    width: 240px;
+    /*background: green;*/
+    float: left;
+}
+.body .body-one div h2{
+    width: 150px;
+    height: 82px;
+    margin: 0 auto;
+    margin: 42px 0 30px 44px;
+    padding: 12px 0px 30px 0px;
+    color: #fff;
+    font-size: 29px;
+    border-bottom:2px solid #fff;
+}
+.body .body-one div h5{
+    width: 168px;
+    height: 20px;
+    margin: 0 auto;
+    color: #444;
+    font-size: 13px;
+}
+/*通用中*/
+
+/*内容左图1*/
+.body .body-one .one-left-one{
+    background: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/php.png) no-repeat center;
+}
+/*2大排*/
+.body .body-one .one-left-two{
+    background: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/h5.png) no-repeat center;
+}
+/*.3*/
+.body .body-one .one-left-therr{
+    background: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/ui.png) no-repeat center;
+}
+/*4*/
+.body .body-one .one-left-four{
+    background: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/and.png) no-repeat center;
+}
+/*内容中*/
+.body .body-one .one-center{
+    height: 100%;
+    width: 720px;
+    /*background: pink;*/
+    float: left;
+}
+/*内容中上左*/
+.body .body-one .one-center .one-center-one{
+    width: 480px;
+    height: 190px;
+    
+    margin: 20px 0px 0px 25px;
+    background: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/course_php.png) no-repeat;
+}
+.body .body-one .one-center .one-center-one h3{
+    color: #fff;
+    font-size: 25px;
+    padding: 66px 0 0 76px;
+}
+.body .body-one .one-center .one-center-one p{
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 0 0 76px;
+}
+/*2222*/
+.body .body-one .one-center .one-center-two{
+    width: 480px;
+    height: 190px;
+    
+    margin: 20px 0px 0px 25px;
+    background: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/course_h5.png) no-repeat;
+}
+.body .body-one .one-center .one-center-two h3{
+    color: #fff;
+    font-size: 25px;
+    padding: 66px 0 0 76px;
+}
+.body .body-one .one-center .one-center-two p{
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 0 0 76px;
+}
+/*3333*/
+.body .body-one .one-center .one-center-three{
+    width: 480px;
+    height: 190px;
+    
+    margin: 20px 0px 0px 25px;
+    background: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/course_ui.png) no-repeat;
+}
+.body .body-one .one-center .one-center-three h3{
+    color: #fff;
+    font-size: 25px;
+    padding: 66px 0 0 76px;
+}
+.body .body-one .one-center .one-center-three p{
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 0 0 76px;
+}
+/*444*/
+.body .body-one .one-center .one-center-four{
+    width: 480px;
+    height: 190px;
+    margin: 20px 0px 0px 25px;
+    background: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/course_and.png) no-repeat;
+}
+.body .body-one .one-center .one-center-four h3{
+    color: #fff;
+    font-size: 25px;
+    padding: 66px 0 0 76px;
+}
+.body .body-one .one-center .one-center-four p{
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 0 0 76px;
+}
+/*内容中小块*/
+.body .body-one .one-center .one{
+    float: right;
+    display: inline-block;
+    width: 200px;
+    height: 170px;
+    background: #fff;
+    margin: 20px 15px 0px 0;
+    text-align: center;
+    
+}
+.body .body-one .one-center .two{
+    float: left;
+    display: inline-block;
+    width: 200px;
+    height: 170px;
+    background: #fff;
+    margin: 0px 20px 0px 25px;
+    text-align: center;
+    
+}
+.body .body-one .one-center .three{
+    float: left;
+    display: inline-block;
+    width: 200px;
+    height: 170px;
+    background: #fff;
+    margin: 0px 20px 0px 20px;
+    text-align: center;
+    
+}
+.body .body-one .one-center .four{
+    float: right;
+    display: inline-block;
+    width: 200px;
+    height: 170px;
+    background: #fff;
+    margin: 0px 15px 0px 0px;
+    text-align: center;
+    
+}
+/*内容右*/
+.body .body-one .one-right{
+    height: 100%;
+    width: 240px;
+    /*background: pink;*/
+    float: left;
+    background: #fff;
+}
+/*右框*/
+.body .body-one .one-right .right-one{
+    width: 220px;
+    height: 350px;
+    /*background: red;*/
+    margin:20px 10px;
+    
+}
+/*右上*/
+.body .body-one .one-right .right-one .right-one-top{
+    width: 220px;
+    height: 50px;
+    /*background: greenyellow;*/
+    line-height: 50px;
+    border-top: 1px solid red;
+}
+/*右上左*/
+.body .body-one .one-right .right-one .right-one-top span{
+    float: left;
+    color:#ff6848;
+
+}
+/*右上右*/
+.body .body-one .one-right .right-one .right-one-top a{
+    float: right;
+    color: gray;
+}
+/*右下*/
+.body .body-one .one-right .right-one .right-one-bottom{
+    width: 220px;
+    height: 309px;
+    /*background: gray;*/
+}
+/*右下li*/
+.body .body-one .one-right .right-one .right-one-bottom li{
+    height: 39px;
+    width: 220px;
+    /*background: #369;*/
+    line-height: 39px;
+    color: #8a8989;
+}
+/*优秀学员*/
+section .good{
+    background: url(../image/1.png);
+    width: 100%;
+    height: 393px;
+    margin: 50px 0;
+}
+section .good:hover{
+    background: url(../image/2.png);
+}
+/*权威推荐*/
+.infor .figure{
+    width: 1200px;
+    height: 450px;
+    /*background: pink;*/
+    margin: 0 auto;
+    text-align: center;
+}
+.infor .figure h2{
+    font-size: 30px;
+    color: #626262;
+}
+.infor .figure p{
+    font-size: 15px;
+    color: #7d7d7d;
+    margin: 10px 0 20px 0;
+}
+.infor .figure figure{
+    width: 270px;
+    height: 315px;
+    background: #fff;
+    float: left;
+    margin:25px 8px 0 20px;
+    position: relative;
+    
+
+}
+.infor .figure figure img{
+    width: 100px;
+    height: 100px;
+    margin-top: 50px;
+}
+.infor .figure figure span{
+    display: inline-block;
+    height: 50px;
+    width: 90px;
+    position: absolute;
+    left: 85px;
+    top: 165px;
+    padding-top:10px;
+    line-height: 50px;
+    font-size: 20px; 
+    color: #707070;
+    border-bottom: 2px solid #c58dfa;
+}
+.infor .figure figure p{
+    position: absolute;
+    left: 25px;
+    top: 225px;
+    display: block;
+    width: 215px;
+}
+/*就业企业*/
+.infor .pander{
+    width: 1200px;
+    height: 450px;
+    /*background: #fff;*/
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 100px;
+}
+.infor .pander h6{
+    font-size: 30px;
+    margin: 10px 0;
+}
+.infor .pander p{
+    margin-bottom: 20px;
+}
+
+.infor .pander ul li{
+    float: left;
+    width: 240px;
+    height: 120px;
+    line-height: 120px;
+}
+.infor .xuexiao{
+    width: 100%;
+    height: 100px;
+    background: #fff;
+    
+
+}
+.infor .xuexiao ul{
+    width: 1200px;
+    height: 100px;
+    /*background: gray;*/
+    margin:0 auto;
+    
+}
+.infor .xuexiao ul li{
+    float: left;
+    width: 230px;
+    height: 50px;
+    /*background: pink;*/
+    line-height: 50px;
+    text-align: center;
+    margin: 25px 1px;
+    border-right: 1px solid gray;
+}
+.infor .xuexiao ul li a{
+    font-size: 15px;
+    color: #7d7d7d;
+}
+.infor .xuexiao ul  a span{
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+    
+    position: relative;
+    top: 5px;
+}
+.infor .xuexiao ul li a .foot1{
+    background: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/foot_3.png) no-repeat 0 1px;
+}
+.infor .xuexiao ul li a .foot2{
+    background: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/foot_3.png) no-repeat -22px 0;
+} 
+.infor .xuexiao ul li a .foot3{
+    background: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/foot_3.png) no-repeat -45px 0;
+}
+.infor .xuexiao ul li a .foot4{
+    background: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/foot_3.png) no-repeat -68px 1px;
+}
+.infor .xuexiao ul li a .foot5{
+    background: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/foot_3.png) no-repeat -95px 0;
+}
+/*最后*/
+footer{
+    width: 100%;
+    height: 250px;
+    background: #f5f5f5;
+    position: relative;
+
+}
+/*最后的背景*/
+footer .footer-top{
+    width: 1050px;
+    height: 150px;
+    /*background: pink;*/
+    position: absolute;
+    top: 50px;
+    left: 250px;
+    border-bottom: 1px solid gray;
+}
+/*三个图片背景*/
+footer .footer-top .ul-top{
+    width: 200px;
+    height: 40px;
+    margin: 37px 0 0 426px;
+}
+/*三个小图标*/
+footer .footer-top .ul-top .wb{
+    width: 39px;
+    height: 39px;
+    background: url(../image/wb.png);
+    float: left;
+    margin-left: 20px;
+}
+
+footer .footer-top .ul-top .wx{
+    width: 39px;
+    height: 39px;
+    background: url(../image/wx.png);
+    float: left;
+    margin-left: 20px;
+}
+
+footer .footer-top .ul-top .dh{
+    width: 39px;
+    height: 39px;
+    background: url(../image/dh.png);
+    float: left;
+    margin-left: 20px;
+}
+footer .footer-top .ul-bottom{
+    width: 400px;
+    height: 40px;
+    /*background: red;*/
+    margin: 0 auto;
+}
+footer .footer-top .ul-bottom li{
+    float: left;
+    padding-left: 40px;
+    line-height: 40px;
+    margin-top: 20px; 
+}
+footer .footer-bottom{
+    width: 1050px;
+    height: 50px;
+    /*background: green;*/
+    position: absolute;
+    top: 200px;
+    left: 250px;
+}
+footer .footer-bottom span{
+    line-height: 50px;
+    padding-left: 355px;
+}

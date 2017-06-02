@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script>
+              var number=prompt("请输入一个数字");
+              var a=number%5;
+              var b=number%6;
+              if(a==0&&b==0){
+                alert("这个数字同时能被5和6整除");
+              }else if(a==0&&b!=0){
+                alert("这个数能被5整除，但不能被6整除");
+              }else if(a!=0&&b==0){
+                alert("这个数能被6整除，但不能被5整除");
+              }else{
+                alert("这个数既不能被5整除，也不能被6整除");
+              }
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

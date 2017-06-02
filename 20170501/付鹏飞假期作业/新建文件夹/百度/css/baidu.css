@@ -1,0 +1,234 @@
+*{
+    margin:0;
+    padding:0;
+    
+}
+body{
+    background-image:url(../image/12.jpg);
+}
+/*导航*/
+.nav{
+    width: 100%;
+    height: 50px;
+    background-color: ;
+}
+.nav-left{
+    float: left;
+    margin: 10px 20px 0 10px;
+    color:white;
+}
+.nav-left a{
+    margin-right:18px;
+    color:white;
+}
+.nav-right{
+    float:right;
+    margin: 10px 20px 0 10px;
+}
+.nav-right a{
+    margin-left:18px;
+    color:white;
+}
+.nav-right .cp{
+    text-decoration: none;
+    display: inline-block;
+    width: 88px;
+    height: 30px;
+    background: #398bfb;
+    text-align: center;
+}
+.nav .nav-left b{
+    color: #3388e0
+    
+}
+/*百度搜索*/
+section{
+    width: 100%;
+    text-align: center;
+}
+section .box{
+    width: 760px;
+    height: 250px;
+    margin: 0 auto;
+    /*background-color: black;*/
+    text-align: center;
+    
+}
+section .box img{
+    width: 350px;
+    height: 150px;
+    
+}
+section .box input{
+    padding-right: 35px;
+    width: 500px;
+    height: 35px;
+    
+}
+section .box button{
+    
+    width: 90px;
+    height: 38px;
+    position: relative;
+}
+section .box button .zhaoxiang{
+    background:#fff url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/img/camera_new_5606e8f.png) no-repeat;
+    z-index: 1;
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    margin-top: -8px;
+    height: 16px;
+    width: 18px;
+}
+/*内容*/
+header{
+    width: 100%;
+    text-align: center;
+}
+/*背框*/
+header .bodyer{
+    width: 900px;
+    height: 500px;
+    background-color: #a8a8b0;
+    margin: 0 auto;
+}
+/*内容导航*/
+header .bodyer .head{
+    width: 100%;
+    height: 40px;
+    /*background-color: red;*/
+    line-height: 40px;
+    
+}
+header .bodyer .head span{
+    
+    height: 40px;
+    width: 100px;
+    /*background-color: greenyellow;*/
+    display: inline-block;
+    float: left;
+}
+/*我的关注*/
+header .bodyer .head .heada:hover{
+    background-color: #80818d;  
+    cursor: pointer; 
+}
+/*导航*/
+header .bodyer .head .headb:hover{
+    background-color: #80818d;
+    cursor: pointer;
+}
+/*推荐*/
+header .bodyer .head .headc:hover{
+    background-color: #80818d;
+    cursor: pointer;
+}
+/*左侧内容*/
+header .bodyer .left{
+    width: 60%;
+    height: 460px;
+    /*background-color: blue;*/
+    display: inline-block;
+}
+/*兴趣推荐字*/
+header .bodyer .left .left-biao{
+    width: 100%;
+    height: 46px;
+    /*background-color: red;*/
+    line-height: 46px;
+    cursor: pointer;
+}
+header .bodyer .left .left-biao div{
+    border-bottom: 1px solid #fff;
+    width: 172px;
+    float: left;
+    height: 1px;
+    margin-top: 22px;
+}
+header .bodyer .left .left-biao span{
+    float: left;
+}
+header .bodyer .left .left-xw{
+    line-height: 100px;
+    width: 100%;
+    height: 100px;
+    /*background-color: red;*/
+
+}
+
+header .bodyer .left .left-xw .left-book{
+    line-height: 30px;
+    width: 400px;
+    height: 80px;
+    padding-top: 15px;
+    margin: 0 auto;
+    /*background-color: pink;*/
+    text-align: left;
+
+}
+header .bodyer .left .left-xw .left-book img{
+    float: left;
+}
+header .bodyer .left .left-xw .left-book div{
+    width: 400px;
+    height: 40px;
+    background-color: ;
+    margin: 0 auto;
+    float: left;
+    cursor: pointer;
+}
+header .bodyer .left .left-xw .left-book span{
+    float: left;
+    cursor: pointer;
+}
+header .bodyer .left .left-xw .left-book span b{
+    border: 1px solid pink;
+    color:red;
+    cursor: pointer;
+}
+/*右侧内容*/
+header .bodyer .right{
+    width:40%;
+    height: 460px;
+    /*background-color: yellow; */
+    float: right;
+}
+header .bodyer .right .right-head{
+    width: 90%;
+    height: 46px;
+    background-color: ;
+    margin: 0 auto;
+    line-height: 46px;
+}
+header .bodyer .right .right-head a{
+    float: left;
+    cursor: pointer;
+}
+header .bodyer .right .right-head span{
+    float: right;
+    cursor: pointer;
+}
+header .bodyer .right ul{
+    list-style: none;
+    width: 45%;
+    height: 414px;
+    background-color: ;
+    line-height: 46px;
+
+}
+header .bodyer .right .right-ul-left{
+    float: left;
+}
+header .bodyer .right .right-ul-right{
+    float: right;
+}
+header .bodyer .right ul li{
+    float: left;
+    cursor: pointer;
+}
+header .bodyer .right ul li b{
+    border: 1px solid pink;
+    color:red;
+    cursor: pointer;
+}

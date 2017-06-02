@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        var workAge;
+        var check;
+        for(var i = 0 ; i < 100 ; i ++){
+            workAge = prompt("请输入你的工龄");
+            if (workAge == 0 || workAge == 1 || workAge == 2) {
+                monthPay = prompt("请输入你的月薪");
+                check = monthPay / 1;
+                if (!check) {
+                    alert("你的输入有误，请确认填写的是数字");
+                } else {
+                    if (workAge == 0) {
+                        if (monthPay < 8000) {
+                            alert("你的年终奖是" + monthPay + "元");
+                        } else {
+                            alert("你的年终奖是" + monthPay * 1.2 + "元");
+                        }
+                    } else if (workAge == 1) {
+                        if (monthPay < 10000) {
+                            alert("你的年终奖是" + monthPay * 1.5 + "元");
+                        } else {
+                            alert("你的年终奖是" + monthPay * 1.7 + "元");
+                        }
+                    } else {
+                        if (monthPay < 12000) {
+                            alert("你的年终奖是" + monthPay * 3 + "元");
+                        } else {
+                            alert("你的年终奖是" + monthPay * 3.2 + "元");
+                        }
+                    }
+                }
+            } else {
+                alert("你的输入有误，请确认工龄务必在2年以内,并且没有其他字符");
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

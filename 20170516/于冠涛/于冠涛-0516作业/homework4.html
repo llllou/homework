@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script>
+             var work=prompt("请输入您工作了多少年");
+             if(work<1&&work>0){
+                var salary=prompt("请输入你的薪资");
+                if(salary<=8000){
+                    alert("发放月薪1倍的年终奖");
+                }else{
+                    alert("发放月薪1.2倍的年终奖");
+                }
+             }else if(work>=1&&work<2){
+                 var salary=prompt("请输入你的薪资");
+                if(salary<=10000){
+                    alert("发放月薪1.5倍的年终奖");
+                }else{
+                    alert("发放月薪1.7倍的年终奖");
+                }
+             }else if(work>=2){
+                 var salary=prompt("请输入你的薪资");
+                if(salary<=12000){
+                    alert("发放月薪3倍的年终奖");
+                }else{
+                    alert("发放月薪3.2倍的年终奖");
+                }
+             }else{
+                alert("本公司没有您的在职资料")
+             }
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,621 @@
+*{
+    padding: 0;
+    margin:0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+i,em{
+    font-style:normal;
+}
+.head{
+    width: 100%;
+    height:111px;
+  
+}
+.head1{
+        width:1100px;
+        height:70px;
+        margin:0 auto;
+          /*background:#abc;*/
+}
+.head1 p{
+            margin-left:117px;
+            font-size: 30px;
+            padding-top:34px; 
+}
+.head2{
+        width:1100px;
+        height:41px;
+        margin:0 auto;
+        /*background:orange;*/
+}
+.head2 p{
+             margin-left:117px;
+            font-size: 20px;
+}
+.head2 em{
+            float:right;
+            margin-top:-15px;
+            color:green;
+}
+.nav{
+        width:100%;
+        height:50px;
+        background: #36aa03;
+}
+.nav .nav-centent{
+        width:1100px;
+        height:50px;
+        /*background: pink;*/
+        margin:0 auto;
+
+}
+.nav .nav-centent li{
+            width:122px;
+            height:50px;
+            
+            float:left;
+            font-family: "微软雅黑";
+            font-size:16px;
+}
+.nav .nav-centent em{
+            float: left;
+            line-height:50px;
+            margin:0 29px;
+}
+.nav .nav-centent li:hover{
+            color:#1eacb9;  
+            background: #efedef;          
+}
+
+
+
+.nav-b{
+        width:100%;
+        height:29px;
+        background:#fcfcfc;
+}
+.nav-b p{
+          margin-left:340px;
+          line-height: 29px;
+}
+/*图片*/
+.img{
+        width:1100px;
+        height:283px;
+        margin: 0 auto;
+}
+.jianxi{
+       width:100%;
+       height:22px;
+       /*background: gray;*/
+}
+/*中间1*/
+.oDiv{
+        width:100%;
+        height:217px;
+        background: #fff;
+}
+.oDiv .oDiv-left{
+        width:273px;
+        height:217px;
+        /*background: blue;*/
+       margin-left:242px;
+       float:left;
+}
+.oDiv .oDiv-left .oDiv-left-t{
+        width:273px;
+        height:44px;
+        background: #f3f2f3;
+}
+.oDiv .oDiv-left .oDiv-left-t img{
+            margin:20px 0 20px 10px;
+            float:left;
+}
+.oDiv .oDiv-left .oDiv-left-t h4{
+                float:left;
+                margin:15px 0 15px 10px;
+}
+.oDiv .oDiv-left .oDiv-left-t .oDiv2{
+                border-left:2px solid #dcdcdc;
+                float:left;
+                margin:13px 0 20px 10px;
+                color:#cfcfcf;
+                padding-left: 10px;
+}
+.oDiv .oDiv-left .oDiv-left-b1{
+            width:273px;
+            height:53px;
+            background-image:url(../image/1.png);
+            text-align: center;
+            color:green;
+}
+
+.oDiv .oDiv-left .oDiv-left-b2{
+            width:273px;
+            height:56px;
+            background-image:url(../image/2.png);
+            margin-top:5px; 
+            text-align: center;
+            color:green;
+}
+
+.oDiv .oDiv-left .oDiv-left-b3{
+            width:273px;
+            height:57px;
+            background-image:url(../image/3.png);
+            margin-top:2px; 
+           text-align: center;
+            color:green;
+}
+.oDiv .oDiv-center{
+            width:538px;
+            height:217px;
+            /*background: red;*/
+            float:left;
+            margin-left:16px; 
+}
+.oDiv .oDiv-center .oDiv-center-t{
+        width:538px;
+        height:44px;
+        background: #f3f2f3;
+}
+.oDiv .oDiv-center .oDiv-center-t img{
+            margin:20px 0 20px 10px;
+            float:left;
+}
+.oDiv .oDiv-center .oDiv-center-t h4{
+                 float:left;
+                margin:15px 0 15px 10px;
+}
+.oDiv .oDiv-center .oDiv-center-t  .oDiv4{
+                 border-left:2px solid #dcdcdc;
+                float:left;
+                margin:13px 0 20px 10px;
+                color:#cfcfcf;
+                padding-left: 10px;
+}
+
+.oDiv .oDiv-center .oDiv-center-t .oDiv2{
+                 float:right;
+                margin:13px 0 20px 10px;
+                color:#cfcfcf;
+                padding-right: 10px;
+}
+.oDiv .oDiv-center .oDiv-center-b {
+                width: 538px;
+                height: 173px;
+                /*background: yellow;*/
+                float:left;
+                margin-top: -10px;
+}
+.oDiv .oDiv-center .oDiv-center-b .oDiv-center-b1{
+               width:185px;
+               height:173px;
+               float:left;
+               /*background: blue;*/
+}
+.oDiv .oDiv-center .oDiv-center-b .oDiv-center-b1 img{
+             margin: 50px 25px;
+}
+.oDiv .oDiv-center .oDiv-center-b .oDiv-center-b2 {
+           width:353px;
+           height:173px;
+         /*  background: black;*/
+           float:right;
+           text-indent: 2em;
+          margin-top: 20px;
+          line-height: 25px;
+}
+
+.oDiv .oDiv-right{
+            width:257px;
+            height:217px;
+            /*background: red;*/
+            float:left;
+            margin-left:16px; 
+}
+.oDiv .oDiv-right .oDiv-right-t{
+        width:257px;
+        height:44px;
+        background: #f3f2f3;
+        float:right;
+}
+.oDiv .oDiv-right .oDiv-right-t img{
+            margin:20px 0 20px 10px;
+            float:left;
+}
+.oDiv .oDiv-right .oDiv-right-t h4{
+                float:left;
+                margin:15px 0 15px 10px;
+}
+.oDiv .oDiv-right .oDiv-right-t .oDiv3{
+                border-left:2px solid #dcdcdc;
+                float:left;
+                margin:13px 0 20px 10px;
+                color:#cfcfcf;
+                padding-left: 10px;
+}
+.oDiv .oDiv-right .oDiv-right-b {
+                width: 257px;
+                height: 173px;
+                /*background: yellow;*/
+                float:left;
+         
+}
+.oDiv .oDiv-right .oDiv-right-b img{
+            margin:11px 21px;
+}
+.jianxi1{
+       width:100%;
+       height:17px;
+       /*background: gray;*/
+}
+/*中间2*/
+.p{
+        width:100%;
+        height:217px;
+        background: #fff;
+}
+.p .pd{
+        width:1100px;
+        height:217px;
+        /*background: red;*/
+        margin:0 auto;
+}
+.p .pd .p-t{
+            width:1100px;
+            height:44px;
+            background: #f2f1f2;
+            float: left;
+
+}
+.p .pd .p-t img{
+            margin:20px 0 20px 15px;
+            float:left;
+}
+.p .pd .p-t h4{
+                float:left;
+                margin:15px 0 15px 10px;
+}
+.p .pd .p-t .p-t1{
+                border-left:2px solid #dcdcdc;
+                float:left;
+                margin:13px 0 20px 10px;
+                color:#cfcfcf;
+                padding-left: 10px;
+}
+.p .pd .p-t .p-t2{
+                 float:right;
+                margin:13px 0 20px 10px;
+                color:#cfcfcf;
+                padding-right: 10px;
+}
+.p .p-b{
+            width:1100px;
+            height:173px;
+            /*background: yellow;*/
+}
+.p .p-b .p-b1{
+            width:119px;
+            height:173px;
+            /*background: pink;*/
+            float:left;
+}
+.p .p-b .p-b1 img{
+           margin:15px 0 0 14px;
+}
+.p .p-b .p-b1 h4{
+            margin-left:20px;
+         
+} 
+.p .p-b .p-b2{
+            width:193px;
+            height:173px;
+            /*background: blue;*/
+            float:left;
+}
+.p .p-b .p-b2 img{
+            margin:15px 0 0 0px;
+            float:left;
+}
+.p .p-b .p-b2 h4{
+            margin-left:20px;
+            margin-top:-4px;
+} 
+.p .p-b .p-b3{
+            width:193px;
+            height:173px;
+            /*background: pink;*/
+            float:left;
+}
+.p .p-b .p-b3 img{
+            margin:15px 0 0 0px;
+            float:left;
+}
+.p .p-b .p-b3 h4{
+            margin-left:20px;
+            margin-top:-4px;
+} 
+.p .p-b .p-b4{
+            width:193px;
+            height:173px;
+            /*background: blue;*/
+            float:left;
+}
+.p .p-b .p-b4 img{
+            margin:15px 0 0 0px;
+            float:left;
+}
+.p .p-b .p-b4 h4{
+            margin-left:20px;
+            margin-top:-4px;
+} 
+.p .p-b .p-b5{
+            width:193px;
+            height:173px;
+            /*background: pink;*/
+            float:left;
+}
+.p .p-b .p-b5 img{
+            margin:15px 0 0 0px;
+            float:left;
+}
+.p .p-b .p-b5 h4{
+            margin-left:20px;
+            margin-top:-4px;
+} 
+.p .p-b .p-b6{
+            width:193px;
+            height:173px;
+            /*background: blue;*/
+            float:left;
+}
+.p .p-b .p-b6 img{
+            margin:15px 0 0 0px;
+            float:left;
+}
+.p .p-b .p-b6 h4{
+            margin-left:20px;
+            margin-top:-4px;
+}
+/*间隙*/
+.jianxi2{
+       width:100%;
+       height:17px;
+       /*background: gray;*/
+}
+/*中间3*/
+.last{
+            width:100%;
+            height:218px;
+            /*background: green;*/
+}
+.last .last-d{
+            width:1100px;
+            height:218px;
+            /*background: #abc;*/
+            margin:0 auto;
+}
+.last .last-d .last-left{
+            width:272px;
+            height: 218px;
+            /*background: yellow;*/
+            float:left;
+}
+.last .last-d .last-left .last-left-t{
+            width:272px;
+            height:45px;
+            background: #f2f1f2;
+}
+.last .last-d .last-left .last-left-t img{
+            margin:20px 0 20px 10px;
+            float:left;
+}
+.last .last-d .last-left .last-left-t h4{
+                float:left;
+                margin:15px 0 15px 10px;
+}
+.last .last-d .last-left .last-left-t .last2{
+                border-left:2px solid #dcdcdc;
+                float:left;
+                margin:13px 0 20px 10px;
+                color:#cfcfcf;
+                padding-left: 10px;
+}
+.last .last-d .last-left .last-left-b{
+                width:272px;
+                height:173px;
+                /*background: pink;*/
+}
+.last .last-d .last-left .last-left-b img{
+                margin: 7px 0 0 30px;
+}
+.last .last-d .last-center{
+                width:538px;
+                height:218px;
+                /*background: red;*/
+                float:left;
+                margin-left:15px;
+}
+.last .last-d .last-center .last-center-t{
+                width:538px;
+                height:45px;
+                background: #eeeeee;
+                float:left;
+}
+.last .last-d .last-center .last-center-t img{
+             margin:20px 0 20px 10px;
+            float:left;
+}
+.last .last-d .last-center .last-center-t h4{
+                float:left;
+                margin:15px 0 15px 10px;
+}
+.last .last-d .last-center .last-center-t .last3{
+                 border-left:2px solid #dcdcdc;
+                float:left;
+                margin:13px 0 20px 10px;
+                color:#cfcfcf;
+                padding-left: 10px;
+}
+.last .last-d .last-center .last-center-t .last4{
+                float:right;
+                margin:13px 0 20px 10px;
+                color:#cfcfcf;
+                padding-right: 10px;    
+}
+.last .last-d .last-center .last-center-c{
+                width:538px;
+                height:100px;
+                /*background: yellow;*/
+                float:left;
+}
+.last .last-d .last-center .last-center-tu{
+                width:155px;
+                height:100px;
+                /*background: blue;*/
+                float: left;
+             
+}
+.last .last-d .last-center .last-center-tu img{
+                margin:10px 0 0 13px;
+                float: left;
+}
+.last .last-d .last-center .last-center-c .wenzi{
+                width:383px;
+                height:100px;
+                /*background: ;*/
+                float:right;
+}
+.last .last-d .last-center .last-center-c .wenzi p{
+                margin-top:12px;
+                text-indent: 2em;
+                line-height: 25px;
+}
+.last .last-d .last-center .last-center-b{
+                width:538px;
+                height:73px;
+                background: #f5f5f5;
+                float:left;
+}
+.last .last-d .last-center .last-center-b p{
+                float:left;
+                list-style:disc;
+                margin-left:13px;
+                line-height: 36px;
+}
+.last .last-d .last-center .last-center-b i{
+                float:right;
+            
+}
+.last .last-d .last-right{
+                width:260px;
+                height:218px;
+                /*background: red;*/
+                float:right;
+
+}
+
+.last .last-d .last-right .last-right-t{
+                width:256px;
+                height:105px;
+                border:2px solid #f3f3f3;
+                float:left;
+}
+.last .last-d .last-right .last-right-t .right-l{
+                width:110px;
+                height:105px;
+                float:left;
+}
+.last .last-d .last-right .last-right-t .right-l img{
+                margin:13px 0 0 15px;
+}
+.last .last-d .last-right .last-right-t .right-c{
+                width:35px;
+                height:105px;
+                /*background: blue;*/
+                float:left;
+             
+}
+.last .last-d .last-right .last-right-t .right-c b{
+                   color:green;
+                   font-size: 70px;
+                   float: right;
+                   margin-top: 10px;
+}
+.last .last-d .last-right .last-right-t .right-r{
+                    width:111px;
+                    height:105px;
+                    /*background: blue;*/
+                    float:left;
+}
+.last .last-d .last-right .last-right-t .right-r p{
+                    margin-top:35px;
+
+}
+.last .last-d .last-right .last-right-t .right-r span{
+                    color:green;
+}
+
+.last .last-d .last-right .last-right-b{
+                width:256px;
+                height:105px;
+                border:2px solid #f3f3f3;
+                float:left;
+}
+.last .last-d .last-right .last-right-b .right-b1{
+                width:110px;
+                height:105px;
+                float:left;
+}
+.last .last-d .last-right .last-right-b .right-b1 img{
+                margin:13px 0 0 15px;
+}
+.last .last-d .last-right .last-right-b .right-b2{
+                width:35px;
+                height:105px;
+                /*background: blue;*/
+                float:left;
+             
+}
+.last .last-d .last-right .last-right-b .right-b2 b{
+                   color:green;
+                   font-size: 70px;
+                   float: right;
+                   margin-top: 10px;
+}
+.last .last-d .last-right .last-right-b .right-b3{
+                    width:111px;
+                    height:105px;
+                    /*background: blue;*/
+                    float:left;
+}
+.last .last-d .last-right .last-right-b .right-b3 p{
+                    margin-top:35px;
+
+}
+.last .last-d .last-right .last-right-b .right-b3 span{
+                    color:green;
+}
+/*中间*/
+.jianxi3{
+       width:100%;
+       height:50px;
+       /*background: gray;*/
+}
+.dizhi{
+            width:100%;
+            height:60px;
+            background: #ededec;
+}
+.dizhi p{
+            text-align: center;
+}
+/*.dizhi em{
+             text-align: center;
+}*/

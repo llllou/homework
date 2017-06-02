@@ -1,0 +1,269 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size:12px;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+em{
+    font-style: normal;
+}
+.head{
+    width: 1366px;
+    height: 165px;
+    background: #fbfdf5;
+}
+.top{
+    width: 940px;
+    height: 22px;
+    margin:0 auto;
+}
+.top-laber{
+    /*background-image: url(../image/psd20579_03.png);*/
+    color: #c4c5c1;
+    float: right;
+    background-repeat: no-repeat;
+    font-size: 11.38px;
+    font-family: 宋体；
+}
+.top-laber img{
+    margin-left: 11px;
+}
+.name{
+    width: 940px;
+    height: 96px;
+    margin-left: 214px;
+}
+.name-left{
+    width: 468px;
+    height: 75px;
+    margin:0 auto;
+    float: left;
+}
+.name-left-word1{
+    text-align: center;
+    color: #151515;
+    font-size: 28.45px;
+}
+.name-left-word2{
+    text-align: center;
+    color: #151515;
+    font-size: 15.17px;
+}
+.name-right{
+    width: 472px;
+    height: 75px;
+    float: right;
+}
+.name-right span{
+    font-size: 22.76px;
+    color: #67cf0a;
+    display:inline-block;
+    float: right;
+    margin-top: 40px;
+}
+.border{
+    width: 1366px;
+    height: 43px;
+    background-image: linear-gradient(to bottom,#1f9601,#5dcd07);
+}
+.bar{
+    width: 940px;
+    height: 43px;
+    margin-left:214px;
+}
+.bar .bar-1,.bar-2,.bar-3{
+    color: white;
+    line-height: 43px;
+    font-size: 15.17px;  
+    float: left;
+}
+.bar-1{
+    margin-left: 16px;
+    position: relative;
+}
+.bar-hover{
+    width: 160px;
+    height: 18px;
+    line-height: 18px;
+    position: absolute;
+    bottom:-18px;
+}
+.bar-1:hover .bar-1-1{
+    background: white;
+    color: #c2c1c2;
+    font-size: 11.38px;
+}
+.bar-2{
+    margin-left: 46px;
+}
+.bar-3{
+    margin:0 16px 0 39px;
+}
+.photo{
+    width: 940px;
+    height: 266px;
+    margin:0 auto;
+    margin-top: 43px;
+}
+.center{
+    width: 940px;
+    height: 186px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.center-left{
+    width: 233px;
+    height: 186px;
+    float: left;
+}
+.center-left-1{
+    font-size: 15.17px;
+    color: #878787;
+    float: left;
+}
+.center-left-1-word{
+    font-size: 11.38px;
+    color: #cccccc;
+    float: left;
+}
+.center-center{
+    width: 459px;
+    height: 186px;
+    margin:0 15px;
+    float: left;
+}
+.center-center-top{
+    width: 448px;
+    height:49px;
+}
+.center-center-word{
+    font-size: 11.38px;
+    color: #cccccc;
+    float: right;
+}
+.center-center-photo img{
+    float: left;
+}
+.center-right{
+    width: 218px;
+    height: 186px;
+    float: right;
+}
+.porduct{
+    width: 940px;
+    height: 213px;
+    margin:0 auto;
+}
+.porduct-top{
+    width: 940px;
+    height: 37px;
+    float: left;
+}
+.porduct-top-word1{
+    font-size: 15.17px;
+    color: #878787;
+    float: left;
+}
+.porduct-top-word2{
+    font-size: 11.38px;
+    color: #cccccc;
+    float: left;
+}
+.porduct-photo{
+    width: 940px;
+    height: 163px;
+}
+.porduct-photo li{
+    float: left;
+    margin-left: 15px;
+}
+.last-two{
+    width: 940px;
+    height: 204px;
+    margin: 0 auto;
+}
+.last-two-left{
+    width: 233px;
+    height: 204px;
+    float: left;
+}
+.last-two-center{
+    width: 448px;
+    height: 204px;
+    margin-left: 26px;
+    float: left;
+}
+.porduct-two-center-1{
+    width: 468px;
+    height: 77px;
+    float: left;
+}
+.porduct-two-center-photo1{
+    float: left;
+}
+.last-two-center-2 li{
+
+list-style-type: disc;
+}
+.last-two-center-3{
+    float: left;
+}
+.last-two-center-4{
+    float: left;
+    margin-left: 211px;
+}
+.last-two-center-5{
+     float: left;
+    margin-left: 183px;
+}
+.last-two-right{
+    width: 202px;
+    height: 174px;
+    margin-left: 31px;
+    margin-bottom: 30px;
+    float: right;
+}
+.last-two-right-1{
+    width: 202px;
+    height: 92px;
+    float: left;
+}
+.last-two-right-photo1{
+    float: left;
+}
+.last-two-right-word1{
+    width: 37px;
+    height: 92px;
+    float: left;
+    text-align: center;
+    line-height: 92px;
+    color: #38ab03;
+}
+.last-two-right-word1 span{
+    font-weight: 400;
+    font-size: 53px;
+}
+.last-two-right-word2{
+    font-size: 17px;
+    color: #3d3d3d;
+    margin-top: 22px;
+}
+.last-two-right-word3{
+    font-weight: 300px;
+    font-size: 14px;
+    color: #38ab03;
+}
+.last{
+    width: 940px;
+    height: 73px;
+    margin-left: 210px;
+    }
+.last p{
+    color: #9d9d9d;
+    text-align: center;
+}

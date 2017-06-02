@@ -1,0 +1,608 @@
+*{margin: 0px;padding:0px;color:#878c91;}
+a{text-decoration: none;color:#878c91;}
+ul{list-style: none;}
+em{font-style: normal;}
+.clear{clear:both;}
+body{background-color: #f5f5f5;}
+/*-------------------------总体样式-------------------------*/
+header
+{
+	height: 125px;
+}
+nav
+{
+	height: 35px;
+	width:1170px;
+	padding: 0px 95px 0px;
+	vertical-align: middle;}
+.nav-left
+{
+	float: left;
+	font-size: 12px;
+	line-height: 35px;}
+.nav-right
+{
+	float: right;
+}
+.nav-left li
+{
+	text-align: center;
+	float: left;
+}
+.nav-left a
+{
+	border-right:1px solid #878c91;
+	padding-right:7px;padding-left:10px;
+} 
+.nav-left-content1 a{
+	border-right:none; 
+	padding: 0px;
+}
+.nav-left-content6 a
+{
+	border-right:none;
+}
+.nav-right
+{
+	font-size:12px;
+	line-height: 35px;
+}
+.nav-right span
+{
+	margin-left:20px;
+}
+.nav-right .nav-right-content1
+{
+	margin-left:0px;
+}
+.nav-right-content1 a
+{
+	color:#fd8268;
+}
+.nav-right img
+{
+	margin-right: 7px;
+}
+/*--------------------------头部导航-------------------*/
+.nav2{width: 1170px;
+	height: 90px;
+	font-size: 16px;
+	margin:0px 120px 0px 100px ;
+	padding-top: 27px;
+	position: relative;}
+.nav2 ul
+{
+	vertical-align: middle;
+}
+.nav2 li 
+{
+	float: left;
+}
+.nav2 img
+{
+	display: inline-block;
+}
+.nav2-img1{width: 150px;height: 38px;}
+.nav2 a{display: inline-block; height: 38px;padding-right: 7px}
+.nav2-img2{width: 105px;height: 38px;}
+.nav2-content1{border-right:1px solid #878c91;height: 38px;margin-right: 8px;}
+.nav2>img{float:right;}
+.nav2-img4
+{
+	width: 18px;
+	height: 20px;
+	margin-right:22px;
+	margin-top: 13px;
+}
+.nav2-img3
+{height:45px;width:45px;border-radius: 50%;margin-top:0px;margin-right: 0px;}
+.nav2-content{padding-left: 38px;padding-top: 16px;cursor: pointer;}
+#downward{height:0px;width: 0px;
+	border-width: 4px 3px;
+	border-style: solid;
+	border-color:#878c91 white white white;
+	position: absolute;
+	top: 52px;
+	left:641px;
+}
+
+
+.main-show
+{	width: 1355px;height: 450px;
+	float: left;
+	background-image:url(../image/banner-1.jpg) ;
+	background-position: -313px 0px;
+	overflow: hidden;;	
+	text-overflow: ellipsis;
+}
+.main-list{
+	width:217px ;
+	height:448px;
+	background-color: rgba(50,50,50,0.3);
+	margin-left: 95px;
+	float: left;
+	position: relative;;
+	}
+.main-list ul>li{padding-left: 25px;padding-top: 25px}
+.main-list  h3{color:#f4f7f8;font-size: 16px;}
+.main-list ul li .main-list-title{
+	font-size: 11px;
+	color: #c0d2db;
+	display: block;
+	margin-top: 11px;
+	padding-bottom: 16px;
+	border-bottom: 1px solid #245972;
+	width: 162px;
+	position: relative;
+}
+.main-list li span em{
+	position: absolute;
+	top:-22px;
+	left: 150px;
+	color: rgba(230,230,230,0.6);
+	font-size: 20px;
+}
+
+.main-list>ul>li:hover{background-color:rgba(50,50,50,0.5) }
+.main-list li>div{
+    position: absolute;
+    left:217px;
+    top:0px;
+	width: 930px;
+	height: 450;
+	background-color: white ;
+	display: none;
+}
+.main-list ul li:hover div{display: block;}
+.main-list2-left{float: left;cursor: pointer;}
+
+.main-list2-left ul{width: 210px;height: 450px;}
+.main-list ul li .main-list2-left li{width: 210px;
+	height: 210px;margin: 0px;
+	padding-left:10px;text-align: center;
+	background-color: white;
+	padding-right: 30px;
+}
+.main-list2-left li+li{padding-top:0px;border-top: 1px solid}
+.main-list2-left li img{margin-top: 16px;
+	width: 110px;
+	height: 80px;
+}
+.main-list2-left li h3{font-size:12px;color:black;}
+#main-list2-left-h3 
+{margin-top: 23px;
+}
+.main-list2-left li p{color: grey;padding-top: 18px;font-size: 10px;}
+.main-list2-right-content1>a:hover{color:#ff6949;}
+.main-list2-right{
+	float: right;
+	width: 706px;
+	height: 450px;
+	white-space: nowrap;
+	text-overflow: ellipsis;}
+.main-list2-right-content1{width: 680px;
+	height: 167px;padding-left: 35px;
+	background-color: #fafafa; }
+.main-list2-right-content1 h3{padding-top: 42px
+	;color:#ff6949;font-size: 16px;}
+.main-list2-right-content1 a{margin: 8px 3px 5px;display: inline-block;}
+.main-list2-right-content1 .main-list2-right-link{padding-left:0px;}
+.main-list2-right-content2{padding-left: 35px;
+	background-color: #fafafa;width: 686px;height: 284px;font-size:12px;}
+.main-list2-right-content2>img{float:right;}
+.main-list ul li .main-list2-right-content2 li{width: 300px;padding-left:0px;}
+.main-list2-right-content2 ul{float: left;}
+.main-list ul li .main-list2-right-content2 h3{color:#ff6949;font-size: 16px;}
+/*-------------------------------二级菜单----------------------------------*/
+.main-exp{width: 1154px;height: 88px;background-color: white;margin: 0px auto;padding-top: 25px;padding-bottom: 25px;}
+.main-exp-img{float: left; width: 37px;height: 36px;margin:25px 14px 10px 23px;background-image:url(../image/infor.png);}
+.main-exp ul li{width: 229px;height: 108px;float: left;}
+.main-exp li:hover{box-shadow: -2px 8px 4px 0px rgba(100,100,100,0.1);}
+.main-exp-page{float: right;padding-top: 25px;padding-bottom:25px;padding-right: 32px;border-right:1px solid rgb(200,200,200);}
+.main-exp-page>p{font-size:10px;}
+.main-exp-page>b{display: block;font-size:20px;color:rgb(83,83,83);font-weight: normal;}
+.main-exp ul li+li+li+li+li .main-exp-page{border-right: 0px;}
+/*--------------------------------第二个导航栏----------------------------*/
+.main-table
+{
+width: 1154px;
+
+height: 360px;
+margin:70px auto 0px;
+overflow: hidden;
+}
+.main-table-left
+{
+float:left;width:187px;
+height:100%;
+background: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/php.png) no-repeat;
+padding-left: 25px
+}
+.main-table-left>.main-table-left-up
+{
+	width: 169px;
+	height: 100px;
+	padding-top: 33px;
+}
+
+.main-table-left>ul
+{
+width: 174px;
+height: 44px;
+font-size: 14px;
+margin-top: 24px;
+
+}
+.main-table-left>ul li
+{
+	margin-bottom: 20px;
+	white-space: nowrap;
+	position: relative;
+	left:-8px;
+	color: rgba(50,50,50,0.6);
+	cursor: pointer;
+}
+.main-table-left>.main-table-left-up h2
+{
+ 	color: white;
+ 	font-weight: normal;
+	border-bottom: 1px solid white;
+	padding-bottom: 18px;
+	font-size: 30px;
+}
+
+.main-table-right
+{
+	float: right;
+	width: 218px;
+	height: 330px;
+	background-color: white;
+	border-top: 1px solid #ff6949;
+	padding-top: 30px;
+	font-size:14px;
+	padding-left: 17px;
+	
+}
+.main-table-right>span
+{
+	font-size: 15px;
+	color: #ff6949;
+
+}
+ .main-table-right>a
+{
+	margin-left: 36px;
+}
+.main-table .main-table-right>ul li:hover
+{
+	color:#ff6949; 
+}
+.main-table-right>ul
+{ 
+	margin-top: 25px;
+	list-style: square;
+	
+}
+.main-table-right>ul>li
+{   
+	margin-bottom: 15px;
+	width: 176px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	padding-left: 12px;
+	cursor: pointer;
+}
+
+.main-table-middle
+{
+width: 667px;
+height: 360px;
+/*background-color: grey;*/
+padding-right: 20px;
+padding-left: 20px;
+float: left;
+}
+.main-table-middle img
+{
+	width: 214px;
+	height: 124px;
+}
+.main-table-second
+{
+	float: left;
+	width: 210px;
+	height: 170px;
+	overflow: hidden;
+	margin-right: 15px;
+	margin-top: 16px;
+	cursor: pointer;
+	
+}
+.main-table-next
+{
+	margin-left:18px;
+	float: left;
+	width: 200px;
+	height: 170px;
+	overflow: hidden;
+	cursor:pointer;
+	
+}
+.main-table-next2
+{
+	margin-left:5px;
+	float: left;
+	width: 200px;
+	height: 170px;
+	overflow: hidden;
+	margin-top: 16px;
+	cursor: pointer;
+
+}
+.main-table-middle .main-table-big
+{
+width: 410px;
+height: 110px;
+background-image: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/course_php.png);
+float: left;
+padding-left: 25px;
+padding-top: 60px;
+cursor:pointer;
+}
+.main-table-middle .main-table-big h1{color:white;}
+.main-table-big span{color:white;}
+.main-table-middle-show
+{
+	background-color: white;
+	position: relative;
+	top:-10px;
+	padding-top: 17px;
+	}
+.main-table-middle-show h5
+{
+	margin-bottom: 18px;font-weight: normal;white-space: nowrap;
+}
+.main-table-middle-show:hover{top:-90px;background-color: rgba(250,250,250,0.9);}
+
+
+
+/*---------------------------中央介绍区-----------------------------*/
+
+.photowall{height: 392px;background-color: black;margin-top: 60px;}
+.photowall>ul
+{
+float: left;
+}
+.photowall-still
+{width: 81px;
+	float: left;
+height:392px;
+background-image: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/student/stu-left.jpg);
+}
+.photowall-big,.photowall-small
+{
+width: 196px;
+height: 392px;
+float: left;
+overflow: hidden;
+}
+.photowall li{float: left;}
+
+.photowall-ground{text-align:center;
+	height:197px;
+	width: 1421px;background-color: rgba(56,236,175,0.5);
+	padding-top: 196px;
+	position: relative;
+	left: -1300px;
+
+}
+.photowall-ground h1{color: white;font-weight: 200px;font-size: 36px;}
+.photowall-ground:hover{display: none;}
+.photowall:hover .photowall-ground{z-index: -1}
+/*---------------------------------------------------照片墙-----------------------------------*/
+.face
+{
+	width: 100%;
+	height: 596px;
+	text-align: center;
+	background-color: #fff8f2;
+	margin: 0px auto 0px;
+	padding-top: 62px;
+	
+
+}
+.face>h3
+{
+	width: 120px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 30px;
+	color: #626262;
+	margin:0px auto 15px;
+	
+}
+.face>h6
+{
+	font-size:16px;
+	margin-bottom: 45px;
+}
+.face .face-area
+{
+	float: left;
+	width: 205px;
+	height: 220px;
+	margin:21.5px 0px;
+	padding:50px 20px;
+	background-color: white;
+	box-shadow: 2px 2px 3px 1px pink;
+	margin-left: 40px;
+
+}
+.face-area img{
+	width: 110px;
+	height: 110px;
+	display: block;
+	margin:0px auto 0px;
+}
+.face-area span
+{
+	
+	font-size: 20px;
+	margin-top: 21px;
+	padding-bottom: 16px;
+	display: inline-block;
+	width: 66px;
+	margin-bottom: 16px;
+}
+.face-area .faca-name1
+{
+	border-bottom: 2px solid #6ca8fb;
+}
+.face-area .faca-name2
+{
+	border-bottom: 2px solid #fdb745;
+}
+.face-area .faca-name3
+{
+	border-bottom: 2px solid #f57894;
+}
+.face-area .faca-name4
+{
+	border-bottom: 2px solid #e484f4;
+}
+.face>div {margin-left:84px;}
+.footer-logo
+{
+	width: 100%;
+	height: 458px;
+	padding-top: 50px;
+	background-color:#fafafa;
+	text-align: center;
+
+}
+.footer-logo h2{
+	font-size: 30px;
+	color: #626262;
+	margin-bottom: 10px;
+}
+.footer-logo ul{margin-left: 95px;}
+
+.footer-logo ul li
+{
+	float: left;
+	width: 222px;
+	height: 96px;
+	margin-top: 30px;
+
+}
+.footer-nav
+{
+	width: 100%;
+	height: 100px;
+	background-color: white;
+	padding-left: 99px;
+	padding-top: 30px;
+
+}
+.footer-nav ul
+{
+	margin: 
+}
+.footer-nav ul li
+{
+	float: left;
+	border-right: 1px solid #dcdcdc;
+	width: 227px;
+	height: 40px;
+	text-align: center;
+	 padding-top: 14px;
+
+}
+.footer-nav li:first-child
+{
+	border-left:1px solid #dcdcdc;
+}
+.footer-nav>ul li span
+{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background-image: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/foot_3.png);
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.footer-nav-2
+{
+background-position: -22px 0px;
+}
+.footer-nav>ul li a:hover .footer-nav-1{background-position: 0 -24px;}
+.footer-nav>ul li a:hover .footer-nav-2{background-position: -22px -24px;}
+.footer-nav-3
+{
+background-position: -44px 0px;
+}
+.footer-nav>ul li a:hover .footer-nav-3{background-position: -44px -24px;}
+.footer-nav-4
+{
+background-position: -70px 0px;
+}
+.footer-nav>ul li a:hover .footer-nav-4{background-position: -70px -24px;}
+.footer-nav-5
+{
+background-position: -96px 0px;
+}
+.footer-nav>ul li a:hover .footer-nav-5{background-position: -96px -24px;}
+
+.footer-nav>ul li a:hover{color:#ff6949; }
+.company li:hover a{color:#ff6949; }
+.footer-link
+{
+	width: 100%
+	height:210px;
+	text-align: center;
+}
+.footer-link>ul 
+{
+width: 1080px;
+height: 36px;
+
+
+}
+.footer-link ul li
+{
+	float: left;
+	height: 36px;
+}
+.footer-link .button
+{
+	margin-top: 45px;
+	margin-bottom: 25px;
+}
+.footer-link .button a{width: 34px;
+height: 34px;
+display: inline-block;
+margin: 0 15px;
+background-image: url(http://p10.ucai.cn/static//i3/fullstack/indexv6/tells.png);
+}
+.footer-link .link1
+{
+	margin-left: 591px;
+}
+.footer-link .link2 a{background-position:-34px 0px; }
+.footer-link .link3 a{background-position:-68px 0px; }
+.company
+{
+	padding-left: 530px;
+}
+.company li
+{padding-right: 34px;
+padding-top: 15px;}
+.footer-link hr
+{
+	width: 1080px;
+	margin: 16px 140px;
+	color: #e5e5e5;
+	opacity: 0.5;
+
+}

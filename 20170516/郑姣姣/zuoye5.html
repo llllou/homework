@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+           var kg=prompt("输入您的体重"+"kg");
+           var m=prompt("输入您的身高"+"m");
+           BMI=kg/(m*m);
+            if(kg>1 && m>0){
+                   if(BMI<18.5){
+                        alert("您的体质指数过轻");
+                   }else if(BMI>=18.5 && BMI<24.99999){
+                        alert("您的体质指数正常");
+                    }else if(BMI>=25 && BMI<27.99999){
+                        alert("您的体质指数过重");
+                    }else if(BMI>=28 && BMI<31.99999){
+                        alert("您的体质指数肥胖");
+                    }else if(BMI>32){
+                        alert("您的体质指数属于非常肥胖")
+                    }
+            }
+            else{
+                alert("输入有误")
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

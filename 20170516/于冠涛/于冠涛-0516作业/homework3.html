@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script>
+            var year=prompt("请输入一个年份");
+            // var a=year%4;
+            // var b=year%400;
+            // if(a==0||b==0){
+            //     alert("是闰年");
+            // }else{
+            //     alert("不是闰年");
+            // }
+            var a=year%100;
+            if(a==0){
+                 var b=year%400;
+                 if(b==0){
+                    alert("是百年，是闰年");
+                 }else{
+                    alert("是百年，不是闰年");
+                 }
+            }else{
+                var c=year%4;
+                if(c==0){
+                    alert("不是百年，是闰年");
+                }else{
+                    alert("不是百年，也不是闰年");
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
