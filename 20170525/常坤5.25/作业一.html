@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				list-style: none;
+			}
+			div{
+				width: 202px;
+				overflow: hidden;
+			}
+			#oDiv{
+				width: 200px;
+				height: 50px;
+				float: left;
+				border: 1px solid gray;
+				margin-top: 0;
+				line-height: 50px;
+				text-align: center;
+				font-size:30px ;
+				font-weight: bold;
+			}
+			li{
+				float: left;
+				width: 200px;
+				height: 50px;
+				border: 1px solid gray;
+				line-height: 50px;
+				text-align: center;
+				font-size:30px ;
+				
+			}
+			ul{
+				width: 202px;
+				height: 156px;
+				float: left;
+				overflow: hidden;
+				display: none;
+				background: red;
+				overflow: hidden;
+				padding: 0;
+			}
+			li:hover{
+				background: gold;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+		<div id="oDiv">图片</div><ul id="oUl">
+			<li id="oLi1">微博</li>
+			<li id="oLi2">汽车</li>
+			<li id="oLi3">美食</li>
+		</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oDiv=document.getElementById("oDiv");
+		var oUl=document.getElementById("oUl");
+		var oLis=document.getElementById("oUl").getElementsByTagName("li");
+		
+		oDiv.onmouseover=function(){
+			oUl.style.display="block";
+		}
+		
+		oUl.onmouseover=function(){
+			oUl.style.display="block";
+		}
+		oUl.onmouseout=function(){
+			oUl.style.display="none";
+		}
+		oDiv.onmouseout=function(){
+			oUl.style.display="none";
+		}
+		for(var i=0;i<oLis.length;i++){
+			oLis[i].index=i;
+			oLis[i].onclick=function(){
+				var a=oDiv.innerText;
+				var b=this.innerText;
+				this.innerText=a;
+				oDiv.innerText=b;
+			}
+		}
+	</script>
+</html>

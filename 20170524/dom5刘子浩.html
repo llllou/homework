@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+      div{
+                 height:200px;
+                 width: 200px;
+
+             }
+      /*.dd{*/
+          /*height:200px;*/
+          /*width: 200px;*/
+          /*background: blue;*/
+      /*}*/
+    </style>
+
+</head>
+<body>
+<button>大</button><button>小</button>
+<div style="font-size:12px;">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+    文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+    文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+    文字文字文字文字文字文字文字文字文字文字</div>
+</body>
+<script type="text/javascript">
+var oDiv = document.getElementsByTagName("div")
+var oButton = document.getElementsByTagName("button")
+
+oButton[0].onclick=function () {
+var big = parseInt(oDiv[0].style.fontSize);
+big+=1;
+    oDiv[0].style.fontSize =big+"px";
+}
+oButton[1].onclick=function () {
+    var big = parseInt(oDiv[0].style.fontSize);
+    big-=1;
+    oDiv[0].style.fontSize =big+"px";
+}
+</script>
+</html>S

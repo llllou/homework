@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#oDiv{
+				width: 400px;
+				height: 500px;
+				background: #abc;
+				overflow:hidden;
+			}
+			button{
+				width: 90px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="oDiv" style="font-size:18px">
+			字体变化字的大小字的颜色还原字体字体变化字的大小字的颜色还原字体字体变化字的大小字的颜色还原字体字体变化字的大小字的颜色还原字体字体变化字的大小字的颜色还原字体字体变化字的大小字的颜色还原字体
+		</div>
+		<button>字体增大</button>
+	    <button>字体减小</button>
+	    <button>字体颜色</button>
+	    <button>还原</button>
+	<script type="text/javascript">
+		var button=document.getElementsByTagName("button");
+        var oDiv=document.getElementById("oDiv");
+        var a=parseInt(oDiv.style.fontSize);
+            button[0].onclick=function(){
+                    a++;
+                    if(a<=50){
+                        oDiv.style.fontSize=a+"px";
+                    }else{
+                        oDiv.style.fontSize=50+"px";
+                    }  
+                }
+               button[1].onclick=function(){
+                    a--;
+                    if(a<18){
+                        oDiv.style.fontSize=18+"px";
+                    }else{
+                        oDiv.style.fontSize=a+"px";
+                    }  
+                }
+                button[2].onclick=function(){
+                  var yanse=String(parseInt(Math.random()*9));
+                  var yanse1=String(parseInt(Math.random()*9));
+                  var yanse2=String(parseInt(Math.random()*9));
+                  yanse=yanse1+yanse2+yanse;
+                  oDiv.style.color="#"+yanse;
+                }
+                button[3].onclick=function(){
+                	oDiv.style.fontSize=18+"px";
+                	oDiv.style.color="black";
+                }
+	</script>
+</html>

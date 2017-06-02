@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        input{
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 1px solid blue;
+            border-radius: 50%;
+            outline: none;
+        }
+        img{
+           width: 1330px;
+            height: 580px;
+            margin-top: -80px;
+            margin-left: 10px;
+            z-index: -1;
+        }
+        #but1{
+            position: relative;
+            left: 1100px;
+             top: 500px;
+        }
+        #but2{
+            position: relative;
+            left:1150px;
+            top:500px;
+        }
+    </style>
+     <script type="text/javascript">
+         window.onload=function () {
+           var but1=document.getElementById("but1");
+           var but2=document.getElementById("but2");
+           var oImg=document.getElementById("img");
+             var index=11;
+           but1.onclick=function () {
+               index--;
+               if (index<=11){
+                   index=15;
+               }
+               fun();
+           }
+
+             but2.onclick=function () {
+                 index++;
+                 if (index>=15){
+                     index=11;
+                 }
+                 fun();
+             }
+
+
+             function fun() {
+                 oImg.src= " img/"+index+".jpg";
+             }
+         }
+
+     </script>
+</head>
+<body>
+<input type="button" value="上一张" id="but1"/>
+<input type="button"value="下一张"id="but2">
+<img src="img/11.jpg" alt=""id="img">
+</body>
+</html>

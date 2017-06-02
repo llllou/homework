@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉二级</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+
+        }
+        #one,li{
+            width:200px;
+            height:60px;
+            text-align: center;
+            line-height: 60px;
+            border: 1px solid lightslategray;
+        }
+        #two{
+            display: none;
+            width: 200px;
+            float: left;
+        }
+        #two li:hover{
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<div id="one">图片</div>
+<ul id="two">
+    <li>微博</li>
+    <li>汽车</li>
+    <li>美食</li>
+</ul>
+</body>
+<script type="text/javascript">
+    var one = document.getElementById("one");
+    var two = document.getElementById("two");
+    var ulPs =document.getElementById("two").getElementsByTagName("li");
+
+    one.onmouseover=function () {
+        two.style.display="block";
+    }
+    two.onmouseover=function () {
+        two.style.display="block";
+    }
+    one.onmouseout=function () {
+        two.style.display="none";
+    }
+    two.onmouseout=function () {
+        two.style.display="none";
+    }
+    for(var i=0; i<ulPs.length;i++){
+
+        ulPs[i].onclick=function () {
+            var z = this.innerText;
+            this.innerText = one.innerText;
+            one.innerText = z;
+        }
+    }
+</script>
+</html>

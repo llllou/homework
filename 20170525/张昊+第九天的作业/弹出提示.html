@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div{
+            width:500px;
+            height: 150px;
+            margin:50px auto;
+            border:1px solid #888;
+            font-size:15px;
+            padding-left:20px;
+            position: relative;
+        }
+        #oDiv{
+            width: 200px;
+            height: 150px;
+            background:lightcyan;
+            border:2px solid #ff1144;
+            border-radius: 20px;
+            font-size:12px;
+            padding-left:10px;
+            position: absolute;
+            top:106px;
+            left: 25px;
+            display:none;
+        }
+        p{
+            font-size:12px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>邮箱：
+            <input type="url" placeholder="请输入邮箱">
+        </p>
+        <p>密码：
+            <input type="password" placeholder="请输入密码">
+        </p>
+        <p>确认密码：
+            <input type="password" placeholder="请确认密码">
+        </p>
+        <p id="oRad">
+        <input type="checkbox"  title="12">十天内免登录
+        </p>
+        <div id="oDiv">
+            <p>警告：<br>警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告警告</p>
+        </div>
+    </div>
+</body>
+    <script type="text/javascript">
+        var oRad = document.getElementById("oRad");
+        var oDiv = document.getElementById("oDiv");
+        oRad.onmouseover=function () {
+            oDiv.style.display="block";
+        }
+        oRad.onmouseout=function () {
+            oDiv.style.display="none";
+        }
+    </script>
+</html>

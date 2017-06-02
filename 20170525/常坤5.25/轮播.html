@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				font-size: 35px;
+				color: #222;
+				border: 1px solid gray;
+				border-radius:50% ;
+				background: gray;
+				opacity: .5;
+			}
+			#oLeft{
+				position: absolute;
+				top: 250px;
+				left: 50px;
+				cursor: pointer;
+			}
+			#oRight{
+				position: absolute;
+				top: 250px;
+				right: 50px;
+				cursor: pointer;
+			}
+			div:hover{
+				opacity:1;
+				color: white;
+			}
+			#oImg{
+				width: 100%;
+				height: 560px;
+				background:url(img/6.jpg) no-repeat;
+				-webkit-animation: lunbo;
+				/*动画播放的次数*/
+				-webkit-animation-iteration-count: infinite;
+				/*马上跳到动画每一次结束帧的状态*/
+				-webkit-animation-timing-function: step-start;
+				/*持续时间*/
+				-webkit-animation-duration: 8s;
+				background-position: -1362px 0;
+				opacity: 0.8;
+			}
+			#oImg:hover{
+				opacity: 1;
+			}
+			@-webkit-keyframes  lunbo{
+	    	0%{background-position: -1362px 0;}
+	    	20%{background-position: -2724px 0;}
+	    	40%{background-position: -4086px 0;}
+	    	60%{background-position: -5448px 0;}
+	    	80%{background-position: -6810px 0;}
+	    	100%{background-position: -1362px 0;}
+	    	
+	    }
+		</style>
+	</head>
+	<body>
+		<div id="oImg"></div>
+		<div id="oRight">></div>
+		<div id="oLeft"><</div>
+	</body>
+</html>

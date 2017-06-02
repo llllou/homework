@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <script src="js/index.js"></script>
+</head>
+<body>
+<div id="div1">〈</div>
+<div id="div2">〉</div>
+<img src="img/1.jpg" id="Img">
+</body>
+<script>
+    var oDiv1=document.getElementById("div1");
+    var oDiv2=document.getElementById("div2");
+    var oImg=document.getElementById("Img");
+    var a=1;
+    oDiv1.onclick=function () {
+        a--;
+        if(a<=0) a=5;
+
+        fun();
+    }
+    oDiv2.onclick=function () {
+        a++;
+        if(a>5) a=1;
+
+        fun();
+    }
+    function fun() {
+        oImg.src="img/"+a+".jpg";
+    }
+
+</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+    <style>
+        form{
+            width: 300px;
+            height:200px;
+            margin: 0 auto;
+            text-align: center;
+            border:1px solid blue;
+        }
+        #Mimi{
+            margin-right:80px ;
+        }
+        div{
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+            border-radius:10px;
+            box-shadow: 5px 5px 5px ;
+            position: absolute;
+            top:145px;
+            left: 585px;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var Mimi=document.getElementById("Mimi");
+            var Box=document.getElementById("Box");
+            Mimi.onmousemove=function () {
+                Box.style.display="block";
+            };
+            Mimi.onmouseout=function () {
+                Box.style.display="none";
+            };
+        };
+    </script>
+</head>
+<body>
+    <form>
+        <p>emile:<input /></p>
+        <p>密码：<input type="password"/></p>
+        <p>确认密码：<input type="password"/></p>
+        <p id="Mimi"><input type="checkbox" />:十天内免登录</p>
+    </form>
+        <div id="Box">
+            请注意安全，请注意安全，请注意安全，请注意安全，请注意安全，请注意安全，请注意安全，请注意安全，请注意安全，请注意安全，请注意安全，请注意安全，请注意安全，请注意安全，请注意安全，
+
+        </div>
+</body>
+
+</html>

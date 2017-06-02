@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#content{
+			margin: 0 auto;
+			width: 400px;
+		}
+		#button{
+			margin: 20px auto;
+			width: 400px;
+			height: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="button">
+		<input type="button" id="turnBig" value="按我字体变大">
+		<input type="button" id="turnSmall" value="按我字体变小">
+		<input type="button" id="turnColor" value="字体颜色">
+		<input type="button" id="turnStyle" value="字体样式">
+	</div>
+	<div id="content" style="font-size:12px">
+		文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+	</div>
+</body>
+<script type="text/javascript">
+	var content=document.getElementById('content');
+	var big=document.getElementById('turnBig');
+	var small=document.getElementById('turnSmall');
+	var color=document.getElementById('turnColor');
+	var style=document.getElementById('turnStyle');
+	big.onclick=function(){
+		var size=parseInt(content.style.fontSize);
+		size+=1;
+		content.style.fontSize=size+'px';
+	}
+	small.onclick=function(){
+		var size=parseInt(content.style.fontSize);
+		size-=1;
+		content.style.fontSize=size+'px';
+	}
+	color.onclick=function(){
+		if(content.style.color == 'red'){
+			content.style.color ='blue';
+		}else if(content.style.color=='blue'){
+			content.style.color='purple';
+		}else{
+			content.style.color='red';
+		}
+	}
+	style.onclick=function(){
+		if(content.fontStyle == 'italic'){
+			content.style.fontStyle='';
+		}else{
+			content.style.fontStyle="italic";
+		}
+
+		// content.style.backgroundColor='gray';
+	}
+</script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin:0;padding:0;
+    }
+    #oDiv {
+        width:146px;height:30px;font-size:16px;text-align:center;line-height:30px;
+        border:2px solid red;
+
+    }
+    #nav {
+        width:146px;font-size:16px;text-align:center;display:none;
+        border-left:2px solid red; border-right:2px solid red;
+    }
+    #nav>li {
+        height:30px;line-height:30px;list-style:none;border-top:1px solid red;border-bottom:2px solid red;
+    }
+    #nav>li:hover {
+        background:orange;
+    }
+</style>
+<script>
+    window.onload = function () {
+        var  oDiv = document.getElementById("oDiv");
+        var  oNav = document.getElementById("nav");
+        var  oLi = document.getElementsByTagName("li");
+        oNav.onmouseover = function () {
+            oNav.style.display = "block";
+        }
+        oNav.onmouseout = function () {
+            oNav.style.display = "none";
+        }
+        oDiv.onmouseover = function () {
+            oNav.style.display = "block";
+        }
+        oDiv.onmouseout = function () {
+            oNav.style.display = "";
+        }
+        for (var i = 0; i < oLi.length; i++) {
+            oLi[i].onclick = function () {
+                var odd =   oDiv.innerHTML
+                oDiv.innerHTML  = this.innerHTML;
+                this.innerHTML = odd;
+            }
+        }
+
+    }
+
+</script>
+<body>
+    <div id="oDiv">图片</div>
+    <ul id = "nav">
+        <li>微博</li>
+        <li>汽车</li>
+        <li>美食</li>
+    </ul>
+
+</body>
+</html>

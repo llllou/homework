@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>轮播图</title>
+        <style type="text/css">
+            input{
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                background-color:#000;
+                opacity:0.7;
+                line-height: 70px;
+                text-align: center;
+                color: white;
+                font-size: 30px;
+                float: left;
+                outline:none;
+            }
+            .oDivLeft{
+                position: absolute;
+                top:300px;
+                left:50px;
+            }
+            .oDivRight{
+                position: absolute;
+                top:300px;
+                right:50px;
+            }
+            img{
+                width:100%;
+                height: 700px; 
+            }
+        </style>
+    </head>
+    <body>
+        <input type="button" id="oDiv1" value="<" class="oDivLeft">
+        <input type="button" id="oDiv2" value=">" class="oDivRight">
+        <img id="oImg" src="image/1.jpg">
+    </body>
+    <script >
+        var oDiv1=document.getElementById("oDiv1");
+        var oDiv2=document.getElementById("oDiv2");
+        var oImg=document.getElementById("oImg");
+        var sum=1;
+        oDiv1.onclick=function(){
+            sum--;
+            if(sum<=0) sum=5;
+            fun();
+        }
+         oDiv2.onclick=function(){
+            sum++;
+            if(sum>5) sum=1;
+            fun();
+        }
+        function fun(){
+          oImg.src="image/"+sum+".jpg";
+        }
+    </script>
+</html>

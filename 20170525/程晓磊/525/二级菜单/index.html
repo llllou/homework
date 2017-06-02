@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!--<script src="js/index.js"></script>-->
+</head>
+<body>
+<div style="width:200px;" id="oDiv">菜单
+
+</div>
+<ul id="UL" style="display:none;">
+    <li>图片</li>
+    <li>新闻</li>
+    <li>微博</li>
+    <li>贴吧</li>
+</ul>
+</body>
+<script type="text/javascript">
+    var oDiv=document.getElementById("oDiv");
+    var Ul=document.getElementById("UL");
+    var Li=document.getElementsByTagName("li");
+    oDiv.onmouseover = function(){
+       Ul.style.display="block";
+    }
+    Ul.onmouseover=function () {
+        Ul.style.display="block";
+    }
+    Ul.onmouseout=function () {
+        Ul.style.display="none";
+    }
+    for(i=0;i<4;i++){
+        (function (m) {
+            Li[i].onclick=function () {
+                var a=Li[m].innerText;
+                Li[m].innerText=oDiv.innerText;
+                oDiv.innerText=a;
+            }
+        })(i);
+
+    }
+</script>
+</html>

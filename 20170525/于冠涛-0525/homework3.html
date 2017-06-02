@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            *{
+                padding:0;
+                margin:0;
+            }
+
+            li{
+                list-style:none;
+                width:150px;
+                height:40px;
+                background:white;
+                font-size:25px;
+                text-align:center;
+                border:2px solid skyblue;
+                line-height:40px;
+                margin:0 auto;
+            }
+            #oUl{
+                width:152px;
+                height:126px;
+                display:none;
+                background:red;
+            }
+            #oDiv1{
+                width:150px;
+                height:40px;
+                font-size:25px;
+                text-align:center;
+                line-height:40px;
+                border:2px solid skyblue;
+                /*margin:0 0 -12px 40px;*/
+            }
+        </style>
+    </head>
+    <body>
+        <div id="oDiv1">图片</div>
+        <ul id="oUl">
+            <li>微博</li>
+            <li>汽车</li>
+            <li>美食</li>
+        </ul>
+    </body>
+    <script>
+        var oDiv1=document.getElementById("oDiv1");
+        var oUl=document.getElementById("oUl");
+        var oLi=document.getElementById("oUl").getElementsByTagName("li");
+        oDiv1.onmouseover=function(){
+            oUl.style.display="block";
+        }
+        oUl.onmouseover=function(){
+            oUl.style.display="block";
+        }
+        oUl.onmouseout=function(){
+            oUl.style.display="none";
+        }
+        oLi[0].onmouseover=function(){
+            oLi[0].style.background="#ffa500";
+        }
+        oLi[0].onclick=function(){
+            var a=oLi[0].innerText;
+            oLi[0].innerText=oDiv1.innerText;
+            oDiv1.innerText=a;
+        }
+        oLi[0].onmouseout=function(){
+            oLi[0].style.background="white";
+        }
+
+        oLi[1].onmouseover=function(){
+            oLi[1].style.background="#ffa500";
+        }
+        oLi[1].onclick=function(){
+            var a=oLi[1].innerText;
+            oLi[1].innerText=oDiv1.innerText;
+            oDiv1.innerText=a;
+        }
+        oLi[1].onmouseout=function(){
+            oLi[1].style.background="white";
+        }
+        oLi[2].onmouseover=function(){
+            oLi[2].style.background="#ffa500";
+        }
+        oLi[2].onclick=function(){
+            var a=oLi[2].innerText;
+            oLi[2].innerText=oDiv1.innerText;
+            oDiv1.innerText=a;
+        }
+        oLi[2].onmouseout=function(){
+            oLi[2].style.background="white";
+        }
+        oDiv1.onmouseout=function(){
+            oUl.style.display="none";
+        }
+
+    </script>
+</html>

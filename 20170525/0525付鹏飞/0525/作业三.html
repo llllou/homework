@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luobo</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .lunbo{
+            width: 100%;
+            height:790px;
+            position: relative;
+        }
+        img{
+            width:100%;
+            height:790px;
+            position: absolute;
+            z-index: 1;
+        }
+        a{
+            display: inline-block;
+            width:50px;
+            height: 50px;
+            background-color: rgba(255,255,255,0.1);
+            position: absolute;
+            z-index: 5;
+            border-radius: 50px;
+            text-align: center;
+            text-decoration: none;
+            line-height: 50px;
+            font-size: 36px;
+            color: #000;
+            margin-top: 400px;
+            display: none;
+        }
+        .lunbo:hover a{
+            display: block;
+        }
+        .lunbo a:hover{
+            background-color: rgba(250,250,250,0.7);
+        }
+        #prev{
+            margin-left: 10px;
+        }
+        #next{
+            margin-left: 1540px;
+        }
+
+    </style>
+    <script type="text/javascript">
+        window.onload=function () {
+            var oImg=document.getElementById("oImg");
+            var prev=document.getElementById("prev");
+            var next=document.getElementById("next");
+
+            var index=1;
+            prev.onclick=function () {
+                index--;
+                if(index<1){
+                    index=10;
+                }
+                bo();
+            }
+            next.onclick=function () {
+                index++;
+                if(index>10){
+                    index=1;
+                }
+                bo();
+            }
+            function bo() {
+                oImg.src = "images/"+ index +".jpg";
+            }
+
+
+
+        }
+    </script>
+</head>
+<body>
+<div class="lunbo">
+    <img src="images/1.jpg" alt="" id="oImg">
+    <a href="javascrip:" id="prev" class="arrow"><</a>
+    <a href="javascript:" id="next" class="arrow">></a>
+</div>
+
+</body>
+</html>

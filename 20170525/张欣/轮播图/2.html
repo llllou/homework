@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+                *{
+                    margin:0;
+                    padding:0;
+                }
+                img{
+                    width:100%;
+                    height: 790px;
+                }
+                #left{
+                    /*float:left;*/
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50px;
+                    background: rgba(68,68,68,0.2);
+                   top:300px;
+                   left:100px;
+                    position: absolute;
+                }
+                 #right{
+                    float:right;
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50px;
+                    background: rgba(68,68,68,0.2);
+                   top:300px;
+                   right:100px;
+                    position: absolute;
+                }
+                #s1{
+                   /* top: 300px;
+                    left: 150px;*/
+                    /*position:absolute;*/
+                    font-size:70px;
+                    color: gray;
+                    margin:300px 0  0 23px ;
+                }
+                #s2{
+                  /*   top: 300px;
+                    right: 120px;*/
+                    /*position:absolute;*/
+                    font-size:70px;
+                    color: gray;
+                    float:right;
+                    margin:0px 23px  0 0px ;
+                }
+        </style>
+    </head>
+    <body>
+            <img src="img/1.jpg" alt="" id="olmg">
+            <div id="left"><span id="s1"><</span></div>
+            <div id="right"><span id="s2">></span></div>
+            
+            
+  </body>
+    <script>
+            var  left=document.getElementById("left"); 
+            var  right=document.getElementById("right"); 
+            // var  s1=document.getElementById("s1"); 
+            // var  s2=document.getElementById("s2"); 
+            var olmg=document.getElementById("olmg");
+            var index=1;
+            left.onclick=function(){
+                index--;
+                if(index<=0){
+                    index=12;
+                }
+                lunbo();
+            }
+            right.onclick=function(){
+                index++;
+                if(index>=12){
+                    index=1;
+                }
+                lunbo();
+            }
+            function lunbo(){
+                olmg.src="img/"+index+".jpg";
+            }
+    </script>
+</html>

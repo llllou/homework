@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        #oDiv{
+            width:440px;
+            height: 300px;
+            border: 1px solid #000;
+            padding: 30px;
+            background-color: #d6d6d6;
+            font-size: 15px;
+        }
+        .anniu{
+            width:500px;
+            height: 50px;
+            line-height: 50px;
+            background: #d6d6d6;
+            border: 1px solid #000;
+        }
+        input{
+            margin-left: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="anniu">
+        <input type="button" value="点我变大" onclick="bianda()">
+        <input type="button" value="点我变小" onclick="bianxiao()">
+        <input type="button" value="点我变颜色" onclick="bjing()">
+        <input type="button" value="点我还原" onclick="huanyuan()">
+    </div>
+    <div id="oDiv" style="font-size: 15px">字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体
+        字体字体字体字体字体字体字体字体字体字体字体字体字体</div>
+</body>
+<script type="text/javascript">
+    function bianda() {
+        var da=document.getElementById("oDiv");
+
+        var a=parseInt(da.style.fontSize);
+        if(a<=20){
+            a+=1;
+        }
+        da.style.fontSize=a+"px";
+    }
+    function bianxiao() {
+        var xiao=document.getElementById("oDiv");
+        var b=parseInt(xiao.style.fontSize);
+        if(b>=12){
+            b-=1;
+        }
+        xiao.style.fontSize=b+"px";
+    }
+    function bjing() {
+        var bj=document.getElementById("oDiv");
+        bj.style.backgroundColor="#000";
+        bj.style.color="#fff"
+    }
+    function huanyuan() {
+        var hy=document.getElementById("oDiv");
+        hy.style.color="#000";
+        hy.style.fontSize="15px";
+        hy.style.backgroundColor="#fff";
+    }
+</script>
+</html>

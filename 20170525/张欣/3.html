@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+                *{
+                    margin:0;
+                    padding: 0;
+                }
+                #div1{
+                    width: 130px;
+                    height: 50px;
+                    background: orange;
+                    text-align: center;
+                    line-height: 50px;
+                    border:1px solid #444444;
+                }
+                li{
+                    width: 130px;
+                    height: 50px;
+                    /*background: #f27918;*/
+                    text-align: center;
+                    line-height: 50px;
+                    border:1px solid #444444;
+                    list-style: none;
+                
+                }
+                ul{
+                        display:none;
+                }
+                 ul li:hover{
+                        background: orange;
+                 } 
+
+        </style>
+    </head>
+    <body>
+            <div id="div1">图片</div>
+            <ul>
+                <li>微博</li>
+                <li>汽车</li>
+                <li>美食</li>
+            </ul>
+    </body>
+    <script>
+               var div1=document.getElementById("div1"); 
+                var ul=document.getElementsByTagName("ul")[0];
+               var li=document.getElementsByTagName("li");
+                div1.onclick=function(){
+                    ul.style.display="block";
+                }
+
+
+               for( var i=0;i<li.length;i++){
+                li[i].onclick=function(){
+                    var div=div1.innerText;
+                    var  li1=this.innerText;
+                    this.innerText=div;
+                    div1.innerText=li1;
+                 }
+               }
+    </script>
+</html>

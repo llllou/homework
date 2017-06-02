@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <!--<script src="js/index.js"></script>-->
+    <title>Title</title>
+</head>
+<body>
+<!--<button id="btn">变大</button>-->
+<!--<button id="btn1">变小</button>-->
+<!--<div id="oDiv">-->
+    <!--<span  style="font-size: 12px">变大</span>-->
+    <!--<span class="span" style="font-size: 12px">变大</span>-->
+    <!--<span class="span" style="font-size: 12px">变大</span>-->
+    <!--<span class="span" style="font-size: 12px">变大</span>-->
+    <!--<span class="span" style="font-size: 12px">变大</span>-->
+    <!--<span class="span" style="font-size: 12px">变大</span>-->
+    <!--<span class="span" style="font-size: 12px">变大</span>-->
+    <!--<span class="span" style="font-size: 12px">变大</span>-->
+    <!--<span class="span" style="font-size: 12px">变大</span>-->
+    <!--<span class="span" style="font-size: 12px">变大</span>-->
+<!--</div>-->
+<div class="top">
+<button>字体变大</button>
+<button>字体变小</button>
+<button>字体阴影</button>
+<button>背景图片2</button>
+<button>背景图片2</button>
+<button>全部还原</button>
+<button>确定保存</button>
+</div>
+<div class="bottom">
+    <span id="span"style="font-size: 25px;text-shadow: 0px 0px 0px #aaa;">我是一个span</span>
+</div>
+</body>
+<script>
+//    <!--var but=document.getElementById("btn");-->
+//    <!--var but1=document.getElementById("btn1");-->
+//    <!--var span=document.getElementsByTagName("span");-->
+//    <!--var i=document.getElementsByTagName("i");-->
+//
+//    <!--but.onclick = function (){-->
+//        <!--var a=parseInt(span[0].style.fontSize);-->
+//        <!--if(a<=35){-->
+//            <!--a++;}-->
+//        <!--for(k=0;k<=9;k++){-->
+//            <!--span[k].style.fontSize=a+"px";-->
+//        <!--}-->
+//    <!--}-->
+//    <!--but1.onclick = function (){-->
+//        <!--var b=parseInt(span[0].style.fontSize);-->
+//        <!--if(b>=0){-->
+//            <!--b&#45;&#45;;}-->
+//        <!--for(j=0;j<=j;j++){-->
+//            <!--span[j].style.fontSize=b+"px";-->
+//        <!--}-->
+//    <!--}-->
+var btn=document.getElementsByTagName("button");
+var oDiv=document.getElementById("bottom");
+var span=document.getElementById("span");
+btn[0].onclick=function (){
+   var a=parseInt(span.style.fontSize);
+   if(a<=50){
+       a++;
+   }
+   span.style.fontSize=a+"px";
+}
+btn[1].onclick=function (){
+    var b=parseInt(span.style.fontSize);
+    if(b>=10){
+        b--;
+    }
+    span.style.fontSize=b+"px";
+}
+//btn[2].onclick=function (){
+//    span.style.textShow="4px 2px 2px #aaa";
+//}
+    btn[3].onclick=function () {
+        oDiv.style.backgroundImage="url(../img/2.jpg)";
+    }
+</script>
+</html>

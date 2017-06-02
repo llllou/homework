@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            .oDiv{
+                width:800px;
+                height:450px;
+                background:indianred;
+                margin:0 auto;
+                border:3px solid skyblue;
+                overflow:hidden;
+            }
+            #oDivOne{
+                width:800px;
+                height:70px;
+                background:lightgoldenrodyellow;
+                border-bottom:3px solid skyblue;
+                line-height:70px;
+            }
+            #oDivOne button{
+                width:100px;
+                height:30px;
+                margin:0 17px 0 36px;
+            }
+            #oDivP{
+                font-size:15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="oDiv">
+            <div id="oDivOne">
+                <button id="oDivButton1">变大</button>
+                <button id="oDivButton2">变小</button>
+                <button id="oDivButton3">变粗</button>
+                <button id="oDivButton4">变色</button>
+                <button id="oDivButton5">还原</button>
+            </div>
+            <p style="font-size:20px;font-weight:400;color:black;" id="oDivP">
+                哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+            </p>
+        </div>
+        <script>
+            var button1=document.getElementById("oDivButton1");
+            var button2=document.getElementById("oDivButton2");
+            var button3=document.getElementById("oDivButton3");
+            var button4=document.getElementById("oDivButton4");
+            var button5=document.getElementById("oDivButton5");
+            var oDivP=document.getElementById("oDivP");
+
+            button1.onclick=function(){
+                var a = parseInt(oDivP.style.fontSize);
+                a += 2;
+                oDivP.style.fontSize= a + "px";
+                if(a==34){
+                    oDivP.style.fontSize= 20 + "px";
+                }
+            }
+            button2.onclick=function(){
+                var a = parseInt(oDivP.style.fontSize);
+                a -= 2;
+                oDivP.style.fontSize= a + "px";
+                if(a==14){
+                    oDivP.style.fontSize= 28 + "px";
+                }
+            }
+            button3.onclick=function(){
+                var a = parseInt(oDivP.style.fontWeight);
+                a +=200;
+                oDivP.style.fontWeight= a ;
+                if(a>=700){
+                    oDivP.style.fontWeight=400;
+                }
+            }
+            button4.onclick=function(){
+
+                var arr = ["red","orange","yellow","green","blue","black","purple"];
+                if(oDivP.style.color==arr[5]){
+                    oDivP.style.color=arr[0];
+                }else if(oDivP.style.color==arr[0]){
+                    oDivP.style.color=arr[2];
+                }
+                else if(oDivP.style.color==arr[2]){
+                    oDivP.style.color=arr[3];
+                }else if(oDivP.style.color==arr[3]){
+                    oDivP.style.color=arr[4];
+                }else if(oDivP.style.color==arr[4]){
+                    oDivP.style.color=arr[5];
+                }
+            }
+            button5.onclick=function(){
+                oDivP.style.fontWeight=400;
+                oDivP.style.fontSize=16+"px";
+            }
+        </script>
+
+    </body>
+</html>

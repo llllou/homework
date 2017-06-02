@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				width: 100%;
+				height: 800px;
+				margin: 0;
+				padding: 0;
+				background:url(1234.jpg) no-repeat;
+				background-size:100% 100%;
+				font-family:"kai";
+			}
+			@font-face{
+			    font-family:"kai";
+			    src:url(kai.ttf);
+			}
+			#box{
+				width: 1000px;
+				height: 800px;
+				margin: 55px auto;
+				position: fixed;
+				left: 240px;
+			}
+			#kzt{
+				width: 1000px;
+				height: 65px;
+				text-align: center;
+			}
+			#txt{
+				width: 0px;
+				height: 325px;
+				background-image: url(1235.jpg);
+				background-repeat:no-repeat ;
+				background-size: 100% 100%;
+				padding: 35px 0px;
+				border: 25px solid #ccbbaa;
+				box-shadow:0px 0px 15px 15px #a28d81 inset;
+				border-radius: 50px;
+				margin: 0 auto;
+				margin-top: 20px;
+				overflow: hidden;
+				transition: 2s;
+				text-align: left;
+			}
+			
+			button{
+				height: 55px;
+				width: 160px;
+				margin-left:10px ;
+				background-image: url(GD@HCEFE@S0`SS01A}A_NYN_03.png);
+				border: 5px solid #8b9a85;
+				border-radius: 10px;
+				font-size: 25px;
+				font-weight: bold;
+				font-family:"kai" ;
+				outline: none;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="kzt">
+				<button>展开</button>
+				<button>字体增大</button>
+				<button>字体缩小</button>
+				<button>样式1</button>
+				<button>样式2</button>
+			</div>
+			<div id="txt" style="font-size: 14px;">
+				话说天下大势，分久必合，合久必分。周末七国分争，并入于秦。及秦灭之后，楚、汉分争，又并入于汉。汉朝自高祖斩白蛇而起义，一统天下，后来光武中兴，传至献帝，遂分为三国。推其致乱之由，殆始于桓、灵二帝。桓帝禁锢善类，崇信宦官。及桓帝崩，灵帝即位，大将军窦武、太傅陈蕃共相辅佐。时有宦官曹节等弄权，窦武、陈蕃谋诛之，机事不密，反为所害，中涓自此愈横。
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+			var txt=document.getElementById("txt");
+			var but=document.getElementsByTagName("button");
+			var bod=document.getElementsByTagName("body");
+			but[0].onclick=function(){
+				txt.style.width=770+"px";
+				txt.style.paddingLeft=50+"px";
+				txt.style.paddingRight=50+"px";
+			}
+			but[1].onclick=function(){
+				var a = parseInt(txt.style.fontSize);
+				if(a==34){
+					a=34;
+				}else{
+					a+=2;
+				}
+				
+				txt.style.fontSize=a+"px";
+			}
+			but[2].onclick=function(){
+				var a = parseInt(txt.style.fontSize);
+				if(a==12){
+					a=12;
+				}else{
+					a-=2;
+				}
+				
+				txt.style.fontSize=a+"px";
+			}
+			but[3].onclick=function(){
+				txt.style.backgroundImage="url(1.jpg)";
+				txt.style.backgroundSize="100% 100%";
+			}
+			but[4].onclick=function(){
+				txt.style.backgroundImage="url(1231.jpg)";
+				txt.style.backgroundSize="100% 100%"
+			}
+	</script>
+</html>

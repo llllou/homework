@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#oDiv{
+				width: 300px;
+				height: 140px;
+				background: #e200fd;
+				margin: 0 auto;
+				text-align: center;
+				border:1px solid black;
+			}	
+			#oSpan{
+				letter-spacing: 3px;
+				display: block;
+				width: 190px;
+				height: 120px;
+				background: yellow;
+				margin-left: 120px;
+				margin-top: 20px;
+				text-align: center;
+				border:1px solid red ;
+				border-radius: 20px;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="oDiv">
+			<p>email:
+				<input type="text" name="" id="" value="" />
+			</p>
+			<p>密码：
+				<input type="password" name="" id="" value="" />
+			</p>
+			<p>确认密码：
+				<input type="password" name="" id="" value="" />
+			</p>
+			<input type="checkbox" name="" id="" value="" />
+			<a href="" id="dianji">十天内免登陆</a>
+			<span id="oSpan">请注意请注意请注意休息请注意请注意请注意请注意请注意请注意请注意请注意请注意休息请注意请注意请注意请注意请注意请注意请注意休息请注意请注意请注意请注意</span>
+				
+	
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oSpan=document.getElementById("oSpan");
+		var dianji=document.getElementById("dianji");
+				dianji.onmouseover=function(){
+					oSpan.style.display="block";
+				}
+				dianji.onmouseout=function(){
+					oSpan.style.display="none";
+				}
+	</script>
+</html>

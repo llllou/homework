@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+<div id="oDiv">
+<div>
+    <span>E-mail</span><input type="text"/>
+</div>
+<div>
+    <span>密码</span><input type="text"/>
+</div>
+<div>
+    <span>确认密码</span><input type="text"/>
+</div>
+<div id="bottom"><input type="checkbox" ><span>十天内免登陆</span></div>
+</div>
+<div id="foot"><i>请注意安全啊请注意安全啊请注意安全啊请注意安全啊请注意安全啊请注意安全啊</i></div>
+</body>
+<script>
+    var bottom=document.getElementById("bottom");
+    var foot=document.getElementById("foot");
+    bottom.onmouseover=function () {
+        foot.style.display="block";
+        bottom.style.cursor="poniter";
+    }
+    bottom.onmouseout=function () {
+        foot.style.display="none";
+    }
+</script>
+</html>

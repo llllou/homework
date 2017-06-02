@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            width:100%;
+            height:100%;
+        }
+        button{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            opacity: 0.5;
+            position: absolute;
+            outline: none;
+            border:none;
+        }
+        #oBut1{
+            background-image:url("images/2.png");
+            background-size:100% 100%;
+            top: 50%;
+            left: 10%;
+        }
+        #oBut2{
+            background-image:url("images/1.png");
+            background-size:100% 100%;
+            top: 50%;
+            right: 10%;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/1.jpg" alt="" id="oImg">
+    <button id="oBut1"></button>
+    <button id="oBut2"></button>
+</body>
+    <script type="text/javascript">
+        var oImg = document.getElementById("oImg");
+        var oBut1 = document.getElementById("oBut1");
+        var oBut2 = document.getElementById("oBut2");
+        var a = 1;
+        oBut1.onclick=function () {
+            a--;
+            fun();
+        }
+        oBut2.onclick=function () {
+            a++;
+            fun();
+        }
+        function fun() {
+            if(a > 5) a=1;
+            if(a < 1) a=5;
+            oImg.src="images/"+a+".jpg";
+        }
+    </script>
+</html>

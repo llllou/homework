@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            #form{
+                border:1px solid gray;
+                width:300px;
+                margin:0 auto;
+            }
+            .input{
+                margin:0 5px;
+                vertical-align:middle;
+            }
+            #oDiv{
+                width:150px;
+                height:80px;
+                background:yellow;
+                position:absolute;
+                top:160px;
+                left:700px;
+                border:1px solid #f94a14;
+                border-radius:10px;
+                box-shadow:5px 5px 5px gray;
+                display:none;
+            }
+
+        </style>
+    </head>
+    <body>
+       <form id="form">
+           <p>
+               email:
+               <input type="text">
+           </p>
+           <p>
+               密码:
+               <input type="password">
+           </p>
+           <p>
+               确认密码:
+               <input type="password">
+           </p>
+           <p>
+               <input type="checkbox"class="input">十天内免登陆
+           </p>
+       </form>
+        <div id="oDiv">
+            请认真填写！！请认真填写！！请认真填写！！请认真填写！！请认真填写！！请认真填写             ！！
+        </div>
+    </body>
+    <script>
+        var form=document.getElementById("form");
+        var oDiv=document.getElementById("oDiv");
+        form.onmouseover=function(){
+            oDiv.style.display="block";
+        }
+        form.onmouseout=function(){
+            oDiv.style.display="none";
+        }
+    </script>
+</html>

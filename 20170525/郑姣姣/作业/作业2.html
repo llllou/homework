@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				width: 100%;
+				height: 640px;
+			}
+			input{
+				width: 100px;
+				height: 100px;
+				border-radius:50% ;
+				background: rgba(255,255,255,0.8);
+				border: none;
+			}
+			#input1{
+				position: absolute;
+				top:280px;
+				left: 60px;
+			}
+			#input2{
+				position: absolute;
+				top:280px;
+				right: 65px;
+			}
+			span{
+				font-size: 95px;
+				color:  #e200fd;
+			}
+			#left{
+				position: absolute;
+				top:262px;
+				left: 70px;
+			}
+			#right{
+				position: absolute;
+				top:260px;
+				right: 74px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="oDiv" style="background:url(img/1.jpg) ;"></div>
+		
+		<span id="left"><</span>
+		<span id="right">></span>
+		<input type="button" name="" id="input1" value="" />
+		<input type="button" name="" id="input2" value="" />
+		
+	</body>
+	<script type="text/javascript">
+		var input1=document.getElementById("input1");
+		var input2=document.getElementById("input2");
+		
+		var oDiv=document.getElementById("oDiv");
+		var index=1;
+		input1.onclick=function(){
+			index--;
+			if(index<=0){
+				index=8;
+			}
+			lunbo();
+		}
+		input2.onclick=function(){
+			index++;
+			if(index>8){
+				index=1;
+			}
+			lunbo();
+		}
+		function lunbo(){
+			oDiv.style.background="url( img/"+index+".jpg)";
+		}
+	</script>
+</html>

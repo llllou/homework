@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>文字大小</title>
+            <script>
+                window.onload=function(){
+                    var oBnt1=document.getElementById("bnt1");
+                    var oBnt2=document.getElementById("bnt2");
+                    var oP=document.getElementById("text");
+                    var num=18;
+                    oBnt1.onclick=function(){
+                        num--;
+                        oP.style.fontSize=num+"px";
+                    }
+                   oBnt2.onclick=function(){
+                        num++;
+                        oP.style.fontSize=num+"px";
+                   }
+                }
+            </script>
+    </head>
+    <body>
+           <input id="bnt1" type="button" value="按我就变小"/>
+           <input id="bnt2" type="button" value="按我就变大"/>
+           <p id="text">斗破苍穹》是一部发表在起点中文网的玄幻小说，作者是起点白金作家天蚕土豆。讲述了天才少年萧炎在创造了家族空前绝后的修炼纪录后突然成了废人，种种打击接踵而至。就在他即将绝望的时候，一缕灵魂从他手上的戒指里浮现，一扇全新的大门.</p>
+    </body>
+</html>

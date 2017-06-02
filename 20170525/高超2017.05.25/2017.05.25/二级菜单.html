@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二级菜单</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 150px;
+            height: 30px;
+            border:1px solid aquamarine;
+            text-align: center;
+            line-height: 30px;
+            font-size: 20px;
+        }
+        ul{
+            display: none;
+        }
+        ul li{
+            width: 150px;
+            height:30px;
+            border:1px solid aquamarine;
+            list-style: none;
+            line-height: 30px;
+            text-align: center;
+            font-size: 20px;
+        }
+        ul li:hover{
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="One">图片</div>
+    <ul id="List">
+        <li >微博</li>
+        <li >汽车</li>
+        <li >美食</li>
+    </ul>
+</body>
+<script>
+    var One=document.getElementById("One");
+    var List=document.getElementById("List");
+    var Lists=document.getElementById("List").getElementsByTagName("li");
+    One.onmouseover=function () {
+        List.style.display="block";
+
+    };
+    One.onmouseout=function () {
+        List.style.display="none";
+
+    };
+    List.onmouseover=function () {
+        List.style.display="block";
+    };
+
+    List.onmouseout=function () {
+        List.style.display="none";
+
+    };
+    for(i=0;i<Lists.length; i++){
+            Lists[i].index=i;
+            Lists[i].onclick=function (){
+                var a=One.innerText;
+                var b=this.innerText;
+                this.innerText=a;
+                One.innerText=b;
+        }
+    }
+
+
+
+</script>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        li {
+            list-style: none;
+        }
+
+        .list {
+            width: 300px;
+            height: 250px;
+            background: greenyellow;
+            /*float: left;*/
+            text-align: center;
+            margin: 0 auto;
+
+        }
+
+        .list-1 {
+            /*float: left;*/
+        }
+
+        #twolist {
+            width: 150px;
+            height: 200px;
+            color: white;
+            /*background: black;*/
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        #photo {
+            display: inline-block;
+            width: 150px;
+            text-align: center;
+            margin-top: 30px;
+            height: 20px;
+            line-height: 20px;
+            font-size: 20px;
+            border: 1px solid blue;
+        }
+
+        #twolist {
+            display: none;
+        }
+
+        #twolist > p {
+            height: 20px;
+            line-height: 20px;
+            border: 1px solid blue;
+            margin: 0;
+            font-size: 20px;
+        }
+
+        #photo:hover {
+            background: #ff5500;
+        }
+
+        .list-1:hover #twolist {
+            display: block;
+        }
+
+        #twolist :hover.list-word {
+            background: #ff5500;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var p = document.getElementsByTagName("p");
+
+            for (var i=1;i<p.length;i++){
+                (function(a){
+                    p[a].onclick=function(){
+                        var l = p[a].innerText;
+                        p[a].innerText = p[0].innerText;
+                        p[0].innerText = l;
+                    }
+                })(i);
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div class="list">
+    <div class="list-1">
+        <p id="photo">图片</p>
+        <div id="twolist">
+            <p class="list-word" id="p1">微博</p>
+            <p class="list-word" id="p2">汽车</p>
+            <p class="list-word" id="p3">美食</p>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

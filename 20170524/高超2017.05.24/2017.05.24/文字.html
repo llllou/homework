@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文字</title>
+    <style type="text/css">
+            #oDiv{
+                width: 700px;
+                height:800px;
+                margin: 0 auto;
+            }
+            #oP{
+                text-indent: 20px;
+                line-height: 30px;
+                font-size: 15px;
+            }
+            h1{
+                text-align: center;
+            }
+            .navOne{
+                width:700px;
+                margin: 0 auto;
+            }
+            button{
+                width:40px;
+                height:17px;
+                text-align: center;
+                line-height: 12px;
+            }
+            em{
+                font-style: normal;
+                font-size: 14px;
+            }
+            .navOne-left{
+                float: right;
+            }
+            .navOne-left span{
+                font-size: 14px;
+            }
+            .leftBut{
+                width:80px;
+                height:17px;
+                text-align: center;
+                line-height: 12px;
+            }
+    </style>
+</head>
+<body>
+
+        <h1>三国演义</h1>
+        <div class="navOne">
+            <em>字体：</em>
+            <button>大</button>
+            <button>小</button>
+            <div class="navOne-left">
+                <span>模式：</span>
+                <button class="leftBut">夜间模式</button>
+            </div>
+        </div>
+        <div id="oDiv" style="background-color: white"><!--做了修改-->
+        <p id="oP">
+            《三国演义》是中国古典四大名著之一，是中国第一部长篇章回体历史演义小说，全名为《三国志通俗演义》（又称《三国志演义》），作者是元末明初的著名小说家罗贯中。
+            《三国演义》描写了从东汉末年到西晋初年之间近105年的历史风云，以描写战争为主，诉说了东汉末年的群雄割据混战和魏、蜀、吴三国之间的政治和军事斗争，最终司马炎一统三国，建立晋朝的故事。反映了三国时代各类社会斗争与矛盾的转化，并概括了这一时代的历史巨变，塑造了一批叱咤风云的三国英雄人物。
+            全书可大致分为黄巾之乱、董卓之乱、群雄逐鹿、三国鼎立、三国归晋五大部分。在广阔的背景上，上演了一幕幕气势磅礴的战争场面。编者罗贯中将兵法三十六计融于字里行间，既有情节，也有兵法韬略。<br/>
+            《三国演义》是中国古典四大名著之一，是中国第一部长篇章回体历史演义小说，全名为《三国志通俗演义》（又称《三国志演义》），作者是元末明初的著名小说家罗贯中。<br/>
+            《三国演义》描写了从东汉末年到西晋初年之间近105年的历史风云，以描写战争为主，诉说了东汉末年的群雄割据混战和魏、蜀、吴三国之间的政治和军事斗争，最终司马炎一统三国，建立晋朝的故事。反映了三国时代各类社会斗争与矛盾的转化，并概括了这一时代的历史巨变，塑造了一批叱咤风云的三国英雄人物。<br/>
+            全书可大致分为黄巾之乱、董卓之乱、群雄逐鹿、三国鼎立、三国归晋五大部分。在广阔的背景上，上演了一幕幕气势磅礴的战争场面。编者罗贯中将兵法三十六计融于字里行间，既有情节，也有兵法韬略。<br/>
+           《三国演义》是中国古典四大名著之一，是中国第一部长篇章回体历史演义小说，全名为《三国志通俗演义》（又称《三国志演义》），作者是元末明初的著名小说家罗贯中。<br/>
+            《三国演义》描写了从东汉末年到西晋初年之间近105年的历史风云，以描写战争为主，诉说了东汉末年的群雄割据混战和魏、蜀、吴三国之间的政治和军事斗争，最终司马炎一统三国，建立晋朝的故事。反映了三国时代各类社会斗争与矛盾的转化，并概括了这一时代的历史巨变，塑造了一批叱咤风云的三国英雄人物。<br/>
+            全书可大致分为黄巾之乱、董卓之乱、群雄逐鹿、三国鼎立、三国归晋五大部分。在广阔的背景上，上演了一幕幕气势磅礴的战争场面。编者罗贯中将兵法三十六计融于字里行间，既有情节，也有兵法韬略。<br/>
+       </p>
+        </div>
+</body>
+<script type="text/javascript">
+        var but=document.getElementsByTagName("button");
+        var oText=document.getElementById("oP");
+        var oDiv=document.getElementById("oDiv");
+//        var a=document.defaultView.getComputedStyle(oText,null).fontSize;
+        var a=15;
+
+        but[0].onclick=function(){
+            a++;
+            if(a>20){
+                a=20;
+            }
+            oText.style.fontSize=a+"px";
+
+        };
+        but[1].onclick=function(){
+            a--;
+            if(a<12){
+                a=12;
+            }
+            oText.style.fontSize=a+'px';
+
+        };
+        but[2].onclick=function(){
+
+            // if(oDiv.style.backgroundColor="blue"){
+            //     oDiv.style.backgroundColor="red";
+
+            // }else if(oDiv.style.backgroundColor="red"){
+            //     oDiv.style.backgroundColor="white";
+            // }
+            // 1.if后边逻辑判断用==或者===，一个=是赋值
+            // 2.oDiv.style.backgroundColor改变的是oDiv的行内样式
+            // 3.（最重要的）判断条件是backgroundColor是blue或者red的时候，分别做出改变。
+            //   可是你的oDiv本身的backgroundColor默认是白色的，它不可能满足你的判断条件，
+            //   所以你点多少次也不会改变，都是白色
+
+
+            // 修改
+            // 1.在oDiv里添加行内样式background-color初始white
+            // 2.js如下修改
+            if(oDiv.style.backgroundColor=="white"){
+                oDiv.style.backgroundColor="red";
+
+            }else if(oDiv.style.backgroundColor=="red"){
+                oDiv.style.backgroundColor="blue";
+            }else{
+            	oDiv.style.backgroundColor="white";
+            }
+
+
+        };
+</script>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            *{
+                padding:0;
+                margin:0;
+            }
+            /*body{*/
+                /*width:100%;*/
+                /*height:900px;*/
+            /*}*/
+            #body{
+                width:100%;
+                height:900px;
+                /*background-color:skyblue;*/
+                background:url(img/1.jpg) 100% 100%;
+            }
+            #bodyLeft{
+                width:70px;
+                height:70px;
+                border-radius:50%;
+                background:url(img/left_arrow_128px_1205454_easyicon.net.png) round;
+                /*background:red;*/
+                float:left;
+                opacity:0.5;
+                position:absolute;
+                top:50%;
+                left:5%;
+                display:none;
+            }
+            #bodyRight{
+                width:70px;
+                height:70px;
+                border-radius:50%;
+                background:url(img/right_arrow_128px_1205488_easyicon.net.png) round;
+                /*background:red;*/
+                float:right;
+                opacity:0.5;
+                position:absolute;
+                top:50%;
+                left:90%;
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="body">
+            <div id="bodyLeft">
+
+            </div>
+            <div id="bodyRight">
+
+            </div>
+        </div>
+    </body>
+    <script>
+        var body=document.getElementById("body");
+        var bodyLeft=document.getElementById("bodyLeft");
+        var bodyRight=document.getElementById("bodyRight");
+        body.onmouseover=function(){
+            bodyLeft.style.display="block";
+            bodyRight.style.display="block";
+        }
+        body.onmouseout=function(){
+            bodyLeft.style.display="none";
+            bodyRight.style.display="none";
+        }
+        var index=1;
+        bodyLeft.onclick=function(){
+            index--;
+            if(index<1){
+                index=5;
+            }
+            body.style.background="Url(img/"+index+".jpg)"+"100%"+"100%";
+        }
+        bodyRight.onclick=function(){
+            index++;
+            if(index>5){
+                index=1;
+            }
+            body.style.background="Url(img/"+index+".jpg)"+"100%"+"100%";
+        }
+    </script>
+</html>

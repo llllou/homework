@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            .Div{
+                 width: 700px;
+                 height: 500px;
+                 border: 30px solid #8543fe;
+                 border-radius: 50px;
+                 margin: 0 auto;
+                 background:url(1234.jpg);
+            } 
+               .qwe{
+                 width: 700px;
+                 height: 500px;
+                 border: 30px solid #96d8e5;
+                 border-radius: 50px;
+                 margin: 0 auto;
+                 background:url(123.jpg);
+            } 
+               .mm{
+                   width: 700px;
+                   height: 500px;
+                   border: 30px solid yellow;
+                   border-radius: 50px;
+                   margin: 0 auto;
+                   background:#ff6103;
+              }
+              .mm{
+                   width: 700px;
+                   height: 500px;
+                   border: 30px solid yellow;
+                   border-radius: 50px;
+                   margin: 0 auto;
+                   background:#ff6103;
+              }
+              .zhang{
+                   width: 700px;
+                   height: 500px;
+                   border: 30px solid gray;
+                   border-radius: 50px;
+                   margin: 0 auto;
+                   background:url(12.jpg);
+              }
+              #but1{
+                   
+                   margin-left:476px;
+              }
+               #but1:hover{
+                  background:red;
+               }
+               #but2{
+                  margin-left: 20px;
+               }
+                #but2:hover{
+                  background:red;}
+        </style>
+        <script type="text/javascript">
+              window.onload=function(){
+                 var oDiv=document.getElementById("oDiv");
+                // var oDiv1=document.getElementById("oDiv");
+
+
+                 var but1=document.getElementById("but1");
+                 var but2=document.getElementById("but2");
+                 var but3=document.getElementById("but3");
+                 var but4=document.getElementById("but4");
+                 var but5=document.getElementById("but5");
+                 var but6=document.getElementById("but6");
+
+
+                    var num = 16;
+                  but1.onclick=function(){
+                    if (num >= 12)
+                        num--;
+                     oDiv.style.fontSize=num+"px"            
+                  } 
+                    but2.onclick=function(){
+                      if (num <= 22)
+                            num++;
+                       oDiv.style.fontSize=num+"px"
+                } 
+                      but3.onclick = function() {
+                                oDiv.className = "mm";
+                    
+                  }
+                   but4.onclick = function() {
+                                oDiv.className = "Div";
+                    
+                  }
+                  but5.onclick = function() {
+                                oDiv.className = "none";
+                    
+                  }
+                     but6.onclick = function() {
+                                oDiv.className = "zhang";
+                    
+                  }
+                  
+
+
+              }
+
+
+
+               
+        </script>
+ 
+    </head>
+    <body>
+        <button id="but1"> - </button>
+        <button id="but2"> + </button>
+        <button id="but3">橙色 </button>
+         <button id="but4">风景色 </button>
+         <button id="but6">美景色 </button>
+          <button id="but5"> x </button>
+       <div id="oDiv" class="qwe"> 咏鹅 [唐]骆宾王
+          鹅，鹅，鹅， 曲项向天歌。 白毛浮绿水， 
+          .咏鹅 [唐]骆宾王 鹅，鹅，鹅， 曲项向天歌。
+           白毛浮绿水， 红掌拨清波。
+           《咏鹅》相传是骆宾王在七岁时写的一首诗，这是一首咏物诗。
+           这首千古流传的诗歌咏鹅 [唐]骆宾王 鹅，鹅，鹅， 曲项向天歌。 白毛浮绿水， 红掌拨清波。
+           《咏鹅》相传是骆宾王在七岁时写的一首诗，这是一首咏物诗。这首千古流传的诗歌咏鹅 [唐]骆宾王 鹅，鹅，鹅， 曲项向天歌。 白毛浮绿水， 红掌拨清波。
+           《咏鹅》相传是骆宾王在七岁时写的一首诗，这是一首咏物诗。这首千古流传的诗歌.咏鹅 [唐]骆宾王 鹅，鹅，鹅， 曲项向天歌。 白毛浮绿水， 红掌拨清波。《咏鹅》相传是骆宾王在七岁时写的一首诗，这是一首咏物诗。这首千古流传的诗歌
+         </div>
+
+    </body>
+</html>

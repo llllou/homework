@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+        	section{
+        		width:100%;
+        		height:750px;
+        		background: url(561c9303c14a2.jpg)no-repeat 100% 100%;
+        	}
+        	button{
+        		margin-left: 150px;
+        	}
+			#oDiv{
+				margin:100px auto;
+				line-height: 50px;
+				letter-spacing:3px;
+				border:2px solid #ffffff;
+				border-radius: 20px;
+				text-indent: 2em;
+				font-family: 楷体;
+				transition:width 2s, height 2s, background 2s, color 2s; 
+			}
+        </style>
+
+        <script type="text/javascript">
+
+	    	window.onload=function(){
+
+	    		var oDiv=document.getElementById("oDiv");
+
+	    		var img=document.getElementsByTagName("img")
+	    			oDiv.style.width="1360px";
+	    			oDiv.style.height="400px";
+
+	    		var btn=document.getElementsByTagName("button");
+	    			
+	    			btn[0].onclick=function(){
+	    				var a = parseInt(oDiv.style.fontSize);
+	    				a-=1;
+	    				oDiv.style.fontSize=a+"px";
+	    			}
+
+	    			btn[1].onclick=function(){
+	    				var a = parseInt(oDiv.style.fontSize);
+	    				a+=1;
+	    				oDiv.style.fontSize=a+"px";
+	    			}
+
+	    			btn[2].onclick=function(){
+		    			if(oDiv.style.color=="red"){
+		    				oDiv.style.color="gold";
+		    			}else if(oDiv.style.color=="gold"){
+		    				oDiv.style.color="brown";
+		    			}else if(oDiv.style.color=="brown"){
+		    				oDiv.style.color="purple";
+		    			}else if(oDiv.style.color=="purple"){
+		    				oDiv.style.color="yellow";
+		    			}else if(oDiv.style.color=="yellow"){
+		    				oDiv.style.color="blue";
+		    			}else if(oDiv.style.color=="blue"){
+		    				oDiv.style.color="green";
+		    			}else if(oDiv.style.color=="green"){
+		    				oDiv.style.color="black";
+		    			}else if(oDiv.style.color=="black"){
+		    				oDiv.style.color="orange";
+		    			}else if(oDiv.style.color=="orange"){
+		    				oDiv.style.color="greenyellow";
+		    			}else{
+		    				oDiv.style.color="red";
+		    			}
+	    			}
+
+	    			btn[3].onclick=function(){
+	    				if(oDiv.style.fontFamily=="楷体"){
+	    					oDiv.style.fontFamily="宋体";
+	    				}else if(oDiv.style.fontFamily=="宋体"){
+	    					oDiv.style.fontFamily="微软雅黑";
+	    				}else if(oDiv.style.fontFamily=="微软雅黑"){
+	    					oDiv.style.fontFamily="黑体";
+	    				}else{
+	    					oDiv.style.fontFamily="楷体";
+	    				}
+	    			}
+
+	    			btn[4].onclick=function(){
+	    				oDiv.style.width="1460px";
+	    				oDiv.style.height="480px";
+	    			}
+
+	    			btn[5].onclick=function(){
+	    				oDiv.style.width="1360px";
+	    				oDiv.style.height="400px";
+	    				oDiv.style.color="black";
+	    				oDiv.style.fontSize="20px";
+	    				oDiv.style.fontFamily="楷体";
+	    			}
+
+	    			var oP=document.getElementById("oP")
+	    				oP.style.color="#00fe36";
+	    				oP.style.fontSize="30px";
+	    				oP.style.fontFamily="楷体";
+	    				oP.style.textAlign="center";
+	    	}
+    	</script>
+
+    </head>
+    <body>
+    	<section>
+
+	    	<button>字体变小</button>
+	    	<button>字体变大</button>
+	    	<button>颜色变幻</button>
+	    	<button>字体样式</button>
+	    	<button>边框改变</button>
+	    	<button>一键还原</button>
+
+	    	<div id="oDiv" style="font-size:20px">
+	    		人 生都是从复杂到简单的忘记，有人说，在爱情与时间面前，我们终究输给了时间，走着走着，就走向了前方的陌路。其实，不是每一场美丽的邂逅都会开出绚丽的 花，缘聚缘散也不是我们所能掌握，我们可以做的就是每受伤一次就能坚强一分，在不断愈合的过程中增加生命的厚重。经久之后，再次回眸，相信记忆深刻的东西 已不再是某个人的脸颊，而是每条路走来，我们学会了如何的成长。单薄的时间支撑起的回忆永远不及现实来的汹涌。<br>　　走 在茫茫人海，常怀一份感动来锤炼善良的内心，荡起生命之舟，扬帆在前进的旅途之中。在淡然中生活，在静默中守心，不要刻意去改变什么，走一步有一步的精 彩，停一步有一步的风景，只要心中怀着美好，哪里的风景都是倾心的。静静地把时光捧在手心，记载岁月走过残留下的痕迹。本着对生命的尊重，感谢生命中所有 的赠予，无论世事如何改变，守着那些美好的，温馨的东西，过此一生。如此，安好。
+	    	</div>
+
+	    	<p id="oP">来啊，快活啊！</p>
+    	</section>
+    </body>
+</html>

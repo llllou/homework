@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #box {
+            width: 300px;
+            height: 300px;
+            color: #0cb75d;
+            border: 1px solid red;
+            margin: 0 auto;
+        }
+
+        .div1{
+            width: 280px;
+            padding: 10px;
+            margin: 0 auto;
+        }
+        input{
+            width: 50px;
+            height: 50px;
+            margin-left: 30px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oBtn1 = document.getElementById("btn1");
+            var oBtn2 = document.getElementById("btn2");
+            var oBtn3 = document.getElementById("btn3");
+            var oBox = document.getElementById("box");
+
+            oBtn1.onclick = function () {
+                var a = parseInt(oBox.style.fontSize);
+                a += 1;
+                oBox.style.fontSize = a + "px";
+            }
+            oBtn2.onclick = function () {
+                var a = parseInt(oBox.style.fontSize);
+                a -= 1;
+                oBox.style.fontSize = a + "px";
+            }
+             oBtn3.onclick=function () {
+                 oBox.style.fontSize=30+"px";
+
+             }
+        }
+    </script>
+</head>
+<body>
+<div class="div1">
+    <input type="button" value="增大" id="btn1"/>
+    <input type="button" value="减小" id="btn2">
+    <input type="button" value="还原" id="btn3">
+</div>
+<div id="box" style="font-size: 30px;">字字字字字字字字字字字字字字字字字字字字字字</div>
+</body>
+</html>

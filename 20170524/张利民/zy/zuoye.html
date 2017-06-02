@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       .red {
+           width:500px;background:red;border:10px solid yellow;padding:20px;color:yellow;
+       }
+       .yellow {
+           width:500px;background:yellow;border:10px solid red;padding:20px;color:red;
+       }
+    </style>
+    <script>
+        window.onload = function() {
+            var oBt1 = document.getElementById("bt1");
+            var oBt2 = document.getElementById("bt2");
+            var oBt3 = document.getElementById("bt3");
+            var oP1 = document.getElementById("p1");
+            var oRed = document.getElementById("red");
+            var oYellow = document.getElementById("yellow");
+            var num =16;
+            oBt1.onclick = function() {
+                if(num > 12) {
+                    num --;
+                    oP1.style.fontSize = num+"px"
+                    alert(num);
+                }
+            }
+            oBt2.onclick = function() {
+                if(num <=22 ) {
+                    num ++;
+                    oP1.style.fontSize = num+"px"
+                    alert(num);
+                }
+
+            }
+            oBt3.onclick = function() {
+                oP1.style.display = "none"
+            }
+            oRed.onclick = function () {
+               oP1.className = "red"
+            }
+            oYellow.onclick = function () {
+                oP1.className = "yellow"
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" id="bt1" value="-"/>
+    <input type="button" value="+" id="bt2" />
+    <input type="button" value="红" id="red"/>
+    <input type="button" value="黄" id="yellow"/>
+    <input type="button" id="bt3" value="&times"/>
+    <p id="p1" >
+        　春风拂面，喜润心田。连日来，壮乡儿女沉浸在激动和喜悦中。自治区党委、南宁市委、北海市委分别在第一时间召开常委扩大会议，认真学习习近平总书记考察广西时的重要讲话精神。广大干部群众通过网络、电视、报纸等，关注习近平总书记的考察行程，学习习近平总书记的重要讲话。大家纷纷表示，一定牢记嘱托、不负期许，把习近平总书记的亲切关怀转化为做好各项工作的强大动力，不断谱写“一带一路”建设新篇章。
+    </p>
+
+
+</body>
+<scipt>
+
+</scipt>
+</html>

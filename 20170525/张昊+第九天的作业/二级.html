@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        div{
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border:1px solid #888;
+        }
+        ul{
+            width: 200px;
+            height: 155px;
+            display: none;
+        }
+        ul li{
+            list-style: none;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border:1px solid #888;
+        }
+        #oDiv:hover,ul li:hover{
+            background:gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="oDiv">电脑</div>
+    <ul id="oUl">
+        <li>屏幕</li>
+        <li>鼠标</li>
+        <li>键盘</li>
+    </ul>
+
+</body>
+    <script type="text/javascript">
+        var oDiv = document.getElementById("oDiv");
+        var oUl = document.getElementById("oUl");
+        var Li = document.getElementById("oUl").getElementsByTagName("li");
+        oDiv.onmouseover=function () {
+            oUl.style.display="block";
+        }
+        oDiv.onmouseout=function () {
+            oUl.style.display="none";
+        }
+        oUl.onmouseover=function () {
+            oUl.style.display="block";
+        }
+        oUl.onmouseout=function () {
+            oUl.style.display="none";
+        }
+        for(var i = 0 ; i < Li.length;i++){
+            var b ;
+            Li[i].onclick=function () {
+                b = this.innerText;
+                this.innerText = oDiv.innerText;
+                oDiv.innerText = b;
+            }
+        }
+    </script>
+</html>

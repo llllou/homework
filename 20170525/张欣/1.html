@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+              #o1{
+                width: 300px;
+                height: 180px;
+                border:1px solid #ccc;
+                margin:0 auto;
+              }  
+              #o2{
+                width: 200px;
+                height: 150px;
+                background: #abc;
+                margin:0 auto;
+                margin-top:20px;
+                border-radius:15px;
+                display: none;
+              }
+        </style>
+    </head>
+    <body>
+        <div id="o1">
+             <p>email :<input type="text"></p> 
+             <p>密码: <input type="password"></p>
+             <p>确认密码: <input type="password"></p>
+            <p><input type="radio" name="sex">十天内免登录</p> 
+        </div>
+        <div id="o2">请注意安全啊！请注意安全啊！请注意安全啊！请注意安全啊！请注意安全啊！请注意安全啊！请注意安全啊！请注意安全啊！请注意安全啊！请注意安全啊！请注意安全啊！</div>
+    </body>
+    <script>
+              var o1=document.getElementById("o1");
+               // var o2=document.getElementById("02");
+              o1.onmouseover=function(){
+                    o2.style.display="block";
+              }
+             o1.onmouseout=function(){
+                    o2.style.display="none";
+              }
+    </script>
+</html>

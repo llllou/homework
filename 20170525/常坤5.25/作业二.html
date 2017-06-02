@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#oDiv1{
+				width: 400px;
+				height: 150px;
+				border: 1px solid gray;
+				position: absolute;
+				left: 300px;
+				top: 20px;
+			}
+			#oDiv2{
+				width: 200px;
+				height: 150px;
+				border: 1px solid gray;
+				background: gold;
+				position: absolute;
+				left: 400px;
+				top: 200px;
+				border-radius: 10px;
+				box-shadow:1px 1px 1px 1px gray;
+				display: none;
+			}
+			p{
+				margin-left: 20px;
+				margin-top: 10px;
+			}
+			#oInp{
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="oDiv1">
+			<p>email:<input type="text" name="" id="" value="" /></p>
+			<p>密码:<input type="text" name="" id="" value="" /></p>
+			<p>确认密码:<input type="text" name="" id="" value="" /></p>
+			<p><input type="checkbox" name="" id="oInp" value="" />十天内免登陆</p>
+		</div>
+		<div id="oDiv2">
+			请注意安全
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oInp=document.getElementById("oInp");
+		var oDiv2=document.getElementById("oDiv2");
+		oInp.onmouseover=function(){
+			oDiv2.style.display="block";
+		}
+		oInp.onmouseout=function(){
+			oDiv2.style.display="none";
+		}
+	</script>
+</html>

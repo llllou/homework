@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>二级</title>
+        <style>
+             ul{
+                width: 100px;
+                height: 120px;
+                position: absolute;
+                top:37px;
+                left: -32px;
+                display: none;
+             }
+             li{
+                list-style: none;
+                width: 100px;
+                height: 40px;
+                font-size: 16px;
+                line-height: 40px;
+                border: 1px solid #ccc;
+                text-align: center;
+             }
+             li:hover{
+                background-color: red;
+             }
+             .oDiv{
+                width: 100px;
+                height: 40px;
+                font-size: 16px;
+                line-height: 40px;
+                border: 1px solid #ccc;
+                text-align: center;
+             }
+             .oDiv:hover{
+                background-color: red;
+             }
+        </style>
+    </head>
+    <body>
+            <div id="oDiv" class="oDiv">创作
+                
+            </div>
+            <ul id="oUl">
+                        <li>美术</li>
+                        <li>生活</li>
+                        <li>艺术</li>
+            </ul>
+    </body>
+    <script>
+        var oDiv=document.getElementById("oDiv");
+        var oLi=document.getElementsByTagName("li");
+        var oUl=document.getElementById("oUl");
+         oDiv.onmouseover=function(){
+             oUl.style.display="block";
+        }  
+        oUl.onmouseover=function(){
+             oUl.style.display="block";
+        }
+        oUl.onmouseout=function(){
+             oUl.style.display="none";
+        }
+        for(var i=0;i<oLi.length;i++){
+            (function fun(m){
+                    oLi[m].onclick=function(){
+                    var a=oLi[m].innerText;
+                        oLi[m].innerText=oDiv.innerText;
+                        oDiv.innerText=a;
+                    }
+            })(i);
+        }
+    </script>
+</html>

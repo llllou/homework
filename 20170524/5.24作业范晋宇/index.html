@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>0524作业</title>
+        <link rel="stylesheet" href="css/index.css">
+
+    </head>
+    <body>
+    <div class="textbox">
+                <button>字体缩小</button>
+                <button>字体放大</button>
+                <button>颜色改变</button>
+                <button>还原</button>
+                <textarea id="text" style="font-size: 25px; color:black;background: url(image/1.jpg) no-repeat;
+    background-size: 100% 100%;"></textarea>
+    </div>
+    </body>
+      <script type="text/javascript">
+           var text=document.getElementById("text");
+           var but=document.getElementsByTagName("button");
+
+           but[0].onclick=function(){
+                     var a=parseInt(text.style.fontSize);
+                     if(a<=11){
+                        a=11;
+                     }else{
+                      a-=2;
+                     }
+                     text.style.fontSize=a+"px";
+           }
+
+           but[1].onclick=function(){
+                     var a=parseInt(text.style.fontSize);
+                     if(a>=81){
+                            a=81;
+                     }else{
+                            a+=2;
+                     }
+                     text.style.fontSize=a+"px";         
+           }
+           but[2].onclick=function(){
+                  if(text.style.color=="black"){
+                       text.style.color="blue";
+                  }else if(text.style.color=="blue"){
+                      text.style.color="yellow";
+                  }else if(text.style.color=="yellow"){
+                      text.style.color="red";
+                  }else if(text.style.color=="red"){
+                      text.style.color="black";
+                  }}
+            but[3].onclick=function(){
+                  text.style.color="black";
+                  text.style.fontSize="25px";
+            }
+
+      </script>
+</html>

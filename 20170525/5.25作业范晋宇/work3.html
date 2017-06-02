@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        .oDiv{
+            width: 180px;
+            height: 150px;
+            font:left;
+            margin-left: 550px;
+            margin-top: 100px;
+            border: 1px solid #ccc;
+            background:url(image/);
+        }
+        .lest{
+            width: 194px;
+            height: 116px;
+            background-color: yellow;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px 1px #000;
+            position: absolute;
+            top:240px;
+            left: 570px;
+            line-height: 20px;
+            display: none;
+        }
+        </style>
+    </head>
+    <body>
+         <div class="oDiv">
+             email:<input type="text">
+             密码:<input type="text">
+             确认密码:<input type="text">
+             <input type="checkbox" id="input">十天内免登录
+         </div>
+         <div id="oDiv2" class="lest">为了您的账号密码，请注意安全，以防上当受骗！为了您的账号密码，请注意安全，以防上当受骗！</div>
+    </body>
+    <script>
+          var input1=document.getElementById("input");
+          var oDiv2=document.getElementById("oDiv2");
+          input1.onclick=function(){
+                oDiv2.style.display="block";
+          }
+    </script>
+</html>

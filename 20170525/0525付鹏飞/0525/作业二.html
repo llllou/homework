@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .box{
+            width: 300px;
+            height:130px;
+            margin-left: 500px;
+            border: 1px solid gray;
+            position: relative;
+        }
+        .dian{
+            width:10px;
+            height:10px;
+            background-color: #d6d6d6;
+            display: inline-block;
+            border: 1px solid #cccccc;
+            border-radius: 3px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        #wenben{
+            position: absolute;
+            width: 200px;
+            height:100px;
+            background-color: yellow;
+            border-radius: 30px;
+            padding: 20px 10px;
+            margin-top: 10px;
+            box-shadow: 5px 5px 10px black;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <p>emaill:<input type="text"></p>
+    <p>密码:<input type="text"></p>
+    <p>确认密码:<input type="text"></p>
+    <a href="" id="tishi"><div class="dian"></div>十天内免费登陆</a>
+    <div id="wenben">请注意啊！ 请注意啊！ 请注意啊！ 请注意啊！ 请注意啊！ 请注意啊！ 请注意啊！ 请注意啊！ 请注意啊！ 请注意啊！ 请注意啊！ 请注意啊！ 请注意啊！ 请注意啊！ 请注意啊！</div>
+</div>
+</body>
+<script type="text/javascript">
+    var tishi = document.getElementById("tishi");
+    var wenben = document.getElementById("wenben");
+
+    tishi.onmouseout=function () {
+        wenben.style.display="none";
+    }
+    tishi.onmouseover=function () {
+        wenben.style.display="block";
+    }
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+                div{
+                    width: 200px;
+                    height: 200px;
+                    background: red;
+                    overflow:auto;
+                     }
+        </style>
+               
+    </head>
+    <body>
+            <button>字体增大</button>
+            <button>字体减小</button>
+            <button>字体颜色</button>
+            <button>整体变化</button>
+            <div id="oDiv" style="font-size:12px">字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体</div>
+    </body>
+    <script>
+            var button=document.getElementsByTagName("button");
+            var oDiv=document.getElementById("oDiv");
+            var a=parseInt(oDiv.style.fontSize);
+            button[0].onclick=function(){
+                    a++;
+                    if(a<=30){
+                        oDiv.style.fontSize=a+"px";
+                    }else{
+                        oDiv.style.fontSize=30+"px";
+                    }  
+                }
+               button[1].onclick=function(){
+                    a--;
+                    if(a<12){
+                        oDiv.style.fontSize=12+"px";
+                    }else{
+                        oDiv.style.fontSize=a+"px";
+                    }  
+                }
+                button[2].onclick=function(){
+                  var    a=String(parseInt(Math.random()*9));
+                  var    b=String(parseInt(Math.random()*9));
+                  var    c=String(parseInt(Math.random()*9));
+                  a=a+b+c;
+                  oDiv.style.color="#"+a;
+                }
+    </script>
+</html>

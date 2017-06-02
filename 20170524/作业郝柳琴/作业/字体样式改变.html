@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #oDiv{
+            overflow: auto;
+        }
+        .clas0{
+            font-family: 叶根友毛笔行书2.0版;
+            width: 200px;
+            height: 200px;
+            background: #333333;
+        }
+        .clas1{
+            font-size: 27px;
+            color:red;
+            font-family: 微软雅黑;
+            width: 100px;
+            height: 100px;
+            background: purple;
+        }
+        .clas2{
+            font-family: 黑体;
+            width: 400px;
+            height: 400px;
+            background: pink;
+        }
+        .clas3{
+            font-family: 方正兰亭超细黑简体;
+            width: 300px;
+            height: 300px;
+            background:  blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <button>字体变大</button>
+    <button>字体变小</button>
+    <button>字体颜色</button>
+    <button>整体样式</button>
+    <div id="oDiv">字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体字体v</div>
+<script type="text/javascript">
+    var butt = document.getElementsByTagName("button");
+    var oDiv = document.getElementById("oDiv");
+    oDiv.style.fontSize="20px";
+    oDiv.style.color="yellow";
+    var font = parseInt(oDiv.style.fontSize);
+    butt[0].onclick = function(){
+        if(font<=40){
+            font++;
+            oDiv.style.fontSize = font + "px";
+        }else{
+            oDiv.style.fontSize = 40 + "px";
+        }
+    }
+    butt[1].onclick = function(){
+        if(font>=8){
+            font--;
+            oDiv.style.fontSize = font + "px";
+        }else{
+            oDiv.style.fontSize = 8 + "px";
+        }
+    }
+    butt[2].onclick = function(){
+            var a = String(parseInt(Math.random()*9));
+             var b = String(parseInt(Math.random()*9));
+            var c = String(parseInt(Math.random()*9));
+            a = a + b + c;
+            oDiv.style.color="#" + a;
+    }
+    butt[3].onclick = function(){
+        var d = parseInt(Math.random()*3);
+        oDiv.className = "clas"+d;
+    }
+//    var ss = Number(111);
+//    var str = String(ss);
+//    alert(str);
+</script>
+</body>
+</html>

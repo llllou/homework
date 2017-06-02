@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin:0;
+}
+i{
+    font-style: normal;
+    display: block;
+margin-top: 15px;
+    margin-left: 10px;
+    font-size: 14px;
+}
+div{
+    width: 300px;
+    height: 40px;
+    margin: 0 auto;
+}
+#oDiv{
+    width: 300px;
+    height:150px;
+    background: coral;
+}
+#bottom:hover{
+    cursor: help;
+}
+#foot{
+    width:200px;
+    height: 100px;
+    background: #cccbba;
+    border: 1px solid red;
+    border-radius: 30px;
+    display: none;
+}
