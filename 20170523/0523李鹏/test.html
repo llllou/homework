@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    html,body{
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+    #big{
+      width: 400px;
+      height: 400px;
+      background-color: #000;
+      position: absolute;
+      color: #fff;
+      text-align: center;
+      top: 50%;
+      margin-left: -200px;
+      left: 50%;
+      margin-top: -200px;
+    }
+    #control{
+      width: 300px;
+      height: 120px;
+      background-color: rgba(255,255,255,0.7);
+      position: absolute;
+      top: 0;
+      left: 400px;
+      display: none;
+      z-index: 50;
+    }
+    .changebtn{
+      margin: 10px 5px;
+      padding: 3px;
+    }
+    .changecolor{
+      width: 40px;
+      height: 40px;
+      border-radius:50%;
+      float: left;
+      margin: 10px;
+      text-align: center;
+      line-height: 40px;
+    }
+    #red{
+      background-color: red;
+    }
+    #yellow{
+      color: #000;
+      background-color: yellow;
+    }
+    #blue{
+      background-color: blue;
+    }
+    .small{
+      width: 50px;
+      height: 50px;
+      background-color: #aaaaaa;
+      position: absolute;
+      top: 50%;
+      margin-top: -25px;
+      left: 50%;
+      margin-left: -25px;
+    }
+    #cover{
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      opacity: 0.7;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+    <div id="big">
+      大div
+      <br>
+      <button id="pannel">控制面板</button>
+      <div class="small">小div</div>
+      <div id="control">
+        <button id="w100" class="changebtn">宽100px</button>
+        <button id="w200" class="changebtn">宽200px</button>
+        <button id="h100" class="changebtn">高100px</button>
+        <button id="h200" class="changebtn">高200px</button>
+        <div id="red" class="changecolor">红</div>
+        <div id="yellow" class="changecolor">黄</div>
+        <div id="blue" class="changecolor">蓝</div>
+        <button id="confirm" class="changebtn">确认</button>
+        <button id="reset" class="changebtn">重置</button>
+      </div>
+    </div>
+    <div id="cover"></div>
+
+</body>
+<script>
+
+  var btnPannel=document.getElementById("pannel");
+  var cover=document.getElementById("cover");
+  var control=document.getElementById("control");
+  var w100=document.getElementById("w100");
+  var h100=document.getElementById("h100");
+  var w200=document.getElementById("w200");
+  var h200=document.getElementById("h200");
+  var red=document.getElementById("red");
+  var yellow=document.getElementById("yellow");
+  var blue=document.getElementById("blue");
+  var confirm=document.getElementById("confirm");
+  var reset=document.getElementById("reset");
+  var small=document.getElementsByClassName("small")[0];
+
+
+  btnPannel.onclick=function () {
+    cover.style.display="block";
+    control.style.display="block";
+  };
+
+  w100.onclick=function () {
+    small.style.width="100px";
+    small.style.marginLeft="-50px";
+  };
+  h100.onclick=function () {
+    small.style.height="100px";
+    small.style.marginTop="-50px";
+  };
+  w200.onclick=function () {
+    small.style.width="200px";
+    small.style.marginLeft="-100px";
+  };
+  h200.onclick=function () {
+    small.style.height="200px";
+    small.style.marginTop="-100px";
+  };
+  red.onclick=function () {
+    small.style.color="white";
+    small.style.backgroundColor="red";
+  };
+  yellow.onclick=function () {
+    small.style.color="black";
+    small.style.backgroundColor="yellow";
+  };
+  blue.onclick=function () {
+    small.style.color="white";
+    small.style.backgroundColor="blue";
+  };
+  confirm.onclick=function () {
+    cover.style.display="none";
+    control.style.display="none";
+  };
+  reset.onclick=function () {
+    small.style.cssText="";
+  };
+</script>
+</html>

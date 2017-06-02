@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var score = [34,43,89,23,16,90,67,78,79,67];
+		var sum=0;
+		for(var i=0;i<=score.length-1;i++){
+			sum+=score[i];
+		}
+		var avg=sum/score.length;
+		console.log(avg);
+		var student=[];
+		for(var j=0;j<=score.length-1;j++){
+			if(score[j] > avg){
+				student.push(score[j]);
+			}
+		}
+		console.log(student.length);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

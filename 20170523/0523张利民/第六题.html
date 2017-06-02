@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="javascript">
+        function maxr(char){
+        var a = 0;
+        var b=1;
+
+        var maxlength = 0;
+        var maxchar = "";
+
+        while(a<=char.length-2){
+            if(char.charAt(a) == char.charAt(b)){
+                b++;
+            }else{
+               if(b-a>maxlength){
+                  maxlength = b-a;
+                  maxchar = char.slice(a,b);
+               }
+               a = b;
+               b = a+1;
+            }
+        };
+        console.log(maxchar,maxlength);
+    }
+     var str = "mmjiiikkkmmmmmmmmllllllllllllllllllmlll";
+     maxr(str);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

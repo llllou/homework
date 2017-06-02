@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        var n;
+
+        function tri(n){
+            var num;
+            var tempA = n;
+            var tempB = n;
+            for(var i = 0; i < n; i++){
+                num = "";
+                for(var j = tempB-1; j > 0; j --){
+                    num += " ";
+                }
+                for(var k = 0; k < 1 + 2*i; k ++){
+                    num += "*";
+                }
+                console.log(num);
+                tempA ++;
+                tempB --;
+            }
+        }
+
+        tri(prompt("请输入一个数字，我将打印图形"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

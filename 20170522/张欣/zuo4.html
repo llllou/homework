@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+                     function fun(a,b){
+                        return a-b;
+                    }
+                    var arr=[12,45,7,78,54,88,76,87,98,60];
+                    alert(arr.sort(fun));
+                    // console.log("最高分是"+arr.pop());
+                    // console.log("最低分是"+arr.shift());
+                     // console.log("最高分是"+arr.sort(fun)[arr.length-1]);
+                     var arr1=arr.sort(fun);
+                    var arr=[12,45,7,78,54,88,76,87,98,60];
+                     for(var i=0;i<arr.length;i++){
+                        if(arr[i]==arr1[arr1.length-1]){
+                            alert("成绩最高的下标为"+i);
+                        }
+
+                     }
+                       for(var i=0;i<arr.length;i++){
+                        if(arr[i]==arr1[0]){
+                            alert("成绩最低的下标为"+i);
+                        }
+                    }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

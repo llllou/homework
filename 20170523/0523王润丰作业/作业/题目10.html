@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+
+        // 得出最大相同的字符串
+        function maxsame(char1,char2){
+            var l1 = char1.length;
+            var l2 = char2.length;
+            var tempA;
+            var tempB;
+            var l;
+            var count = 1;
+            var tempL;
+
+            // 得到短字符串
+            if(l1 > l2){
+                l = l2;
+                tempA = char2;
+                tempB = char1;
+            }else{
+                l = l1;
+                tempA = char1;
+                tempB = char2;
+            }
+            tempL = l;
+
+            // 拿短字符串的最长可能性判断到最短的可能性，一旦判断成功，便停止循环返回值
+            for(var i = fac(l); i > 0; i --){
+                for(var j = 0; j < count; j ++){
+                    // tempA.substr(j,tempL);
+                    if(match(tempB,tempA.substr(j,tempL))){
+                        return tempA.substr(j,tempL);
+                        break;
+                    }
+                }
+                if(count < l){
+                    count ++;
+                }
+                tempL --;
+            }
+
+            return false;
+        }
+
+        // 将短字符串去对比长字符串
+        function match(char1,char2){
+            var l1 = char1.length;
+            var l2 = char2.length;
+            var bool
+            for(var i = 0; i < l1; i ++){
+                if(char1.substr(i,l2) == char2){
+                    return char2;
+                }
+            }
+            return false;
+        }
+
+        // 阶乘算出可能性
+        function fac(num){
+            var fac = 1;
+            for(var i = 1; i <= num; i ++){
+                fac *= i;
+            }
+            return fac;
+        }
+
+        var inputA = prompt("请随意输入");
+        var inputB = prompt("请随意输入");
+        console.log(maxsame(inputA,inputB));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

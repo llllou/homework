@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var arr=[70,85,94,60,42,59,60,75,50,83];
+            var num=0;
+            for (var i = 0; i < arr.length; i++) {
+                num+=arr[i];
+            }
+            var a=num/arr.length;
+            var arr2=[];
+            for(var j=0;j<=arr.length-1;j++){
+                if (arr[j]>a) {
+                    arr2.push(arr[j]);
+                }
+            }
+            console.log(arr2.length);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

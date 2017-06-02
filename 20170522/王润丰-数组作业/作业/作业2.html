@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        var array = new Array(8,2,3,22,4,5,33,47,8,8,1,13);
+        function sortNum(arr){
+            var temp;
+            for(var i = 0; i < arr.length; i++){
+                for(var j = 0; j < arr.length; j ++){
+                    if(arr[j] > arr[j+1]){
+                        temp = arr[j];
+                        arr[j] = arr[j+1];
+                        arr[j+1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        console.log(sortNum(array));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

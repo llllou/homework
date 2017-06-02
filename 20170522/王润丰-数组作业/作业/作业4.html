@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        var score = new Array(80, 78, 68, 60, 81, 85, 90, 75, 73, 89);
+        find(score);
+        function find(arr){
+            var tempMax = arr[0],
+                tempMin = arr[1],
+                tempMaxIndex,
+                tempMinIndex;
+            for(var i = 0; i < arr.length; i++){
+                if(tempMax < arr[i]){
+                    tempMax = arr[i];
+                    tempMaxIndex = i;
+                }
+                if(tempMin > arr[i]){
+                    tempMin = arr[i];
+                    tempMinIndex = i;
+                }
+            }
+            console.log("最大值" + tempMax + "下标为" + tempMaxIndex + "最小值" + tempMin + "下标为" + tempMinIndex);
+        }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

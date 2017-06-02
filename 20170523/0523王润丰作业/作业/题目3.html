@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        function rev(char){
+            var l = char.length;
+            var newChar = "";
+            while(l){
+                newChar += char[l-1];
+                l --;
+            }
+            return newChar;
+        }
+
+        var input = prompt("请随便输入些什么，我将倒置他们");
+        alert(rev(input));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

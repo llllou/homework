@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .header{
+            width: 1000px;
+            height:600px;
+            background:#cccccc;
+            margin: 50px auto 0;
+            box-shadow:10px 10px 10px  #888;
+            border:2px solid #909;
+        }
+        .header-left{
+            width:500px;
+            height: 600px;
+            float:left;
+        }
+        .header-left-input{
+            width:500px;
+            height:100px;
+        }
+        .header-left-input input{
+            width:200px;
+            height: 30px;
+            font-size:15px;
+            float:left;
+            margin:50px 30px 0 90px;
+            box-shadow: 5px 5px 5px #888;
+            overflow: hidden;
+        }
+        .header-left-input button{
+            width:80px;
+            height:34px;
+            float:left;
+            margin:50px 0 0 0;
+            box-shadow: 5px 5px 5px #888;
+        }
+        #oDiv{
+            width:100px;
+            height:100px;
+            background:#f41;
+            border-radius: 20px;
+            box-shadow: 5px 5px 5px #888;
+            color:#f7f7f8;
+            text-align: center;
+            line-height: 100px;
+            transition: width 2s , height 2s ,background 2s ,color 2s,top 1s,left 1s;
+            margin-left:30px;
+            position: relative;
+        }
+        .header-right{
+            width:450px;
+            height: 550px;
+            float:right;
+            background:#909;
+            margin:20px 20px;
+            box-shadow:5px 5px 10px  #888;
+        }
+        .header-right-top{
+            width:400px;
+            height:80px;
+            background:#939;
+            margin:25px 25px;
+        }
+        .header-right-top b{
+            float:left;
+            width:60px;
+            height:80px;
+            text-align: center;
+            color:#fff;
+            line-height: 80px;
+            font-size: 20px;
+        }
+        .header-right-top button{
+            width:80px;
+            height:35px;
+            margin:25px 16px 1px 15px;
+        }
+        .header-right-top .button-last{
+            width:150px;
+            margin-left:90px;
+        }
+        .header-right-top-button button{
+            width: 65px;
+            margin-left:4px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function () {
+            var oDiv = document.getElementById("oDiv");
+            var oDivRight = document.getElementById("oDivRight");
+            var Botton = document.getElementsByTagName("button");
+            Botton[0].onclick=function () {
+                if(oDiv.style.display=="none"){
+                    oDiv.style.display="block";
+                }else{
+                    oDiv.style.display="none";
+                }
+            }
+            Botton[1].onclick=function () {
+                oDiv.style.height="150px";
+            }
+            Botton[2].onclick=function () {
+                oDiv.style.height="300px";
+            }
+            Botton[3].onclick=function () {
+                oDiv.style.height="450px";
+            }
+            Botton[4].onclick=function () {
+                oDiv.style.width="150px";
+            }
+            Botton[5].onclick=function () {
+                oDiv.style.width="300px";
+            }
+            Botton[6].onclick=function () {
+                oDiv.style.width="450px";
+            }
+            Botton[7].onclick=function () {
+                oDiv.style.background="black";
+                oDiv.style.color="red";
+            }
+            Botton[8].onclick=function () {
+                oDiv.style.background="green";
+                oDiv.style.color="blue";
+            }
+            Botton[9].onclick=function () {
+                oDiv.style.background="yellow";
+                oDiv.style.color="black";
+            }
+            var a= 10;
+            Botton[10].onclick=function () {
+                a -= 10;
+                oDiv.style.top = a + "px";
+            }
+            Botton[11].onclick=function () {
+                a += 10;
+                oDiv.style.top = a + "px";
+            }
+            Botton[12].onclick=function () {
+                a-=10;
+                oDiv.style.left = a+"px";
+            }
+            Botton[13].onclick=function () {
+                a+=10;
+                oDiv.style.left = a+"px";
+
+            }
+            Botton[14].onclick=function () {
+                oDiv.style.width="100px";
+                oDiv.style.height="100px";
+                oDiv.style.background="#f41";
+                oDiv.style.left = "0px";
+                oDiv.style.top = "0px";
+
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="header">
+    <div class="header-left">
+        <div class="header-left-input">
+            <input type="text" placeholder="下面是一个方块"><button>显示/隐藏</button>
+        </div>
+        <div id="oDiv" style="display:none;">我是一个方块</div>
+    </div>
+    <div class="header-right" id="oDivRight">
+        <div class="header-right-top"><b>高度</b>
+            <button>高度加150</button><button>高度加300</button><button>高度加450</button>
+        </div>
+        <div class="header-right-top"><b>宽度</b>
+            <button>宽度加150</button><button>宽度加300</button><button>宽度加450</button>
+        </div>
+        <div class="header-right-top"><b>颜色</b>
+            <button>黑色</button><button>绿色</button><button>黄色</button>
+        </div>
+        <div class="header-right-top header-right-top-button"><b>移动</b>
+            <button>上</button><button>下</button><button>左</button><button>右</button>
+        </div>
+        <div class="header-right-top"><b>还原</b>
+            <button class="button-last">还原初始值</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

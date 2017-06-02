@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        function rightchange(char,n){
+            var l = char.length;
+            var temp
+            for(var i = 0; i < n; i ++){
+                temp = char[l-1];
+                char = temp + char;
+                char = char.substr(0,l);
+            }
+            return char;
+        }
+
+        var input = prompt("请随意输入");
+        var num = prompt("请输入你要右移的位数");
+        console.log(rightchange(input,num));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

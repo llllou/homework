@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            function fun(arr){
+                var v=0;
+                for(var i=0;i<arr.length;i++){
+                    for(var j=0;j<arr.length-1;j++){
+                        if(arr[j]>=arr[i]){
+                                v=arr[j];
+                                arr[j]=arr[i];
+                                arr[i]=v;
+                        }
+                    }
+                }
+                    return arr;
+            }
+            var garde=[80,45,68,67,64,34,89,90,30,60];
+            var str=fun(garde);
+            var garde=[80,45,68,67,64,34,89,90,30,60];
+            for(var i=0; i<garde.length;i++){
+                if(garde[i]==str[0]){
+                    console.log("最小的数下标为"+i);
+                }else if(garde[i]==str[garde.length -1]){
+                    console.log("最大数的下标为"+i);
+                }
+            }
+            
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

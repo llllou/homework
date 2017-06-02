@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var arr=[93,88,95,86,92,75,65,80,90];
+               function f(a,b){
+                        return a-b;
+               }
+               var arr=arr.sort(f);
+               var b=arr;
+               var arr=[93,88,95,86,92,75,65,80,90];
+               for(var i=0;i<arr.length;i++){
+                    if(arr[i]==b[0]){
+                          console.log("最低分下标是"+i);
+                    }
+                    else if(arr[i]==b[b.length-1]){
+                          console.log("最高分下标是"+i);
+                    }
+               }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        var char = prompt("请输入一个字符串");
+        var num = prompt("请输入一个数字");
+        alert(repeat(char,num));
+
+        function repeat(char,n){
+            var temp = char.toString();
+            for(var i = 0; i < n; i ++){
+                temp += char.toString();
+            }
+            return temp;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

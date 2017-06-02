@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+#container{
+    width: 1100px;
+    margin: 0 auto;
+}
+
+#pic{
+    width: 1100px;
+    height: 800px;
+    /*background: lightcoral;*/
+    float: left;
+    position: relative;
+}
+
+#ctrl{
+    width: 450px;
+    height: 800px;
+    /*background: lightsalmon;*/
+    float: left;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    display: none;
+}
+
+h3{
+    margin: 100px 0 100px 100px;
+    float: left;
+}
+
+#pic input{
+    margin: 100px 0 0 100px;
+    width: 100px;
+    float: left;
+}
+
+img{
+    margin-left: 80px;
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    top: 200px;
+    left: 0;
+}

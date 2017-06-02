@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function fun(arr){
+			 	var i;
+			 	for(var j=1;j<arr.length;j++){
+			 		for(var n=0;n<arr.length-1;n++){
+			 			if(arr[n]>arr[j]){
+			 				i=arr[n];
+			 				arr[n]=arr[j];
+			 				arr[j]=i;
+			 			}
+			 		}
+			 	}
+			 	return arr;
+			}
+			var arr=[8,2,3,22,4,5,33,47,8,9,1,13];
+			var b=fun(arr);
+			console.log(b);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

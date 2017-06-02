@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var arr = [8,2,3,22,4,5,33,47,8,9,1,13];
+            var arr1=[];
+            var arr2=[];
+            // arr.sort();
+            // console.log(arr);
+            for(var i=0;i<arr.length;i++){
+                if (arr[i]<10) {
+                    arr1.push(arr[i]);
+                    arr1.sort();
+                }else{
+                    arr2.push(arr[i]);
+                    arr2.sort();
+                }
+            }
+            console.log(arr1.concat(arr2));
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

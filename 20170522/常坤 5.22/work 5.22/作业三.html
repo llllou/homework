@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var arr=[86,85,77,67,84,73,77,88,91,93];
+			var num=0;
+			for(var i=0;i<arr.length;i++){
+				num+=arr[i];
+			}
+			var pjz=parseInt(num/arr.length);
+			console.log(arr+"的平均值"+pjz);
+			var arr1=[];
+			var j=0;
+			for(var i=0;i<arr.length;i++){
+				if(arr[i]>=pjz){
+					arr1[j]=arr[i];
+//					alert(arr[i]);
+					j++;
+				}
+			}
+			console.log("大于平均值的有"+j+"人");
+			console.log(arr1);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+       <!--  <canvas id="can" width="400" height="400" style="background:Black"></canvas> -->
+        <script  type="text/javascript">
+            // var sn=[42,41],dz=43,fx=1,n,ctx=document.getElementById('can').getContext("2d");
+            //    function draw(t,c){
+            //     ctx.fillStyle=c;
+            //     ctx.fillRect(t%20*20+1,~~(t/20)*20+1,18,18);
+            //  }
+            //    document.onkeydown=function(e){fx=sn[1]-sn[0]==(n=[-1,-20,1,20][(e||event).keyCode-37]||fx)?fx:n};
+            //         !function(){
+            //     sn.unshift(n=sn[0]+fx);
+            //     if(sn.indexOf(n,1)>0 || n<0||n>399||fx==1&&n%20==0||fx==-1&&n%20==19) return alert("GAME OVER");
+            //     draw(n,"Lime");
+            //     if(n==dz){
+            //         while(sn.indexOf(dz=~~(Math.random()*400))>=0);
+            //         draw(dz,"Yellow");
+            //     }else
+            //         draw(sn.pop(),"Black");
+            //     setTimeout(arguments.callee,130);
+            //  }();
+            // function sum(a,b,c){
+            //     return (function(a,b){
+            //         return a >= b ? a : b;
+            //     })
+            //     (a,b) + c;
+            // }
+            // -function fun(){
+            //     alert("哈哈")
+            // }();
+            // function fn(){
+            //     console.log(1);
+            //     console.log(2);
+            //     console.log(3);
+            // }
+            // console.log(0);
+            // fn();
+            // console.log(4);
+            // console.log(5);
+            // function sum(a,b){
+            //     return a + b;
+            //     alert("哈哈");
+            // }
+            // console.log(sum(1,"2"));
+            // fn();
+            // fn2();
+            // function fn(){
+            //     alert("我是函数");
+            // }
+            // var  fn2 = function(){
+            //     alert("我是函数2");
+            // }
+            // a();
+            // var a = 1;
+            // function a(){
+            //     alert("我是函数");
+            // }
+            // var a = 1;
+            // function a(){
+            //     alert("我是函数");
+            // }
+            // a();
+            // a();
+            // var a = 1;
+            // function a(){
+            //     alert("我是函数");
+            // }
+            // function fn(){
+            //     var a = 1;
+            //     console.log("我是函数" +a);
+            // }
+            // fn();
+            // console.log("我是函数a" +a);
+            // function outer(){
+            //     var count = 0;
+            //     function inner(){
+            //         count++;
+            //         console.log(count);
+            //     }
+            //     return inner;
+            // }
+            // var inn1 = outer();
+            // var inn1 = outer();
+
+            // inn1();
+            // inn1();
+            // inn1();
+            // inn2();
+            // inn2();
+            // var arr =[16,33,34,12,53];
+            // console.log(arr[0]);
+            // var arr =[1,"哈哈",true, undefined,"秘密"];
+            function sortNumber(a,b)
+                {
+                return a - b;
+                }
+            var arr = new Array(6);
+                    arr[0] = "10"
+                    arr[1] = "5"
+                    arr[2] = "40"
+                    arr[3] = "25"
+                    arr[4] = "100"
+                    arr[5] = "1"
+                    document.write(arr + "<br />");
+                    document.write(arr.sort(sortNumber));
+                    // 第三
+                    var arr = [96,76,85,90,80,55,83,60,100,77];
+                    var newArray = [];
+                    var sum = 0;
+                    var pjcj;
+                    for (var i = 0;i < arr.length; i++) {
+                        sum += arr[i];
+                        pjcj =parseInt(sum / arr.length);
+                        if (arr[i] >= pjcj) {
+                            newArray[newArray.length] = arr[i];
+                        }
+                    }
+                    console.log(newArray);
+                     // 第四
+                     var arr = [96,76,85,90,80,55,83,60,100,77];
+                        function cj() {
+                            var min = arr[0];
+                            var minIndex = 0;
+                            var max = arr[0];
+                            var maxIndex = 0;
+                            for(var i = 1; i < arr.length; i++) {
+                               //判断大小
+                                if (max < arr[i]) {
+                                    max = arr[i];
+                                    maxIndex = i;
+                                }
+                                if (min > arr [i]) {
+                                    min = arr [i];
+                                    minIndex = i;
+                                }
+                            }
+                            console.log("最高分是"+max);
+                            console.log("最高分的下标是"+maxIndex);
+                            console.log("最低分是"+min);
+                            console.log("最低分的下标是"+minIndex);
+                        }
+                        cj();
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

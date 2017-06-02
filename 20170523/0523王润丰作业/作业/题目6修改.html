@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        function maxr(char){
+            var l = char.length;
+            var count = 1, comp = 0, temp;
+            var newChar = "";
+            for(var i = 0; i < l; i ++){
+                if(char[i] == char[i + 1]){
+                    count ++;
+                    newChar += char[i];
+                }else{
+                    temp = comp;
+                    comp = count;
+                    count = 1;
+                    if(comp > temp){
+                        continue;
+                    }else{
+                        comp = temp;
+                    }
+                }
+            }
+            newChar += newChar[0];
+            return newChar;
+        }
+
+        var input = prompt("请随意输入");
+        console.log(maxr(input));
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

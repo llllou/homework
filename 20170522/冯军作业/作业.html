@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //1
+        //        var arr=["北京烤鸭","四川麻婆豆腐","西湖醋鱼","飞龙汤",
+        //            "无为熏鸭","东坡肉","腊味合蒸","辣子鸡","东安子鸡","清蒸武昌鱼"];
+        //        console.log(arr[parseInt(Math.random()*arr.length)]);
+        //2
+        //              var arr=[8,2,3,22,4,5,33,47,8,9,1,13];
+        //     arr.sort(function (a,b) {
+        //         if(a<b){
+        //             return-1;
+        //         }else if(a>b){
+        //             return 1;
+        //         }else if (a==b){
+        //             return 0;
+        //         }
+        //     })
+        //        console.log(arr);
+        //3
+//        var arr = [60, 79, 84, 61, 79, 85, 63, 75, 84, 80];
+//        var z = 0;
+//        for (var i = 0; i < arr.length; i++) {
+//            z += arr[i];
+//        }
+//        var a=parseInt(z/arr.length);
+//        var sun=0;
+//        for(var i = 0; i < arr.length; i++ ){
+//            if(arr[i]>a){
+//                 sun++;
+//            }
+//        }
+//        console.log(sun);
+        //4
+                      var arr=[8,2,3,22,4,5,33,47,8,9,1,13];
+             arr.sort(function (a,b) {
+                 if(a<b){
+                     return-1;
+                 }else if(a>b){
+                     return 1;
+                 }else if (a==b){
+                     return 0;
+                 }
+             })
+                var b=arr;
+                var arr=[8,2,3,22,4,5,33,47,8,9,1,13];
+                for(var i=0;i<arr.length;i++){
+                         if(arr[i]==b[0]){
+                             console.log(arr[i]+"是最低分数，并且下标是"+i);
+                         }
+                         if(arr[i]==b[b.length-1]){
+                             console.log(arr[i]+"是最高分数，并且下标是"+i);
+                         }
+                }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

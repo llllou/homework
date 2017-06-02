@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function fun(arr){
+			 	var i;
+			 	for(var j=1;j<arr.length;j++){
+			 		for(var n=0;n<arr.length-1;n++){
+			 			if(arr[n]>arr[j]){
+			 				i=arr[n];
+			 				arr[n]=arr[j];
+			 				arr[j]=i;
+			 			}
+			 		}
+			 	}
+			 	return arr;
+			}
+			var arr=[86,85,77,50,84,73,77,97,91,93];
+			var b=fun(arr);
+			var arr=[86,85,77,50,84,73,77,97,91,93];
+			for(var i=0;i<arr.length;i++){
+				if(arr[i]==b[0]){
+					console.log("最低分"+arr[i]);
+					console.log("最低分的下标是"+i);
+				}
+				if(arr[i]==b[arr.length-1]){
+					console.log("最高分"+arr[i]);
+					console.log("最高分的下标是"+i);
+				}
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

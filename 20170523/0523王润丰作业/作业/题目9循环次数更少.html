@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        var k;
+        for(var i = 3; i <= 100; i ++){
+            for(var j = i + 1; j <= 100; j ++){
+                k = Math.pow(i,2) + Math.pow(j,2);
+                if(k > 10000){
+                    break;
+                }
+                if(Math.sqrt(k)%1 == 0){
+                    console.log(i, j, Math.sqrt(k));
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

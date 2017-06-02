@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function maxsame(char1,char2) {
+            var sum;
+            var max = 0;
+            var maxchar = "";
+            for (var i = 0 ; i <= char2.length;i++){
+                for(var t = i+1;t <= char2.length;t++){
+                    sum=char2.substring(i,t);
+                    if(char1.indexOf(sum) != -1 && sum.length > max){
+                        max = sum.length;
+                        maxchar = sum;
+                    }
+                }
+            }
+            return maxchar;
+        }
+        alert(maxsame("abcdefghijklmn","mndefghlm"));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

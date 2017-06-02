@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+                 function num(x,y){
+                    return x-y;
+                }
+                var chengji=[66,88,75,89,92,95,84,79,80,70];
+                console.log(chengji.sort(num));
+                // console.log("最高分为"+chengji.pop());
+                // console.log("最低分为"+chengji.shift());
+
+                var chengji1=chengji.sort(num);
+                var chengji=[66,88,75,89,92,95,84,79,80,70];
+                for(var i=0;i<chengji.length;i++){
+                    if(chengji[i]==chengji1[chengji1.length-1]){
+                        alert("最高分下标为"+i);
+                    }
+                }
+                for(var i=0;i<chengji.length;i++){
+                    if(chengji[i]==chengji1[0]){
+                        alert("最低分下标为"+i);
+                    }
+                }
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

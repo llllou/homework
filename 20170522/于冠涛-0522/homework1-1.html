@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script>
+                function maopao(arr){
+                    var temp;
+                    for(var i=0;i<arr.length;i++){ //比较多少趟，从第一趟开始
+                        for(var j=0;j<arr.length-i-1;j++){ //每一趟比较多少次数
+                            if(arr[j]>arr[j+1]){
+                                temp=arr[j];
+                                arr[j]=arr[j+1];
+                                arr[j+1]=temp;
+                            }
+                        }
+                    };
+                return arr;
+                }
+                var arrry=[8,2,3,22,4,5,33,47,8,9,1,13];
+                var s=maopao(arrry);
+                console.log(s);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

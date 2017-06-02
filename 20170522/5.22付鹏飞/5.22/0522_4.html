@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var arr = [96,95,60,84,73,92,86,93,76,74,79];
+             var max = 0;
+             var min = 100;
+            for (var d = 0 ; d <= arr.length-1 ; d++){
+                if(arr[d] > max){
+                    max = arr[d];
+                }
+                if(arr[d] < min){
+                    min = arr[d];
+                }
+            }
+            console.log("最大值为"+max);
+            console.log("最小值为"+min);
+            for (var d = 0 ; d <= arr.length-1 ; d++){
+                if(arr[d] == max){
+                    console.log("最大值的下标为"+d);
+                }
+                if(arr[d] == min){
+                    console.log("最小值的下标为"+d);
+                }
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

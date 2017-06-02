@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        var score = new Array(80, 78, 68, 60, 81, 85, 90, 75, 73, 89);
+        function average(arr){
+            var sum = 0, 
+                ave,
+                newArr = new Array();
+                count = 0;
+            for(var i = 0; i < arr.length; i ++){
+                sum += arr[i];
+            }
+            ave = parseInt(sum/arr.length);
+            for(var j = 0; j < arr.length; j++){
+                if(arr[j] >= ave){
+                    count ++;
+                    newArr[count] = arr[j];
+                }
+            }
+            return newArr;
+        }
+
+        console.log(average(score));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	//冒泡排序法
+		var arr=[8,2,3,22,4,5,33,47,8,9,1,13];
+		for(var i=0;i <= arr.length-1;i++){
+			for(var j=i+1;j <=arr.length;j++){
+				if(arr[i] > arr[j]){
+					var min = arr[j];
+					arr[j] = arr[i];
+					arr[i] = min; 
+				}
+			}
+		}
+		console.log(arr);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

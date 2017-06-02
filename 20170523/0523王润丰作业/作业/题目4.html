@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        function rev(char){
+            var arr = char.split(" ");
+            var l = arr.length;
+            char = "";
+            while(l){
+                char += arr[l-1] + " ";
+                l --;
+            }
+            return char;
+        }
+        console.log(rev("i come from beijing"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

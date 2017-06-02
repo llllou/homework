@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //---------------------作业4---------------
+     /*  var arr = [96,76,85,90,80,55,83,60,100,77];
+        function cj() {
+            var min = arr[0];
+            var minIndex = 0;
+            var max = arr[0];
+            var maxIndex = 0;
+            for(var i = 1; i < arr.length; i++) {
+               //判断大小
+                if (max < arr[i]) {
+                    max = arr[i];
+                    maxIndex = i;
+                }
+                if (min > arr [i]) {
+                    min = arr [i];
+                    minIndex = i;
+                }
+            }
+            console.log("最高分是"+max);
+            console.log("最高分的下标是"+maxIndex);
+            console.log("最低分是"+min);
+            console.log("最低分的下标是"+minIndex);
+        }
+        cj();*/
+        //作业3
+        /*var arr=[78,69,89,65,59,81,44,90,100,93];
+        var newArray = [];
+        var sum = 0;
+        var pjcj;
+        for (var i = 0;i < arr.length; i++) {
+            sum += arr[i];
+        }
+        pjcj =parseInt(sum / arr.length);
+        for (var j = 0;j < arr.length; j++ ) {
+            if (arr[j] >= pjcj) {
+                newArray[newArray.length] = arr[j];
+            }
+        }
+        console.log(newArray);*/
+        //作业2
+       // 数组排序sort
+       // 8,2,3，22,4,5，33，47,8,9,1,13
+       // 让上面数字按照1到100的排列顺序 排列
+      /*  var array = [8,2,3,22,4,5,33,47,6,9,1,13];
+        var wc= 0, nc = 0;
+        for(var i = 0;i < array.length - 1;i++) {
+            var isSort = true;//假设排序OK
+            for(var j = 0;j < array.length -1 - i; j++) {
+                if(array[j] > array[j+1] ) {
+                    isSort = false;//交换位置说明还没排序好
+                    var tmp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = tmp;
+                }
+                nc++;//记录内循环次数
+            }
+            wc++;//记录外循环次数
+            if(isSort) {//如果排序好了，直接退出循环
+                break;
+            }
+        }
+        console.log(array);
+        console.log("内循环次数"+nc);
+        console.log("外循环次数"+wc);*/
+        //作业题1
+        var arr = ["李鹏","张利民","程晓磊","张昊","范晋宇","曹锟","冯军","付鹏飞","高超","王怀志","王润丰","于冠涛","郑娇娇","张美","张欣","董强","韩宝利","常坤","罗群","魏慧霞","吴雄健","王凌涛"];
+        var sjdm = parseInt(Math.random()*22);
+
+
+
+
+    </script>
+</head>
+<style>
+    #div {
+        font-size:18px;width:100px;height:40px;line-height:40px;background:orange;color:#fff;position:absolute;
+        top:0;left:0;right:0;bottom:0;margin:auto;
+        text-align:center;font-weight:700;
+    }
+</style>
+
+<body>
+    <div id ="div">
+        点名器
+    </div>
+
+</body>
+<script>
+    window.onload = function () {
+        var Odiv = document.getElementById("div");
+        Odiv.onclick = function () {
+             document.write(arr[sjdm]);
+
+       }
+    }
+</script>
+</html>
