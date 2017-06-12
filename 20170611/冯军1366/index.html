@@ -1,0 +1,2664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        em {
+            font-style: normal;
+        }
+
+        nav {
+            width: 100%;
+            height: 126px;
+        }
+
+        .nav-top {
+            width: 100%;
+            height: 30px;
+            background: #EFEFEF;
+
+        }
+
+        .nav-topL {
+            width: 237px;
+            height: 22px;
+            float: left;
+            color: #999;
+            margin-left: 80px;
+            margin-top: 8px;
+        }
+
+        .nav-topL-word {
+            width: 114px;
+            height: 14px;
+            border-right: 1px solid #ddd;
+            float: left;
+            position: relative;
+        }
+
+        .nav-topL-word > span {
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            background: url("img/back_19.jpg") no-repeat;
+            float: left;
+        }
+
+        .nav-topL-word > a {
+            color: #999;
+            padding-right: 15px;
+        }
+
+        .nav-topL-word-hover {
+            width: 120px;
+            height: 160px;
+            position: absolute;
+            margin-top: 5px;
+            border: 1px solid darkgrey;
+            display: none;
+        }
+
+        .nav-topL-word > a:hover {
+            color: red;
+        }
+
+        .nav-topL-word-hover > img {
+            width: 120px;
+            height: 120px;
+        }
+
+        .nav-topL-word-hover > p {
+            text-align: center;
+        }
+
+        .nav-topL-word:hover .nav-topL-word-hover {
+            display: block;
+            z-index: 1000;
+        }
+
+        .nav-topL-word2 {
+            margin-left: 5px;
+            border: none;
+        }
+
+        .nav-topL-word2 > span {
+            background: url("img/back_17.jpg") no-repeat;
+        }
+
+        .nav-topR {
+            width: auto;
+            height: 30px;
+            float: right;
+            margin-right: 370px;
+        }
+
+        .nav-topR-l {
+            float: left;
+            width: 82px;
+            height: 30px;
+
+        }
+
+        .nav-topR-l > a {
+            padding-right: 15px;
+            margin-top: 8px;
+            display: inline-block;
+            float: left;
+            color: #999;
+        }
+
+        .nav-topR-l-word {
+            border-right: 1px solid #ddd;
+        }
+
+        .nav-topR-l > a:hover {
+            color: red;
+        }
+
+        .nav-topR-c {
+            width: 92px;
+            height: 14px;
+            line-height: 14px;
+            margin: 8px 2px 0 5px;;
+            border-right: 1px #ddd solid;
+            float: left;
+            text-align: center;
+            padding-right: 5px;
+            position: relative;
+        }
+
+        .nav-topR-c > a {
+            position: absolute;
+            left: 0;
+            top: -4px;
+            width: 92px;
+            height: 24px;
+            background: #f77071;
+            border-radius: 4px;
+            color: white;
+            line-height: 24px;
+        }
+
+        .nav-topR-c:hover {
+            opacity: 0.8;
+        }
+
+        .nav-topR-r {
+            width: 89px;
+            height: 30px;
+            float: left;
+            color: #999;
+            text-align: center;
+            margin-left: -2px;
+        }
+
+        .topR-r-word1-a {
+            width: 89px;
+            height: 16px;
+            margin: 8px 0;
+            border-right: 1px #ddd solid;
+            position: relative;
+        }
+
+        .topR-r-word1-a > span {
+            display: inline-block;
+            width: 10px;
+            height: 9px;
+            background: url("img/QQ图片20170609194414_17.png") no-repeat;
+            margin-bottom: -2px;
+        }
+
+        .nav-topR-r:hover {
+            background: white;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-bottom: none;
+            width: 87px;
+        }
+
+        .topR-r-word1-ul {
+            width: 88px;
+            height: 90px;
+            border: 1px #ddd solid;
+            border-top: none;
+            z-index: 1200;
+            margin-top: -2px;
+            display: none;
+            background: white;
+            position: absolute;
+        }
+
+        .topR-r-word1-ul > li {
+            width: 88px;
+            height: 14px;
+            float: left;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+
+        .topR-r-word1-ul > li:hover {
+            color: red;
+        }
+
+        .nav-topR-r:hover .topR-r-word1-ul {
+            display: block;
+        }
+
+        .topR-r-word1-ul-1 {
+            height: 120px;
+        }
+
+        .nav-topR-r1 {
+            float: left;
+            width: 89px;
+            height: 30px;
+            position: relative;
+            cursor: pointer;
+            border-right: 1px #ddd solid;
+            border-left: 1px #ddd solid;
+            margin-left: -1px;
+        }
+
+        .topR-r-word3-b {
+            width: 73px;
+            height: 16px;
+            display: inline-block;
+            padding: 0 15px 0;
+            margin: 8px 0;
+        }
+
+        .nav-topR-r1:hover {
+            background: white;
+        }
+
+        .topR-r-word3-b > span {
+            display: inline-block;
+            width: 10px;
+            height: 9px;
+            background: url("img/QQ图片20170609194414_17.png") no-repeat;
+            margin-bottom: -2px;
+        }
+
+        .topR-r-word3 {
+            position: absolute;
+            right: 0;
+            width: 600px;
+            height: 180px;
+            margin-top: -3px;
+            padding: 15px 0px;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            z-index: 1200;
+            display: none;
+            background: #ffffff;
+        }
+
+        .topR-r-word3-t1 {
+            float: left;
+            padding: 0px 15px;
+        }
+
+        .tit {
+            color: #333;
+            cursor: default;
+        }
+
+        .topR-r-word3-t1 > li {
+            width: auto;
+            height: 30px;
+        }
+
+        .topR-r-word3-t1 > li:hover {
+            color: red;
+        }
+
+        .topR-r-word3-t1 .tit:hover {
+            color: #333;
+        }
+
+        .topR-r-word3-t1-li1 > em {
+            width: 9px;
+            height: 14px;
+            display: block;
+            background: url("img/hot.gif");
+            position: relative;
+            top: -20px;
+            left: 60px;
+        }
+
+        .nav-topR-r1:hover .topR-r-word3 {
+            display: block;
+        }
+
+        .nav-c {
+            width: 100%;
+            height: 96px;
+            background: #ffffff;
+            margin-left: 85px;
+        }
+
+        .nav-c > div {
+            width: 1180px;
+            height: 36px;
+            padding: 30px 0;
+            /*margin: 0 360px;*/
+            /*background: grey;*/
+        }
+
+        .logo {
+            width: 236px;
+            height: 35px;
+            float: left;
+            background: url("img/QQ图片20170609194414_14.png") no-repeat;
+        }
+
+        .nav-c-case {
+            width: 460px;
+            margin-left: 118px;
+            height: 32px;
+            border: 2px #dd4f50 solid;
+            border-right: 0;
+            background: #fff;
+            position: relative;
+            float: left;
+        }
+
+        .nav-c-case-div {
+            width: 94px;
+            position: relative;
+            z-index: 300;
+            background: #fff;
+            border: none;
+            line-height: 32px;
+            float: left;
+            padding-right: 5px;
+            color: #c9cbc8;
+            font-size: 12px;
+        }
+
+        .nav-c-case-div > div {
+            width: 94px;
+            height: 20px;
+            text-indent: 10px;
+            color: #666;
+            padding: 6px 0;
+            line-height: 20px;
+            border-right: 1px #efefef solid;
+            background: none;
+            float: left;
+        }
+
+        .nav-c-case-div > em {
+            width: 10px;
+            height: 6px;
+            display: block;
+            margin: 14px 0 0 10px;
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 64px;
+            background: url("img/QQ图片20170609194414_17.png") no-repeat;
+        }
+
+        #nccd-2 {
+            position: absolute;
+            top: 27px;
+            left: -5px;
+            width: 93px;
+            height: auto;
+            background: #fff;
+            border: 1px #efefef solid;
+            border-top: none;
+            float: left;
+            margin: 5px 5px;
+            color: #000;
+            display: none;
+            z-index: 1200;
+            cursor: pointer ;
+        }
+
+        #nccd-2 > a {
+            width: 77px;
+            height: 25px;
+            line-height: 25px;
+            padding: 0px 7px;
+            float: left;
+            color: #000;
+        }
+
+        #nccd-2 > a:hover {
+            color: red;
+            background: #666;
+            opacity: 0.8;
+        }
+
+        .key {
+            width: 256px;
+            height: 32px;
+            line-height: 32px;
+            border: 0;
+            outline: none;
+            padding-left: 25px;
+            color: #bbb;
+            float: left;
+        }
+
+        .seach {
+            width: 12px;
+            height: 10px;
+            margin: 10px 3px 0 10px;
+            display: block;
+            position: absolute;
+            top: 1px;
+            left: 94px;
+            background: url("img/QQ图片20170609194414_09.png");
+        }
+
+        .submit {
+            width: 80px;
+            float: right;
+            text-align: center;
+            color: #fff;
+            line-height: 32px;
+            border: 0;
+            cursor: pointer;
+            outline: none;
+            background: #dd4f50;
+            height: 32px;
+            font-size: 14px;
+        }
+
+        .or {
+            width: auto;
+            float: left;
+            line-height: 36px;
+            padding: 0 20px;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .edit {
+            width: 120px;
+            float: left;
+            height: 36px;
+            line-height: 36px;
+            background: #dd4f50;
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .wrap {
+            width: 100%;
+            height: 40px;
+            background: black;
+        }
+
+        .wrap-c {
+            width: 990px;
+            height: 40px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 110;
+            /*margin-left: 362px;*/
+        }
+
+        .wrap-c-ul li {
+            width: auto;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            padding: 0 35px 0 35px;
+            float: left;
+            display: inline-block;
+            position: relative;
+            z-index: 100;
+        }
+
+        .wrap-c-ul li:hover {
+            background: #dd4f50;
+        }
+
+        .wrap-c-ul li > a {
+            height: 40px;
+            display: inline-block;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .wrap-c-ul-li {
+            background: #dd4f50;
+            color: #ffffff;
+        }
+
+        .wrap-c .wrap-c-ul .wrap-c-ul-li-1 {
+            float: right;
+        }
+
+        .wrap-li-11 {
+            height: 40px;
+            display: inline-block;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .wrap-li-t1 {
+            width: 142px;
+            height: 120px;
+            background: #dd4f50;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            z-index: 100;
+            display: none;
+        }
+
+        .wrap-li-t1 > a {
+            width: 100%;
+            display: block;
+            line-height: 40px;
+            color: white;
+        }
+
+        .photo {
+            width: 100%;
+            height: auto;
+            min-width: 1180px;
+            position: relative;
+            float: left;
+        }
+
+        .photo-content {
+            width: 100%;
+            height: 420px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            float: left;
+        }
+
+        .photo-content-ul {
+            width: 100%;
+            height: 420px;
+            position: relative;
+            float: left;
+        }
+
+        .photo-content-ul > li {
+            width: 1338px;
+            height: 420px;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .photo-content-ul li > img {
+            width: 1349px;
+            height: 420px;
+
+        }
+
+        .circles {
+            position: absolute;
+            width: 150px;
+            height: 16px;
+            bottom: 10px;
+            right: 40%;
+        }
+
+        .circles ol {
+            list-style: none;
+        }
+
+        .circles ol li {
+            float: left;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin: 0 auto;
+            background: #666;
+        }
+
+        .circles ol li.cur {
+            background-color: #333;
+        }
+
+        .side {
+            width: 280px;
+            height: 420px;
+            position: absolute;
+            top: 0px;
+            left: 174px;
+            z-index: 10;
+            border-bottom: 1px #eee solid;
+            background: white;
+            float: left;
+        }
+
+        .side-top {
+            width: 220px;
+            height: 142px;
+            border-bottom: 1px #eee solid;
+            margin: 0 30px 0;
+            position: relative;
+        }
+
+        .side-content-body {
+            padding: 21px 0 16px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .side-content-body1 {
+            width: 262px;
+            height: 81px;
+            overflow: hidden;
+            margin-bottom: 5px;
+        }
+
+        .side-content-body1 > a {
+            padding: 0 30px 12px 0;
+            height: 16px;
+            line-height: 16px;
+            width: auto;
+            display: block;
+            float: left;
+            color: #666;
+            min-width: 24px;
+            zoom: 1;
+        }
+
+        .side-content-up .side-content-body1 .ored {
+            color: red;
+        }
+
+        .side-content-body2 {
+            width: 282px;
+            height: 264px;
+            position: absolute;
+            top: 0;
+            left: 250px;
+            background: white;
+            display: none;
+        }
+
+        .scb {
+            width: 220px;
+            margin: 0 30px 0;
+            float: left;
+        }
+
+        .scb-p {
+            width: 220px;
+            padding: 21px 0 16px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .scb-div {
+            width: 262px;
+            height: auto;
+        }
+
+        .scb-div > a {
+            padding: 0 20px 12px 0;
+            height: 16px;
+            line-height: 16px;
+            width: auto;
+            display: block;
+            float: left;
+            color: #666;
+            min-width: 24px;
+        }
+
+        .side-content-up:hover .side-content-body2 {
+            display: block;
+        }
+
+        .scb1 {
+            width: 280px;
+            height: 200px;
+            border: 1px #eee solid;
+            position: absolute;
+            top: 0px;
+            left: 220px;
+            background: white;
+            display: none;
+        }
+
+        .scb11:hover .scb1 {
+            display: block;
+        }
+
+        .scb2 {
+            position: absolute;
+            top: -268px;
+            left: 220px;
+            width: 280px;
+            height: 402px;
+            background: white;
+            display: none;
+        }
+
+        .scb22 {
+            border-bottom: none;
+        }
+
+        .scb22:hover .scb2 {
+            display: block;
+        }
+
+        .ul-list {
+            width: 1181px;
+            height: 162px;
+            border-top: 1px #eee solid;
+            border-left: 1px #eee solid;
+            float: left;
+            margin-left: 78px;
+        }
+
+        .ul-list-li {
+            width: 294px;
+            height: 42px;
+            overflow: hidden;
+            padding: 60px 0;
+            border-right: 1px #eee solid;
+            border-bottom: 1px #eee solid;
+            float: left;
+        }
+
+        .ul-list-li-span1 {
+            margin-left: 48px;
+            width: 40px;
+            height: 42px;
+            float: left;
+            background: url("img/sprite_03.jpg") no-repeat;
+        }
+
+        .ul-list-li-span2 {
+            width: 187px;
+            float: left;
+            margin-left: 15px;
+        }
+
+        .ul-list-li-span2 > a {
+            width: 100%;
+            display: block;
+            font-size: 18px;
+            height: 18px;
+            line-height: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .ul-list-li-span2 > a:hover{
+            color: red;
+        }
+        .ul-list-li-span2 > label {
+            color: #999;
+        }
+
+        .designers {
+            width: 1180px;
+            height: auto;
+            margin-top: 60px;
+            margin-left: 78px;
+            float: left;
+        }
+
+        .designers-top {
+            width: 100%;
+            height: 34px;
+            border-bottom: 1px #eee solid;
+        }
+
+        .designers-top > p {
+            width: auto;
+            height: 24px;
+            line-height: 24px;
+            float: left;
+            cursor: pointer;
+            color: #333;
+            font-size: 24px;
+            margin-right: 30px;
+        }
+
+        .designers-top > label {
+            width: auto;
+            height: 16px;
+            float: right;
+            padding-top: 2px;
+        }
+
+        .designers-top label > a {
+            width: auto;
+            float: left;
+            margin-left: 20px;
+            color: #999;
+
+        }
+
+        section {
+            width: 100%;
+            height: 285px;
+            margin: 0 auto;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .sec-left {
+            width: 158px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 1px #eee solid;
+            float: left;
+        }
+
+        .sec-left > li {
+            width: 158px;
+            height: 70px;
+            line-height: 70px;
+            cursor: pointer;
+            border-bottom: 1px #eee solid;
+            font-size: 14px;
+            text-indent: 43px;
+        }
+
+        .sec-left-2 {
+            color: #dd4f50;
+            border-left: 3px #dd4f50 solid;
+            margin-left: -1px;
+        }
+
+        .sec-body {
+            position: relative;
+            float: right;
+            width: 1020px;
+            height: 285px;
+        }
+
+        .sec-right {
+            width: 1020px;
+            height: 285px;
+            position: absolute;
+            float: right;
+            display: none;
+            overflow: hidden;
+        }
+
+        .sec-right-list {
+            width: 1020px;
+            float: left;
+        }
+
+        .list-span1 {
+            width: 30px;
+            height: 34px;
+            display: inline-block;
+            position: absolute;
+            left: 0 ;
+            top: 125px;
+            margin-top: -34px;
+            background: url("img/QQ截图20170608203917.png") no-repeat;
+            background-size: 30px 34px;
+            opacity: 0.8;
+            z-index: 10;
+        }
+
+        .list-span2 {
+            width: 30px;
+            height: 34px;
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            top: 125px;
+            margin-top: -34px;
+            margin-right: 20px;
+            background: url("img/QQ截图20170608204012.png") no-repeat;
+            background-size: 30px 34px;
+            opacity: 0.8;
+            z-index: 10;
+        }
+
+        .sec-right-big {
+            width: 1020px;
+            height: 184px;
+            overflow: hidden;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+        .sec-big1-ul {
+            width: 8364px;
+            height: 184px;
+            overflow: hidden;
+            position: absolute;
+            top: 0px;
+        }
+
+        .sec-big1-li {
+            width: 204px;
+            height: 184px;
+            float: left;
+            position: relative;
+        }
+
+        .sec-big1-li > a {
+            width: 184px;
+            height: 184px;
+            display: block;
+            overflow: hidden;
+        }
+
+        .sec-big1-li a img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .sec-big1-li-word {
+            height: auto;
+            width: 184px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: url("img/pic_bg.png") repeat-x 0 -240px;
+        }
+
+        .sec-big1-li-word1 {
+            width: auto;
+            float: left;
+            color: #fff;
+            padding: 40px 0 10px 20px;
+        }
+
+        .sec-big1-li-word2 {
+            width: auto;
+            float: right;
+            color: #CBCBCB;
+            padding: 40px 20px 10px 0;
+        }
+
+        .sec-right-small {
+            margin-top: 20px;
+            width: 10000px;
+            overflow: hidden;
+            position: absolute;
+            left: 0px;
+            top: 164px;
+        }
+
+        .sec-small-bottom {
+            width: 3366px;
+            height: 84px;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .small-bottom-li {
+            width: 102px;
+            height: 84px;
+            float: left;
+            position: relative;
+        }
+
+        .small-bottom-li-a1 {
+            width: 82px;
+            height: 82px;
+        }
+
+        .small-bottom-li-a1 > img {
+            width: 82px;
+            height: 82px;
+        }
+
+        .small-bottom-li-a2 {
+            height: 12px;
+            line-height: 12px;
+            width: 82px;
+            padding: 20px 0 10px 0;
+            color: #fff;
+            text-align: center;
+            z-index: 100;
+        }
+
+        .small-bottom-li1 {
+            width: 184px;
+            margin-right: 20px;
+        }
+
+        .small-bottom-li-a2 img {
+            width: 200px;
+            height: 82px;
+        }
+
+        .clearfix {
+            width: 1180px;
+            height: auto;
+            margin-top: 60px;
+            float: left;
+            margin-left: 78px;
+        }
+
+        .clearfix-list {
+            width: 1180px;
+            height: 376px;
+            margin-top: 20px;
+        }
+
+        .clearfix-list ul {
+            width: 104%;
+        }
+
+        .clearfix-list ul li {
+            width: 278px;
+            height: 374px;
+            float: left;
+            margin-right: 20px;
+            position: relative;
+            border: 1px #eee solid;
+        }
+
+        .clearfix-list ul li > span {
+            display: inline-block;
+            width: 100%;
+            height: 280px;
+            text-align: center;
+            float: left;
+        }
+
+        .clearfix-list-1 {
+            width: 280px;
+            height: 280px;
+            float: left;
+        }
+      .clearfix-list-1:hover{
+          opacity: 0.8;
+      }
+        .clearfix-a {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: 250px;
+            left: 110px;
+            float: left;
+        }
+
+        .clearfix-list-2 {
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            border: 1px #fff solid;
+            float: left;
+            opacity: 1;
+        }
+
+        .clearfix-a1 {
+            width: 274px;
+            height: 14px;
+            padding-top: 40px;
+            color: #333;
+            float: left;
+            text-align: center;
+        }
+
+        .clearfix-list ul li > p {
+            padding: 8px 0 20px;
+            color: #999;
+            text-align: center;
+        }
+
+        .company {
+            width: 1180px;
+            height: auto;
+            margin-left: 78px;
+            float: left;
+            margin-top: 60px;
+        }
+
+        .company-body {
+            position: relative;
+            width: 1178px;
+            height: 174px;
+            overflow: hidden;
+            border: 1px #eee solid;
+            margin-left: 78px;
+        }
+
+        .company-body div {
+            position: absolute;
+            transition: left 1s, right 1s;
+            top: 0;
+        }
+
+        .company-body div.image2 {
+            left: 550px;
+        }
+
+        .company-body div.image3 {
+            left: 760px;
+        }
+
+        .company-body div.image4 {
+            left: 970px;
+        }
+
+        .pic {
+            width: 1180px;
+            height: auto;
+            margin-left: 78px;
+            float: left;
+            margin-top: 60px;
+        }
+
+        .pic .designers-top-p2 {
+            color: #dd4f50;
+        }
+
+        .pic-body {
+            height: 590px;
+            width: 100%;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .pic-ul {
+            width: 1200px;
+            height: 600px;
+            overflow: hidden;
+            display: none;
+        }
+
+        .pic-ul-li1 {
+            width: 580px;
+            height: 280px;
+            position: relative;
+            float: left;
+            margin: 0 13px 20px 0;
+        }
+
+        .pic-ul-li1 > a {
+            height: 18px;
+            display: block;
+            font-size: 18px;
+            position: absolute;
+            z-index: 10;
+            bottom: 0px;
+            left: 0px;
+            color: rgb(255, 255, 255);
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding: 100px 20px 20px;
+        }
+        .pic-ul-li1 img:hover{
+            opacity: 0.8;
+        }
+        .pic-ul-li2 {
+            width: 280px;
+            height: 280px;
+        }
+
+        .original {
+            width: 1180px;
+            height: auto;
+            margin-left: 78px;
+            float: left;
+            margin-top: 60px;
+        }
+
+        .original-c {
+            width: 1179px;
+            height: 239px;
+            border-right: 1px #eee solid;
+            border-bottom: 1px #eee solid;
+        }
+
+        .original-c > a {
+            width: 224px;
+            height: 239px;
+            float: left;
+            line-height: 239px;
+            text-align: center;
+            color: #fff;
+            font-size: 26px;
+            margin-right: 14px;
+            padding: 0;
+            position: relative;
+            background: red;
+        }
+
+        .original-c-1 {
+            width: 210px;
+            height: 210px;
+            float: left;
+            margin: 20px 0 0 20px;
+        }
+
+        .original-c-1 > img {
+            cursor: pointer;
+            color: #666;
+        }
+        .original-c-1>img：hover{
+            opacity: 0.8;
+        }
+        .original-c-1 > a {
+            width: 100%;
+            display: block;
+            color: #666;
+            margin-top: 12px;
+        }
+        .original-c .original-c-green{
+            background:#54bda6;
+        }
+
+        .news {
+            width: 1180px;
+            height: auto;
+            margin-left: 78px;
+            float: left;
+            margin-top: 60px;
+        }
+
+        .news-list {
+            width: 340px;
+            height: 405px;
+            float: left;
+            overflow: hidden;
+            border: 1px #eee solid;
+            padding: 20px 18px 20px 20px;
+            margin-right: 13px;
+        }
+
+        .answer > p {
+            width: 80%;
+            font-size: 18px;
+            height: 18px;
+            line-height: 18px;
+            border: 0;
+            padding-bottom: 0;
+            color: #333;
+        }
+
+        .check {
+            width: 180px;
+            height: 40px;
+            display: block;
+            background: #dd4f50;
+            margin: 0 auto;
+            margin-top: 30px;
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+            font-size: 14px;
+            border-radius: 3px;
+        }
+
+        .check > em {
+            width: auto;
+            height: 16px;
+            line-height: 14px;
+            display: inline-block;
+            margin-left: 5px;
+            font-size: 16px;
+        }
+
+        .link {
+            background: #f8f8f8;
+            width: 100%;
+            height: auto;
+            min-width: 1180px;
+            float: left;
+        }
+
+        .link-content {
+            width: 1180px;
+            margin: 0 auto;
+        }
+
+        .link-name {
+            width: 100%;
+            height: 14px;
+            line-height: 14px;
+            padding: 23px 0 12px 0;
+            border-bottom: 1px #eee solid;
+        }
+
+        .cur {
+            height: 25px;
+            border-bottom: 2px #dd4f50 solid;
+            width: auto;
+            float: left;
+            margin-right: 23px;
+            cursor: pointer;
+        }
+
+        .detail {
+            width: 990px;
+            height: 102px;
+            padding-top: 20px;
+        }
+
+        .link-list {
+            padding: 0 0 14px;
+        }
+
+        .link-list > a {
+            width: auto;
+            height: 12px;
+            display: inline-block;
+            float: left;
+            padding: 0 20px 10px 0;
+            color: #999;
+        }
+
+        .last {
+            width: 100%;
+            height: 308px;
+            background: #1c1c1c;
+            float: left;
+        }
+
+        .last-body {
+            width: 1180px;
+            margin-left: 78px;
+            padding: 27px 0 20px;
+            float: left;
+        }
+
+        .last-1 {
+            width: 236px;
+            height: 68px;
+            overflow: hidden;
+            float: left;
+            padding-bottom: 40px;
+            margin-right: 74px;
+        }
+
+        .last-span-1 {
+            width: 65px;
+            height: 65px;
+            float: left;
+            background: url("img/QQ图片20170609194414_104.png");
+            color: #b3b3b3;
+            margin-left: 8px;
+        }
+
+        .last-span-2 {
+            width: 155px;
+            height: 64px;
+            margin-left: 8px;
+            color: #b3b3b3;
+            float: left;
+        }
+
+        .last-span-2 > em {
+            display: inline-block;
+            width: 155px;
+            height: 14px;
+            line-height: 14px;
+            font-weight: bold;
+            padding: 0 0 9px 0;
+            float: left;
+        }
+
+        .last-a-1 {
+            width: 75px;
+            height: 21px;
+            background: url("img/QQ图片20170609194414_99.png") no-repeat;
+            float: left;
+            margin-right: 2px;
+        }
+
+        .last-a-2 {
+            width: 75px;
+            height: 21px;
+            background: url("img/QQ图片20170609194414_101.png") no-repeat;
+            float: left;
+        }
+
+        .last-2-span {
+            width: 235px;
+            height: 68px;
+            float: right;
+            padding-bottom: 40px;
+        }
+
+        .last-2-span > em {
+            width: 235px;
+        }
+
+        .last-2 a img {
+            width: 75px;
+            height: 22px;
+            display: block;
+            float: left;
+            margin-top: 28px;
+        }
+
+        .abouts {
+            width: 1180px;
+            height: 12px;
+            margin-top: 20px;
+            float: left;
+            margin-left: 450px;
+        }
+
+        .abouts > a {
+            width: auto;
+            padding: 0 20px;
+            height: 12px;
+            line-height: 14px;
+            border-right: 1px #484848 solid;
+            float: left;
+            color: #666;
+        }
+
+        .abouts > a:hover {
+            color: red;
+        }
+
+        .statement {
+            width: 1180px;
+            height: 12px;
+            margin-top: 20px;
+            float: left;
+            margin-left: 400px;
+        }
+
+        .statement > a {
+            width: 100%;
+            line-height: 22px;
+            text-align: center;
+            margin: 22px auto 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .statement1 {
+            margin-left: 500px;
+        }
+
+        .bottom {
+            width: 1180px;
+            height: 12px;
+            margin-top: 20px;
+            float: left;
+            margin-left: 600px;
+        }
+
+        .bottom .bottom1 {
+            width: 19px;
+            height: 18px;
+            background: url("img/QQ图片20170609194414_73.png") no-repeat;
+            float: left;
+        }
+
+        .bottom .bottom2 {
+            width: 19px;
+            height: 18px;
+            background: url("img/QQ图片20170609194414_76.png") no-repeat;
+            float: left;
+        }
+
+       .answer-small {
+            width: 340px;
+            height: 305px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #answer-move{
+             position: absolute;
+             top:0;
+             left: 0;
+         }
+        #answer-move2{
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+        #answer-move3{
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+        .answer-big {
+            height: 303px;
+            width: 340px;
+        }
+
+        .answer-news {
+            height: 100px;
+            padding: 0;
+            border-bottom: 1px #eee solid;
+        }
+
+        .answer-news > img {
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            float: left;
+            margin-top: 20px;
+        }
+
+        .answer-news-right {
+            width: 260px;
+            float: left;
+            height: 60px;
+            margin: 20px 0 0 20px;
+        }
+
+        .answer-news-right > a {
+            font-size: 14px;
+            height: 16px;
+            display: block;
+            color: #333;
+            padding: 10px 0 14px;
+        }
+
+        .answer-news-right-1 {
+            width: 180px;
+            float: left;
+            color: #999;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .answer-news-right-2 {
+            width: 64px;
+            text-align: right;
+            float: right;
+            font-size: 12px;
+        }
+
+    </style>
+    <script src="animate.js"></script>
+</head>
+<body>
+<nav>
+    <div class="nav-top">
+        <div class="nav-topL">
+            <div class="nav-topL-word">
+                <span></span>
+                <a href="">设计本官方微信</a>
+                <div class="nav-topL-word-hover">
+                    <img src="img/QQ图片20170609194414_106.png" alt="">
+                    <p>扫一扫，加微信<br/>更多金币等你拿！</p>
+                </div>
+            </div>
+            <div class="nav-topL-word nav-topL-word2">
+                <span></span>
+                <a href="">设计本手机版</a>
+            </div>
+        </div>
+        <div class="nav-topR">
+            <div class="nav-topR-l">
+                <a href="">登录</a>
+                <a href="" class="nav-topR-l-word">注册</a>
+            </div>
+            <div class="nav-topR-c">
+                <a href="">申请定制设计</a>
+            </div>
+            <div class="nav-topR-r">
+                <div class="topR-r-word1">
+                    <div class="topR-r-word1-a">
+                        客服服务
+                        <span></span></div>
+                    <ul class="topR-r-word1-ul">
+                        <li>在线客服</li>
+                        <li>意见反馈</li>
+                        <li>帮助中心</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav-topR-r">
+                <div class="topR-r-word1">
+                    <div class="topR-r-word1-a">
+                        设计师中心
+                        <span></span></div>
+                    <ul class="topR-r-word1-ul topR-r-word1-ul-1">
+                        <li>接单大厅</li>
+                        <li>社交广场</li>
+                        <li>模型下载</li>
+                        <li>推广中心</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav-topR-r1">
+                <div class=" topR-r-word3-b">
+                    网站导航
+                    <span></span>
+                </div>
+                <div class="topR-r-word3">
+                    <ul class="topR-r-word3-t1">
+                        <li class="tit">设计案例</li>
+                        <li>家装案例</li>
+                        <li>工装案例</li>
+                        <li>案例解析</li>
+                    </ul>
+                    <ul class="topR-r-word3-t1">
+                        <li class="tit">设计案例</li>
+                        <li>家装案例</li>
+                        <li>工装案例</li>
+                        <li>案例解析</li>
+                    </ul>
+                    <ul class="topR-r-word3-t1">
+                        <li class="tit">设计案例</li>
+                        <li>家装案例</li>
+                        <li>工装案例</li>
+                        <li>案例解析</li>
+                    </ul>
+                    <ul class="topR-r-word3-t1">
+                        <li class="tit">设计案例</li>
+                        <li>家装案例</li>
+                        <li>工装案例</li>
+                        <li>案例解析</li>
+                        <li class="topR-r-word3-t1-li1">提设计需求
+                            <em></em></li>
+                    </ul>
+                    <ul class="topR-r-word3-t1">
+                        <li class="tit">设计案例</li>
+                        <li>家装案例</li>
+                        <li>工装案例</li>
+                        <li>案例解析</li>
+                    </ul>
+                    <ul class="topR-r-word3-t1">
+                        <li class="tit">设计案例</li>
+                        <li>家装案例</li>
+                        <li>工装案例</li>
+                        <li>案例解析</li>
+                    </ul>
+                    <ul class="topR-r-word3-t1">
+                        <li class="tit">设计案例</li>
+                        <li class="topR-r-word3-t1-li1"> 设计本App <em></em></li>
+                        <li>工装案例</li>
+                        <li>案例解析</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav-c">
+        <div>
+            <div class="logo"></div>
+            <div class="nav-c-case" id="nccd">
+                <div class="nav-c-case-div" id="nccd-1">
+                    <div id="nccd-1-1">找图片</div>
+                    <em></em>
+                </div>
+                <div id="nccd-2">
+                    <p>找图集</p>
+                    <p>找案例</p>
+                    <p>找设计师</p>
+                    <p>找问答</p>
+                    <p>找模型</p>
+                </div>
+
+                <input type="text" value="请输入搜索关键词" class="key">
+                <em class="seach"></em>
+                <input type="submit" value="搜索" class="submit">
+            </div>
+            <span class="or">或</span>
+            <a href="" class="edit">
+                提交设计需求
+                <em></em>
+            </a>
+        </div>
+    </div>
+</nav>
+<div class="wrap">
+    <div class="wrap-c">
+        <ul class="wrap-c-ul">
+            <li class="wrap-c-ul-li">
+                <a href="">首页</a>
+            </li>
+            <li>
+                <div class="wrap-li-11">设计案例
+                    <div class="wrap-li-t1">
+                        <a href="">家装案例</a>
+                        <a href="">工装案例</a>
+                        <a href="">案例解析</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="wrap-li-11">装修图库
+                    <div class="wrap-li-t1">
+                        <a href="">家装图库</a>
+                        <a href="">工装案例</a>
+                        <a href="">案例解析</a>
+                    </div>
+                </div>
+            </li>
+
+            <li><a href="" class="a">有问必答</a></li>
+            <li><a href="" class="b">找设计师</a></li>
+
+            <li class="wrap-c-ul-li-1">
+                <div class="wrap-li-11">设计师专区
+                    <div class="wrap-li-t1">
+                        <a href="">3DMAX模型下载</a>
+                        <a href="">工装案例</a>
+                        <a href="">案例解析</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="photo" id="photo">
+    <div class="side">
+        <div class="side-top">
+            <div class="side-content-up">
+                <div class="side-content-body">
+                    家装设计
+                </div>
+                <div class="side-content-body1">
+                    <a href="" class="ored">三居</a>
+                    <a href="">三居</a>
+                    <a href="" class="ored">三居</a>
+                    <a href="">三居</a>
+                    <a href="">三居</a>
+                    <a href="" class="ored">三居</a>
+                    <a href="" class="ored">三居</a>
+                    <a href="">三居</a>
+                    <a href="">三居</a>
+                    <a href="">三居</a>
+                    <a href="" class="ored">三居</a>
+                    <a href="">三居</a>
+                    <a href="" class="ored">三居</a>
+                    <a href="">三居</a>
+                </div>
+                <div class="side-content-body2">
+                    <div class="scb">
+                        <p class="scb-p">户型</p>
+                        <div class="scb-div">
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                        </div>
+                    </div>
+                    <div class="scb">
+                        <p class="scb-p">风格</p>
+                        <div class="scb-div">
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div></div>
+            </div>
+        </div>
+        <div class="side-top scb11">
+            <div class="side-content-up">
+                <div class="side-content-body">
+                    工装设计
+                </div>
+                <div class="side-content-body1 ">
+                    <a href="" class="ored">餐厅设计</a>
+                    <a href="">售楼处设计</a>
+                    <a href="" class="ored">办公室设计</a>
+                    <a href="" class="ored">主题酒店</a>
+                    <a href="" class="ored">酒吧/KTV</a>
+                    <a href="">会所</a>
+                    <a href="" class="ored">商业展示</a>
+                    <a href="">购物中心</a>
+                    <a href="">咖啡店</a>
+                    <a href="">展厅设计</a>
+                </div>
+                <div class="scb scb1">
+                    <p class="scb-p">类型</p>
+                    <div class="scb-div">
+                        <a href="">小户型</a>
+                        <a href="">小户型</a>
+                        <a href="">小户型</a>
+                        <a href="">小户型</a>
+                        <a href="">小户型</a>
+                        <a href="">小户型</a>
+                        <a href="">小户型</a>
+                        <a href="">小户型</a>
+                        <a href="">小户型</a>
+                        <a href="">小户型</a>
+                        <a href="">小户型</a>
+                        <a href="">小户型</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="side-top scb22">
+            <div class="side-content-up">
+                <div class="side-content-body">
+                    室内设计师
+                </div>
+                <div class="side-content-body1">
+                    <a href="" class="ored">设计本网站在线交易流程及服务保障》</a>
+                    <a href="" class="ored">北京</a>
+                    <a href="">三居</a>
+                    <a href="">三居</a>
+                    <a href="" class="ored">三居</a>
+                    <a href="">三居</a>
+                    <a href="" class="ored">三居</a>
+                    <a href="" class="ored">三居</a>
+                    <a href="">三居</a>
+                    <a href="" class="ored">三居</a>
+                    <a href="" class="ored">三居</a>
+                    <a href="">三居</a>
+                    <a href="" class="ored">三居</a>
+                </div>
+                <div class="scb scb2">
+                    <div class="scb">
+                        <p class="scb-p">所在城市</p>
+                        <div class="scb-div">
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                        </div>
+                    </div>
+                    <div class="scb">
+                        <p class="scb-p">擅长空间</p>
+                        <div class="scb-div">
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                            <a href="">小户型</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="photo-content">
+        <ul class="photo-content-ul" id="photo-ul">
+            <li><img src="img/389_9308.jpg" alt=""></li>
+            <li><img src="img/389_9267.jpg" alt=""></li>
+            <li><img src="img/389_9063.jpg" alt=""></li>
+        </ul>
+        <div class="circles" id="circles">
+            <ol>
+                <li class="cur"></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </div>
+
+</div>
+<ul class="ul-list">
+    <li class="ul-list-li">
+        <span class="ul-list-li-span1"></span>
+        <span class="ul-list-li-span2">
+               <a href="">浏览真实设计案例</a>
+               <label for="">百万设计师的原创作品</label>
+           </span>
+    </li>
+    <li class="ul-list-li">
+        <span class="ul-list-li-span1"></span>
+        <span class="ul-list-li-span2">
+               <a href="">浏览真实设计案例</a>
+               <label for="">百万设计师的原创作品</label>
+           </span>
+    </li>
+    <li class="ul-list-li">
+        <span class="ul-list-li-span1"></span>
+        <span class="ul-list-li-span2">
+               <a href="">浏览真实设计案例</a>
+               <label for="">百万设计师的原创作品</label>
+           </span>
+    </li>
+    <li class="ul-list-li">
+        <span class="ul-list-li-span1"></span>
+        <span class="ul-list-li-span2">
+               <a href="">浏览真实设计案例</a>
+               <label for="">百万设计师的原创作品</label>
+           </span>
+    </li>
+</ul>
+<div class="designers">
+    <div class="designers-top">
+        <p>找设计师</p>
+        <label for="">
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京></a>
+        </label>
+    </div>
+    <section id="section">
+        <ul class="sec-left" id="sec-left">
+            <li class="sec-left-2">实力推荐</li>
+            <li>最新签单</li>
+            <li>行业大腕</li>
+            <li>知名机构</li>
+        </ul>
+        <div class="sec-body">
+            <div class="sec-right" style="display: block">
+                <div class="sec-right-list">
+                    <span class="list-span1" id="list-span1"></span>
+                    <span class="list-span2" id="list-span2"></span>
+                </div>
+                <!--大图-->
+                <div class="sec-right-big" id="sec-bigp">
+                    <ul class="sec-big1-ul" id="sec-big1-ul1">
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/387_8893.jpg" alt=""></a>
+                            <div class="sec-big1-li-word">
+                                <a href="" class="sec-big1-li-word1">赵亚奇</a>
+                                <a href="" class="sec-big1-li-word2">赵亚奇设</a>
+                            </div>
+                        </li>
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/387_8893.jpg" alt=""></a>
+                            <div class="sec-big1-li-word">
+                                <a href="" class="sec-big1-li-word1">赵亚奇</a>
+                                <a href="" class="sec-big1-li-word2">赵亚奇设计</a>
+                            </div>
+                        </li>
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/387_8893.jpg" alt=""></a>
+                            <div class="sec-big1-li-word">
+                                <a href="" class="sec-big1-li-word1">赵亚奇</a>
+                                <a href="" class="sec-big1-li-word2">赵亚奇设计</a>
+                            </div>
+                        </li>
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/387_8893.jpg" alt=""></a>
+                            <div class="sec-big1-li-word">
+                                <a href="" class="sec-big1-li-word1">赵亚奇</a>
+                                <a href="" class="sec-big1-li-word2">赵亚奇设计</a>
+                            </div>
+                        </li>
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/387_8893.jpg" alt=""></a>
+                            <div class="sec-big1-li-word">
+                                <a href="" class="sec-big1-li-word1">赵亚奇</a>
+                                <a href="" class="sec-big1-li-word2">赵亚奇设计</a>
+                            </div>
+                        </li>
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/387_8893.jpg" alt=""></a>
+                            <div class="sec-big1-li-word">
+                                <a href="" class="sec-big1-li-word1">赵亚奇</a>
+                                <a href="" class="sec-big1-li-word2">赵亚奇设计</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--小图-->
+                <div class="sec-right-small" id="sec-bigs">
+                    <ul class="sec-small-bottom" id="sec-big1-ul2">
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sec-right">
+                <!--大图-->
+                <div class="sec-right-big">
+                    <ul class="sec-big1-ul">
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/387_8893.jpg" alt=""></a>
+                            <div class="sec-big1-li-word">
+                                <a href="" class="sec-big1-li-word1">赵亚奇</a>
+                                <a href="" class="sec-big1-li-word2">赵亚奇设计</a></div>
+                        </li>
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/387_8893.jpg" alt=""></a>
+                            <div class="sec-big1-li-word">
+                                <a href="" class="sec-big1-li-word1">赵亚奇</a>
+                                <a href="" class="sec-big1-li-word2">赵亚奇设计</a></div>
+                        </li>
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/387_8893.jpg" alt=""></a>
+                            <div class="sec-big1-li-word">
+                                <a href="" class="sec-big1-li-word1">赵亚奇</a>
+                                <a href="" class="sec-big1-li-word2">赵亚奇设计</a></div>
+                        </li>
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/387_8893.jpg" alt=""></a>
+                            <div class="sec-big1-li-word">
+                                <a href="" class="sec-big1-li-word1">赵亚奇</a>
+                                <a href="" class="sec-big1-li-word2">赵亚奇设计</a></div>
+                        </li>
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/387_8893.jpg" alt=""></a>
+                            <div class="sec-big1-li-word">
+                                <a href="" class="sec-big1-li-word1">赵亚奇</a>
+                                <a href="" class="sec-big1-li-word2">赵亚奇设计</a></div>
+                        </li>
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/387_8893.jpg" alt=""></a>
+                            <div class="sec-big1-li-word">
+                                <a href="" class="sec-big1-li-word1">赵亚奇</a>
+                                <a href="" class="sec-big1-li-word2">赵亚奇设计</a></div>
+                        </li>
+                    </ul>
+                </div>
+                <!--小图-->
+                <div class="sec-right-small">
+                    <ul class="sec-small-bottom">
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sec-right">
+                <!--大图-->
+                <div class="sec-right-big">
+                    <ul class="sec-big1-ul">
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/387_8893.jpg" alt=""></a>
+                            <div class="sec-big1-li-word">
+                                <a href="" class="sec-big1-li-word1">赵亚奇</a>
+                                <a href="" class="sec-big1-li-word2">赵亚奇设计</a></div>
+                        </li>
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/387_8893.jpg" alt=""></a>
+                            <div class="sec-big1-li-word">
+                                <a href="" class="sec-big1-li-word1">赵亚奇</a>
+                                <a href="" class="sec-big1-li-word2">赵亚奇设计</a></div>
+                        </li>
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/387_8893.jpg" alt=""></a>
+                            <div class="sec-big1-li-word">
+                                <a href="" class="sec-big1-li-word1">赵亚奇</a>
+                                <a href="" class="sec-big1-li-word2">赵亚奇设计</a></div>
+                        </li>
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/387_8893.jpg" alt=""></a>
+                            <div class="sec-big1-li-word">
+                                <a href="" class="sec-big1-li-word1">赵亚奇</a>
+                                <a href="" class="sec-big1-li-word2">赵亚奇设计</a></div>
+                        </li>
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/387_8893.jpg" alt=""></a>
+                            <div class="sec-big1-li-word">
+                                <a href="" class="sec-big1-li-word1">赵亚奇</a>
+                                <a href="" class="sec-big1-li-word2">赵亚奇设计</a></div>
+                        </li>
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/387_8893.jpg" alt=""></a>
+                            <div class="sec-big1-li-word">
+                                <a href="" class="sec-big1-li-word1">赵亚奇</a>
+                                <a href="" class="sec-big1-li-word2">赵亚奇设计</a></div>
+                        </li>
+                    </ul>
+                </div>
+                <!--小图-->
+                <div class="sec-right-small">
+                    <ul class="sec-small-bottom">
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                        <li class="small-bottom-li">
+                            <a href="" class="small-bottom-li-a1">
+                                <img src="img/386_9213.jpg" alt="">
+                            </a>
+                            <a href="" class="small-bottom-li-a2">肖毅峰</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sec-right">
+                <!--大图-->
+                <div class="sec-right-big">
+                    <ul class="sec-big1-ul">
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/381_6282.jpg" alt=""></a>
+                        </li>
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/381_6282.jpg" alt=""></a>
+                        </li>
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/381_6282.jpg" alt=""></a>
+                        </li>
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/381_6282.jpg" alt=""></a>
+                        </li>
+                        <li class="sec-big1-li">
+                            <a href=""><img src="img/381_6282.jpg" alt=""></a>
+                        </li>
+
+                    </ul>
+                </div>
+                <!--小图-->
+                <div class="sec-right-small">
+                    <ul class="sec-small-bottom">
+                        <li class="small-bottom-li small-bottom-li1">
+                            <a href="" class="small-bottom-li-a1 small-bottom-li-a2">
+                                <img src="img/380_6293.jpg" alt="">
+                            </a>
+                        </li>
+                        <li class="small-bottom-li small-bottom-li1">
+                            <a href="" class="small-bottom-li-a1 small-bottom-li-a2">
+                                <img src="img/380_6293.jpg" alt="">
+                            </a>
+                        </li>
+                        <li class="small-bottom-li small-bottom-li1">
+                            <a href="" class="small-bottom-li-a1 small-bottom-li-a2">
+                                <img src="img/380_6293.jpg" alt="">
+                            </a>
+                        </li>
+                        <li class="small-bottom-li small-bottom-li1">
+                            <a href="" class="small-bottom-li-a1 small-bottom-li-a2">
+                                <img src="img/380_6293.jpg" alt="">
+                            </a>
+                        </li>
+                        <li class="small-bottom-li small-bottom-li1">
+                            <a href="" class="small-bottom-li-a1 small-bottom-li-a2">
+                                <img src="img/380_6293.jpg" alt="">
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div class="clearfix">
+    <div class="designers-top">
+        <p>设计案例</p>
+        <label for="">
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京></a>
+        </label>
+    </div>
+    <div class="clearfix-list">
+        <ul>
+            <li>
+                <span><img src="img/20170608174550-e32b55b3-la.jpg" alt="" class="clearfix-list-1"></span>
+                <a href="" class="clearfix-a"><img src="img/382_7810.jpg" alt="" class="clearfix-list-2"></a>
+                <a href="" class="clearfix-a1">象外·界静温泉会所设计</a>
+                <p>近境制作</p>
+            </li>
+            <li>
+                <span><img src="img/20170608174550-e32b55b3-la.jpg" alt="" class="clearfix-list-1"></span>
+                <a href="" class="clearfix-a"><img src="img/382_7810.jpg" alt="" class="clearfix-list-2"></a>
+                <a href="" class="clearfix-a1">象外·界静温泉会所设计</a>
+                <p>近境制作</p>
+            </li>
+            <li>
+                <span><img src="img/20170608174550-e32b55b3-la.jpg" alt="" class="clearfix-list-1"></span>
+                <a href="" class="clearfix-a"><img src="img/382_7810.jpg" alt="" class="clearfix-list-2"></a>
+                <a href="" class="clearfix-a1">象外·界静温泉会所设计</a>
+                <p>近境制作</p>
+            </li>
+            <li>
+                <span><img src="img/20170608174550-e32b55b3-la.jpg" alt="" class="clearfix-list-1"></span>
+                <a href="" class="clearfix-a"><img src="img/382_7810.jpg" alt="" class="clearfix-list-2"></a>
+                <a href="" class="clearfix-a1">象外·界静温泉会所设计</a>
+                <p>近境制作</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="company">
+    <div class="designers-top">
+        <p>设计机构</p>
+        <label for="">
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京></a>
+        </label>
+    </div>
+</div>
+<div class="company-body" id="oDiv">
+    <div class="image1"><img src="img/QQ图片20170606145952.png" alt=""></div>
+    <div class="image2"><img src="img/QQ图片20170606150014.png" alt=""></div>
+    <div class="image3"><img src="img/QQ图片20170606150035.png" alt=""></div>
+    <div class="image4"><img src="img/QQ图片20170606213003.png" alt=""></div>
+</div>
+
+
+<div class="pic">
+    <div class="designers-top">
+        <p class="designers-top-p1 designers-top-p2">家装图库</p>
+        <p class="designers-top-p1">工装图库</p>
+        <label for="">
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京></a>
+        </label>
+    </div>
+    <div class="pic-body pic-body-1 ">
+        <ul class="pic-ul" style="display:block;">
+            <li class="pic-ul-li1"><img src="img/376_6296.png" alt=""></li>
+            <li class="pic-ul-li1 pic-ul-li2"><img src="img/376_6297.jpg" alt=""><a href="">办公空间，上班族的第2个家！</a></li>
+            <li class="pic-ul-li1 pic-ul-li2"><img src="img/376_6297.jpg" alt=""><a href="">办公空间，上班族的第2个家！</a></li>
+
+            <li class="pic-ul-li1 pic-ul-li2"><img src="img/376_6297.jpg" alt=""><a href="">办公空间，上班族的第2个家！</a></li>
+            <li class="pic-ul-li1"><img src="img/376_6296.png" alt=""></li>
+            <li class="pic-ul-li1 pic-ul-li2"><img src="img/376_6297.jpg" alt=""><a href="">办公空间，上班族的第2个家！</a></li>
+
+        </ul>
+        <ul class="pic-ul">
+            <li class="pic-ul-li1"><img src="img/375_6304.jpg" alt=""><a href="">1㎡空间都不放过，售楼中心就是如此给力！</a></li>
+            <li class="pic-ul-li1 pic-ul-li2"><img src="img/375_6306.jpg" alt=""><a href="">办公空间，上班族的第2个家！</a></li>
+            <li class="pic-ul-li1 pic-ul-li2"><img src="img/375_6306.jpg" alt=""><a href="">办公空间，上班族的第2个家！</a></li>
+
+            <li class="pic-ul-li1 pic-ul-li2"><img src="img/375_6305.jpg" alt=""><a href="">你到过这么美的餐厅吃饭吗？</a></li>
+            <li class="pic-ul-li1"><img src="img/375_6304.jpg" alt=""><a href="">1㎡空间都不放过，售楼中心就是如此给力！</a></li>
+            <li class="pic-ul-li1 pic-ul-li2"><img src="img/375_6306.jpg" alt=""><a href="">办公空间，上班族的第2个家！</a></li>
+        </ul>
+    </div>
+
+</div>
+<div class="original">
+    <div class="designers-top">
+        <p class="designers-top-p1">原创出品</p>
+        <label for="">
+            <a href="">北京</a>
+            <a href="">北京</a>
+            <a href="">北京</a>
+        </label>
+    </div>
+    <div class="original-c">
+        <a href="">案例解析</a>
+        <div class="original-c-1">
+            <img src="img/374_6218.jpg" alt="">
+            <a href="">【第347期】蜻蛉—150㎡日式禅意..</a>
+        </div>
+        <div class="original-c-1">
+            <img src="img/374_6218.jpg" alt="">
+            <a href="">【第347期】蜻蛉—150㎡日式禅意..</a>
+        </div>
+        <div class="original-c-1">
+            <img src="img/374_6218.jpg" alt="">
+            <a href="">【第347期】蜻蛉—150㎡日式禅意..</a>
+        </div>
+        <div class="original-c-1">
+            <img src="img/374_6218.jpg" alt="">
+            <a href="">【第347期】蜻蛉—150㎡日式禅意..</a>
+        </div>
+    </div>
+    <div class="original-c">
+        <a href="" class="original-c-green">设计师专访</a>
+        <div class="original-c-1">
+            <img src="img/374_6218.jpg" alt="">
+            <a href="">【第347期】蜻蛉—150㎡日式禅意..</a>
+        </div>
+        <div class="original-c-1">
+            <img src="img/374_6218.jpg" alt="">
+            <a href="">【第347期】蜻蛉—150㎡日式禅意..</a>
+        </div>
+        <div class="original-c-1">
+            <img src="img/374_6218.jpg" alt="">
+            <a href="">【第347期】蜻蛉—150㎡日式禅意..</a>
+        </div>
+        <div class="original-c-1">
+            <img src="img/374_6218.jpg" alt="">
+            <a href="">【第347期】蜻蛉—150㎡日式禅意..</a>
+        </div>
+    </div>
+</div>
+<div class="news">
+    <div class="designers-top">
+        <p class="designers-top-p1">最新动态</p>
+        <label for="">
+            <a href="">更多></a>
+        </label>
+    </div>
+    <div class="news-list">
+        <div class="answer"><P>大家都在逛有问必答</P></div>
+        <div class="answer-small" >
+            <div id="answer-move">
+                    <div class="answer-news">
+                        <img src="img/headphoto_4630.jpg" alt="">
+                        <div class="answer-news-right">
+                            <a href="">餐厅国画适合挂什么？</a>
+                            <p class="answer-news-right-1">回答：国画花鸟画，多以大自然花鸟为题，可选题材众多，内容也变化多姿，表达的寓意也有很多种，所以有更多的人喜..</p>
+                            <p class="answer-news-right-2">27秒以前</p>
+                        </div>
+                    </div>
+                    <div class="answer-news">
+                        <img src="img/headphoto_4630.jpg" alt="">
+                        <div class="answer-news-right">
+                            <a href="">餐厅国画适合挂什么？</a>
+                            <p class="answer-news-right-1">回答：国画花鸟画，多以大自然花鸟为题，可选题材众多，内容也变化多姿，表达的寓意也有很多种，所以有更多的人喜..</p>
+                            <p class="answer-news-right-2">27秒以前</p>
+                        </div>
+                    </div>
+                    <div class="answer-news">
+                        <img src="img/headphoto_4630.jpg" alt="">
+                        <div class="answer-news-right">
+                            <a href="">餐厅国画适合挂什么？</a>
+                            <p class="answer-news-right-1">回答：国画花鸟画，多以大自然花鸟为题，可选题材众多，内容也变化多姿，表达的寓意也有很多种，所以有更多的人喜..</p>
+                            <p class="answer-news-right-2">27秒以前</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="check">去答题频道看看
+            <em> ></em>
+        </div>
+    </div>
+    <div class="news-list">
+        <div class="answer"><P>大家都在逛有问必答</P></div>
+        <div class="answer-small" >
+            <div id="answer-move2">
+                <div class="answer-news">
+                    <img src="img/headphoto_4630.jpg" alt="">
+                    <div class="answer-news-right">
+                        <a href="">餐厅国画适合挂什么？</a>
+                        <p class="answer-news-right-1">回答：国画花鸟画，多以大自然花鸟为题，可选题材众多，内容也变化多姿，表达的寓意也有很多种，所以有更多的人喜..</p>
+                        <p class="answer-news-right-2">27秒以前</p>
+                    </div>
+                </div>
+                <div class="answer-news">
+                    <img src="img/headphoto_6393.jpg" alt="">
+                    <div class="answer-news-right">
+                        <a href="">进口窗帘布艺品牌哪些比较好？</a>
+                        <p class="answer-news-right-1">回答：进口窗帘布艺品牌的话，我比较推荐的是美莱客窗帘。这家窗帘品牌是美国的一家窗帘品牌，在国内一些一线城市..</p>
+                        <p class="answer-news-right-2">27秒以前</p>
+                    </div>
+                </div>
+                <div class="answer-news">
+                    <img src="img/headphoto_4630.jpg" alt="">
+                    <div class="answer-news-right">
+                        <a href="">餐厅国画适合挂什么？</a>
+                        <p class="answer-news-right-1">回答：国画花鸟画，多以大自然花鸟为题，可选题材众多，内容也变化多姿，表达的寓意也有很多种，所以有更多的人喜..</p>
+                        <p class="answer-news-right-2">27秒以前</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="check">去答题频道看看
+            <em> ></em>
+        </div>
+    </div>
+    <div class="news-list">
+        <div class="answer"><P>大家都在逛有问必答</P></div>
+        <div class="answer-small" >
+            <div id="answer-move3">
+                <div class="answer-news">
+                    <img src="img/headphoto_4630.jpg" alt="">
+                    <div class="answer-news-right">
+                        <a href="">餐厅国画适合挂什么？</a>
+                        <p class="answer-news-right-1">回答：国画花鸟画，多以大自然花鸟为题，可选题材众多，内容也变化多姿，表达的寓意也有很多种，所以有更多的人喜..</p>
+                        <p class="answer-news-right-2">27秒以前</p>
+                    </div>
+                </div>
+                <div class="answer-news">
+                    <img src="img/headphoto_4630.jpg" alt="">
+                    <div class="answer-news-right">
+                        <a href="">餐厅国画适合挂什么？</a>
+                        <p class="answer-news-right-1">回答：国画花鸟画，多以大自然花鸟为题，可选题材众多，内容也变化多姿，表达的寓意也有很多种，所以有更多的人喜..</p>
+                        <p class="answer-news-right-2">27秒以前</p>
+                    </div>
+                </div>
+                <div class="answer-news">
+                    <img src="img/headphoto_5046.jpg" alt="">
+                    <div class="answer-news-right">
+                        <a href="">李博预约了</a>
+                        <p class="answer-news-right-1">宏邦设计</p>
+                        <p class="answer-news-right-2">做设计</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="check">去答题频道看看
+            <em> ></em>
+        </div>
+    </div>
+</div>
+<div class="link">
+    <div class="link-content">
+        <div class="link-name"><p class="cur">友情链接</p></div>
+        <div class="detail">
+            <div class="link-list">
+                <a href="">挂靠网</a> <a href="">挂靠网</a> <a href="">挂靠网</a> <a href="">挂靠网</a> <a href="">挂靠网</a> <a
+                    href="">挂靠网</a> <a href="">挂靠网</a> <a href="">挂靠网</a> <a href="">挂靠网</a> <a href="">挂靠网</a> <a
+                    href="">挂靠网</a> <a href="">挂靠网</a> <a href="">挂靠网</a> <a href="">挂靠网</a> <a href="">挂靠网</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="last">
+    <div class="last-body">
+        <div class="last-1">
+            <span class="last-span-1"></span>
+            <span class="last-span-2">
+                <em>手机设计本</em><br/>
+                <em>随时提问题，随意赏美图</em>
+                <a href="" class="last-a-1"> </a>
+                <a href="" class="last-a-2"> </a>
+            </span>
+        </div>
+        <div class="last-1">
+            <span class="last-span-1"></span>
+            <span class="last-span-2">
+                <em>
+设计本官方微信</em><br/>
+                <em>随时提问题，随意赏美图</em>
+            </span>
+        </div>
+        <div class="last-1">
+            <span class="last-span-1"></span>
+            <span class="last-span-2">
+                <em>订阅邮件</em><br/>
+                <em>随时提问题，随意赏美图</em>
+            </span>
+        </div>
+        <div class="last-2">
+            <span class="last-span-2 last-2-span">
+                <em>关注我们</em>
+                 <a href="" class="last-3"> <img src="img/QQ图片20170609194414_112.png" alt=""></a>
+                <a href="" class="last-a-4"><img src="img/QQ图片20170609194414_114.png" alt=""> </a>
+                <a href="" class="last-a-5"> <img src="img/QQ图片20170609194414_116.png" alt=""></a>
+            </span>
+        </div>
+    </div>
+    <div class="abouts">
+        <a href="">关于我们</a> <a href="">关于我们</a> <a href="">关于我们</a> <a href="">关于我们</a> <a href="">关于我们</a> <a href="">关于我们</a>
+    </div>
+    <div class="statement">
+        <a href="">免责声明：本网站部分内容由用户自行上传，如权利人发现存在误传其作品情形，请及时与本站联系。</a>
+    </div>
+    <div class="statement statement1">
+        <a href="">©2012shejiben.com,All Rights Reserved.(粤ICP备0812558号-2)</a>
+    </div>
+    <div class="bottom">
+        <p href="" class="bottom1"></p>
+        <p href="" class="bottom2"></p>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="js/animate.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+</html>
