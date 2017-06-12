@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/designer.css">
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li>
+                <a href="#">
+                    <em></em>
+                    <span>申请设计</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <em></em>
+                    <span>意见反馈</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <em></em>
+                    <span>APP下载</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <em></em>
+                    <span>回到顶部</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <nav>
+        <!--导航-->
+        <div class="user" id="user">
+            <div class="wrap">
+                <ul class="official">
+                    <li><a href="#">
+                        <em></em><span>设计本官方微信</span></a>
+                        <div class="qr_code" id="qr_code" style="display: none; opacity: 0;">
+                            <img src="./images/se_code.png" alt="">
+                            <p>扫一扫，加微信更多金币等你拿！</p>
+                        </div>
+                    </li>
+                    <li><a href="#"><em></em><span>设计本手机版</span></a></li>
+                </ul>
+                <ul class="login">
+                    <li><a href="#"><span>登录</span></a></li>
+                    <li><a href="#"><span>注册</span></a></li>
+                    <li class="applyfor"><span><a href="#">申请定制设计</a></span></li>
+                    <li>
+                        <span>客服服务<em></em></span>
+                        <!--二级菜单-->
+                        <ul style="display:none;">
+                            <li><a href="#">在线客服</a></li>
+                            <li><a href="#">意见反馈</a></li>
+                            <li><a href="#">帮助中心</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>设计师中心<em></em></span>
+                        <!--二级菜单-->
+                        <ul style="display:none;">
+                            <li><a href="#">接单大厅</a></li>
+                            <li><a href="#">社交广场</a></li>
+                            <li><a href="#">模型下载</a></li>
+                            <li><a href="#">推广中心</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>网站导航<em></em></span>
+                        <!--二级菜单-->
+                        <ul style="display:none;">
+                            <li>
+                                <dl>
+                                    <dt>设计案例</dt>
+                                    <dd><a href="#">家装案例</a></dd>
+                                    <dd><a href="#">工装案例</a></dd>
+                                    <dd><a href="#">案例解析</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>装修图库</dt>
+                                    <dd><a href="#">家装图库</a></dd>
+                                    <dd><a href="#">工装图库</a></dd>
+                                    <dd><a href="#">图库专题</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>有问必答</dt>
+                                    <dd><a href="#">最近回答</a></dd>
+                                    <dd><a href="#">最新提问</a></dd>
+                                    <dd><a href="#">待回答问题</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>找设计师</dt>
+                                    <dd><a href="#">全国设计师</a></dd>
+                                    <dd><a href="#">好评设计师</a></dd>
+                                    <dd><a href="#">设计师专访</a></dd>
+                                    <dd><a href="#">提设计需求</a><em></em></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>设计相关</dt>
+                                    <dd><a href="#">逛商品</a></dd>
+                                    <dd><a href="#">设计资讯</a></dd>
+                                    <dd><a href="#">空间谈</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>设计师中心</dt>
+                                    <dd><a href="#">个人中心</a></dd>
+                                    <dd><a href="#">接单大厅</a></dd>
+                                    <dd><a href="#">社交广场</a></dd>
+                                    <dd><a href="#">模型下载</a></dd>
+                                    <dd><a href="#">推广中心</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>其他</dt>
+                                    <dd><a href="#">设计本App</a><em></em></dd>
+                                    <dd><a href="#">关于我们</a></dd>
+                                    <dd><a href="#">联系我们</a></dd>
+                                    <dd><a href="#">帮助中心</a></dd>
+                                    <dd><a href="#">意见反馈</a></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--搜索框-->
+        <div class="search" id="search">
+            <a href="#"><div class="logo"></div></a>
+            <div class="searchBox">
+                <form action="#" method="get" name="searchBox">
+                    <div class="searchDetail" id="searchDeatail">
+                        <div><span>找图片</span><em class="glass"></em><em class="line"></em><em class="angle"></em></div>
+                        <ul style="display:none;">
+                            <li>找图集</li>
+                            <li>找案例</li>
+                            <li>找设计师</li>
+                            <li>找问答</li>
+                            <li>找模型</li>
+                        </ul>
+                    </div>
+                    <input type="text" value="请输入搜索关键词" class="inputText" name="inputText">
+                    <input type="button" value="搜索" class="btn" name="searchBtn">
+                    <span>或</span>
+                    <input type="button" value="提交设计需求" class="btn btn_width" name="submitRe">
+                </form>
+                <div class="border"></div>
+            </div>
+        </div>
+        <!--主菜单-->
+        <div class="menu">
+            <ul class="fstList">
+                <li class="active"><a href="#"><h5>首页</h5></a></li>
+                <li class="sndListHover">
+                    <a href="#"><h5>设计案例</h5></a>
+                    <ul class="sndList">
+                        <li><a href="#">家装案例</a></li>
+                        <li><a href="#">工装案例</a></li>
+                        <li><a href="#">案例解析</a></li>
+                    </ul>
+                </li>
+                <li class="sndListHover">
+                    <a href="#"><h5>装修图库</h5></a>
+                    <ul class="sndList">
+                        <li><a href="#">家装图库</a></li>
+                        <li><a href="#">工装图库</a></li>
+                        <li><a href="#">图库专题</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                    <h5>有问必答</h5>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <h5>找设计师</h5>
+                    </a>
+                </li>
+                <li class="side sndListHover">
+                    <a href="#"><h5>设计师专区</h5></a>
+                    <ul class="sndList">
+                        <li><a href="#">3DMAX模型下载</a></li>
+                        <li><a href="#">设计资讯</a></li>
+                        <li><a href="#">人物专访</a></li>
+                        <li><a href="#">人物广场</a></li>
+                        <li><a href="#">空间谈</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="banner" id="banner">
+        <div class="wrap">
+            <div class="menuList_left" id="menuList_left">
+                <dl>
+                    <dt>家装设计</dt>
+                    <dd class="hot"><a href="#">三居</a></dd>
+                    <dd><a href="#">复式</a></dd>
+                    <dd class="hot"><a href="#">别墅豪宅</a></dd>
+                    <dd><a href="#">样板房</a></dd>
+                    <dd><a href="#">田园</a></dd>
+                    <dd class="hot"><a href="#">欧式</a></dd>
+                    <dd class="hot"><a href="#">中式</a></dd>
+                    <dd><a href="#">新古典</a></dd>
+                    <dd class="hot"><a href="#">美式</a></dd>
+                    <dd><a href="#">地中海</a></dd>
+                    <dd class="hot"><a href="#">现代</a></dd>
+                    <dd><a href="#">混搭</a></dd>
+                    <dd class="line" id="line1"></dd>
+                </dl>
+                <dl>
+                    <dt>工程设计</dt>
+                    <dd class="hot"><a href="#">餐厅设计</a></dd>
+                    <dd><a href="#">售楼处设计</a></dd>
+                    <dd class="nomarg hot"><a href="#">办公室设计</a></dd>
+                    <dd class="hot"><a href="#">主题酒店</a></dd>
+                    <dd class="hot"><a href="#">酒吧KTV</a></dd>
+                    <dd><a href="#">会所</a></dd>
+                    <dd><a href="#">商业战士</a></dd>
+                    <dd><a href="#">购物中心</a></dd>
+                    <dd class="hot"><a href="#">咖啡店</a></dd>
+                    <dd class="line" id="line2"></dd>
+                </dl>
+                <dl>
+                    <dt>室内设计师</dt>
+                    <dd class="nomarg hot"><a href="#">设计本网站在线交易流程及服务保障》</a></dd>
+                    <dd><a href="#">北京</a></dd>
+                    <dd><a href="#">上海</a></dd>
+                    <dd><a href="#">深圳</a></dd>
+                    <dd class="hot"><a href="#">台湾</a></dd>
+                    <dd class="hot"><a href="#">别墅</a></dd>
+                    <dd class="hot"><a href="#">会所</a></dd>
+                    <dd><a href="#">酒店</a></dd>
+                    <dd class="hot"><a href="#">餐厅</a></dd>
+                    <dd class="line whiteColor" id="line3"></dd>
+                <em class="cover"></em>
+            </div>
+            <div class="menuList_right" id="menuList_right">
+                <ul>
+                    <li>
+                        <dl>
+                            <dt>户型</dt>
+                            <dd><a href="#">小户型</a></dd>
+                            <dd><a href="#">二居</a></dd>
+                            <dd><a href="#">三居</a></dd>
+                            <dd><a href="#">四居</a></dd>
+                            <dd><a href="#">复式</a></dd>
+                            <dd><a href="#">样板房</a></dd>
+                            <dd><a href="#">别墅豪宅</a></dd>
+                        </dl>
+                        <dl>
+                            <dt>风格</dt>
+                            <dd><a href="#">欧式</a></dd>
+                            <dd><a href="#">中式</a></dd>
+                            <dd><a href="#">新古典</a></dd>
+                            <dd><a href="#">东南亚</a></dd>
+                            <dd><a href="#">美式</a></dd>
+                            <dd><a href="#">田园</a></dd>
+                            <dd><a href="#">地中海</a></dd>
+                            <dd><a href="#">现代</a></dd>
+                            <dd><a href="#">混搭</a></dd>
+                        </dl>
+                        <em class="cover"></em>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>类型</dt>
+                            <dd><a href="#">酒店空间</a></dd>
+                            <dd><a href="#">酒店空间</a></dd>
+                            <dd><a href="#">购物空间</a></dd>
+                            <dd><a href="#">文化空间</a></dd>
+                            <dd><a href="#">商业展示</a></dd>
+                            <dd><a href="#">医疗机构</a></dd>
+                            <dd><a href="#">办公空间</a></dd>
+                            <dd><a href="#">餐饮空间</a></dd>
+                            <dd><a href="#">娱乐空间</a></dd>
+                            <dd><a href="#">休闲场所</a></dd>
+                            <dd><a href="#">售楼中心</a></dd>
+                            <dd><a href="#">金融机构</a></dd>
+                            <dd><a href="#">运动场所</a></dd>
+                            <dd><a href="#">教育机构</a></dd>
+                        </dl>
+                        <em class="cover"></em>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>所在城市</dt>
+                            <dd><a href="#">北京</a></dd>
+                            <dd><a href="#">上海</a></dd>
+                            <dd><a href="#">广州</a></dd>
+                            <dd><a href="#">深圳</a></dd>
+                            <dd><a href="#">南京</a></dd>
+                            <dd><a href="#">天津</a></dd>
+                            <dd><a href="#">杭州</a></dd>
+                            <dd><a href="#">武汉</a></dd>
+                            <dd><a href="#">成都</a></dd>
+                            <dd><a href="#">西安</a></dd>
+                            <dd><a href="#">福州</a></dd>
+                            <dd><a href="#">苏州</a></dd>
+                            <dd><a href="#">郑州</a></dd>
+                            <dd><a href="#">合肥</a></dd>
+                            <dd><a href="#">贵阳</a></dd>
+                            <dd><a href="#">宁波</a></dd>
+                            <dd><a href="#">长沙</a></dd>
+                        </dl>
+                        <dl>
+                            <dt>擅长空间</dt>
+                            <dd><a href="#">家居住宅</a></dd>
+                            <dd><a href="#">别墅豪宅</a></dd>
+                            <dd><a href="#">办公室</a></dd>
+                            <dd><a href="#">酒店</a></dd>
+                            <dd><a href="#">餐厅</a></dd>
+                            <dd><a href="#">咖啡厅</a></dd>
+                            <dd><a href="#">酒吧KTV</a></dd>
+                            <dd><a href="#">商业展示</a></dd>
+                            <dd><a href="#">医院</a></dd>
+                            <dd><a href="#">幼儿园</a></dd>
+                            <dd><a href="#">会所</a></dd>
+                            <dd><a href="#">样板房</a></dd>
+                            <dd><a href="#">售楼处</a></dd>
+                            <dd><a href="#">文化空间</a></dd>
+                            <dd><a href="#">运动空间</a></dd>
+                        </dl>
+                        <em class="cover"></em>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="carousel" id="carouselMain">
+            <ul>
+                <li><a href="#"><img src="./images/banner_0.jpg" alt=""></a></li>
+                <li><a href="#"><img src="./images/banner_1.jpg" alt=""></a></li>
+                <li><a href="#"><img src="./images/banner_2.jpg" alt=""></a></li>
+            </ul>
+        </div>
+        <div class="changeBtn" id="changeBtn">
+            <ul>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <section>
+        <div class="infoMenu">
+            <ul>
+                <li>
+                    <dl>
+                        <dt></dt>
+                        <dd><a href="#"><h5>浏览真实设计案例</h5></a></dd>
+                        <dd><span>百万设计师的原创作品</span></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt></dt>
+                        <dd><a href="#"><h5>找到满意的设计师</h5></a></dd>
+                        <dd><span>全国332个城市的设计师云集于此</span></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt></dt>
+                        <dd><a href="#"><h5>装修疑问尽管问</h5></a></dd>
+                        <dd><span>每秒钟都有热心设计师在线</span></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt></dt>
+                        <dd><a href="#"><h5>在线担保交易</h5></a></dd>
+                        <dd><span>资金托管，官方担保，满意后付款</span></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div class="discover">
+            <div class="title">
+                <h5>找设计师</h5>
+                <ul>
+                    <li><a href="#">北京</a></li>
+                    <li><a href="#">上海</a></li>
+                    <li><a href="#">广州</a></li>
+                    <li><a href="#">深圳</a></li>
+                    <li><a href="#">苏州</a></li>
+                    <li><a href="#">杭州</a></li>
+                    <li><a href="#">更多></a></li>
+                </ul>
+            </div>
+            <div class="designer" id ="designer">
+                <ul class="menu" id="menu">
+                    <li class="active">实力推荐 ></li>
+                    <li>最新签单 ></li>
+                    <li>行业大腕 ></li>
+                    <li>知名机构 ></li>
+                </ul>
+                <div class="content" id="recommend" style="display:block">
+                    <div class="carousel" id="carousel">
+                        <ul class="contentTop">
+                        </ul>
+                        <ul class="contentBottom" style="left:102px">
+                        </ul>
+                    </div>
+                    <div class="btnCtrl">
+                        <span class="prevBtn" id="prevBtn"><</span>
+                        <span class="nextBtn" id="nextBtn">></span>
+                    </div>
+                </div>
+                <div class="content" id="newest" style="display:none">
+                    <div class="container">
+                        <ul class="contentTop">
+                        </ul>
+                        <ul class="contentBottom">
+                        </ul>
+                    </div>
+                </div>
+                <div class="content" id="bigshot" style="display:none">
+                    <div class="container">
+                        <ul class="contentTop">
+                        </ul>
+                        <ul class="contentBottom">
+                        </ul>
+                    </div>
+                </div>
+                <div class="content wellknown" id="wellknown" style="display:none">
+                    <div class="container">
+                        <ul class="contentTop">
+                        </ul>
+                        <ul class="contentBottom">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="desiCase">
+            <div class="title">
+                <h5>设计案例</h5>
+                <ul>
+                    <li><a href="#">酒店空间</a></li>
+                    <li><a href="#">购物空间</a></li>
+                    <li><a href="#">文化空间</a></li>
+                    <li><a href="#">办公空间</a></li>
+                    <li><a href="#">餐饮空间</a></li>
+                    <li><a href="#">更多></a></li>
+                </ul>
+            </div>
+            <div class="cases">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="./images/cases_0.jpg" alt="">
+                            <img src="./images/cases_portrait_0.jpg" alt="" class="portrait">
+                            <span></span>
+                        </a>
+                        <a href="#"><h5>永恒时刻|南通盛和韵城样板</h5></a>
+                        <p>建筑设计</p>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./images/cases_1.jpg" alt="">
+                            <img src="./images/cases_portrait_1.jpg" alt="" class="portrait">
+                            <span></span>
+                        </a>
+                        <a href="#"><h5>时尚乐活——苏樊造型空间设计</h5></a>
+                        <p>姜晓林</p>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./images/cases_2.jpg" alt="">
+                            <img src="./images/cases_portrait_2.jpg" alt="" class="portrait">
+                            <span></span>
+                        </a>
+                        <a href="#"><h5>天光 微重</h5></a>
+                        <p>王俊宏</p>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./images/cases_3.jpg" alt="">
+                            <img src="./images/cases_portrait_3.jpg" alt="" class="portrait">
+                            <span></span>    
+                        </a>
+                        <a href="#"><h5>诺森X艺术家居新地标"艺展中心..</h5></a>
+                        <p>王文亮</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="company">
+            <div class="title">
+                <h5>设计机构</h5>
+                <ul>
+                    <li><a href="#">北京</a></li>
+                    <li><a href="#">上海</a></li>
+                    <li><a href="#">广州</a></li>
+                    <li><a href="#">深圳</a></li>
+                    <li><a href="#">苏州</a></li>
+                    <li><a href="#">杭州</a></li>
+                    <li><a href="#">更多></a></li>
+                </ul>
+            </div>
+            <div class="comps" id="comps">
+                <div class="content"><a href="#"><img src="./images/company_0.jpg" width="550" height="174"></a></div>
+                <div class="content" style="left: 210px;"><a href="#"><img src="./images/company_1.jpg" width="550" height="174"></a></div>
+                <div class="content" style="left: 420px;"><a href="#"><img src="./images/company_2.jpg" width="550" height="174"></a></div>
+                <div class="content" style="left: 630px;"><a href="#"><img src="./images/company_3.jpg" width="550" height="174"></a></div>
+            </div>
+        </div>
+        <div class="gallary">
+            <div class="title">
+                <h5 class="active" style="margin-right: 20px;">家装图库</h5>
+                <h5>工装图库</h5>
+                <ul class="active">
+                    <li><a href="#">客厅</a></li>
+                    <li><a href="#">卧室</a></li>
+                    <li><a href="#">卫生间</a></li>
+                    <li><a href="#">餐厅</a></li>
+                    <li><a href="#">厨房</a></li>
+                    <li><a href="#">儿童房</a></li>
+                    <li><a href="#">阳台</a></li>
+                    <li><a href="#">更多></a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">酒店</a></li>
+                    <li><a href="#">商场</a></li>
+                    <li><a href="#">商店</a></li>
+                    <li><a href="#">办公室</a></li>
+                    <li><a href="#">餐厅</a></li>
+                    <li><a href="#">酒吧KTV</a></li>
+                    <li><a href="#">售楼处</a></li>
+                    <li><a href="#">更多></a></li>
+                </ul>
+            </div>
+            <div class="pics">
+                <ul>
+                    <li><a href="#"><img src="./images/gallary_0.png" alt=""></a></li>
+                    <li><a href="#"><img src="./images/gallary_1.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="./images/gallary_2.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="./images/gallary_3.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="./images/gallary_4.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="./images/gallary_5.jpg" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="original">
+            <div class="title">
+                <h5>原创出品</h5>
+                <ul>
+                    <li><a href="#">设计资讯</a></li>
+                    <li><a href="#">空间谈</a></li>
+                    <li><a href="#">名人访谈</a></li>
+                </ul>
+            </div>
+            <div class="resolution">
+                <dl>
+                    <dt><a href="#">案例解析</a></dt>
+                    <dd><a href="#"><img src="./images/original_0.jpg" alt=""><em></em></a><a href="#"><span>【第347期】蜻蛉——150m²日式禅意..</span></a></dd>
+                    <dd><a href="#"><img src="./images/original_1.jpg" alt=""><em></em></a><a href="#"><span>【第346期】布鲁克林——139m²混搭..</span></a></dd>
+                    <dd><a href="#"><img src="./images/original_2.jpg" alt=""><em></em></a><a href="#"><span>【第345期】简单点——128m²北欧简..</span></a></dd>
+                    <dd><a href="#"><img src="./images/original_3.jpg" alt=""><em></em></a><a href="#"><span>【第344期】春意盎然——76m²北欧清..</span></a></dd>
+                </dl>
+            </div>
+            <div class="interview">
+                <dl>
+                    <dt><a href="#">设计师专访</a></dt>
+                    <dd><a href="#"><img src="./images/original_4.jpg" alt=""><em></em></a><a href="#"><span>谢小海：设计改变生活</span></a></dd>
+                    <dd><a href="#"><img src="./images/original_5.jpg" alt=""><em></em></a><a href="#"><span>卲延凤：美学/创新/时尚/人文/设计</span></a></dd>
+                    <dd><a href="#"><img src="./images/original_6.jpg" alt=""><em></em></a><a href="#"><span>高露：用心设计 感悟人生</span></a></dd>
+                    <dd><a href="#"><img src="./images/original_7.jpg" alt=""><em></em></a><a href="#"><span>郝泽伟：功能至上，美学结合实用</span></a></dd>
+                </dl>
+            </div>
+        </div>
+        <div class="news">
+            <div class="title">
+                <h5>最新动态</h5>
+                <ul>
+                    <li><a href="#">更多></a></li>
+                </ul>
+            </div>
+            <div class="newscontain">
+                <div class="qaa">
+                    <h4>大家都在逛有问必答</h4>
+                    <div class="container">
+                        <ul>
+                            <li><img src="./images/headphoto_0.jpg" alt=""><a href="#"><h5>济南墙面油漆厂家哪家质量好？</h5></a><p>回答：济南墙面油漆厂家推荐...<em>5分钟前</em></p></li>
+                            <li><img src="./images/headphoto_1.jpg" alt=""><a href="#"><h5>实木复合地板一般多厚？</h5></a><p>实木地板一般：8m...<em>8分钟前</em></p></li>
+                            <li><img src="./images/headphoto_2.jpg" alt=""><a href="#"><h5>地下室通风天窗价格要多少？</h5></a><p>根据材料不同，价格也...<em>9分钟前</em></p></li>
+                            <li><img src="./images/headphoto_3.jpg" alt=""><a href="#"><h5>三维防爆灯价格怎么样？</h5></a><p>三维防爆灯价格一般在...<em>15分钟前</em></p></li>
+                            <li><img src="./images/headphoto_4.jpg" alt=""><a href="#"><h5>客厅背景墙布怎么设计？</h5></a><p>这要看你装修的是什么...<em>21分钟前</em></p></li>
+                            <li><img src="./images/headphoto_5.jpg" alt=""><a href="#"><h5>建筑防水油膏价格多少？</h5></a><p>建筑防水油膏价格一般在...<em>22分钟前</em></p></li>
+                            <li><img src="./images/headphoto_6.jpg" alt=""><a href="#"><h5>创意酒杯架价格要多少？</h5></a><p>创意酒杯架一般是200元...<em>29分钟前</em></p></li>                            
+                        </ul>
+                    </div>
+                    <a href="#"><span>去问答频道看看></span></a>
+                </div>
+                <div class="demand">
+                    <h4>大家都在发布需求</h4>
+                    <div class="container"><ul>
+                            <li><img src="./images/headphoto_0.jpg" alt=""><a href="#"><h5>任先生提出了要求</h5></a><p>江苏无锡市136m²平层住宅设计1小...<em>1分钟前</em></p></li>
+                            <li><img src="./images/headphoto_1.jpg" alt=""><a href="#"><h5>王女士提出了要求</h5></a><p>广东惠州市惠阳区140m²平层住宅设计...<em>1分钟前</em></p></li>
+                            <li><img src="./images/headphoto_2.jpg" alt=""><a href="#"><h5>黄先生提出了要求</h5></a><p>北京市朝阳区100m²平层住宅设...<em>8分钟前</em></p></li>
+                            <li><img src="./images/headphoto_3.jpg" alt=""><a href="#"><h5>梁先生提出了要求</h5></a><p>安徽合肥市瑶海区130m²平层住宅设计...<em>10分钟前</em></p></li>
+                            <li><img src="./images/headphoto_4.jpg" alt=""><a href="#"><h5>蔡女士提出了要求</h5></a><p>湖北武汉市新洲区116m²平层住宅设计...<em>12分钟前</em></p></li>
+                            <li><img src="./images/headphoto_5.jpg" alt=""><a href="#"><h5>徐女士提出了要求</h5></a><p>重庆市北碚区159m²平层住宅设计...<em>13分钟前</em></p></li>
+                            <li><img src="./images/headphoto_6.jpg" alt=""><a href="#"><h5>陶先生提出了要求</h5></a><p>浙江绍兴诸暨市200m²复式楼设计..<em>18分钟前</em></p></li>
+                        </ul>
+                    </div>
+                    <a href="#"><span>提交我的设计需求></span></a>
+                </div>
+                <div class="order">
+                    <h4>大家都在预约设计师</h4>
+                    <div class="container">
+                        <ul>
+                            <li><img src="./images/1.jpg" alt=""><a href="#"><h5>马先生预约了李萍_兆..做设计</h5></a><p><i>上海</i><i>教育机构</i><i>145m²</i><em>2分钟前</em></p></li>
+                            <li><img src="./images/1.jpg" alt=""><a href="#"><h5>袁先生预约了顾惠敏做设计</h5></a><p><i>上海</i><i>教育机构</i><i>400m²</i><em>5分钟前</em></p></li>
+                            <li><img src="./images/1.jpg" alt=""><a href="#"><h5>丁女士预约了北京墨磬..做设计</h5></a><p><i>定西</i><i>运动场所</i><i>1200m²</i><em>7分钟前</em></p></li>
+                            <li><img src="./images/1.jpg" alt=""><a href="#"><h5>梁宇预约了王斐做设计</h5></a><p><i>定西</i><i>运动场所</i><i>145m²</i><em>20分钟前</em></p></li>
+                            <li><img src="./images/1.jpg" alt=""><a href="#"><h5>马先生预约了李萍_兆..做设计</h5></a><p><i>呼和浩特</i><i>别墅</i><i>300㎡</i><em>30分钟前</em></p></li>
+                            <li><img src="./images/1.jpg" alt=""><a href="#"><h5>黄预约了郭敏做设计</h5></a><p><i>济宁</i><i>餐厅空间</i><i>38m²</i><em>35分钟前</em></p></li>
+                            <li><img src="./images/1.jpg" alt=""><a href="#"><h5>小红帽预约了罗西-6..做设计</h5></a><p><i>六安<i>住宅空间</i><i>50m²</i><em>36分钟前</em></p></li>
+                        </ul>
+                    </div>
+                    <a href="#"><span>去找设计师></span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="friendlyLink">
+            <div class="wrap">
+                <h5>友情链接</h5>
+                <div class="container">
+                    <ul>
+                        <li><a href="#">挂靠网</a></li>
+                        <li><a href="#">装修风格</a></li>
+                        <li><a href="#">家具</a></li>
+                        <li><a href="#">装修</a></li>
+                        <li><a href="#">上海租车</a></li>
+                        <li><a href="#">家居在线</a></li>
+                        <li><a href="#">众包平台</a></li>
+                        <li><a href="#">装修网</a></li>
+                        <li><a href="#">中国建材采购网</a></li>
+                        <li><a href="#">大樊装饰有限公司</a></li>
+                        <li><a href="#">图满意装修网</a></li>
+                        <li><a href="#">装修网</a></li>
+                        <li><a href="#">装修网</a></li>
+                        <li><a href="#">中国招标网</a></li>
+                        <li><a href="#">装修网</a></li>
+                        <li><a href="#">设计帝国</a></li>
+                        <li><a href="#">装修网</a></li>
+                        <li><a href="#">装修论坛</a></li>
+                        <li><a href="#">土木在线论坛</a></li>
+                        <li><a href="#">装修网</a></li>
+                        <li><a href="#">素材</a></li>
+                        <li><a href="#">卫浴</a></li>
+                        <li><a href="#">鲁文建筑服务网</a></li>
+                        <li><a href="#">设计师教程</a></li>
+                        <li><a href="#">图老师</a></li>
+                        <li><a href="#">装修设计</a></li>
+                        <li><a href="#">家居设计</a></li>
+                        <li><a href="#">桌面壁纸</a></li>
+                        <li><a href="#">装修网</a></li>
+                        <li><a href="#">土巴兔新闻中心</a></li>
+                        <li><a href="#">装修网</a></li>
+                        <li><a href="#">视频教程</a></li>
+                        <li><a href="#">PS教程</a></li>
+                        <li><a href="#">蚂蚁图库</a></li>
+                        <li><a href="#">手抄报设计图</a></li>
+                        <li><a href="#">装修网</a></li>
+                        <li><a href="#">免费素材网</a></li>
+                        <li><a href="#">房屋设计图</a></li>
+                        <li><a href="#">网站模板</a></li>
+                        <li><a href="#">建筑</a></li>
+                        <li><a href="#">酷乐设计网</a></li>
+                        <li><a href="#">图片大全</a></li>
+                        <li><a href="#">图片素材</a></li>
+                        <li><a href="#">创意设计</a></li>
+                        <li><a href="#">图片素材</a></li>
+                        <li><a href="#">金华论坛</a></li>
+                        <li><a href="#">建筑社区</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="cobyright">
+            <div class="wrap">
+                <ul class="aboutus">
+                    <li>
+                        <i></i>
+                        <h5>手机设计本</h5>
+                        <p>随时提问题，随意赏美图</p>
+                        <a href="#"><em class="store"></em></a>
+                        <a href="#"><em class="android"></em></a>
+                    </li>
+                    <li>
+                        <i></i>
+                        <h5>设计本官方微信</h5>
+                        <p>扫描二维码，即刻与本本亲密互 动，还有更多美图等你来看！</p>
+                    </li>
+                    <li>
+                        <a href="#"><i></i></a>
+                        <a href="#"><h5>订阅邮件</h5></a>
+                        <a href="#"><p>邮件订阅设计本每日推荐，不错 过每一天的惊喜。</p></a>
+                    </li>
+                    <li class="last_style">
+                        <h5>关注我们</h5>
+                        <a href="#"><em class="sina"></em></a>
+                        <a href="#"><em class="tencent"></em></a>
+                        <a href="#"><em class="qzone"></em></a>
+                    </li>
+                </ul>
+                <ul class="contact">
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">联系我们</a></li>
+                    <li><a href="#">意见建议</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                    <li><a href="#">使用条款</a></li>
+                </ul>
+                <p>免责声明：本网站部分内容由用户自行上传，如权利人发现存在误传其作品情形，请及时与本站联系。</p>
+                <p>&coby;2012shejiben.com,All Rights Reserved.(粤ICP备0812558号-2)</p>
+                <div class="icon">
+                    <a href="#"><em></em></a>
+                    <a href="#"><em></em></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script type="text/javascript" src="./scripts/animation.js"></script>
+<script type="text/javascript" src="./scripts/carousel.js"></script>
+<script type="text/javascript" src="./scripts/designer.js"></script>
+<script type="text/javascript" src="./scripts/main.js"></script>
+</html>

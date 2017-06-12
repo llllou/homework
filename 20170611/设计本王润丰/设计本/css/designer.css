@@ -1,0 +1,141 @@
+.designer{
+    width: 1180px;
+    height: auto;
+    margin: 0 auto;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.designer .menu{
+    float: left;
+}
+
+.designer .menu li{
+    width: 158px;
+    height: 70px;
+    cursor: pointer;
+    color: #666;
+    line-height: 70px;
+    font-size: 14px;
+    text-indent: 45px;
+    border: 1px solid #eee;
+    border-bottom: 0;
+}
+
+.designer .menu li.active{
+    width: 156px;
+    color: #dd4f50;
+    border-left: 3px #dd4f50 solid;
+    text-indent: 43px;
+}
+
+.designer .menu li:nth-child(4){
+    border-bottom: 1px solid #eee;
+}
+
+.designer .carousel{
+    width: 1448px;
+    height: 288px;
+    position: absolute;
+    left: -204px;
+    overflow: hidden;
+}
+
+.designer .container{
+    width: 1448px;
+    height: 288px;
+    position: absolute;
+    left: -204px;
+}
+
+.designer .content{
+    width: 1000px;
+    height: 285px;
+    float: left;
+    margin-left: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.designer .content .contentTop{
+    width: 1448px;
+    position: absolute;
+}
+
+.designer .content .contentTop li{
+    width: 184px;
+    height: 184px;
+    float: left;
+    margin: 0 20px 20px 0;
+    overflow: hidden;
+}
+
+.designer .content .contentTop li.margleft{
+    margin-left: 204px;
+}
+
+.designer .content .contentTop img{
+    width: 200px;
+    height: 200px;
+}
+
+.designer .wellknown .contentTop img{
+    width: 184px;
+    height: 184px;
+}
+
+.designer .content .contentBottom{
+    width: 1224px;
+    position: absolute;
+    bottom: 0;
+}
+
+.designer .content .container .contentBottom{
+    left: 102px;
+}
+
+
+.designer .content .contentBottom li.margleft{
+    margin-left: 102px;
+}
+
+.designer .content .contentBottom li{
+    float: left;
+    margin-right: 20px;
+}
+
+
+.designer .content .contentBottom img{
+    width: 82px;
+    height: 82px;
+}
+
+.designer .wellknown .contentBottom img{
+    width: 184px;
+    height: 82px;
+}
+
+.designer .content .btnCtrl span{
+    width: 30px;
+    height: 34px;
+    color: #fff;
+    background: rgba(0,0,0,.3);
+    text-align: center;
+    font: 30px/34px '宋体';
+    position: absolute;
+    top: 79px;
+    transition: .2s;
+    user-select: none;
+    cursor: default;
+}
+
+.designer .content .btnCtrl span:hover{
+    background: rgba(0,0,0,.5);
+}
+
+.designer .content .prevBtn{
+    left: 0;
+}
+.designer .content .nextBtn{
+    right: 0;
+}

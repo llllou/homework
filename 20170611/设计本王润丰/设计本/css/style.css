@@ -1,0 +1,1193 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+em, i{
+    font-style: normal;
+}
+
+li{
+    list-style: none;
+}
+
+/*导航部分*/
+nav{
+    width: 100%;
+    height: 166px;
+}
+
+nav .user{
+    width: 100%;
+    height: 30px;
+    background: #efefef;
+}
+
+nav .user .wrap{
+    width: 1182px;
+    height: auto;
+    margin: 0 auto;
+}
+
+nav .user a, nav .user span{
+    font: 12px Arial;
+    color: #999;
+    height: 15px;
+    margin-top: 6px;
+}
+
+nav .user .official{
+    float: left;
+}
+
+nav .user .official>li{
+    float: left;
+    cursor: pointer;
+    position: relative;
+}
+
+nav .user .official em{
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-image: url(../images/back.png);
+    float: left;
+    margin-top: 7px;
+}
+
+nav .user .official span{
+    float: left;
+}
+
+nav .user li:hover span{
+    color: #dd4f50;
+}
+
+nav .user .official li:nth-child(1) span{
+    padding-right: 15px;
+    border-right: 1px solid #ddd;
+}
+
+nav .user .official .qr{
+    width: 120px;
+    height: 166px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    position: absolute;
+    top: 24px;
+    left: -10px;
+    border: 1px #ddd solid;
+    background: #fff;
+    background-size: 120px 120px;
+    opacity: 0;
+    transition: .3s;
+}
+
+nav .user .official .qr p{
+    padding: 0 10px;
+}
+
+nav .user .official .qr img{
+    width: 120px;
+    height: 120px;
+}
+
+nav .user .official li:nth-child(1) em{
+    background-position: -213px -105px;
+}
+
+nav .user .official li:nth-child(2) em{
+    margin-left: 15px;
+    background-position: -229px -105px;
+}
+
+nav .user .login{
+    float: right;
+}
+
+nav .user .login>li{
+    float: left;
+    cursor: pointer
+}
+
+nav .user .login span{
+    padding: 0 15px;
+    border-right: 1px solid #ddd;
+    float: left;
+}
+
+nav .user .login li:nth-child(1) span{
+    padding: 0;
+}
+
+nav .user .login em{
+    display: block;
+    float: right;
+    border: 4px solid transparent;
+    border-top-color: #999; 
+    margin: 7px 0 0 2px;
+}
+
+nav .user .login .applyfor a{
+    display: block;
+    float: left;
+    width: 92px;
+    height: 24px;
+    color: #fff;
+    background: #dd4f50;
+    text-align: center;
+    line-height: 24px;
+    margin-top: -4px;
+    border-radius: 5px;
+    position: relative;
+}
+
+nav .user .login .applyfor a::before{
+    content: "";
+    border-radius: 5px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+nav .user .login .applyfor a:hover::before{
+    background: rgba(255,255,255,.3);
+}
+
+nav .search{
+    width: 1182px;
+    height: 97px;
+    margin: 0 auto;
+}
+
+nav .search .logo{
+    width: 236px;
+    height: 35px;
+    float: left;
+    background: url(../images/global.png) -3px -3px;
+    margin-top: 30px;
+}
+
+nav .search .searchBox{
+    margin: 30px 0 0 116px;
+    float: left;
+    position: relative;
+}
+
+nav .search .searchDetail{
+    width: 106px;
+    height: 32px;
+    font-size: 12px;
+    line-height: 32px;
+    color: #666;
+    float: left;
+    padding-left: 12px;
+    margin-top: 2px;
+}
+
+nav .search .searchDetail em{
+    float: right;
+}
+
+nav .search .searchDetail .angle{
+    display: block;
+    border: 4px solid transparent;
+    border-top-color: #999;
+    margin: 14px 10px 0 0;
+}
+
+nav .search .searchDetail .line{
+    display: block;
+    width: 1px;
+    height: 31px;
+    background: #efefef;
+}
+
+nav .search .searchDetail .glass{
+    display: block;
+    width: 12px;
+    height: 10px;
+    background: url(../images/sprite.png) -312px -9px;
+    margin: 10px 8px 0 10px;
+}
+
+nav .searchBox input{
+    float: left;
+}
+
+nav .searchBox .inputText{
+    font-size: 12px;
+    border: 0;
+    width: 257px;
+    height: 31px;
+    color: #bbb;
+    margin-top: 2px;
+    outline: 0;
+}
+
+nav .searchBox .btn{
+    width: 80px;
+    height: 36px;
+    background: #dd4f50;
+    color: #fff;
+    line-height: 36px;
+    font-size: 14px;
+    border: 0;
+    cursor: pointer;
+}
+
+nav .searchBox .btn_width{
+    width: 119px;
+}
+
+nav .searchBox form > span{
+    font-size: 14px;
+    color: #999;
+    margin: 11px 20px 0;
+    float: left;
+}
+
+nav .searchBox .border{
+    width: 452px;
+    height: 32px;
+    border: 2px solid #dd4f50;
+    position: absolute;
+    z-index: -1;
+}
+
+nav .menu{
+    width: 100%;
+    height: 40px;
+    background: #333;
+}
+
+nav .menu .fstList{
+    width: 1182px;
+    margin: 0 auto;
+}
+
+nav .menu .fstList>li{
+    float: left;
+    position: relative;
+}
+
+nav .menu .fstList li a{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 36px;
+    color: #fff;
+}
+
+nav .menu .fstList li:hover{
+    background: #dd4f50;
+}
+
+nav .menu .fstList li.active{
+    background: #dd4f50;
+}
+
+nav .menu .fstList li.side{
+    float: right;
+}
+
+nav .menu .sndList{
+    width: 100%;
+    position: absolute;
+    top: 39px;
+    background: #dd4f50;
+    display: none;
+    z-index: 999;
+}
+
+nav .menu .current{
+    display: block;
+}
+
+nav .menu .sndList li a{
+    padding: 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+nav .menu .sndList li a:hover{
+    background: #d04142;
+}
+
+/*轮播图*/
+.banner{
+    width: 100%;
+    height: 420px;
+    position: relative;
+}
+
+.banner .wrap{
+    width: 1182px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.banner .wrap .menuList_left{
+    width: 282px;
+    height: 420px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: absolute;
+    left: 0;
+}
+
+.banner .wrap .menuList_right{
+    width: 282px;
+    height: 420px;
+    position: absolute;
+    left: 282px;
+}
+
+.banner .wrap .menuList_right li{
+    padding: 0 0 23px 0;
+    background: #fff;
+    position: absolute;
+    display: none;
+    border: 1px solid #eee;
+}
+
+.banner .wrap .menuList_right li:nth-child(1) .cover,.banner .wrap .menuList_right li:nth-child(2) .cover{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: 1px;
+    height: 140px;
+    background: #fff;
+}
+
+.banner .wrap .menuList_right li:nth-child(3) .cover{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: -1px;
+    width: 1px;
+    height: 140px;
+    background: #fff;
+}
+
+.banner .wrap .menuList_right li.active{
+    display: block;
+}
+
+.banner .wrap .menuList_right li:nth-child(1){
+    top: 0;
+    left: 0;
+}
+
+.banner .wrap .menuList_right li:nth-child(2){
+    top: 141px;
+    left: 0;
+}
+
+.banner .wrap .menuList_right li:nth-child(3){
+    left: 0;
+    bottom: 0;
+}
+
+.banner .wrap .menuList_right li:nth-child(3) dl{
+    height: 185px;
+}
+
+.banner .wrap .menuList_right dl{
+    width:  220px;
+    height: 140px;
+    padding: 0 31px;
+    position: relative;
+}
+
+.banner .wrap .menuList_left dl{
+    width:  220px;
+    height: 140px;
+    padding: 0 31px;
+    position: relative;
+}
+
+.banner .wrap dd.line{
+    width: 220px;
+    height: 1px;
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    margin-left: -110px;
+    background: #eee;
+}
+
+.banner .wrap dd.long{
+    width: 282px;
+    left: 0;
+    margin-left: 0;
+}
+
+.banner .wrap dd.whiteColor{
+    background: #fff;
+}
+
+.banner .wrap dt{
+    font-size: 14px;
+    padding: 22px 0 3px 0;
+}
+
+.banner .wrap dd{
+    font-size: 12px;
+    float: left;
+    margin: 12px 22px 0 0;
+}
+
+.banner .wrap dd a{
+    color: #666;
+}
+
+.banner .wrap dd.hot a{
+    color: #dd4f50;
+}
+
+.banner .wrap dd a:hover{
+    color: #dd4f50;
+}
+
+.banner .wrap dd.nomarg{
+    margin-right: 0;
+}
+
+.banner .carousel{
+    width: 100%;
+    height: 420px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.banner .carousel ul{
+    width: 8100px;
+    position: absolute;
+    left: -100px;
+}
+
+.banner .carousel li{
+    float: left;
+}
+
+.banner .changeBtn{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    z-index: 500;
+}
+
+.banner .changeBtn li{
+    width: 10px;
+    height: 10px;
+    background: #666;
+    border-radius: 50%;
+    margin-right: 10px;
+    float: left;
+    cursor: pointer;
+}
+
+.banner .changeBtn li.active{
+    background: #333;
+}
+
+/*内容部分*/
+section{
+    width: 1182px;
+    margin: 0 auto;
+}
+
+section .infoMenu{
+    height: 164px;
+}
+
+section .infoMenu li{
+    float: left;
+}
+
+section .infoMenu li:nth-child(1){
+    border-left: 1px solid #eee;
+}
+
+section .infoMenu dl{
+    width: 294px;
+    height: 42px;
+    padding: 60px 0;
+    float: left;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+section .infoMenu dt{
+    width: 42px;
+    height: 44px;
+    background: url(../images/sprite.png);
+    float: left;
+    margin: 0 15px 0 34px;
+}
+
+section .infoMenu li:nth-child(1) dt{
+    background-position: -3px -60px;
+}
+
+section .infoMenu li:nth-child(2) dt{
+    background-position: -61px -60px;
+}
+
+section .infoMenu li:nth-child(3) dt{
+    background-position: -119px -60px;
+}
+
+section .infoMenu li:nth-child(4) dt{
+    background-position: -174px -60px;
+}
+
+section .infoMenu h5{
+    font-size: 18px;
+    color: #333;
+    font-weight: normal;
+}
+
+section .infoMenu h5:hover{
+    color: #dd4f50;
+}
+
+section .infoMenu span{
+    font-size: 12px;
+    color: #999;
+}
+
+section .title {
+    width: 1182px;
+    height: 42px;
+    margin: 58px auto 0;
+}
+
+section .title h5{
+    font-size: 24px;
+    font-weight: normal;
+    color: #333;
+    float: left;
+    cursor: pointer;
+}
+
+section .title ul{
+    float: right
+}
+
+section .title ul li{
+    float: left;
+    margin-left: 21px;
+}
+
+section .title ul li a{
+    font-size: 12px;
+    color: #999;
+}
+
+section .title ul li a:hover{
+    color: #dd4f50;
+}
+
+section .discover{
+    height: 351px;
+}
+
+section .desiCase{
+    height: 442px;
+    margin: 0 auto;
+}
+
+section .desiCase .cases{
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+section .desiCase .cases li{
+    width: 278px;
+    height: 374px;
+    border: 1px solid #eee;
+    margin-right: 20px;
+    float: left;
+    position: relative;
+}
+
+section .desiCase .cases li:nth-child(4){
+    margin: 0;
+}
+
+section .desiCase .cases span{
+    width: 280px;
+    height: 311px;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    display: none;
+    z-index: 1;
+}
+
+section .desiCase .cases li:hover span{
+    background: rgba(255,255,255,.2);
+    display: block;
+}
+
+section .desiCase .cases img{
+    width: 280px;
+    height: 280px;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+}
+
+section .desiCase .cases img.portrait{
+    width: 60px;
+    height: 60px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    top: 249px;
+    left: 50%;
+    margin-left: -31px;
+}
+
+section .desiCase .cases h5{
+    margin-top: 280px;
+    padding-top: 40px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: normal;
+    color: #333;
+}
+
+section .desiCase .cases h5:hover{
+    color: #dd4f50;
+}
+
+section .desiCase .cases p{
+    font-size: 12px;
+    color: #999;
+    line-height: 26px;
+    text-align: center;
+}
+
+section .company {
+    height: 220px;
+}
+
+section .company .comps{
+    position: relative;
+}
+
+section .company .comps .content{
+    position: absolute;
+}
+
+section .gallary{
+    height: 650px;
+}
+
+section .gallary .title h5.active{
+    color: #dd4f50;
+}
+
+section .gallary .title ul{
+    display: none;
+}
+
+section .gallary .title ul.active{
+    display: block;
+}
+
+section .gallary .pics{
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+section .gallary .pics li{
+    margin: 0 19px 15px 0;
+    float: left;
+}
+
+section .gallary .pics li:nth-child(3n){
+    margin-right: 0;
+}
+
+section .original{
+    height: 530px;
+}
+
+section .original .resolution,section .original .interview{
+    width: 100%;
+    height: 238px;
+    border: 1px solid #eee;
+}
+
+section .original .interview{
+    margin-top: -1px;
+}
+
+section .original dt{
+    float: left;
+    margin: -1px 20px 0 -1px;
+}
+
+section .original dd{
+    margin: 20px 0 0 20px;
+    float: left;
+    position: relative;
+}
+
+section .original dd img{
+    width: 210px;
+    height: 174px;
+}
+
+section .original dd em{
+    width: 210px;
+    height: 174px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+section .original dd a:nth-child(1):hover em{
+    background: rgba(255,255,255,.2);
+}
+
+section .original dd span{
+    display: block;
+    font-size: 12px;
+    color: #666;
+    padding-top: 5px;
+}
+
+section .original dd span:hover{
+    color: #dd4f50;
+}
+
+section .original dt a{
+    display: block;
+    width: 224px;
+    height: 240px;
+    font: 26px/240px '微软雅黑';
+    color: #fff;
+    text-align:center;
+}
+
+section .original .resolution dt a{
+    background: #dd4f50;
+}
+
+section .original .interview dt a{
+    background: #54bda6;
+}
+
+section .news{
+    height: 510px;
+    margin-bottom: 80px;
+}
+
+section .news .newscontain{
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+section .news .qaa, section .news .demand, section .news .order{
+    width: 338px;
+    height: 445px;
+    border: 1px solid #eee;
+    float: left;
+    padding: 0 20px;
+    margin-right: 20px;
+}
+
+section .news .order{
+    margin: 0;
+}
+
+section .news h4{
+    font: 18px microsoft yahei;
+    font-weight: normal;
+    margin-top: 20px;
+}
+
+section .news span{
+    display: block;
+    width: 180px;
+    height: 40px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+    background: #dd4f50;
+    border-radius: 4px;
+    margin: 32px auto 0;
+    position: relative;
+}
+
+section .news span::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+section .news span:hover::after{
+    background: rgba(255,255,255,.2);
+}
+
+section .news .container{
+    width: 340px;
+    height: 300px;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+}
+
+section .news .container li{
+    height: 80px;
+    border-bottom: 1px solid #eee;
+    padding-top: 20px;
+}
+
+section .news .container img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 20px;
+}
+
+section .news .container h5{
+    font-size: 14px;
+    font-weight: normal;
+    color: #333;
+    padding-top: 8px;
+}
+
+section .news .container h5:hover{
+    color: #dd4f50;
+}
+
+section .news .container p{
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+}
+
+section .news .container i{
+    margin-right: 20px;
+}
+
+section .news .container em{
+    float: right;
+    color: #333;
+    font-size: 12px;
+}
+
+/*尾部*/
+footer .friendlyLink {
+    width: 100%;
+    height: 172px;
+    background: #f8f8f8;
+}
+
+footer .friendlyLink .wrap{
+    width: 1182px;
+    margin: 0 auto;
+    font-size: 12px;
+}
+
+footer .friendlyLink h5{
+    display: inline-block;
+    color: #666;
+    padding: 24px 0 12px 0;
+    border-bottom: 2px solid #dd4f50;
+}
+
+footer .friendlyLink .container{
+    margin-top: -1px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+footer .friendlyLink ul{
+    width: 985px;
+}
+
+footer .friendlyLink li{
+    float: left;
+    margin: 0 20px 8px 0;
+}
+
+footer .friendlyLink li a{
+    color: #999;
+}
+
+footer .cobyright{
+    width: 100%;
+    height: 309px;
+    background: #1c1c1c;
+}
+
+footer .cobyright .wrap{
+    width: 1182px;
+    margin: 0 auto;
+}
+
+footer .cobyright .wrap .aboutus{
+    padding-top: 27px;
+    height: 108px;
+    border-bottom: 1px solid #191919;
+}
+
+footer .cobyright .wrap .aboutus li{
+    width: 245px;
+    float: left;
+    margin-right: 67px;
+}
+
+footer .cobyright .wrap .aboutus li:nth-child(4){
+    margin-right: 0;
+}
+
+footer .cobyright .wrap .aboutus li i{
+    display: block;
+    width: 65px;
+    height: 65px;
+    background-image: url(../images/sprite.png);
+    float: left;
+    margin-right: 8px;
+}
+
+footer .cobyright .aboutus li:nth-child(1) i{
+    background-position: -246px -169px;
+}
+
+footer .cobyright .aboutus li:nth-child(2) i{
+    background-position: -318px -169px;
+}
+
+footer .cobyright .aboutus li:nth-child(3) i{
+    background-position: -2px -114px;
+}
+
+footer .cobyright .aboutus li h5, footer .cobyright .wrap .aboutus li p{
+    font-size: 12px;
+    color: #b3b3b3;
+}
+
+footer .cobyright .aboutus li p{
+    margin-top: 15px;
+}
+
+footer .cobyright .aboutus li:nth-child(1) p{
+    margin-top: 0;
+}
+
+footer .cobyright .aboutus em{
+    display: inline-block;
+    background-image: url(../images/sprite.png);
+    margin-top: 10px;
+}
+
+footer .cobyright .aboutus .store{
+    width: 75px;
+    height: 21px;
+    background-position: -231px -79px;
+}
+
+footer .cobyright .aboutus .store:hover{
+    background-position: -75px -163px;
+}
+
+footer .cobyright .aboutus .android{
+    width: 75px;
+    height: 21px;
+    background-position: -317px -79px;
+}
+
+footer .cobyright .aboutus .android:hover{
+    background-position: -161px -163px;
+}
+
+footer .cobyright .aboutus .sina{
+    width: 75px;
+    height: 22px;
+    background-position: -75px -113px;
+    margin-top: 27px;
+}
+
+footer .cobyright .aboutus .sina:hover{
+    background-position: -3px -187px;
+}
+
+footer .cobyright .aboutus .tencent{
+    width: 75px;
+    height: 22px;
+    background-position: -155px -113px;
+    margin-top: 27px;
+}
+
+footer .cobyright .aboutus .tencent:hover{
+    background-position: -83px -187px;
+}
+
+footer .cobyright .aboutus .qzone{
+    width: 75px;
+    height: 22px;
+    background-position: -235px -113px;
+    margin-top: 27px;
+}
+
+footer .cobyright .aboutus .qzone:hover{
+    background-position: -163px -187px;
+}
+
+footer .cobyright .contact{
+    width: 444px;
+    height: 22px;
+    margin: 28px auto 20px;
+}
+
+footer .cobyright .contact li{
+    padding: 0 20px;
+    float: left;
+    border-right: 1px solid #484848;
+}
+
+footer .cobyright .contact li a{
+    color: #666;
+    font-size: 12px;
+}
+
+footer .cobyright .contact li a:hover{
+    color: #e94c3d;
+}
+
+footer .cobyright .contact li:nth-child(5){
+    border-right: 0;
+}
+
+footer .cobyright .wrap>p{
+    text-align: center;
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+footer .cobyright .icon{
+    width: 46px;
+    margin: 0 auto;
+}
+
+footer .cobyright .icon em{
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-image: url(../images/sprite.png);
+    float: left;
+    margin-right: 2px;
+}
+
+footer .cobyright .icon a:nth-child(1) em{
+    background-position: -326px -116px;
+}
+
+footer .cobyright .icon a:nth-child(2) em{
+    background-position: -360px -116px;
+}
+
+.sidebar{
+    width: 62px;
+    position: fixed;
+    top: 500px;
+    right: 269px;
+    z-index: 9999;
+}
+
+.sidebar li{
+    width: 62px;
+    height: 51px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.sidebar li:hover{
+    background: #dd4f50;
+}
+
+.sidebar li em{
+    display: block;
+    width: 22px;
+    height: 22px;
+    margin: 0 auto 5px;
+}
+
+.sidebar li:nth-child(1) em{
+    background: url(../images/sidebar_0.gif);
+}
+
+.sidebar li:nth-child(1):hover em{
+    background-image: url(../images/sidebar_1.gif);
+    background-position: -131px -37px;
+}
+
+.sidebar li:nth-child(2) em{
+    background-image: url(../images/sidebar_1.gif);
+    background-position: -102px -37px;
+}
+
+.sidebar li:nth-child(2):hover em{
+    background-position: -131px -10px;
+}
+
+.sidebar li:nth-child(3) em{
+    background: url(../images/sidebar_2.gif);
+}
+
+.sidebar li:nth-child(3):hover em{
+    background-image: url(../images/sidebar_1.gif);
+    background-position: -133px -67px;
+}
+
+.sidebar li:nth-child(4) em{
+    background: url(../images/sidebar_1.gif);
+    background-position: -101px -10px;
+}
+
+.sidebar li:nth-child(4):hover em{
+    background-position: -102px -63px;
+}
+
+.sidebar li span{
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+}
+
+.sidebar li:hover span{
+    color: #fff;
+}
+
+.sidebar li:nth-child(4){
+    border-bottom: 0;
+}
