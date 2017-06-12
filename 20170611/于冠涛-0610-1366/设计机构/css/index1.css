@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style:none;
+}
+a{
+    text-decoration: none;
+}
+em{
+    font-style: normal;
+}
+i{
+    font-style: normal;
+}
+
+.box{
+    width:1148px;
+    height: 174px;
+    margin:0 auto;
+    background-color:skyblue;
+    position: relative;
+    overflow:hidden;
+}
+.box div{
+    width:550px;
+    height: 174px;
+    position: absolute;
+}
+.oBox2{
+    left:550px;
+    transition: 0.5s;
+}
+.oBox3{
+    left:744px;
+    transition: 0.5s;
+}
+.oBox4{
+    left:938px;
+    transition: 0.5s;
+}

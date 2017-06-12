@@ -1,0 +1,164 @@
+*{
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+li{
+    list-style: none;
+}
+.clear:after{
+    display:block;
+    content:'';
+    height:0;
+    clear:both;
+    visibility: hidden;
+}
+.clear{
+    zoom: 1;
+}
+.box{
+    margin-top:50px;
+    height:346px;
+    position:relative;
+    float:left;
+}
+.box .box-top{
+    height:40px;
+    border-bottom:1px solid #eeeeee;
+}
+.box .box-top .span-left{
+    font-size:21px;
+    font-weight: bold;
+}
+.box .box-top .span-right{
+    float:right;
+}
+.box .box-top .span-right>a{
+    display: inline-block;
+    margin-right:20px;
+    font-size:12px;
+    float:left;
+}
+.box .box-top .span-right>a:hover{
+    color:rgb(208,65,66);
+}
+.leftBox{
+    width:160px;
+    height:285px;
+    float:left;
+    margin-top:21px;
+}
+.leftBox ul{
+    border-bottom: 0.5px solid #000;
+}
+.leftBox li a{
+    display: inline-block;
+    width:156px;
+    height:70px;
+    text-align: center;
+    line-height: 70px;
+    font-size:15px;
+    border-top:1px solid grey;
+    border-left:1px solid grey;
+    border-right:1px solid grey;
+}
+.leftBox li em{
+    display:inline-block;
+    width:10px;
+    height:10px;
+    background: url(../images/sprite1.png) no-repeat -297px -7px;
+    margin-left:16px;
+}
+.rightBox{
+    margin-top: 22px;
+    width:1020px;
+    /*height:184px;*/
+    float:left;
+    margin-left:20px;
+    overflow: hidden;
+    position:relative;
+}
+.rightBox>div{
+    /*float:left;*/
+    width:1020px;
+    overflow: hidden;
+    height:300px;
+    display: none;
+
+}
+.rightBox div.current{
+    display: block;
+}
+.rightBox .top{
+    width:4000px;
+    height:184px;
+    position:absolute;
+    left:0;
+    top:0;
+    overflow: hidden;
+}
+.rightBox .top ul{
+    float:left;
+}
+#leftBtn{
+    position:absolute;
+    top:140px;
+    left:180px;
+    width:30px;
+    height:34px;
+    background: red;
+    cursor: pointer;
+    background: url(../images/sprite1.png) no-repeat -227px -8px;
+}
+#rightBtn{
+    position:absolute;
+    top:140px;
+    right:21px;
+    width:30px;
+    height:34px;
+    cursor: pointer;
+    background: url(../images/sprite1.png) no-repeat -261px -8px;
+}
+.rightBox .top ul{
+    float:left;
+}
+.rightBox .top ul li{
+    float:left;
+    width:184px;
+    height:184px;
+    margin-right:20px;
+    overflow: hidden;
+}
+.rightBox .bottom{
+    position: absolute;
+    width:4000px;
+    top:184px;
+    left:0;
+    overflow: hidden;
+}
+.rightBox .bottom ul{
+    float:left;
+    margin-top: 20px;
+}
+.rightBox .bottom ul li{
+    float:left;
+    width:82px;
+    height:82px;
+    overflow: hidden;
+    margin-right:20px;
+}
+.rightBox .bottom ul li img{
+    width:82px;
+    height:82px;
+}
+.rightBox .bottom .last li{
+    width:184px;
+    height:82px;
+}
+.rightBox .bottom .last li img{
+    width:184px;
+    height:82px;
+}
