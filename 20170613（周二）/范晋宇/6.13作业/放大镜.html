@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            *{
+                margin:0;
+                padding: 0;
+            }
+            .box1{
+                width: 350px;
+                height: 350px;
+                border:1px solid #000;
+                margin:100px;
+                background:url(image/xiao.jpg)no-repeat;
+                position: relative;
+            }
+            .zoom{
+                width: 175px;
+                height: 175px;
+                background:#FEDE4E;
+                opacity:0.5;
+                position: absolute;
+                top:0;
+                left:0;
+                border:1px solid #aaa;
+                display: none;
+            }
+            .box2{
+                width: 400px;
+                height: 400px;
+                background:url(image/da.jpg) no-repeat;
+                position: absolute;
+                top:100px;
+                left:500px;
+                border:1px solid #000;
+                display: none;
+            }
+            .smallPhoto{
+                width: 350px;
+                height: 87.5px;
+                position: absolute;
+                top:450px;
+                left:100px;
+                background:red;
+                border:1px solid #000;
+                list-style: none;
+            }
+            .smallPhoto li{
+                width: 86.5px;
+                height: 87.5px;
+                float: left;
+                border-right: 1px solid #000;
+            }
+            .smallPhoto li:hover {
+                opacity: 0.8;
+            }
+             .smallPhoto li.last{
+                border-right: none;
+             }
+            .smallPhoto li img{
+                width: 86.5px;
+                height: 87.5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box1" id="box1">
+                <div class="zoom" id="zoom"></div>
+        </div>
+        <ul class="smallPhoto" id="smallPhoto">
+                <li>
+                        <img src="image/580f025aN8b0e29b6.jpg" alt="">
+                </li>
+                <li>
+                        <img src="image/580f025aN54fdd879.jpg" alt="">
+                </li>
+                <li>
+                        <img src="image/580f025aNa6a2f3a2.jpg" alt="">
+                </li>
+                <li class="last">
+                        <img src="image/580f025aNfc611480.jpg" alt="">
+                </li>
+        </ul>
+        <div class="box2" id="box2"></div>
+
+    </body>
+    <script>
+    var box1=document.getElementById("box1");
+    var zoom=document.getElementById("zoom");
+    var box2=document.getElementById("box2");
+    var smallPhoto=document.getElementById("smallPhoto");
+    var oLi=smallPhoto.getElementsByTagName("li");
+
+    oLi[0].onclick=function(){
+        box1.style.background="url(image/580f025aN8b0e29b6.jpg)";
+        box2.style.background="url(image/222.jpg)";
+    }
+    oLi[1].onclick=function(){
+        box1.style.background="url(image/580f025aN54fdd879.jpg)";
+        box2.style.background="url(image/333.jpg)";
+    }
+    oLi[2].onclick=function(){
+        box1.style.background="url(image/580f025aNa6a2f3a2.jpg)";
+        box2.style.background="url(image/444.jpg)";
+    }
+    oLi[3].onclick=function(){
+        box1.style.background="url(image/580f025aNfc611480.jpg)";
+        box2.style.background="url(image/555.jpg)";
+    }
+
+    box1.onmouseover=function(){
+            zoom.style.display="block";
+            box2.style.display="block";
+    }
+     box1.onmouseout=function(){
+            zoom.style.display="none";
+            box2.style.display="none";
+    }
+    var  ratio=400/175;
+    box1.onmousemove=function(event){
+        event=event||window.event;
+        var x=document.body.scrollLeft||document.documentElement.scrollLeft;
+        var y=document.body.scrollTop||document.documentElement.scrollTop;
+
+        var X=event.clientX-(getAllLeft(box1)-x)-87;
+        var Y=event.clientY-(getAllTop(box1)-y)-87;
+
+        if(X<0){
+            X=0;
+        }
+        if(Y<0){
+            Y=0;
+        }
+        if(X>box1.offsetWidth-zoom.offsetWidth){
+            X=box1.offsetWidth-zoom.offsetWidth;
+        }
+        if(Y>box1.offsetHeight-zoom.offsetHeight){
+            Y=box1.offsetHeight-zoom.offsetHeight;
+        }
+        zoom.style.left=X+"px";
+        zoom.style.top=Y+"px";
+        box2.style.backgroundPosition=-X*ratio+"px  "+(-Y*ratio)+"px";
+
+    }
+
+
+   function getAllTop(obj){
+            //累加器 ，累加器的初始值不是0，而是自己现在的offsetTop值
+
+            var allTop = obj.offsetTop;
+
+            //当前正在算高度的元素
+            var currentObj = obj;
+
+            while(currentObj =currentObj.offsetParent){
+                allTop+=currentObj.offsetTop;
+            }
+
+            return allTop;
+
+        }
+        function getAllLeft(obj){
+            //累加器 ，累加器的初始值不是0，而是自己现在的offsetTop值
+
+            var allLeft = obj.offsetLeft;
+
+            //当前正在算高度的元素
+            var currentObj = obj;
+
+            while(currentObj =currentObj.offsetParent){
+                allLeft+=currentObj.offsetLeft;
+            }
+
+            return allLeft;
+
+        }
+
+    </script>
+</html>
