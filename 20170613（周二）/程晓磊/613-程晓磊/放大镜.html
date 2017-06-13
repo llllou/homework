@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    #smallPic{
+        width: 400px;
+        height: 400px;
+        border: 1px solid gray;
+        margin: 100px 100px;
+        position: relative;
+        background: url("img/5930c3f9Ndbac2747 (1).jpg")no-repeat center;
+    }
+    #zoom{
+        width: 200px;
+        height: 200px;
+        background: gold;
+        opacity: 0.4;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+    }
+    #bigPic{
+        width: 500px;
+        height: 500px;
+        position: absolute;left: 550px;
+        top: 100px;
+        border: 1px solid gray;
+        display: none;
+        background: url("img/5930c3f9Ndbac2747 (2).jpg")no-repeat;
+
+    }
+    ul {
+width: 464px;
+height: 100px;
+/*background: red;*/
+position: absolute;
+left: 101px;
+top: 502px;
+    }
+    ul li{
+        width: 100px;
+        height: 100px;
+        float: left;
+        list-style: none;
+        margin-right: 10px;
+        border: 1px solid gray;
+        text-align: center;
+        line-height: 100px;
+        cursor: pointer;
+    }
+    ul li img{
+        margin-top: 17px;
+        width: 70px;
+    }
+
+</style>
+</head>
+<body>
+    <div id="smallPic">
+        <div id="zoom"></div>
+    </div>
+    <div>
+        <ul>
+            <li><img src="img/580f025aNa6a2f3a2 (1).jpg" alt=""></li>
+            <li><img src="img/580f025aNfc611480 (1).jpg" alt=""></li>
+            <li><img src="img/580f025aN54fdd879 (1).jpg" alt=""></li>
+            <li><img src="img/580f025aN8b0e29b6 (1).jpg" alt=""></li>
+        </ul>
+    </div>
+    <div id="bigPic"></div>
+</body>
+<script>
+      var smallPic=document.getElementById("smallPic");
+      var zoom=document.getElementById("zoom");
+      var bigPic=document.getElementById("bigPic");
+      var oLi=document.getElementsByTagName("li");
+    oLi[0].onclick=function(){
+         smallPic.style.backgroundImage="url('img/580f025aNa6a2f3a2.jpg')";
+         bigPic.style.backgroundImage="url('img/580f025aNa6a2f3a2 (2).jpg')"
+    }
+      oLi[1].onclick=function(){
+         smallPic.style.backgroundImage="url('img/580f025aNfc611480.jpg')";
+         bigPic.style.backgroundImage="url('img/580f025aNfc611480 (2).jpg')"
+    }
+      oLi[2].onclick=function(){
+         smallPic.style.backgroundImage="url('img/580f025aN54fdd879.jpg')";
+         bigPic.style.backgroundImage="url('img/580f025aN54fdd879 (2).jpg')"
+    }
+      oLi[3].onclick=function(){
+         smallPic.style.backgroundImage="url('img/580f025aN8b0e29b6.jpg')";
+         bigPic.style.backgroundImage="url('img/580f025aN8b0e29b6 (2).jpg')"
+    }
+      var rate=500/200;
+      smallPic.onmouseover=function(){
+        zoom.style.display="block";
+        bigPic.style.display="block";
+        smallPic.onmousemove=function(event){
+            event=event||window.event;
+            var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+            var scrollLeft=document.body.scrollLeft||document.documentElement.scrollLeft;
+            var x=event.clientX-(getAllLeft(smallPic)-scrollLeft)-87;
+            var y=event.clientY-(getAllTop(smallPic)-scrollTop)-87;
+            if(x<0){ x=0; }
+            if(x>200){x=200; }
+               if(y<0){ y=0; }
+            if(y>200){y=200; }
+             zoom.style.top = y +"px";
+          
+            zoom.style.left = x +"px";
+
+bigPic.style.backgroundPosition=-x*rate+"px "+-y*rate+"px";
+
+        }
+      }
+       smallPic.onmouseout=function(){
+        zoom.style.display="none";
+        bigPic.style.display="none";
+      }
+
+function getAllTop(obj){
+            //累加器 ，累加器的初始值不是0，而是自己现在的offsetTop值
+
+            var allTop = obj.offsetTop;
+
+            //当前正在算高度的元素
+            var currentObj = obj;
+
+            while(currentObj =currentObj.offsetParent){
+                allTop+=currentObj.offsetTop;
+            }
+
+            return allTop;
+
+        }
+        function getAllLeft(obj){
+            //累加器 ，累加器的初始值不是0，而是自己现在的offsetTop值
+
+            var allLeft = obj.offsetLeft;
+
+            //当前正在算高度的元素
+            var currentObj = obj;
+
+            while(currentObj =currentObj.offsetParent){
+                allLeft+=currentObj.offsetLeft;
+            }
+
+            return allLeft;
+
+        }
+</script>
+</html>
