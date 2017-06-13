@@ -153,25 +153,28 @@
         }
     }
 
-    function getAllTop(obj){
-        var allTop=obj.offsetTop;
-        var currentObj=obj;
+    function getAllTop (obj) {
+
+        var allTop = obj.offsetTop;
+
+        var currentObj = obj;
+
         while(currentObj = currentObj.offsetParent){
-            allTop+=currentObj.offsetTop;
+
+            allTop += currentObj.offsetTop;
         }
         return allTop;
     }
-    /**
-     * 获取对象到浏览器左边的距离
-     * @param obj
-     * @returns {Number|number}
-     */
 
-    function getAllLeft(obj){
-        var allLeft=obj.offsetLeft;
-        var currentObj=obj;
+    function getAllLeft (obj) {
+
+        var allLeft = obj.offsetLeft;
+
+        var currentObj = obj;
+
         while(currentObj = currentObj.offsetParent){
-            allLeft+=currentObj.offsetLeft;
+
+            allLeft += currentObj.offsetLeft;
         }
         return allLeft;
     }
