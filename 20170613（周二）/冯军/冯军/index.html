@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+      .Al{
+          width: 450px;
+          height: 570px;
+          position: relative;
+          border: 1px solid grey;
+          margin-left: 50px;
+          margin-top: 150px;
+      }
+      .Al>img{
+          width: 450px;
+          height: 450px;
+      }
+        .AlUl{
+            width: 409px;
+            height: 58px;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            left:0;
+            list-style: none;
+            border: 1px solid grey;
+        }
+      .AlUl li{
+          margin: 0 9px;
+          float: left;
+      }
+        .AlUl li img{
+            width: 58px;
+            height: 58px;
+        }
+        .AlZoom{
+            height:225px;
+            width: 225px;
+            position: absolute;
+            top: 0;
+            left:0;
+            background: #FEDE4F;
+            opacity: 0.5;
+            display: none;
+        }
+        .AlBig{
+            width: 800px;
+            height: 800px;
+            position: absolute;
+            top: 0px;
+            left: 500px;
+            border: 1px solid grey;
+            background: url("img/01.jpg")no-repeat ;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+      <div class="Al">
+          <div id="A">
+              <img src="img/1.jpg" alt="" id="Alimg">
+              <div class="AlZoom" id="AlZoom"></div>
+          </div>
+
+          <ul class="AlUl" id="AlUl">
+              <li><img src="img/1.jpg" alt=""></li>
+              <li><img src="img/2.jpg" alt=""></li>
+              <li><img src="img/3.jpg" alt=""></li>
+              <li><img src="img/4.jpg" alt=""></li>
+          </ul>
+          <div class="AlBig" id="AlBig"></div>
+      </div>
+</body>
+<script type="text/javascript">
+    var A=document.getElementById('A');
+    var Alimg=document.getElementById("Alimg");
+   var AlZoom=document.getElementById("AlZoom");
+   var AlUl=document.getElementById("AlUl");
+   var AlLi=AlUl.getElementsByTagName("li");
+    var AlBig =document.getElementById("AlBig");
+    for(var i=0;i<AlLi.length;i++){
+        AlLi[i].index=i;
+        AlLi[i].onmouseover=function () {
+
+           var num=parseInt(this.index+1);
+            Alimg.src="img/"+  num  +".jpg";
+
+            AlBig.style.background="url(img/0"+num+".jpg)";
+        }
+    }
+
+
+    var rate=800/450;
+     A.onmouseover=function () {
+         AlZoom.style.display="block";
+         AlBig.style.display="block";
+     }
+    A.onmouseout=function () {
+        AlZoom.style.display="none";
+        AlBig.style.display="none";
+    }
+    A.onmousemove=function (event) {
+        event=event||window.event;
+
+        var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+        var scrollLeft = document.body.scrollLeft || document.documentElement.scrollLeft;
+
+        var x=event.clientX-(getAllLeft(A)-scrollLeft)-112;
+        var y=event.clientY-(getAllTop(A)-scrollTop)-112;
+
+        if (x<0)x=0;
+        if (x>225)x=225;
+        if (y>225)y=225;
+        if (y<0)y=0;
+
+    AlZoom.style.top=y+"px";
+     AlZoom.style.left=x+"px";
+
+     AlBig.style.backgroundPosition=-x*rate+"px"+" "+-y*rate+"px";
+    };
+     function getAllTop(obj) {
+         var allTop=obj.offsetTop;
+         var currentObj=obj;
+         while (currentObj=currentObj.offsetParent){
+             allTop+=currentObj.offsetTop;
+         }
+         return allTop;
+     }
+     function getAllLeft(obj) {
+         var allLeft=obj.offsetLeft;
+         var currentObj=obj;
+         while (currentObj=currentObj.offsetParent){
+             allLeft+=currentObj.offsetLeft;
+         }
+         return allLeft;
+     }
+
+</script>
+</html>
