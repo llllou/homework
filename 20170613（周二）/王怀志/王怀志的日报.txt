@@ -1,0 +1,16 @@
+学习了滚动条相关的知识，尤其是火狐以及IE浏览器的相关兼容处理，在火狐浏览器中，onmousewheel被视为event.detail
+可用以下代码解决兼容性问题；
+function wheelhandler(event){
+	event=event||window.event
+	if(preventDefault)
+	{event.preventDefault()}
+	else{event.returnValue=false}
+	if(event.wheelDelta)
+	{var dir=event.wheelDelta>0?1:-1;}
+	else if(event.detail)
+	{var dir=event.detail>0?-1:1;};
+	return dir
+}
+.addEventListener("DomMouseScroll",wheelhanler,false);
+scrollTop
+scrollLeft表示卷动的距离

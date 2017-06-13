@@ -1,0 +1,30 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+#area{
+    width: 600px;
+    height: 600px;
+    border: 1px solid #ddd;
+    margin:30px auto;
+    background: url("../img/ground.jpg") round;
+    position: relative;
+}
+#tank
+{
+    position: absolute;
+    top: 550px;
+    left: 40%;
+    width: 26px;
+    height: 28px;
+    background: url("../img/timg.jpg") no-repeat -1px -112px;
+}
+.bullet
+{
+    width: 8px;
+    height:8px;
+    background-color: yellow;
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+}
