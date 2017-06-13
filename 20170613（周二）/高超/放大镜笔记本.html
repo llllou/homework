@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜笔记本</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .Watch{
+            width: 450px;
+            height: 450px;
+            border:1px solid gray;
+            margin-top: 60px;
+            margin-left: 100px;
+            position:relative;
+        }
+        .Zoom{
+            position: absolute;
+            top:100px;
+            left: 100px;
+            width: 300px;
+            height: 300px;
+            background: #fede4e;
+            border:1px solid gray;
+            opacity: 0.4;
+            display: none;
+        }
+        .Show{
+            width: 540px;
+            height: 540px;
+            background: url(images/B1.jpg) no-repeat;
+            position: absolute;
+            top:60px;
+            left:550px;
+            border:1px solid gray;
+            display: none;
+        }
+        .Photo{
+            width: 370px;
+            height: 60px;
+            background: #fede4e;
+            margin: 10px 0 0 135px;
+        }
+        .Photo ul{
+            list-style: none;
+        }
+        .Photo ul li{
+            float: left;
+            width: 55px;
+            height:55px;
+            border: 2px solid red;
+            margin: 0 7px;
+        }
+        .Photo ul li img{
+            width: 55px;
+            height: 55px;
+        }
+    </style>
+</head>
+<body>
+<div class="Watch" id="Watch">
+    <img src="images/1.jpg" alt="">
+    <div class="Zoom" id="Zoom"></div>
+</div>
+<div class="Show" id="Show">
+
+</div>
+<div class="Photo">
+    <ul  id="fire">
+        <li>
+            <img src="images/1.jpg" alt="">
+        </li>
+        <li>
+            <img src="images/2.jpg" alt="">
+        </li>
+        <li>
+            <img src="images/3.jpg" alt="">
+        </li>
+        <li>
+            <img src="images/4.jpg" alt="">
+        </li>
+        <li>
+            <img src="images/5.jpg" alt="">
+        </li>
+    </ul>
+</div>
+
+</body>
+<script>
+    var Watch=document.getElementById("Watch");
+    var Zoom=document.getElementById("Zoom");
+    var Show=document.getElementById("Show");
+    var rate=540/300;
+    Watch.onmouseover=function () {
+        Zoom.style.display='block';
+        Show.style.display="block";
+    };
+    Watch.onmouseout=function () {
+        Zoom.style.display='none';
+        Show.style.display="none";
+    };
+    Watch.onmousemove=function (event) {
+        event = event || window.event;
+
+        var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+        var scrollLeft=document.body.scrollLeft||document.documentElement.scrollLeft;
+        var x=event.clientX-(getAllLeft(Watch)-scrollLeft)-150;
+
+        var y=event.clientY-(getAllTop(Watch)-scrollTop)-150;
+        if(x<0)x=0;
+        if(y<0)y=0;
+        if(x>150)x=150;
+        if(y>150)y=150;
+        Zoom.style.left=x+"px";
+        Zoom.style.top=y+"px";
+
+       Show.style.backgroundPosition=-x*rate +"px"+ " "+ -y*rate +"px";
+    };
+    function getAllTop(obj){
+        //累加器 ，累加器的初始值不是0，而是自己现在的offsetTop值
+        var allTop = obj.offsetTop;
+        //当前正在算高度的元素
+        var currentObj = obj;
+        while(currentObj =currentObj.offsetParent){
+            allTop+=currentObj.offsetTop;
+        }
+        return allTop;
+    }
+    function getAllLeft(obj){
+        //累加器 ，累加器的初始值不是0，而是自己现在的offsetTop值
+        var allLeft = obj.offsetLeft;
+        //当前正在算高度的元素
+        var currentObj = obj;
+
+        while(currentObj =currentObj.offsetParent){
+            allLeft+=currentObj.offsetLeft;
+        }
+        return allLeft;
+    }
+
+
+    var fireLis=document.getElementById("fire").getElementsByTagName("li");
+    var WatchImg=Watch.getElementsByTagName("img")[0];
+    for(var i=0; i<fireLis.length;i++){
+        fireLis[i].index=i;
+        fireLis[i].onmouseover=function () {
+            WatchImg.src="images/"+(this.index+1)+".jpg";
+            Show.style.background="url(images/B"+(this.index+1)+".jpg)";
+        }
+    }
+//    fireLis[0].onmouseover=function () {
+//        WatchImg.src="images/"+1+".jpg";
+//        Show.style.background="url(images/B1.jpg)";
+//    };
+//    fireLis[1].onmouseover=function () {
+//        WatchImg.src="images/"+2+".jpg";
+//        Show.style.background="url(images/B2.jpg)";
+//    };
+//    fireLis[2].onmouseover=function () {
+//        WatchImg.src="images/"+3+".jpg";
+//        Show.style.background="url(images/B3.jpg)";
+//    };
+//    fireLis[3].onmouseover=function () {
+//        WatchImg.src="images/"+4+".jpg";
+//        Show.style.background="url(images/B4.jpg)";
+//    };
+//    fireLis[4].onmouseover=function () {
+//        WatchImg.src="images/"+5+".jpg";
+//        Show.style.background="url(images/B5.jpg)";
+//    }
+</script>
+</html>

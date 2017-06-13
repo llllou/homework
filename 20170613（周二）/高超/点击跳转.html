@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击跳转</title>
+    <style>
+        body{
+            height: 5000px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="点我跳转">
+</body>
+<script>
+  var Jump=document.getElementsByTagName('input')[0];
+  Jump.onclick=function () {
+      document.body.scrollTop=3100;
+  }
+</script>
+
+</html>
