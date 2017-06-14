@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin:0;
+			}
+			.smallPic{
+				width: 350px;
+				height: 350px;
+				border:3px solid red;
+				position: relative;
+				margin: 100px;
+				background: url(image/666.jpg) no-repeat;
+			}
+		   .oDiv{
+			width: 175px;
+			height: 175px;
+			position: absolute;
+			left: 100px;
+			top: 100px;
+			background-color: skyblue;
+			opacity:0.5;
+			display: none;
+		   }
+
+		   .bigPic{
+			   position: absolute;
+			   left: 500px;
+			   top: 100px;
+			   width: 400px;
+			   height: 400px;
+			   border:3px solid blue;
+			   display: none;
+			   background:url(image/555.jpg) no-repeat;
+		   }
+		   #oDiv1{
+			   position: absolute;
+			   top:500px;
+			   left: 100px;
+			   width: 80px;
+			   height: 80px;
+			   border:1px solid red;
+		   }
+		   #oDiv1 img{
+				width: 80px;
+				height: 80px;
+		   }
+			#oDiv2{
+				position: absolute;
+				top:500px;
+				left: 190px;
+				width: 80px;
+				height: 80px;
+				border:1px solid red;
+
+
+			}
+			 #oDiv2 img{
+				width: 80px;
+				height: 80px;
+			 }
+			#oDiv3{
+				position: absolute;
+				top:500px;
+				left: 280px;
+				width: 80px;
+				height: 80px;
+				border:1px solid red;
+		   }
+			 #oDiv3 img{
+				width: 80px;
+				height: 80px;
+			 }
+			#oDiv4{
+				position: absolute;
+				top:500px;
+				left: 370px;
+				width: 80px;
+				height: 80px;
+				border:1px solid red;
+			}
+			 #oDiv4 img{
+				width: 80px;
+				height: 80px;
+		    }
+		</style>
+	</head>
+	<body>
+		<div class="smallPic" id="smallPic" >
+			<img src="image/111.jpg" alt="">
+		 <div id="oDiv" class="oDiv">
+		 </div>
+		</div>
+		<div class="bigPic" id="bigPic"></div>
+		<div id="oDiv1">
+			<img src="image/111.jpg" alt="">
+		</div>
+		<div id="oDiv2">
+			<img src="image/222.jpg" alt="">
+		</div>
+		<div id="oDiv3">
+			<img src="image/333.jpg" alt="">
+		</div>
+		<div id="oDiv4">
+			<img src="image/444.jpg" alt="">
+		</div>
+	</body>
+	<script type="text/javascript">
+		var smallPic=document.getElementById("smallPic")
+			.getElementsByTagName("img")[0];
+		var oDiv=document.getElementById("oDiv");
+		var bigPic=document.getElementById("bigPic");
+        smallPic.onmouseover=function(){
+			oDiv.style.display="block";
+			bigPic.style.display="block";
+		}
+
+        smallPic.onmouseout=function(){
+			oDiv.style.display="none";
+			bigPic.style.display="none";
+		}
+
+        smallPic.onmousemove=function(event){
+				event = event || window.event;
+
+				var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+				var scrollLeft = document.body.scrollLeft || document.documentElement.scrollLeft;
+
+
+				var x = event.clientX - (getAllLeft(smallPic)-scrollLeft)-87;
+				var y = event.clientY - (getAllTop(smallPic)-scrollTop)-87;
+
+
+
+				if(x<0) x=0;
+				if(y<0) y=0;
+				if(x>smallPic.clientWidth-oDiv.clientWidth){
+					x=smallPic.clientWidth-oDiv.clientWidth;
+				}
+				if(y>smallPic.clientHeight-oDiv.clientHeight){
+					y=smallPic.clientHeight-oDiv.clientHeight;
+				}
+				oDiv.style.top = y +"px";
+				oDiv.style.left = x +"px";
+				 var rate=400/175;
+				bigPic.style.backgroundPosition=-x*rate+"px"+" "+-y*rate+"px";
+
+			}
+
+			oDiv1.onmouseover=function(){
+                smallPic.src="image/111.jpg";
+				bigPic.style.background="url(image/555.jpg)";
+			}
+			 oDiv2.onmouseover=function(){
+				smallPic.src="image/222.jpg";
+				bigPic.style.background="url(image/666.jpg)";
+			}
+			 oDiv3.onmouseover=function(){
+                 smallPic.src="image/333.jpg";
+				bigPic.style.background="url(image/777.jpg)";
+			}
+			 oDiv4.onmouseover=function(){
+                 smallPic.src="image/444.jpg";
+				bigPic.style.background="url(image/888.jpg)";
+			}
+
+
+			function getAllTop(obj){
+
+
+				var allTop = obj.offsetTop;
+
+
+				var currentObj = obj;
+
+				while(currentObj =currentObj.offsetParent){
+					allTop+=currentObj.offsetTop;
+				}
+
+				return allTop;
+			}
+			function getAllLeft(obj) {
+				var allLeft = obj.offsetLeft;
+				var currentObj = obj;
+				while (currentObj = currentObj.offsetParent) {
+					allLeft += currentObj.offsetLeft;
+				}
+				return allLeft;
+			}
+	</script>
+</html>
