@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #small{
+            float: left;
+            margin:100px  50px 0;
+        }
+        #big{
+            width: 550px;
+            height: 550px;
+            float: left;
+            background: url("images/huaping.jpg")no-repeat;
+            display: none;
+            position: absolute;
+            left:500px;
+            top: 30px;
+            border:2px solid red;
+        }
+        #sz{
+            border:1px solid #ccc;
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+        #smallPic{
+            width: 400px;
+            height: 400px;
+            background: url("images/huaping.jpg")no-repeat;
+            background-size: 100%;
+        }
+        #zoom{
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+            opacity: 0.7;
+            position: absolute;
+            top:100px;
+            left: 100px;
+            display: none;
+        }
+        #fourPic{
+            width: 400px;
+            height: 100px;
+        }
+        #fourPic img{
+            width: 80px;
+            height: 80px;
+            float: left;
+            margin: 10px 8px;
+            border:2px solid aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="small" id="small">
+        <div class="sz" id="sz">
+            <div id="smallPic"></div>
+            <div id="zoom"></div>
+        </div>
+        <div id="fourPic">
+            <img src="images/huaping.jpg" alt="">
+            <img src="images/angle.jpg" alt="">
+            <img src="images/gamersky.jpg" alt="">
+            <img src="images/view.jpg" alt="">
+        </div>
+    </div>
+    <div class="big" id="big"></div>
+</body>
+<script>
+    var sz=document.getElementById("sz");
+    var smallPic=document.getElementById("smallPic");
+    var zoom=document.getElementById("zoom");
+    var big=document.getElementById("big");
+    var img=document.getElementsByTagName("img");
+    for(var i=0;i<img.length;i++){
+        img[i].onclick=function(){
+            smallPic.style.background="url("+this.src+") no-repeat";
+            smallPic.style.backgroundSize="100% 100%";
+            big.style.background="url("+this.src+") no-repeat";
+//            big.style.backgroundSize="100% 100%";
+        }
+    }
+    var rate=550/200;
+    sz.onmouseover=function(){
+        zoom.style.display="block";
+        big.style.display="block";
+    }
+    sz.onmouseout=function(){
+        zoom.style.display="none";
+        big.style.display="none";
+    }
+    sz.onmousemove=function(event){
+        event=event||window.event;
+        var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+        var scrollLeft = document.body.scrollLeft || document.documentElement.scrollLeft;
+        var x = event.clientX - (getAllLeft(smallPic)-scrollLeft)-100;
+        var y = event.clientY - (getAllTop(smallPic)-scrollTop)-100;
+
+        if(x<0)x=0;
+        if(x>174)x=200;
+        if(y<0)y=0;
+        if(y>174)y=200;
+        zoom.style.top = y +"px";
+        zoom.style.left = x +"px";
+        big.style.backgroundPosition=-x*rate+"px"+" "+-y*rate+"px";
+    }
+    function getAllTop(obj){
+        var allTop = obj.offsetTop;
+        var currentObj = obj;
+        while(currentObj =currentObj.offsetParent){
+            allTop+=currentObj.offsetTop;
+        }
+        return allTop;
+    }
+    function getAllLeft(obj){
+        var allLeft = obj.offsetLeft;
+        var currentObj = obj;
+        while(currentObj =currentObj.offsetParent){
+            allLeft+=currentObj.offsetLeft;
+        }
+        return allLeft;
+    }
+</script>
+</html>
