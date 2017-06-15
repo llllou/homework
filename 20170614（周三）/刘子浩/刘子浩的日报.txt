@@ -1,0 +1,6 @@
+黑科技开始了   
+负边距  css
+.wrap2 .inner{
+  overflow:hidden;
+  margin-right:-10px;
+}

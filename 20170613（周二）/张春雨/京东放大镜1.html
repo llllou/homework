@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.left{
+			width: 400px;
+			height: 600px;
+			margin: 100px;
+		}
+		.smallPic{
+			width: 350px;
+			height: 350px;
+			border: 1px solid #ccc;
+			margin: 25px;
+			position: relative;
+			background: url(image/xiao.jpg) no-repeat;
+		}
+		.smallPic .zoom{
+			position: absolute;
+			top:100px;
+			left: 100px;
+			width: 175px;
+			height: 175px;
+			background: #fede4e;
+			opacity: 0.5;
+			display: none;
+		}
+		.smallPic1{
+			width: 90px;
+			height: 200px;
+			float: left;
+			margin-left: 9px;
+			
+		}
+		.smallPic1 img:hover{
+			border: 1px solid red;
+		}
+		.smallPic1 img{
+			width: 90px;
+			height: 90px;
+			border: 1px solid #fff;
+		}
+		.bigPic{
+			width: 400px;
+			height: 400px;
+			background: url(image/da.jpg) no-repeat;
+			position: absolute;
+			top: 100px;
+			left: 550px;
+			border: 1px solid #000;
+			display: none;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="left" id="left">
+		<div id="smallPic" class="smallPic">
+			
+			<div id="zoom" class="zoom">
+				
+			</div>
+		</div>
+		<div class="smallPic1" id="smallPic1">
+			<img src="image/xiao.jpg" alt="">
+		</div>
+		<div class="smallPic1" id="smallPic2">
+			<img src="image/xiao2.jpg" alt="">
+		</div>
+		<div class="smallPic1" id="smallPic3">
+			<img src="image/xiao2.jpg" alt="">
+		</div>
+		<div class="smallPic1" id="smallPic4">
+			<img src="image/xiao2.jpg" alt="">
+		</div>
+	</div>	
+	<div class="bigPic" id="bigPic">
+			
+	</div>
+</body>
+<script type="text/javascript">
+        //得到元素
+        var smallPic = document.getElementById("smallPic");
+        var zoom = document.getElementById("zoom");
+        var bigPic = document.getElementById("bigPic");
+        var smallPic1 = document.getElementById("smallPic1")
+        var smallPic2 = document.getElementById("smallPic2")
+        var smallPic3 = document.getElementById("smallPic3")
+        var smallPic4 = document.getElementById("smallPic4")
+
+        var rate = 400/175;
+        smallPic.onmouseover=function(){
+            zoom.style.display="block";
+            bigPic.style.display="block";
+        }
+        smallPic.onmouseout=function(){
+            zoom.style.display="none";
+            bigPic.style.display="none";
+        }
+        smallPic.onmousemove=function(event){
+            event = event || window.event;
+            var srcollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            var srcollLeft = document.body.scrollLeft || document.documentElement.scrollLeft;
+            var x = event.clientX-(getAllLeft(smallPic)-srcollLeft)-87;
+            var y = event.clientY-(getAllTop(smallPic)-srcollTop)-87;
+            if(x<0) x=0;
+            if(x > 175) x=175;
+            if(y<0) y=0;
+            if(y > 175) y=175;
+            zoom.style.left=x +"px";
+            zoom.style.top=y +"px";
+            bigPic.style.backgroundPosition=-x*rate +"px"+ " "+ -y*rate +"px";
+        }
+        function getAllTop(obj){
+            var allTop = obj.offsetTop;
+            var currentObj = obj;
+            while(currentObj =currentObj.offsetParent){
+                allTop+=currentObj.offsetTop;
+            }
+            return allTop;
+        }
+        function getAllLeft(obj){
+
+            var allLeft = obj.offsetLeft;
+            var currentObj = obj;
+
+            while(currentObj =currentObj.offsetParent){
+                allLeft+=currentObj.offsetLeft;
+            }
+
+            return allLeft;
+
+        }
+        smallPic1.onclick = function(){
+        	smallPic.style.background = "url(image/xiao.jpg) no-repeat"
+        	bigPic.style.background = "url(image/da.jpg) no-repeat"
+        }
+        smallPic2.onclick = function(){
+        	smallPic.style.background = "url(image/xiao2.jpg) no-repeat"
+        	bigPic.style.background = "url(image/da2.jpg) no-repeat"
+        }
+        smallPic3.onclick = function(){
+        	smallPic.style.background = "url(image/xiao2.jpg) no-repeat"
+        	bigPic.style.background = "url(image/da2.jpg) no-repeat"
+        }
+        smallPic4.onclick = function(){
+        	smallPic.style.background = "url(image/xiao2.jpg) no-repeat"
+        	bigPic.style.background = "url(image/da2.jpg) no-repeat"
+        }
+    </script>
+</html>

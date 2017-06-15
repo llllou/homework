@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style type="text/css">
+			*{
+                margin:0;
+                padding:0;
+            }
+            .smallPic{
+                width: 350px;
+                height: 350px;
+                border:1px solid #ccc;
+                background: url(image/xiao1.jpg);
+                margin:100px;
+                position: relative;
+            }
+            .smallPic .zoom{
+                position:absolute;
+                top:100px;
+                left:100px;
+                width: 175px;
+                height: 175px;
+                background:#FEDE4E;
+                opacity: 0.5;
+                border:1px solid #aaa;
+                display:none;
+            }
+            ul{
+                width: 350px;
+                height: 80px;
+                border:1px solid #fff;
+                margin-left: 100px;
+                margin-top:-95px;
+                list-style: none;
+
+            }
+            ul>li{
+                float: left;
+                width: 78px;
+                height: 78px;
+                border:1px solid #fff;
+                margin-right: 10px;
+            }
+           /* ul>.list1{
+                border:1px solid red;
+            }*/
+            #list4{
+                margin-right: 0;
+            }
+            .bigPic{
+                width: 400px;
+                height: 400px;
+                background:url(image/da1.jpg) no-repeat;
+                position:absolute;
+                top:100px;
+                left:500px;
+                border:1px solid #000;
+                display:none;
+            }
+
+		</style>
+	</head>
+	<body>
+		<div id="smallPic" class="smallPic">
+			
+			<div id="zoom" class="zoom"></div>
+		</div>
+		<ul id="list" class="list">
+            <li id="list1" class="list1"><img src="image/li1.jpg" alt=""></li>
+            <li id="list2"><img src="image/li2.jpg" alt=""></li>
+            <li id="list3"><img src="image/li3.jpg" alt=""></li>
+            <li id="list4"><img src="image/li4.jpg" alt=""></li>
+        </ul>
+		<div class="bigPic" id="bigPic"></div>
+	</body>
+	<script type="text/javascript">
+		var smallPic = document.getElementById("smallPic");
+        var zoom = document.getElementById("zoom");
+        var bigPic = document.getElementById("bigPic");
+      
+        var list1 = document.getElementById("list1");
+        var list2 = document.getElementById("list2");
+        var list3 = document.getElementById("list3");
+        var list4 = document.getElementById("list4");
+       
+
+
+        
+
+        list1.onmouseover = function(){
+        	smallPic.style.background="url(image/xiao1.jpg)";
+        	bigPic.style.background="url(image/da1.jpg)";
+        	list1.style.borderColor="red";
+        }
+        list2.onmouseover = function(){
+        	smallPic.style.background="url(image/xiao2.jpg)";
+        	bigPic.style.background="url(image/da2.jpg)";
+        	list2.style.borderColor="red";
+        }
+        list3.onmouseover = function(){
+        	smallPic.style.background="url(image/xiao3.jpg)";
+        	bigPic.style.background="url(image/da3.jpg)";
+        	list3.style.borderColor="red";
+        }
+        list4.onmouseover = function(){
+        	smallPic.style.background="url(image/xiao4.jpg)";
+        	bigPic.style.background="url(image/da4.jpg)";
+        	list4.style.borderColor="red";
+        }
+
+        list1.onmouseout = function(){
+        	list1.style.borderColor="#fff";
+        }
+        list2.onmouseout = function(){
+        	list2.style.borderColor="#fff";
+        }
+        list3.onmouseout = function(){
+        	list3.style.borderColor="#fff";
+        }
+        list4.onmouseout = function(){
+        	list4.style.borderColor="#fff";
+        }
+
+
+        var rate = 400/175;
+        smallPic.onmouseover=function(){
+            zoom.style.display="block";
+            bigPic.style.display="block";
+        }
+        smallPic.onmouseout=function(){
+            zoom.style.display="none";
+            bigPic.style.display="none";
+        }
+        smallPic.onmousemove=function(event){
+            event = event || window.event;
+            var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            var scrollLeft = document.body.scrollLeft || document.documentElement.scrollLeft;
+            var x = event.clientX - (getAllLeft(smallPic)-scrollLeft)-87;
+            var y = event.clientY - (getAllTop(smallPic)-scrollTop)-87;
+            if(x<0){
+                x=0;
+            }
+            if(x>175){
+                x=175;
+            }
+            if(y>175){
+                y=175;
+            }
+            if(y<0){
+                y=0;
+            }
+            zoom.style.top = y +"px";
+            zoom.style.left = x +"px";
+            bigPic.style.backgroundPosition=-x*rate +"px"+" "+-y*rate+"px";
+        }
+        function getAllTop(obj){
+            var allTop = obj.offsetTop;
+            var currentObj = obj;
+            while(currentObj =currentObj.offsetParent){
+                allTop+=currentObj.offsetTop;
+            }
+            return allTop;
+        }
+        function getAllLeft(obj){
+            var allLeft = obj.offsetLeft;
+            var currentObj = obj;
+            while(currentObj =currentObj.offsetParent){
+                allLeft+=currentObj.offsetLeft;
+            }
+            return allLeft;
+
+        }
+
+	</script>
+</html>

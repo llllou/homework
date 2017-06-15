@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style type="text/css">
+	*{
+	
+		padding:0;
+		margin:0;
+	}
+	.smallPic{
+		width:350px;
+		height:350px;
+		border:1px solid #ccc;
+		margin:100px;
+		position:relative;
+		background:url(image/xiao.jpg) no-repeat;
+	}
+	.smallPic .zoom{
+		position:absolute;
+		top:100px;
+		left:100px;
+		width:175px;
+		height:175px;
+		background-color:#fede4e;
+		opacity:0.5;
+		border:1px solid #aaa;
+		display:none;
+	}
+	.bigPic{
+		width:400px;
+		height:400px;
+		background:url(image/da.jpg) no-repeat;
+		position:absolute;
+		top:100px;
+		left:500px;
+		border:1px solid #000;
+	}
+	.oDiv{
+		width:360px;
+		height:58px;
+		background-color:;
+		top:460px;
+		left:100px;
+		position:absolute;
+	}
+	.oDiv .oUl{
+		float:left;
+		list-style:none;
+	}
+	.oDiv .oUl li{
+		float:left;
+		margin-left:14px;
+	}
+	.oDiv .oUl li img{
+		border:2px solid #fff;
+	}
+	.oDiv .oUl li img:hover{
+		border:2px solid red;
+	}
+</style>
+<body>
+	<div class="smallPic" id="smallPic">
+		<div class="zoom" id="zoom"></div>
+	</div>
+	<div class="bigPic" id="bigPic"></div>
+	<div class="oDiv" id="oDiv">
+		<ul class="oUl" id="oUl">
+			<li><a href="#"><img src="image/xiao1.jpg"></a></li>
+			<li><a href="#"><img src="image/xiao3.jpg"></a></li>
+			<li><a href="#"><img src="image/xiao3.jpg"></a></li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript">
+	var smallPic= document.getElementById("smallPic");
+	var zoom= document.getElementById("zoom");
+	var bigPic= document.getElementById("bigPic");
+	var lis1=document.getElementsByTagName("li")[0];	
+	var lis2=document.getElementsByTagName("li")[1];
+	var lis3=document.getElementsByTagName("li")[2];
+
+
+	//比例，大图800*800，大图盒子400*400
+	//小图盒子350*350 放大镜 175*175
+	//所以放大镜175 大图400
+	var rate = 400/175;
+	//鼠标移入显示
+	smallPic.onmouseover = function(){
+		zoom.style.display = "block";
+		bigPic.style.display = "block";
+	}
+	//移出
+	smallPic.onmouseout = function(){
+		zoom.style.display = "none";
+		bigPic.style.display = "none";
+	}
+	//监听
+	smallPic.onmousemove=function(event){
+		event = event || window.event;
+		
+		var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+		
+		var scrollLeft = document.body.scrollLeft || document.documentElement.scrollLeft;
+		
+		var x =event.clientX-(getAllLeft(smallPic)-scrollLeft)-87;
+		var y =event.clientY-(getAllTop(smallPic)-scrollTop)-87;
+		
+			if(x<0) x=0;
+			if(y<0) y=0;
+			if(x>173){
+				x=173;
+			}
+			if(y>173){
+				y=173;
+			}
+			if(y<0){
+				y=0;
+			}
+		zoom.style.top = y + "px";
+		zoom.style.left = x + "px";
+		
+
+		bigPic.style.backgroundPosition= -x*rate +"px"+" "+ -y*rate+"px";
+	}
+	function getAllLeft(obj){
+		//累加器，累加器的初始值不是0，而是自己现在的offsetLeft值
+		var allLeft = obj.offsetLeft;
+		//当前正在算高度的元素
+		var currentObj = obj;
+
+		while(currentObj = currentObj.offsetParent){
+			allLeft += currentObj.offsetLeft;
+		}
+			return allLeft;
+
+	}function getAllTop(obj){
+		//累加器，累加器的初始值不是0，而是自己现在的offsetTop值
+		var allTop = obj.offsetTop;
+		//当前正在算高度的元素
+		var currentObj = obj;
+
+		while(currentObj = currentObj.offsetParent){
+			allTop += currentObj.offsetTop;
+		}
+			return allTop;
+
+	}
+	lis1.onclick=function(){
+		smallPic.style.background="url(image/xiao.jpg) no-repeat";		bigPic.style.background="url(image/da.jpg) no-repeat";
+
+	}
+	lis2.onclick=function(){
+		smallPic.style.background="url(image/xiao2.jpg) no-repeat";		bigPic.style.background="url(image/da2.jpg) no-repeat";
+
+	}
+	lis3.onclick=function(){
+		smallPic.style.background="url(image/xiao2.jpg) no-repeat";		bigPic.style.background="url(image/da2.jpg) no-repeat";
+
+	}
+</script>
+</html>

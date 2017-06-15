@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width:350px;
+            height:350px;
+            margin:100px auto;
+            position:relative;
+            border:1px solid red;
+        }
+        .box .opacity{
+            width:175px;
+            height:175px;
+            position:absolute;
+            left:87px;
+            top:87px;
+            background: #FEDE4E;
+            opacity:0.5;
+            display: none;
+        }
+        .bigImg{
+            width:400px;
+            height:400px;
+            position:absolute;
+            border:1px solid #000;
+            left:890px;
+            top:100px;
+            display:none;
+            background-image: url(images/big-1.jpg);
+            background-repeat: no-repeat;
+        }
+        .images{
+            position:absolute;
+            left:512px;
+            top:450px;
+        }
+        .images ul{
+            float:left;
+            list-style:none;
+        }
+        .images ul li{
+            float:left;
+            width:52px;
+            height:52px;
+            margin-right:20px;
+            border:2px solid #fff;
+        }
+    </style>
+</head>
+<body>
+        <div class="box" id="oBox">
+            <img  src="images/mid-1.jpg" alt="" id="smallImg">
+            <div class="opacity" id="opacity"></div>
+        </div>
+        <div class="bigImg" id="bigImg"></div>
+        <div class="images">
+            <ul class="detail" id="detail">
+                <li id="first"><img src="images/small-1.jpg" alt=""></li>
+                <li id="second"><img src="images/small-2.jpg" alt=""></li>
+                <li id="third"><img src="images/small-3.jpg" alt=""></li>
+                <li id="fourth"><img src="images/small-4.jpg" alt=""></li>
+            </ul>
+        </div>
+
+</body>
+<script src="common.js"></script>
+<script>
+    var opacity=document.getElementById('opacity');
+    var oBox=document.getElementById('oBox');
+    var bigImg=document.getElementById('bigImg');
+    var detail=document.getElementById('detail');
+    var smallImg=document.getElementById('smallImg');
+    var lis=detail.getElementsByTagName('li');
+    oBox.onmouseover=function(){
+        opacity.style.display='block';
+        bigImg.style.display='block';
+    };
+    oBox.onmouseout=function(){
+        opacity.style.display='none';
+        bigImg.style.display='none';
+    };
+    var rate=175/400;
+    oBox.onmousemove=function(event){
+        event=event || window.event;
+        var scrX=document.body.scrollLeft || document.documentElement.scrollLeft;
+        var scrY=document.body.scrollTop || document.documentElement.scrollTop;
+
+        var x=event.clientX-(getAllLeft(oBox)-scrX)-87;
+        var y=event.clientY-(getAllTop(oBox)-scrY)-87;
+        if(x<0) x=0;
+        if(x>oBox.clientWidth-opacity.clientWidth) x=oBox.clientWidth-opacity.clientWidth;
+
+        if(y<0) y=0;
+        if(y>oBox.clientHeight-opacity.clientHeight) y=oBox.clientHeight-opacity.clientHeight;
+
+        opacity.style.left=x+'px';
+        opacity.style.top=y+'px';
+        bigImg.style.backgroundPosition=(-x/rate)+'px'+' '+(-y/rate)+'px';
+    };
+    for(var i=0;i<lis.length;i++){
+        lis[i].index=i;
+        lis[i].onmouseover=function(){
+            var num=this.index+1;
+            smallImg.src='images/mid-'+ num +'.jpg';
+            bigImg.style.backgroundImage='url(images/big-'+ num +'.jpg)';
+            for(var j=0;j<lis.length;j++){
+                lis[j].style.border='2px solid #fff';
+            }
+            lis[this.index].style.border='2px solid #E53E41';
+        }
+    }
+
+//    detail.onmouseover=function(event){
+//        event = event || window.event;
+//        var ele=event.target;
+//        console.log(ele);
+//        if(ele.id == 'first'){
+//            console.log('first');
+//            smallImg.src='images/mid-1.jpg';
+//            bigImg.style.backgroundImage='images/big-1.jpg';
+//        }else if(ele.id == 'second'){
+//            console.log('second');
+//            smallImg.src='images/mid-2.jpg';
+//            bigImg.style.backgroundImage='images/big-2.jpg';
+//        }else if(ele.id == 'third'){
+//            console.log('third');
+//            smallImg.src='images/mid-3.jpg';
+//            bigImg.style.backgroundImage='images/big-3.jpg';
+//        }else if(ele.id == 'fourth'){
+//            console.log('fourth');
+//            smallImg.src='images/mid-4.jpg';
+//            bigImg.style.backgroundImage='images/big-4.jpg';
+//        }
+//    }
+</script>
+</html>

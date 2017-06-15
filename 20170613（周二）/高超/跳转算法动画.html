@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跳转算法动画</title>
+    <style>
+        body{
+            height: 5000px;
+            background: url(1.jpg);
+        }
+        a{
+            position: fixed;
+            width: 70px;
+            height: 200px;
+            right:10px;
+            bottom:30px;
+            display: none;
+            background: url(rocket.png);
+            background-position: -25px -40px ;
+        }
+    </style>
+</head>
+<body>
+<a href="javascript:;" id="oBtn"></a>
+</body>
+<script type="text/javascript" src="animate.js"></script>
+<script>
+    var oBtn=document.getElementById("oBtn");
+    oBtn.onmouseover=function () {
+        oBtn.style.backgroundPosition=-175+"px "+-40+"px";
+    };
+//    oBtn.onmouseout=function () {
+//        oBtn.style.backgroundPosition=-25+"px "+-40+"px";
+//    };
+    oBtn.onmousedown=function () {
+        scrollAnimate(0,5000);
+        oBtn.style.backgroundPosition=-325+"px "+-40+"px";
+    };
+    window.onscroll=function () {
+        var tr=document.body.scrollTop||document.documentElement.scrollTop;
+        if(tr>1000){
+            oBtn.style.display='block';
+        }else{
+            oBtn.style.display='none';
+        }
+    };
+        function scrollAnimate(target,time){
+            var framNumver=0; //每帧的编号
+            var start=document.body.scrollTop||document.documentElement.scrollTop; //起点
+            //运动的距离
+            var distance=target-start;
+            var interval=50;
+            var maxFrame=time/interval;
+//            最大帧数
+
+//            定时器设表先关
+            clearInterval(timer);
+            var timer=setInterval(function () {
+                framNumver++;
+                if(framNumver==maxFrame){
+                    clearInterval(timer);
+                }
+//调用算法
+             document.body.scrollTop=document.documentElement.scrollTop=Tween.Cubic.easeInOut(framNumver,start,distance,maxFrame);
+
+
+
+            },interval)
+        }
+
+</script>
+</html>
