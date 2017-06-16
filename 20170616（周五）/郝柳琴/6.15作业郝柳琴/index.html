@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 80px;
+            height: 100px;
+            background: url("apple.png") no-repeat;
+            background-size: 100%;
+            text-align: center;
+            line-height: 122px;
+            font-size: 35px;
+            position: absolute;
+            top:0;
+            left:0;
+            color:white;
+        }
+        .grass{
+            background: url("gamersky_006origin_011_2013961452C37.jpg") no-repeat;
+            background-size: 100% 100%;
+            width: 100%;
+            height: 650px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <p class="grass"></p>
+</body>
+<script>
+
+    function Apple(top,left,speed){
+        this.dom = null;
+        this.top = top;
+        this.left = left;
+        this.speed = speed;
+//        this.step = 0;
+        this.timer = 0;
+        this.arr = ["a", "b", "c", "d", "e", "f", "g", "h",
+            "i", "j", "k", "l", "m", "n", "o", "p", "q", "r","s","t","u","v","w","x","y","z"];
+        this.arrs = this.arr[parseInt(Math.random() * 26)];
+        this.init = function(){
+            this.dom = document.createElement("div");
+            this.dom.style.left = this.left + "px";
+            this.dom.style.top = this.top + "px";
+            this.dom.innerText=this.arrs;
+            document.body.appendChild(this.dom);
+        };
+        this.drop = function(){
+            var self = this;
+            self.timer = setInterval(function(){
+                self.top+=4;//速度
+                self.dom.style.top = self.top+"px";
+                if(self.top>450){
+                    self.die();
+                }
+            },this.speed);
+            var num = 0;
+            var sro = 0;
+            document.addEventListener("keydown", function (event) {
+                event = event||window.event;
+                if (event.key == self.arrs) {
+                    self.die();
+                    sro++;
+                    if(sro>100){
+                        alert("恭喜你过关，进入下一关!");
+                        clearInterval(tim);
+                        document.body.removeChild(self.dom);
+                        return sro=0;
+                    }
+
+                }
+                else {
+                    num ++;
+                    if(num > 50){
+                        alert("GAME OVER!");
+                        alert("您的成绩是：" + sro);
+                        clearInterval(tim);
+                        document.body.removeChild(self.dom);
+                    }
+                }
+            }, false);
+        };
+        this.die = function(){
+            clearInterval(this.timer);
+            document.body.removeChild(this.dom);
+        }
+        this.init();
+        this.drop();
+    }
+    var tim = setInterval(function(){
+        new Apple(Math.random()*100,Math.random()*1000,Math.random()*100);
+    },1000);
+
+</script>
+</html>
