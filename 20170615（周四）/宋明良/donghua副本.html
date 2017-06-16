@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<meat charset="utf-8">
+<style type="text/css">
+		div{
+		width: 80px;
+		height: 100px;
+		background: red;
+		background-repeat: no-repeat;
+		background-position:0px -218px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+</style>
+<body>
+
+</body>
+<script type="text/javascript">
+	function Girl(top, left, speed){
+		this.dom = null;
+		this.top = top;
+		this.left = left;
+		this.speed = speed;
+		this.step = 0;
+		this.timer = 0;
+		this.arr = ["a", "b", "c", "d", "e", "f", "g", "h",
+            "i", "j", "k", "l", "m", "n", "o", "p", "q", "r","s","t","u","v","w","x","y","z"];
+        this.arrs = this.arr[parseInt(Math.random() * 26)];
+
+		this.init = function(){
+           this.dom = document.createElement("div");
+           this.dom.style.left = this.left +"px";
+           this.dom.style.top = this.top +"px";
+              this.dom.innerText=this.arrs;
+           document.body.appendChild(this.dom);
+		}
+		this.walk =function(){
+			var self = this;
+			//this是指方法外面的this
+            this.timer =setInterval(function(){
+             self.step++;
+             if ( self.step >7) {
+             	self.step = 0
+             }
+             self.dom.style.backgroundPositionX = - self.step * 79 + "px";
+             self.top += 4;
+             if (self.top > 1000) {
+             	self.top = 1000;
+             	if (self.top = 1000) {
+             		self.die();
+             	}
+             }
+
+             self.dom.style.top = self.top +"px";
+            },this.speed);
+            var num = 0;
+            var sro = 0;
+            document.addEventListener("keydown", function (event) {
+                event = event||window.event;
+                if (event.key == self.arrs) {
+                    self.die();
+                    sro++;
+                    return sro;
+                }
+                else {
+                    num ++;
+                    if(num > 50){
+                        alert("GAME OVER!");
+                        alert("您的成绩是：" + sro);
+                        clearInterval(tim);
+                        document.body.removeChild(self.dom);
+                    }
+                }
+            }, false);
+		}
+		this.die = function(){
+			clearInterval(this.timer);
+			document.body.appendChild(this.dom);
+		}
+           this.init();
+           this.walk();
+	}
+	setInterval(function(){
+		new Girl(Math.random() * 100, Math.random() * 1000, Math.random() * 30)
+	},500);
+
+</script>
+</html>

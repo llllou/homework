@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <style>
+        *{
+            padding:  0;
+            margin:  0;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            background:url("img/greenApple.png");
+            background-size: 100% 100%;
+            position:  absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            line-height: 120px;
+            font-size: 22px;
+            font-weight: bold;
+            color: hsl(100,100%,50%);
+        }
+        body{
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+<script>
+
+    function Apple(top, left, speed, inner){
+        var arr=["a","b","c","d","e","f","g","h","i","j","k","i","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+        this.dom = null;
+        this.top = top;
+        this.left = left;
+        this.speed = speed;
+        this.step = 0;
+        this.timer = 0;
+        this.inner = arr[inner];
+        this.init = function() {
+            this.dom = document.createElement("div");
+            this.dom.style.left = this.left + "px";
+            this.dom.style.top = this.top + "px";
+            this.dom.innerText = this.inner;
+            document.body.appendChild(this.dom);
+        }
+        this.walk = function() {
+            var  self = this ;
+            this.timer = setInterval(function() {
+                self.dom.style.backgroundPositionX =  -self.step*79+"px";
+                self.top +=4;
+                if(self.top > 500){
+                    self.die();
+                }
+                self.dom.style.top = self.top + "px";
+            },this.speed);
+            document.addEventListener("keyup",function (event) {
+                event = event||window.event;
+                if(event.key === self.inner){
+                    self.die();
+                }
+            },false);
+
+        }
+        this.die = function() {
+            clearInterval(this.timer);
+            document.body.removeChild(this.dom);
+        }
+        this.init();
+        this.walk();
+    }
+  setInterval(function() {
+    new Apple(Math.random()*100,Math.random()*1000,100,parseInt(Math.random()*26));
+  },1000);
+
+//    console.log(a.inner);
+//document.body.onkeyup = function (event) {
+//    event = event ||window.event;
+//    if (event.key =)
+//}
+</script>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box{
+            width:500px;
+            height:500px;
+            background: orange;
+            margin: 50px auto;
+            border:1px solid #000;
+            position:relative;
+
+        }
+        .score{
+            display: inline-block;
+            position:absolute;
+            right:0;
+            width:60px;
+            height:20px;
+            background: blue;
+            text-align: center;
+            line-height: 20px;
+            font-size:20px;
+            color:#fff;
+        }
+        .apple{
+            width:35px;
+            height:35px;
+            border-radius: 50%;
+            background: url(images/apple.png) no-repeat center center /60px 60px ;
+            text-align: center;
+            line-height: 35px;
+            font-size:28px;
+            color:#fff;
+            position:absolute;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <span id="score" class="score"></span>
+    </div>
+</body>
+<script>
+    var score=0;
+    function Apple(left,top,speed){
+        this.left = left;
+        this.top = top;
+        this.speed = speed;
+        this.box = document.getElementById('box');
+        this.scoreEle = document.getElementById('score');
+        this.letter = null;
+        this.timer = 0;
+        this.init=function(){
+            this.apple = document.createElement('div');
+            this.apple.className = 'apple';
+            document.body.appendChild(this.box);
+            this.box.appendChild(this.apple);
+            this.scoreEle.innerHTML=score;
+
+            var arr = ['a','b','c','d','e','f','g',
+                'h','i','j', 'k','l','m','n','o',
+                'p','q','r','s','t','u','v','w',
+                'x','y','z'
+            ];
+            this.letter = arr[parseInt(Math.random()*26)];
+            this.apple.innerHTML = this.letter;
+        };
+
+        this.drop=function(){
+            var self = this;
+            timer = setInterval(function(){
+
+                self.top += 4;
+                if(self.top + 35 > 500){
+                    self.die();
+                }
+                self.apple.style.top = self.top + 'px';
+                self.apple.style.left = self.left + 'px';
+            },this.speed);
+            document.addEventListener('keydown',function(eve){
+                eve = eve || window.event;
+                if(self.apple && (eve.key == self.apple.innerHTML)){
+                    self.box.removeChild(self.apple);
+                    score += 1;
+                    self.scoreEle.innerHTML=score;
+                }
+            },false);
+        };
+        this.die = function(){
+            this.box.removeChild(this.apple);
+        };
+        this.init();
+        this.drop();
+//        this.die();
+    }
+    setInterval(function(){
+        new Apple(Math.random() * 465,0,100);
+    },500);
+
+</script>
+</html>
