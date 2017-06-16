@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+ <meta charset="UTF-8">
+ <title></title>
+ <style>
+  body,button{
+   margin: 0;
+   padding: 0;
+  }
+  body {
+   background: #333;
+  }
+  #game {
+   width: 400px;
+   margin: 0 auto;
+  }
+  #start {
+   width: 80px;
+   height: 40px;
+  }
+  span {
+   margin: 20px;
+   color: white;
+  }
+  .letter {
+   position: absolute;
+   color: yellow;
+   font: bold 30px "Arial";
+  }
+ </style>
+</head>
+<body>
+<div id="game">
+     <button id="start">开始</button>
+     <span>得分:<i id="scroll">0</i></span>
+     <span>计时:<i id="time">0</i></span>
+</div>
+</body>
+<script>
+    window.onload= function () {
+        var start = document.getElementById("start");
+        var scroll = document.getElementById("scroll");
+        var time = document.getElementById("time");
+        var timenum = 0 ;//时间的计数
+        var num = 0 ;//成绩的计数
+        var gameover = false ;
+        var timeandtime = null;
+        var letters = null ;
+        //字母放在一个字符串里面，随机选取
+        var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        start.onclick= function () {
+            for(var i = 0 ;i<26;i++){
+                new letter();
+            }
+            letters = document.body.children;
+            document.onkeydown = function (event) {
+                var evt = eventUtil.getEvent(event);
+                var keychar = String.fromCharCode(evt.keyCode);
+                for(var i = 1 ;i<letters.length;i++){
+                    if(keychar == letters[i].innerHTML){
+                        num++;
+                        scroll.innerHTML = num;
+                        document.body.removeChild(letters[i]);
+                    }
+                }
+            }
+            timeandtime=setInterval(function () {
+                timenum = timenum + 1 ;
+                console.log(letters);
+                if(letters.length==1){
+                    gameover = true ;
+                    clearInterval(timeandtime);
+                    alert("用时"+timenum+"秒，再接再厉！突破10秒！");
+                } else {
+                    time.innerHTML = timenum;
+                }
+            },1000)
+        }
+
+        function letter(){
+            this.x=Math.random()*900+100;
+            this.y=0;
+            this.speedY = Math.random()*4+1;
+            this.value = str[parseInt(Math.random()*25)];
+            var letDiv = document.createElement("div");
+            letDiv.className = "letter";
+            letDiv.style.top = this.y+"px";
+            letDiv.style.left = this.x+ "px";
+            letDiv.innerHTML = this.value;
+            document.body.appendChild(letDiv);
+
+            var that = this ;
+            this.timer=setInterval(function () {
+
+                that.y = that.y + that.speedY;
+                if(that.y>=client().height-letDiv.offsetHeight){
+                    that.y = 0;
+                    that.x = Math.random()*900+100;
+                }
+                if(!gameover){
+                    letDiv.style.left = that.x + "px";
+                    letDiv.style.top = that.y + "px";
+                } else {
+                    clearInterval(that.timer);
+                }
+            },15)
+
+</script>
+</html>
