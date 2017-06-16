@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                background:black;
+            }
+            div{
+                width: 100px;
+                height: 100px;
+                background:url(image/111.png) no-repeat;
+                background-size: 100% 100%;
+                position: absolute;
+                top:0;
+                left: 0;
+                border-radius: 50%;
+                font-size: 30px;
+                color:white;
+                font-weight: 900;
+                line-height: 100px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+    </body>
+    <script>
+            function  Apples(top, left, speed,inner){
+                var  letter=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+                this.dom = null;
+                this.top = top;
+                this.left = left;
+                this.speed = speed;
+                this.timer=0;
+                this.inner=letter[inner];
+                 // console.log(this.dom.event.key);
+                this.create = function(){
+                    
+                    this.dom = document.createElement("div");
+                    this.dom.innerHTML=this.inner;
+                    this.dom.style.top = this.top+"px";
+                    this.dom.style.left = this.left+"px";
+                    document.body.appendChild(this.dom);
+                    
+                }
+               
+                // var  keys=this;
+                // var letters=this.dom.innerText.event.key;
+                // console.log(letters);
+                
+                
+                this.drop = function(){
+                    var index=this;
+                    this.timer=setInterval(function(){
+                        index.timer+=5;
+                        if(index.timer>400){
+                            // index.die();
+                            index.dom.style.display="none";
+                        }
+                    index.dom.style.top=index.timer+"px";
+                    },this.speed);
+                    document.addEventListener("keyup",function(event){
+                        event = event ||window.event;
+                        if(event.key ===index.inner){
+                            index.dom.style.display="none";
+                        }
+
+                    }, false)
+
+                }
+                
+                // this.die = function() {
+                //      document.body.removeChild(this.dom);
+                // }
+                this.create();
+                this.drop();
+            }
+        var count=0;
+        var num;
+        num=setInterval(function(){
+            count++;
+            if(count>100){
+                clearInterval(num);
+                alert("游戏结束！");
+            }
+            new Apples(0, Math.random() * 1266+1, parseInt( Math.random()*51+100),parseInt( Math.random()*26));
+        },1000);
+
+
+    </script>
+</html>
