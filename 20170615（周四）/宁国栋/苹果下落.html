@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style>
+	 body{
+			background: #000;
+		}
+     div{
+     	width: 80px;
+     	height: 100px;
+     	background:url(images/apple.png) no-repeat;
+     	position: absolute;
+     	top: 0;
+     	text-align: center;
+	     padding-top: 30px;
+	     color: #fff;
+	     font-size: 50px;
+     }
+	</style>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+		var shuzu = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'];
+	
+	function Girl(top, left, speed) {//构造一个初步函数
+		this.dom = null;//定义一个空对象
+		this.top = top;//定义上边距
+		this.speed =speed;//定义速度
+		this.step = 0;//定义图片移动
+		this.timer =0;//定义时间
+		
+        //this.shuzus=shuzu[parseInt(Math.random() * 26)];
+		
+		this.init = function()//创建div的函数
+		{
+			this.dom = document.createElement('div');
+			//创建一个div
+			this.dom.style.left = left+'px';
+			this.dom.style.top = top + 'px';
+			//刚开始走距离上面的距离
+			this.dom.innerText=shuzu[parseInt(Math.random() * 26)];
+document.onkeydown=function(event){
+                  event = event ||window.event;
+                
+                  if(event.key==this.shuzu)
+                  {
+                  	this.die();
+                  }
+               
+               }
+
+			document.body.appendChild(this.dom);
+			//添加this.dom节点
+		}
+
+		this.walk = function() {
+			//this是指方法外面的this
+			var self=this;//指的是方法外面的this 
+			this.timer = setInterval(function(){
+              self.top += 4; //移动的步长
+              if (self.top > 800)//如果距左大于1000
+              {
+              	self.die();//停止定时器
+              }
+              self.dom.style.top = self.top + "px";
+              //结束之后的距离
+               
+			},this.speed)//指速度
+		}
+
+		this.die = function() {
+			clearInterval(this.timer);//关闭定时器
+			document.body.removeChild(this.dom);//删除这个节点
+		}
+       this.init();//吊用函数
+       this.walk();
+	}
+	//给上面的对象取值
+	setInterval(function(){
+       new Girl (Math.random() * 600,Math.random() * 1800,Math.random() * 300);
+	},500)
+ 
+</script>
+</html>
