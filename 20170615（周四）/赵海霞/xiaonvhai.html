@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div { width: 300px;
+        height: 400px;
+        background-image: url(xiaopingguo.jpg);
+        background-repeat: no-repeat;
+		position: absolute;
+		top: 0;
+		left: 0;
+		text-align:center;
+		font-size:30px;
+		line-height: 300px;
+		}
+		p{
+		width: 200px;
+		height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<p id="p1"></p>
+	<p id="p2"></p>
+</body>
+<script type="text/javascript">
+	var arr = [];
+	var p1 = document.getElementById("p1");
+	var p2 = document.getElementById("p2");
+	var miss = 0;
+	var score = 0;
+	 function pingguo(left, speed) {
+        this.dom = null;
+        this.left = left;
+        this.speed = speed;
+        this.step = 0;
+        this.top = 0;
+        this.timer = 0;
+        var arr1 = [
+          	  "a" , "b" , "c" , "d" , "e" , "f" , "g" , "h" , "i" , "j" , "k" , "l" , "m" , "n" , "o" , "p" , "q" , "r" , "s" , "t" , "u" , "v" , "w" , "x" , "y" , "z"
+          ];
+        
+        this.init = function() {
+            this.dom = document.createElement('div');
+            this.dom.style.left = this.left + 'px';
+            this.dom.innerHTML = arr1[parseInt(Math.random()*26)]+"";
+            arr.push(this.dom.innerHTML);
+            document.body.appendChild(this.dom);
+        }
+        this.walk = function() {
+          var self = this;
+          //this是指方法外面的this
+          
+          this.timer = setInterval(function(){
+            
+            //改变背景图片的位置
+            self.top += self.speed;
+            self.dom.style.top = self.top + "px";
+
+            //改变自身位置
+            if (self.top > 1000 ) {
+            	self.die();
+            	miss ++;
+            	p2.innerHTML=miss;
+            	for (var i = 0; i < arr.length; i++) {
+            		if(arr[i] == self.dom.innerHTML){
+            			arr.splice(i,1);
+            		}
+            	}
+
+            }
+            
+	            
+	     			
+	            	
+        			
+        },Math.random()*10)
+      }
+
+        this.die = function() {
+          clearInterval(this.timer);
+          document.body.removeChild(this.dom);
+        };
+        this.init();
+        this.walk();
+       
+      }
+      document.onkeydown = function(event){
+            	event = event || window.event;
+	            for (var i = 0; i < arr.length; i++) {
+	            	switch(arr[i]){
+	            		case "a" :
+	            		arr[i] = 65;
+	            		break;
+	            		case "b" :
+	            		arr[i] = 66;
+	            		break;
+	            		case "c" :
+	            		arr[i] = 67;
+	            		break;
+	            		case "d" :
+	            		arr[i] = 68;
+	            		break;
+	            		case "e" :
+	            		arr[i] = 69;
+	            		break;
+	            		case "f" :
+	            		arr[i] = 70;
+	            		break;
+	            		case "g" :
+	            		arr[i] = 71;
+	            		break;
+	            		case "h" :
+	            		arr[i] = 72;
+	            		break;
+	            		case "i" :
+	            		arr[i] = 73;
+	            		break;
+	            		case "j" :
+	            		arr[i] = 74;
+	            		break;
+	            		case "k" :
+	            		arr[i] = 75;
+	            		break;
+	            		case "l" :
+	            		arr[i] = 76;
+	            		break;
+	            		case "m" :
+	            		arr[i] = 77;
+	            		break;
+	            		case "n" :
+	            		arr[i] = 78;
+	            		break;
+	            		case "o" :
+	            		arr[i] = 79;
+	            		break;
+	            		case "p" :
+	            		arr[i] = 80;
+	            		break;
+	            		case "q" :
+	            		arr[i] = 81;
+	            		break;
+	            		case "r" :
+	            		arr[i] = 82;
+	            		break;
+	            		case "s" :
+	            		arr[i] = 83;
+	            		break;
+	            		case "t" :
+	            		arr[i] = 84;
+	            		break;
+	            		case "u" :
+	            		arr[i] = 85;
+	            		break;
+	            		case "v" :
+	            		arr[i] = 86;
+	            		break;
+	            		case "w" :
+	            		arr[i] = 87;
+	            		break;
+	            		case "x" :
+	            		arr[i] = 88;
+	            		break;
+	            		case "y" :
+	            		arr[i] = 89;
+	            		break;
+	            		case "z" :
+	            		arr[i] = 90;
+	            		break;
+	            	}
+	        	} 
+	        	
+	            	if (event.keyCode == arr[i]) {
+	            		self.die();
+	            		arr.splice=(i,1);
+	            		score += 1;
+	            		p1.innerHTML=score;
+	            	}         	
+       		 		
+	     	}
+
+      setInterval(function(){
+        new pingguo(  Math.random() * 1000 , Math.random() * 3 );
+      }, 5)
+</script>
+</html>
