@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div{
+            width: 80px;
+            height: 119px;
+            line-height: 119px;
+            text-align: center;
+            background: url("emo.jpg") no-repeat;
+            background-position: -50px 0px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <!--<div></div>-->
+</body>
+<script type="text/javascript">
+    var arr = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+    function apple(left,speed) {
+        this.dom = null;
+        this.left = left;
+        this.speed = speed;
+        this.step = 0;
+        this.init = function () {
+            this.dom = document.createElement("div")
+            this.dom.style.left = this.left + "px";
+            document.body.appendChild(this.dom);
+            this.dom.innerHTML = arr[parseInt(Math.random()*26)];
+//            console.log(parseInt(Math.random()*26))
+        }
+        this.walk = function () {
+            var self = this;
+            var boom = parseInt(Math.random()*10+1);
+//            console.log(boom);
+            this.timer = setInterval(function () {
+                self.step++;
+                var newtop = self.step * self.speed;
+                if (newtop %  boom=== 0 ) {
+                    self.dom.style.backgroundPosition = "-155px"+" "+"0px";
+                }//炸弹
+                if (newtop > 500)self.die();
+                self.dom.style.top = newtop + "px";
+
+            },50)
+        };
+        this.die = function () {
+            clearInterval(this.timer);
+            document.body.removeChild(this.dom);
+        };
+        this.init();
+        this.walk();
+    }
+    var aa = [];
+    var  timer = setInterval(function () {
+         aa.push(new apple(Math.random()*1300,10))
+    },1000)
+
+    document.onkeyup = function (event) {
+        for (var i = 0;i < aa.length; i++){
+        if (event.key == aa[i].dom.innerHTML){
+            aa[i].die();
+            aa.splice(i,1);
+            console.log(aa);
+        }
+        }
+    }
+
+//    document.addEventListener("keyup",function(event){
+//        console.log(event);
+//    },false);
+//    for (var i = 0;i<100;i++){
+//        if (i >= 90 ) break;
+////        console.log( parseInt(Math.random()*25)+65);
+//    }
+</script>
+</html>
