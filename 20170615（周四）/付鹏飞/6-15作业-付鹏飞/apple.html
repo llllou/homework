@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>apple</title>
+    <style type="text/css">
+        div{
+            height:100px;
+            width: 100px;
+            background-image: url(apple.png);
+            background-size: 100px;
+            position: absolute;
+            top:0;
+            left: 0;
+            text-align: center;
+            color: #000000;
+            line-height: 100px;
+            font-size: 30px;
+        }
+        button{
+            width: 100px;
+            height: 40px;
+            background: #000000;
+            position: fixed;
+            right: 100px;
+            top: 100px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+
+    function Apple(top,left) {
+//        this.char=char;
+        this.dom=null;
+        this.top=top;
+        this.left=left;
+        this.timer=0;
+//        this.step=0;
+        this.btn=null;
+
+
+        this.init=function () {
+            var chars=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+            this.btn=document.createElement('button');
+            this.dom=document.createElement('div');
+            this.apples=chars[parseInt(Math.random()*26)];
+            this.dom.innerHTML=this.apples;
+            this.btn.innerHTML='start';
+            this.dom.style.left=this.left+'px';
+            this.dom.style.top=this.top+'px';
+            document.body.appendChild(this.dom);
+            document.body.appendChild(this.btn);
+        }
+
+        this.walk=function () {
+            var self=this;
+            self.timer=setInterval(function () {
+//                改变自身位子
+                self.top+=10;
+                if(self.top>500){
+                    self.die();
+                }
+                self.dom.style.top=self.top+"px";
+            },100);
+            document.addEventListener("keydown",function (event) {
+//                var sun=String.fromCharCode(event.keyCode);
+//                for(var i=0;i<apples.length;i++){
+                    if(event.key == self.apples){
+
+//                        console.log(self.apples);
+                        self.die();
+                    }
+//                }
+            },false);
+        }
+        this.die = function() {
+            clearInterval(this.timer);
+            document.body.removeChild(this.dom);
+        }
+        this.init();
+        this.walk();
+
+    }
+
+    setInterval(function () {
+        new Apple(0,Math.random()*1000)
+    },1000)
+</script>
+</html>
