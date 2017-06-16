@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            padding:0;
+            margin:0;
+        }
+        body{
+            width:100%;
+            height: 700px;
+        }
+        div{
+            width: 50px;
+            height: 100px;
+            position:absolute;
+            top:0;
+            left:0;
+            background:url("images/apple.png");
+            background-size:100% 100%;
+            text-align: center;
+            line-height: 100px;
+            color: #ffffff;
+            font-size: 50px;
+        }
+        #oDiv{
+            width: 150px;
+            height: 30px;
+            color:#fff;
+            position:absolute;
+            background:#ff4411;
+            line-height: 30px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="oDiv" class="oDiv">分数:---难度:---</div>
+</body>
+    <script type="text/javascript">
+        var oDiv = document.getElementById("oDiv");
+        var apples = [];
+        var grade = 0;
+        var difficulty = 1;
+        function diamonds( left, speed){
+            this.dom = null;
+            this.left = left;
+            this.speed = speed;
+            this.timer = 0;
+            this.newTop = 0;
+            this.arr=[
+                "A","B","C","D","E",
+                "F","G","H","I","J",
+                "K","L","M","N","O",
+                "P","Q","R","S","T",
+                "U","V","W","X","Y",
+                "Z"];
+            this.init = function () {
+                this.dom = document.createElement("div");
+                this.dom.style.left = this.left+"px";
+                this.dom.innerText = this.arr[parseInt(Math.random()*this.arr.length)];
+                document.body.appendChild(this.dom);
+            };
+            this.walk = function () {
+                var self = this;
+                self.timer = setInterval(function () {
+                    self.newTop++;
+                    if(self.newTop > 700 ){
+                        self.die();
+                    }
+                    self.dom.style.top = self.newTop+"px";
+                },this.speed * difficulty);
+            };
+            this.die = function () {
+                clearInterval(this.timer);
+                document.body.removeChild(this.dom);
+            };
+            this.init();
+            this.walk();
+        }
+        setInterval(function () {
+            apples.push(new diamonds(Math.random()*1500+100,Math.random()*20));
+        },2000);
+        document.onkeydown = function (event) {
+            event = event || window.event;
+            var key = String.fromCharCode(event.keyCode);
+            for(var i = 0 ; i < apples.length; i++){
+                apples[i].index=i;
+                if(apples[i].dom.innerText == key){
+                    apples[i].die();
+                    apples.splice(i,1);
+                    console.log(apples);
+                    grade+=2;
+                    if(grade > 20){
+                        difficulty+=2;
+                    }if(grade > 40){
+                        difficulty+=5;
+                    }if(grade > 60){
+                        difficulty+=7;
+                    }
+                    console.log(grade);
+                    oDiv.innerText = "分数:" + grade +"难度:"+ difficulty ;
+                    break;
+                }else{
+                    grade--;
+                    oDiv.innerText = "分数:" + grade +"难度:"+ difficulty ;
+                    if (grade <= 0){
+                        alert("游戏结束") ;
+                        window.location.reload();
+                    }
+                }
+            }
+        };
+    </script>
+</html>
