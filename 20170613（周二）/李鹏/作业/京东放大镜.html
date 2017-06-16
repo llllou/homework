@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            *{
+                margin:0;
+                padding:0;
+            }
+            .smallPic{
+                width: 350px;
+                height: 350px;
+                border:1px solid #ccc;
+                margin:100px  100px 0 100px;
+                position: relative;
+            }
+            .smallPic .zoom{
+                position:absolute;
+                top:100px;
+                left:100px;
+                width: 175px;
+                height: 175px;
+                background:#FEDE4E;
+                opacity: 0.5;
+                border:1px solid #aaa;
+                display:none;
+            }
+            .bigPic{
+                width: 400px;
+                height: 400px;
+                background:url(da.jpg) no-repeat;
+                position:absolute;
+                top:100px;
+                left:500px;
+                border:1px solid #000;
+                display:none;
+            }
+            #imgList {
+                margin-left:100px;
+            }
+            #imgList img {
+                width:60px;height:60px;margin-left:15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="smallPic" id="smallPic">
+            <img src="xiao.jpg" alt="" id = "oImg"/>
+            <div class="zoom" id="zoom"></div>
+        </div>
+        <div id="imgList">
+            <img src="1.jpg" alt="">
+            <img src="2.jpg" alt="">
+            <img src="3.jpg" alt="">
+            <img src="4.jpg" alt="">
+        </div>
+        <div class="bigPic" id="bigPic">
+        </div>
+    </body>
+    <script type="text/javascript">
+        //得到元素
+        var smallPic = document.getElementById("smallPic");
+        var zoom = document.getElementById("zoom");
+        var bigPic = document.getElementById("bigPic");
+        var imglist = document.querySelectorAll("#imgList img");
+        var oImg = document.getElementById("oImg");
+        for (var i = 0;i < imglist.length; i++){
+            (function (i) {
+                imglist[i].onclick = function() {
+                    oImg.src = i+"1.jpg";
+                    bigPic.style.backgroundImage = "url(" + i +"11.jpg)";
+
+                }
+            })(i);
+
+        }
+
+        //鼠标移入显示
+        smallPic.onmouseover=function(){
+            zoom.style.display="block";
+            bigPic.style.display="block";
+
+        }
+        //鼠标移出显示
+        smallPic.onmouseout=function(){
+            zoom.style.display="none";
+            bigPic.style.display="none";
+
+        }
+
+        //监听
+        smallPic.onmousemove=function(event){
+            event = event || window.event;
+            var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            var scrollLeft = document.body.scrollLeft || document.documentElement.scrollLeft;
+
+            // 周转一下，得到x ， y
+            var x = event.clientX - (getAllLeft(smallPic)-scrollLeft)-87;
+            var y = event.clientY - (getAllTop(smallPic)-scrollTop)-87;
+            if (x < 0) x = 0;
+            if (x > smallPic.offsetWidth - zoom.offsetWidth) {
+                x = smallPic.offsetWidth - zoom.offsetWidth
+            }
+            if (y < 0) y = 0;
+            if (y > smallPic.offsetHeight - zoom.offsetHeight) {
+                y = smallPic.offsetHeight - zoom.offsetHeight
+            }
+            zoom.style.top = y +"px";
+            zoom.style.left = x +"px";
+            var parecntX = x/( smallPic.offsetWidth - zoom.offsetWidth);
+            var parecntY = y/( smallPic.offsetHeight - zoom.offsetHeight);
+            bigPic.style.backgroundPosition=-parecntX*(800-bigPic.offsetWidth)+ "px" +
+                    " " + -parecntY*(800-bigPic.offsetHeight) + "px";
+
+
+            return false;
+        }
+
+        function getAllTop(obj){
+            //累加器 ，累加器的初始值不是0，而是自己现在的offsetTop值
+            var allTop = obj.offsetTop;
+            //当前正在算高度的元素
+            var currentObj = obj;
+
+            while(currentObj =currentObj.offsetParent){
+                allTop+=currentObj.offsetTop;
+            }
+
+            return allTop;
+
+        }
+        function getAllLeft(obj){
+            //累加器 ，累加器的初始值不是0，而是自己现在的offsetTop值
+
+            var allLeft = obj.offsetLeft;
+
+            //当前正在算高度的元素
+            var currentObj = obj;
+
+            while(currentObj =currentObj.offsetParent){
+                allLeft+=currentObj.offsetLeft;
+            }
+
+            return allLeft;
+
+        }
+    </script>
+</html>

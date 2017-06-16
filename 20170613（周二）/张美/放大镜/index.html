@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>名鞋库</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+        body{
+            background: url(img/qwer.jpg);
+        }
+        .oDiv{
+            width:351px;
+            height:351px;
+            border:1px solid greenyellow;
+            margin:100px 100px;
+            position: relative;
+         }
+        .oDiv .move{
+            width:175px;
+            height:175px;
+            background: #ccc;
+            opacity:0.4;
+            position: absolute;
+            left:87px;
+            top:87px;
+            display: none;
+        }
+        .big{
+            width:401px;
+            height:401px;
+            border:1px solid skyblue;
+            position: absolute;
+            left:460px;
+            top:100px;
+            background:url(img/111.jpg) no-repeat;
+            display: none;
+        }
+        .oUl{
+            position: absolute;
+            left:100px;
+            top:470px;
+        }
+        .oUl li{
+            width:51px;
+            height:51px;
+            border:1px solid red;
+            float:left;
+            margin-left:32px;
+        }
+</style>
+</head>
+<body>
+<div id="oDiv" class="oDiv">
+    <img src="img/11.jpg" alt="" id="middle">
+    <div class="move" id="move"></div>
+</div>
+<div class="big" id="big"></div>
+<ul id="oUl" class="oUl">
+    <li id="one"><a href="javascript:;"><img src="img/1.jpg" alt=""></a></li>
+    <li id="two"><a href="javascript:;"><img src="img/2.jpg" alt=""></a></li>
+    <li id="three"><a href="javascript:;"><img src="img/3.jpg" alt=""></a></li>
+    <li id="four"><a href="javascript:;"><img src="img/4.jpg" alt=""></a></li>
+</ul>
+</body>
+<script type="text/javascript">
+
+    var oDiv = document.getElementById("oDiv");
+    var middle = document.getElementById("middle");
+    var move = document.getElementById("move");
+    var big = document.getElementById("big");
+    var oUl = document.getElementById("oUl");
+    var Lis =oUl.getElementsByTagName("li");
+
+    oDiv.onmouseover = function () {
+
+        move.style.display = "block";
+
+        big.style.display = "block";
+
+    }
+
+    oDiv.onmouseout = function () {
+
+        move.style.display = "none";
+
+        big.style.display = "none";
+
+    }
+
+    var rate = 400/175;
+
+    oDiv.onmousemove = function (event) {
+
+        event = event || window.event;
+
+        var imgSrcX = document.body.scrollLeft || document.documentElement.scrollLeft;
+        var imgSrcY = document.body.scrollTop || document.documentElement.scrollTop;
+
+        var x = event.clientX - (getAllLeft(oDiv) - imgSrcX) - 87;
+        var y = event.clientY - (getAllTop(oDiv) - imgSrcY) - 87;
+
+        if ( x < 0){
+
+            x = 0;
+
+        }
+
+        if ( x > oDiv.clientWidth - move.clientWidth){
+
+            x = oDiv.clientWidth - move.clientWidth;
+
+        }
+
+        if ( y < 0){
+
+            y = 0;
+
+        }
+
+        if ( y > oDiv.clientHeight - move.clientHeight){
+
+            y = oDiv.clientHeight - move.clientHeight;
+
+        }
+
+        move.style.left = x + "px";
+
+        move.style.top = y + "px";
+
+        big.style.backgroundPosition = (-x*rate) + "px" + " " + (-y*rate) + "px";
+
+    }
+
+    for( var i = 0; i < Lis.length; i++){
+
+        Lis[i].index = i;
+
+        Lis[i].onclick = function () {
+
+            var num = this.index +1;
+
+            middle.src = "img/1" + num + ".jpg";
+
+            big.style.backgroundImage = "url(img/11" + num + ".jpg)";
+
+        }
+    }
+
+    function getAllTop (obj) {
+
+        var allTop = obj.offsetTop;
+
+        var currentObj = obj;
+
+        while(currentObj = currentObj.offsetParent){
+
+            allTop += currentObj.offsetTop;
+        }
+        return allTop;
+    }
+
+    function getAllLeft (obj) {
+
+        var allLeft = obj.offsetLeft;
+
+        var currentObj = obj;
+
+        while(currentObj = currentObj.offsetParent){
+
+            allLeft += currentObj.offsetLeft;
+        }
+        return allLeft;
+    }
+</script>
+</html>

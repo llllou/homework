@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            *{
+                margin:0;
+                padding:0;
+            }
+            .smallPic{
+                width: 350px;
+                height: 350px;
+                border:1px solid #ccc;
+                 background: url(image/xiao.jpg) no-repeat;
+                margin:100px;
+                position: relative;
+            }
+            .smallPic .zoom{
+                position:absolute;
+                top:100px;
+                left:100px;
+                width: 175px;
+                height: 175px;
+                background:#FEDE4E;
+                opacity: 0.5;
+                border:1px solid #aaa;
+                display:none;
+            }
+            .bigPic{
+                width: 400px;
+                height: 400px;
+                background:url(image/da.jpg) no-repeat;
+                position:absolute;
+                top:100px;
+                left:500px;
+                border:1px solid #000;
+                display:none;
+            }
+            ul{
+                width: 350px;
+                height: 50px;
+                margin-left: 100px;
+
+            }
+            ul li{
+                float: left;
+                margin-left: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="smallPic" id="smallPic">
+      
+            
+            <div class="zoom" id="zoom"></div>
+            
+        </div>
+        <div class="bigPic" id="bigPic"></div>
+        <ul>
+            <li><img src="image/2.jpg" alt="" /></li>
+            <li><img src="image/4.jpg" alt="" /></li>
+            <li><img src="image/6.jpg" alt="" /></li>
+            <li><img src="image/10.jpg" alt="" /></li>
+        </ul>
+
+    </body>
+    <script type="text/javascript">
+        //得到元素
+       var xiaotu=document.getElementById('smallPic');
+       var zoom=document.getElementById('zoom');
+       var datu=document.getElementById('bigPic');
+       var sudu=400/175;
+       
+       var oLi=document.getElementsByTagName("li");
+
+       xiaotu.onmouseover=function()
+       {
+        zoom.style.display="block";
+        datu.style.display="block";
+       }
+       xiaotu.onmouseout=function()
+       {
+        zoom.style.display="none";
+        datu.style.display="none";
+       }
+       xiaotu.onmousemove=function(event)
+       {
+        event=event||window.event;
+        var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+        var scrollLeft=document.body.scrollLeft||document.documentElement.scrollLeft;
+         
+         var x=event.clientX-(funLeft(xiaotu)-scrollLeft)*2;
+         var y=event.clientY-(funLeft(xiaotu)-scrollTop)*2;
+         if(y<0) y=0;
+         if(x<0) x=0;
+         if(x>177) x=177;
+         if(y>177) y=177;
+         zoom.style.top=y+'px';
+         zoom.style.left=x+'px';
+         datu.style.backgroundPosition=-x*sudu+"px"+" "+-y*sudu+"px";
+       }
+       function funTop(obj)
+       {
+        var allTop=obj.offsetTop;
+        var currentObj=obj;
+        while(currentObj=currentObj.offsetParent)
+        {
+            allTop+=currentObj.offsetTop;
+        }
+        return allTop;
+       }
+       function funLeft(obj)
+       {
+        var allLeft=obj.offsetLeft;
+        var currentObj=obj;
+        while(currentObj=currentObj.offsetParent)
+        {
+            allLeft+=currentObj.offsetLeft;
+        }
+        return allLeft;
+       }
+       oLi[0].onclick=function()
+       {
+         xiaotu.style.background="url(image/11.jpg) no-repeat"
+         datu.style.background="url(image/1.jpg) no-repeat"
+       }
+        oLi[1].onclick=function()
+       {
+         xiaotu.style.background="url(image/3.jpg) no-repeat"
+         datu.style.background="url(image/12.jpg) no-repeat"
+       }
+         oLi[2].onclick=function()
+       {
+         xiaotu.style.background="url(image/5.jpg) no-repeat"
+         datu.style.background="url(image/13.jpg) no-repeat"
+       }
+          oLi[3].onclick=function()
+       {
+         xiaotu.style.background="url(image/xiao.jpg) no-repeat"
+         datu.style.background="url(image/da.jpg) no-repeat"
+       }
+    </script>
+</html>
