@@ -1,0 +1,25 @@
+#tree
+{
+	width: 750px;
+	height: 468px;
+	background: url("../images/tree.jpg") no-repeat 0 0;
+	position: relative;
+	margin: 30px auto;
+}
+h3
+{height: 20px;
+	font-size: 16px;
+	color: red;
+}
+.apple
+{
+	width: 40px;
+	height: 47px;
+	display: block;
+	position: absolute;
+	background-position: center;
+	background-image: url(../images/apple.png);
+	color: white;
+	line-height: 47px;
+	text-align: center;
+}

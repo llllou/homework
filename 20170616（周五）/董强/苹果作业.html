@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>     
+            div{
+                width:100px;
+                height:100px;
+                background:url(1.jpg);
+                background-repeat: no-repeat;
+                position: absolute;
+                top:0px;
+                left:0px;
+            }
+        </style>
+    </head>
+    <body>
+    </body>
+    <script>
+        var odiv=document.createElement('div');
+        document.body.appendChild(odiv);
+
+        // var newTop=0;
+        // setInterval(function(){
+        //     newTop++;
+        //    odiv.style.top=newTop+"px";
+        // },10);
+            function Apple(top,left,speed){
+                this.dom=null;
+                this.speed=speed;
+                this.top=top;
+                this.left=left;
+                 this.init=function(){    
+                    this.dom = document.createElement('div');
+                    this.dom.style.left=this.left+"px";
+                    this.dom.style.top=this.top+"px";
+                    document.body.appendChild(this.dom);
+                }
+                
+                     this.walk = function() {
+          var self = this;
+          //this是指方法外面的this
+          this.timer = setInterval(function(){
+            console.log(this);
+            //改变背景图片的位置
+            // self.step++;
+            // if (self.step > 7) {
+            //   self.step = 0;
+            // }
+            // self.dom.style.backgroundPositionX =
+            //     - self.step * 79 + "px";
+
+            //改变自身位置
+            self.top += 4;//4是速度
+            if (self.top > 500) {
+              // self.die();
+              self.top = 500;
+            }
+            self.dom.style.top = self.top+ 'px';
+          }, this.speed);
+        }
+        this.die = function() {
+          clearInterval(this.timer);
+          document.body.removeChild(this.dom);
+        }
+                    this.init();
+                    this.walk();
+                  
+            }
+            setInterval(function(){
+                new Apple(Math.random() *200,Math.random()*1000, Math.random()*40)
+            },500)
+                
+
+    </script>
+</html>
