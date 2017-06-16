@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background:url(tree.jpg) no-repeat;
+}
+.apple{
+    width: 52px;
+    height: 60px;
+    background-image: url(apple.png);
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: #fff;
+    font-size: 30px;
+    position: absolute;
+    line-height: 60px;
+    text-align: center;
+}
+#score,#miss{
+    font-size:20px;
+    color: #ffffff;
+    position: absolute;
+    left: 10px;
+    z-index: 100;
+}
+#score{
+    bottom: 35px;
+}
+#miss{
+    bottom: 10px;
+}
+/*#info{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}*/
+#start{
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    border-radius: 10px 10px;
+    background-color:orange;
+    top: 30px;
+    left: 10px;
+}
+
+/*#game_info{
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    background-color: #fff;
+    display: none;
+}*/
