@@ -1,0 +1,17 @@
+
+h3 {
+	height: 20px;
+	font-size: 16px;
+	color: red;
+}
+.apple {
+	width: 25px;
+	height: 25px;
+	display: block;
+	position: absolute;
+	background-position: center;
+	background-image: url(images/apple3.png);
+	color: red;
+	line-height: 25px;
+	text-align: center;
+}
