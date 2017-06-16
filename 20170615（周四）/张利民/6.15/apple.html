@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      html, body, div{
+        width: 100%;
+        height: 100%;
+      }
+      div img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 79px;
+        height: 108px;
+        background-repeat: no-repeat;
+        background-position: 0px -218px;
+         }
+    </style>
+  </head>
+  <body>
+    <div><img src="image/apple.png"></div>
+    <script type="text/javascript">
+      function apple(top, bomtto, speed) {
+        this.dom = null;
+        this.top = top;
+        this.bomtto = bomtto;
+        this.speed = speed;
+        this.step = 0;
+        this.timer = 0;
+
+        this.init = function() {
+            this.dom = document.createElement('div');
+            this.dom.style.bomtto = this.bomtto + 'px';
+            this.dom.style.top = this.top + 'px';
+            document.body.appendChild(this.dom);
+        }
+        this.walk = function() {
+          var self = this;
+          this.timer = setInterval(function(){
+            self.step++;
+            if (self.step > 7) {
+              self.step = 0;
+            }
+            self.dom.style.backgroundPositionY =
+                - self.step * 79 + "px";
+
+
+            self.bomtto += 4;
+            if (self.bomtto > 1000) {
+              self.bomtto = 1000;
+            }
+            self.dom.style.bomtto = self.bomtto + 'px';
+          }, this.speed);
+        }
+        this.die = function() {
+          clearInterval(this.timer);
+          document.body.removeChild(this.dom);
+        }
+
+        this.init();
+        this.walk();
+      }
+
+      setInterval(function(){
+        new apple(Math.random() * 400, Math.random() * 100,
+        Math.random() * 30)
+      }, 500)
+    </script>
+  </body>
+</html>

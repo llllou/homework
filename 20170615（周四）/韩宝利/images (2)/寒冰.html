@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style media="screen">
+        body {
+            background:url(3.jpg)no-repeat;
+
+        }
+        div{
+            width: 108px;
+            height: 108px;
+            background-image: url("link.jpg") ;
+            opacity: 0.6;
+            border-radius:10px;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            line-height: 50px;
+            font-size: 40px;
+            /*color: red;*/
+            text-align: center;
+        }
+        /*p{*/
+            /*width: 10px;*/
+            /*height: 10px;*/
+            /*position: absolute;*/
+            /*top:0;*/
+            /*left: 0;*/
+
+        /*}*/
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    function Apple(top,left) {
+        this.dom=null;
+        this.p=null;
+        this.top=top;
+        this.left=left;
+//         this.speed=speed;
+        this.timer=0;
+//         this.char=char;
+
+//         var chars=["a","b","c","d"];
+//         var apples=[];
+
+//         setInterval(function () {
+//             var k=charsp[Math.random()*char.length];
+//             apples.push(new Apple(k));
+//         },1000);
+        this.init=function () {
+            this.dom=document.createElement('div');
+            this.dom.style.left=this.left+"px";
+//            this.dom.innerHTML="chars";
+            this.dom.style.top=this.top+"px";
+            document.body.appendChild(this.dom);
+
+//             this.p=document.createElement('p');
+//             document.body.appendChild(this.p);
+        }
+
+
+        this.walk=function () {
+            var self=this;
+            self.timer=setInterval(function () {
+                self.top+=20;
+                if (self.top>800){self.die()}
+                self.dom.style.top=self.top+"px";
+            },100)
+
+        }
+
+
+        this.die=function () {
+            clearInterval(this.timer);
+            document.body.removeChild(this.dom);
+        }
+        this.init();
+        this.walk();
+    }
+    setInterval(function () {
+        new Apple(0,Math.random()*1000)
+    },1000);
+</script>
+</body>
+</html>

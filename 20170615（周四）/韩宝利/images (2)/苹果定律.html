@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background:url(3.jpg)no-repeat;
+
+        }
+        div{
+            width:80px;
+            height:88px;
+            background:url(1.jpg)no-repeat;
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:10;
+        }
+    </style>
+</head>
+<body>
+<script>
+    function Apple(top,speed){
+        this.dom = null;
+        this.top = top;
+        this.speed = speed;
+        this.timer = 0;
+
+         this.init = function(){
+             this.dom = document.createElement("div");
+             this.dom.style.top + "px";
+             document.body.appendChild(this.dom);
+         }
+         this.drop = function(){
+           var drops = this;
+           this.timer = setInterval(function(){
+              drops.top += 40;
+              if (drops.top < 4000) {drops.die();}
+              drops.style.top= drops.top + "px";
+             }, this.speed);
+           }
+         this.die = function(){
+             clearInterval(this.timer);
+             document.body.removeChild(this.dom);
+         }
+         this.init();
+         this.drop();
+     }
+      setInterval(function(){
+          new Apple(0,Math.random() * 1000,Math.random() * 1000 )
+      },500)
+</script>
+</body>
+</html>

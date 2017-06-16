@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*div {*/
+            /*height:108px;*/
+            /*width:79px;*/
+            /*background: url(girl.png)no-repeat;*/
+            /*background-position:0 -218px;*/
+            /*position: absolute;*/
+            /*top:0;*/
+            /*left:0;*/
+        /*}*/
+       div {
+           width: 79px;
+           height: 108px;
+           background: url(girl.png)no-repeat;
+           background-position:0px -219px;
+           position:absolute;
+           top:0;
+           left:0;
+       }
+    </style>
+</head>
+<body>
+    <script>
+//        var oGirl =document.createElement("div");
+//        document.body.appendChild(oGirl);
+//        var newLeft = 0;
+//        var step = 0;
+//        setInterval(function(){
+//            step ++;
+//    　　　　　if( step>7){
+//               step = 0;
+//         }
+//            oGirl.style.backgroundPositionX = -79*step + "px";
+//            newLeft += 4;
+//            oGirl.style.left = newLeft + "px";
+//        },30);
+//
+        var oGirl = document.createElement("div");
+         document.body.appendChild(oGirl);
+
+         var step  =0; //步长多少的变化量
+         var newLeft = 0;
+         setInterval(function () {
+             step ++;
+             if(step >7){
+                 step = 0;
+             }
+             oGirl.style.backgroundPositionX = -79*step + "px";
+             newLeft += 4;
+             oGirl.style.left = newLeft + "px";
+         }, 30)
+    </script>
+</body>
+</html>

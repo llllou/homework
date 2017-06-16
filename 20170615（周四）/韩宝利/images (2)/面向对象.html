@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            background:url(girl.png)no-repeat;
+            background-position: 0px  -218px;
+            position:absolute;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+<script>
+    /**
+     * 小女孩对象
+     属性：
+     dom 小女孩这个DOM实体
+     left 位置
+     top
+     speed 速度
+     step  步子
+     timer 定时器
+     方法：(生命周期方法和普通方法)
+     init 初始值
+     行走
+     die
+     */
+    function Girl(top, left, speed) {
+        this.dom = null;
+        this.top = top;
+        this.left = left;
+        this.speed = speed;
+        this.step = 0;
+        this.timer = 0;
+ //生命周期
+        this.init =function() {
+             this.dom =document.createElement("div");
+             this.dom.style.left = this.left +  "px";
+             this.dom.style.top =this.top + "px";
+             document.body.appendChild(this.dom);
+        }
+        this.walk =function() {
+            var self =this;
+            //this是指向方法外面的this
+            this.timer =setInterval(function(){
+                //改变背景的图片位置
+                self.step++;
+                if (self.step > 7) {
+                    self.step = 0;
+                }
+                self.dom.style.backgroundPositionX =
+                    -self.step * 79 + "px";
+               // 改变自身的位置
+                self.left += 4; //4为速度
+                if (self.left > 1000) {
+                    self.die();
+
+                }
+                self.dom.style.left =self.left + "px";
+            }, this.speed);
+        }
+        this.die =function() {
+            clearInterval(this.timer);
+            document.body.removeChild(this.dom);
+        }
+
+        this.init();
+        this.walk();
+    }
+    setInterval(function(){
+        new Girl(Math.random() * 400, Math.random() * 100,
+        Math.random() * 300)
+    },500);
+
+</script>
+</body>
+</html>
