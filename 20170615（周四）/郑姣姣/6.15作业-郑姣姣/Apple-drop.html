@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            body{
+                background: #000;
+            }
+            div{
+                width: 90px;
+                height: 90px;
+                line-height: 100px;
+                background: url(img/1.png);
+                background-size: 90px 90px;
+                text-align: center;
+                font-size: 60px;
+                position: absolute;
+                top:0;
+                left:0;
+            }
+            #start{
+                position: absolute;
+                width: 100px;
+                height: 30px;
+                right: 20px;
+                bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="score">Score:<span></span></p>
+        <p id="miss">Miss:<span></span></p>
+        <button id="start">Start</button>
+        <!--<div class="apple">a</div>-->
+    </body>
+    <script>
+        var start=document.getElementById("start");
+        function Apple(top,left,speed) {
+            this.dom = null;
+            this.top = top;
+            this.left = left;
+            this.speed = speed;
+            this.step = 0;
+            this.timer = 0;
+
+            this.arr = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m'];
+            this.arrs = this.arr[parseInt(Math.random()*26)];
+            this.init = function () {
+                this.dom = document.createElement('div');
+                this.dom.style.left = this.left+'px';
+                this.dom.style.top = this.top+'px';
+                document.body.appendChild(this.dom);
+                this.dom.innerText = this.arrs;
+            }
+
+            this.walk = function () {
+                var self = this;
+                document.addEventListener("keydown",function (event) {
+                    if(event.key == self.arrs){
+                        self.die();
+                    }
+                },false)
+                this.timer=setInterval(function () {
+                    console.log(this);
+                    self.step++;
+                    if(self.step > 0){
+                        self.step = 0;
+                    }
+                    self.dom.style.backgroundPositionY=- self.step*90 + 'px';
+                    self.top += 4;
+                    if(self.top > 500){
+//                        self.top = 500;
+                        self.die();
+                    }
+                    self.dom.style.top = self.top+'px';
+                },this.speed);
+            }
+            this.die=function () {
+                clearInterval(this.timer);
+                document.body.removeChild(this.dom);
+            }
+            this.init();
+            this.walk();
+        }
+        setInterval (function () {
+            new Apple(Math.random()*200, Math.random()*1300, Math.random()*100);
+        },500)
+    </script>
+</html>
