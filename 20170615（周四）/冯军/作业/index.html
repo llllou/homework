@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+        div{
+          width: 100px;
+            height: 100px;
+            background: url("timg.jpg")no-repeat;
+            background-position: 0 -200px;
+            background-size: 50px 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    /**
+     不断的生成多个苹果，每个苹果上面有一个随机的字母
+     你可以敲键，如果这个键能够对应到屏幕上的某个苹果，
+     该苹果消失，游戏得分+1
+     */
+    function Apple(char) {
+        this.p=null;
+        this.char = char;
+        this.init = function(){ }
+        this.drop = function(){ }
+        this.die = function(){ }
+    }
+    var chars = ["a","b","c","d"];
+    var apples = [];
+
+    function init() {
+        this.p=document.createElement("div");
+        document.body.appendChild(this.p);
+        this.p.style.left=this.p+"px";
+        this.p.style.top=this.p+"px";
+    }
+
+
+    var speed=1000;
+    this.timer=setInterval(function(){
+        k=chars[Math.random()*chars.length];
+        apples.push(new Apple(k));
+
+        if (num>5) {
+            alert('游戏结果，您的得分是'+num);
+            clearInterval(this.timer);
+        }
+        if (num>10) {
+            speed+=100;
+            alert("难度指数+1");
+        }
+    }, speed);
+
+    var num=0;
+    var arr=[65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90];
+    //难度指数默认是1
+    document.onkeydown = function(){
+        for (var i = 0; i < apples.length; i++) {
+            if (arr == apples[i].char) {
+                //把这个苹果从数组里面删除
+                apples[i].die();
+               num++;
+            }
+        }
+    }
+    var die=function () {
+
+    }
+</script>
+</body>
+</html>
