@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	
+    	div {
+    		width: 105px;
+            height: 120px;
+            background-image: url(./image/apple.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+    		border-radius: 50%;
+    		position: absolute;
+            /*text-align: center;
+            line-height: 120px;*/
+    	}
+	</style>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	
+	function Apple(char,top,left,speed){
+		this.dom=null;
+		this.char = char;
+		this.top=top;
+    	this.left=left;
+    	var CharArray=new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","S","Y","Z");
+    	this.timer=0;
+
+		this.init = function(){
+			this.dom = document.createElement("div");
+			document.body.appendChild(this.dom);
+			this.dom.style.left=Math.random()*400+Math.random()*800+100+"px";
+    	    this.dom.style.top=0+'px';
+    	   
+
+    	    this.dom.innerHTML=CharArray[parseInt(Math.random() * 26)];
+        	this.dom.style.lineHeight="120px";
+        	this.dom.style.textAlign="center";
+            this.dom.style.fontSize="50px";
+		}
+		
+		this.drop = function(){
+        var self=this;
+        this.timer=setInterval(function(){
+        self.top+=20;
+        if(self.top>800){
+            self.top=this.die;
+        }
+        self.dom.style.top=self.top+'px';
+        
+
+        },1000);
+             var num = 0;
+            var sro = 0;
+            document.addEventListener("keydown", function (event) {
+                event = event||window.event;
+                if (event.keycode == self.CharArray) {
+                    self.die();
+                    sro++;
+                    return sro;
+                }
+                else {
+                    num ++;
+                    if(num > 50){
+                        alert("GAME OVER!");
+                        alert("您的成绩是：" + sro);
+                        clearInterval(new Apple);
+                        document.body.removeChild(self.dom);
+                    }
+                }
+            }, false);
+        };
+
+   
+    this.die=function(){
+    	clearInterval(this.timer);
+    	document.body.removeChild(this.dom);
+    }
+
+    this.init();
+    this.drop();
+
+}
+	setInterval(function(){
+    	new Apple(Math.random()*400,Math.random()*200,Math.random()*300);
+    },2000);
+
+   
+</script>
+</html>
