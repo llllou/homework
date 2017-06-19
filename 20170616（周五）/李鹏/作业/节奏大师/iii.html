@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style media="screen">
+        .zhuankuai {
+            position: absolute;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+        body {
+            background: lightgreen;
+        }
+        #box {
+            width: 940px;
+            height: 600px;
+            background: url(jzds1.jpg);
+            position: relative;
+            margin: 0 auto;
+        }
+        #anjian {
+            position: absolute;
+            height: 50px;
+            bottom: 0;
+            left: 0;
+            margin-right: -20px;
+        }
+        #anjian div {
+            height: 40px;
+            width: 290px;
+            background: yellow;
+            text-align: center;
+            line-height: 50px;
+            float: left;
+            color: blue;
+            margin-right: 20px;
+            border: 5px solid blueviolet;
+        }
+        
+        .blocks {
+            position: absolute;
+            height: 40px;
+            width: 290px;
+            background: red;
+            margin-left: 5px;
+        }
+        
+        .score {
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            color: orange;
+            font-size: 50px;
+            line-height: 100px;
+        }
+        
+        .score::before {
+            content: "分数："
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="anjian">
+            <div id="aa">A</div>
+            <div id="bb">B</div>
+            <div id="cc">C</div>
+        </div>
+    </div>
+</body>
+<script>
+    var oBox = document.getElementById("box");
+    var pArr = [0, 320, 640];
+    var mathColor = ["red","yellow","blue","green","pink","purple","gold","olive","gray","sand"];
+    function Blocks() {
+        this.left = pArr[parseInt(Math.random() * pArr.length)]; //位置
+        this.top = 0; //位置
+        this.dom = null; //实体
+
+        this.speed = Math.random() * 5 + 2; //速度
+        this.numList = 0;
+        this.init();
+        this.down();
+        this.keydown();
+    }
+    Blocks.prototype.init = function() {
+        this.dom = document.createElement('div');
+        this.dom.className = "blocks";
+        this.dom.style.background =  mathColor[parseInt(Math.random()*10)];
+        this.dom.style.left = this.left + "px";
+        this.dom.style.top = this.top + "px";
+        oBox.appendChild(this.dom);
+    }
+    Blocks.prototype.down = function() {
+        var self = this;
+        this.timer = setInterval(function() {
+            self.top += self.speed;
+            if (self.top > 660) {
+                // self.die();//自己移除的话，在游戏对象里还存在
+                self.remove();
+            }
+            self.dom.style.top = self.top + 'px';
+        }, 30);
+    }
+    Blocks.prototype.remove = function() {
+        clearInterval(this.timer);
+        oBox.removeChild(this.dom);
+    }
+
+    Blocks.prototype.keydown = function() {
+        var self = this;
+        document.onkeydown = function(ev) {
+            var ev = ev || event;
+            var reg = /[1-9][0-9]*/;
+            var numList = (self.dom.style.top).match(reg).join();
+            self.numList = numList;
+            switch (ev.keyCode) {
+                case 65:
+                    if (self.numList >= 620 && self.numList < 660) {
+                        self.remove();
+                        score.add1();
+                        new Blocks();
+                    } else if (self.numList >= 630) {
+                        self.remove();
+                        score.add2();
+                        new Blocks();
+                    }
+                    break;
+                case 66:
+                    if (self.numList >= 620 && self.numList < 660) {
+                        self.remove();
+                        score.add1();
+                        new Blocks();
+                    } else if (self.numList >= 630) {
+                        self.remove();
+                        score.add2();
+                        new Blocks();
+                    }
+                    break;
+                case 67:
+                    if (self.numList >= 620 && self.numList < 660) {
+                        self.remove();
+                        score.add1();
+                        new Blocks();
+                    } else if (self.numList >= 630) {
+                        self.remove();
+                        score.add2();
+                        new Blocks();
+                    }
+                    break;
+               /* default:*/
+            }
+        }
+    }
+
+    function Score() {
+        this.score = 0;
+        this.init();
+    }
+    Score.prototype.init = function() {
+        this.dom = document.createElement('p');
+        this.dom.className = "score"
+        this.dom.style.left = -220 + "px";
+        this.dom.style.top = 20 + "px";
+        oBox.appendChild(this.dom);
+        this.dom.innerHTML = this.score;
+    }
+    var score = new Score();
+    Score.prototype.add1 = function() {
+        this.score++;
+        this.dom.innerHTML = this.score;
+    }
+    Score.prototype.add2 = function() {
+        this.score += 2;
+        this.dom.innerHTML = this.score;
+    }
+    var score = new Score();
+    new Blocks();
+    setInterval(function() {
+        new Blocks();
+    }, 3000)
+    setInterval(function() {
+        new Blocks();
+    }, 1000)
+</script>
+
+</html>

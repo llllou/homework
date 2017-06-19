@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background: lightgreen;
+        }
+        div{
+            width : 93px;
+            height : 120px;
+            background: url(images/ballon.png) no-repeat;
+            background-position: 0 0;
+            position:absolute;
+            bottom:0;
+        }
+        h1{
+            width:100px;
+            height:50px;
+            font-size: 20px;
+            background: darkblue;
+            color:#fff;
+            text-align: center;
+            line-height: 50px;
+        }
+        span{
+            display:inline-block;
+            width:100px;
+            height:50px;
+            background: red;
+            font-size: 20px;
+            font-weight:bold;
+            color:#fff;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+<audio src="images/bgm.mp3" autoplay></audio>
+
+<audio src="images/boom.mp3" autoplay></audio>
+<script>
+    /**
+     * @property dom left top timer
+     * @constructor
+     */
+    function Ballon(left, bottom, positionX, positionY){
+        this.dom = null;
+        this.left = left;
+        this.bottom = bottom;
+        this.timer = 0;
+        this.positionX = positionX;
+        this.positionY = positionY;
+        this.index = 0;
+
+        this.init = function(){
+            this.dom = document.createElement('div');
+            document.body.appendChild(this.dom);
+            this.dom.style.left = this.left +　'px';
+            this.dom.style.bottom = this.bottom +　'px';
+        };
+
+        this.fly = function(){
+            var self = this;
+            this.timer = setInterval(function(){
+                self.bottom += 10;
+                if(self.bottom > 500){
+                     game.removeBallon(self);
+                     game.miss++;
+                     game.missDom.innerText = 'miss:' + game.miss;
+                }
+                self.dom.style.bottom = self.bottom +'px';
+            },200);
+        };
+        this.bindEve = function(){
+            var self = this;
+            this.dom.onclick = function(){
+                console.log(game.ballons);
+                game.addScore(self.index, self.positionX, self.positionY);
+                self.die();
+            }
+        };
+        this.die = function(){
+            clearInterval(this.timer);
+            document.body.removeChild(this.dom);
+        };
+
+        this.init();
+        this.fly();
+        this.bindEve();
+    }
+    /**
+     * @property score timer scoreDom ballons
+     * @function init createBallon removeBallon
+     * @constructor
+     */
+    function Game(){
+        this.scoreDom = null;
+        this.score = 0;
+        this.timer = 0;
+        this.miss = 0;
+        this.missDom = null;
+        this.ballons = [];
+
+        this.init = function(){
+            this.scoreDom = document.createElement('h1');
+            this.missDom = document.createElement('span');
+            document.body.appendChild(this.scoreDom);
+            document.body.appendChild(this.missDom);
+            this.scoreDom.innerText = 'score:' + this.score;
+            this.missDom.innerText = 'miss:' + this.miss;
+        };
+
+        this.createBallons = function(){
+            var self = this;
+            this.timer = setInterval(function(){
+                var ballon = new Ballon(Math.random()*1250, 0);
+                self.createPosition(ballon);
+                self.ballons.push(ballon);
+            },1000);
+        };
+        this.createPosition = function(ballon){
+            var index = parseInt(Math.random()*12);
+            ballon.positionX = (index % 4)*93;
+            ballon.positionY = (parseInt(index / 4))*120;
+            ballon.index = index;
+            ballon.dom.style.backgroundPositionX = -(index % 4)*93 + 'px';
+            ballon.dom.style.backgroundPositionY = -(parseInt(index / 4))*120 + 'px';
+        };
+
+//        this.bindEve = function(){
+//            var self = this;
+//            console.log(self.ballons);
+//            for(var j = 0; j < this.ballons.length ; j++){
+//                this.ballons[j].dom.num = j;
+//                this.ballons[j].dom.onclick = function(){
+//                    self.ballons[this.num].die();
+//                };
+//            }
+//        };
+        this.addScore = function(index, positionX, positionY){
+            if(positionY < 240){
+                this.score +=(index+1);
+            }else if(positionY == 240){
+                switch(positionX){
+                    case 0:
+                        this.score *= 2;
+                        break;
+                    case 93:
+                        this.score /= 2;
+                        break;
+                    case 186:
+                        this.score  = 0;
+                        break;
+                    case 279:
+                        break;
+                }
+            }
+            this.scoreDom.innerText = ' score :' + this.score;
+        };
+        this.removeBallon = function(ballon){
+            for(var i = 0;i < this.ballons.length;i++){
+                if(ballon === this.ballons[i]){
+                    this.ballons.splice(i,1);
+                    ballon.die();
+                }
+            }
+        };
+        this.init();
+        this.createBallons();
+//        this.bindEve();
+    }
+//    new Ballon(10,0);
+    var game = new Game();
+//    console.log(game);
+</script>
+</body>
+</html>

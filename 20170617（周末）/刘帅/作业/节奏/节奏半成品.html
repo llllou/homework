@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0
+			}
+			html, body {
+				width: 100%;
+				height: 100%;
+			}
+			body {
+				background: blue;
+			}
+			div {
+				background: red;
+				width: 100px;
+				height: 100px;
+				position: absolute;
+			}
+			h1{
+				color:white;
+				font-size: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		function Rhythm(left) {
+			this.speed = 100;
+			this.top = 0;
+			this.left = left;
+			this.dom = null;
+			this.timer = 0;
+			this.score = 0;
+
+			this.init();
+			this.down();
+		}
+
+		Rhythm.prototype.init = function() {
+			this.dom = document.createElement('div');
+			this.dom.style.top = this.top + 'px';
+			this.dom.style.left = this.left + 'px';
+			document.body.appendChild(this.dom);
+
+			var self = this;
+			this.dom.onclick = function() {
+				self.die();
+				game.score += 1;
+				game.oScore.innerHTML = game.score;
+			}
+
+
+		}
+
+		Rhythm.prototype.down = function() {
+			var self = this;
+			this.timer = setInterval(function() {
+				self.top += 3;
+				
+				var bodyHeight = document.documentElement.clientHeight||document.body.clientHeight;
+				if(self.top > bodyHeight-50) {
+					self.die();
+					game.miss++;
+					if(game.miss > 10) {
+						game.die()
+					}
+				}
+				self.dom.style.top = self.top + 'px';
+				
+			},30);
+		}
+
+		Rhythm.prototype.die = function() {
+			clearInterval(this.timer);
+        	document.body.removeChild(this.dom);
+		}
+
+		function Game() {
+			this.timer = 0;
+        	this.score = 0;
+        	this.miss = 0;
+			this.scoreDom = null;
+			this.Rhythms = [];
+
+			this.createRhythm();
+
+		}
+
+		Game.prototype.init = function() {
+			this.score = document.createElement("h1");
+			document.body.appendChild(this.score);
+			this.score.innerHTML = 0;
+
+		}
+		Game.prototype.createRhythm = function() {
+			var self = this;
+			this.timer = setInterval(function() {
+				var rhythm = new Rhythm((parseInt(Math.random()*7)+5)*100);
+				self.Rhythms.push(rhythm);
+			},500);
+			
+
+		}
+		Game.prototype.die = function() {
+			clearInterval(this.timer);
+			for(var i = 0; i<this.Rhythms.length;i++) {
+				this.Rhythms[i].die();
+			}
+			alert('您的分数是' + this.score);
+		}
+		var game = new Game();
+	</script>
+</html>

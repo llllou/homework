@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html, body {
+            width: 100%;
+            min-width: 1000px;
+            height:100%;
+        }
+        body{
+            background:url("image/ChMkJlauzemIb8MzACO-13tBj0AAAH9JADtSFoAI77v353.jpg");
+            background-size: 100% 100%;
+        }
+        .container{
+            width: 1000px;
+            height:100%;
+            margin:0 auto;
+            position: relative;
+        }
+        .track{
+            width:24%;
+            height:100%;
+            border-left:5px solid #ffffff;
+            background: rgba(0,0,0,0.5);
+            float: left;
+            position: relative;
+        }
+        .container .track-last{
+            border-right:5px solid #ffffff;
+        }
+        .Diamonds{
+            width:80%;
+            height: 80px;
+            position: absolute;
+            border-radius: 10px;
+            z-index: 999;
+            opacity: 0.6;
+        }
+        .click{
+            width:98.5%;
+            height: 100px;
+            background:rgba(225,255,255,0.5);
+            position: absolute;
+            bottom: 100px;
+            border-top:5px solid #ffffff;
+            border-bottom:5px solid #ffffff;
+            border-radius: 10px;
+            left:0;
+        }
+        h3{
+            position: absolute;
+            top: 0;
+            left: -170px;
+            background:rgba(0,0,0,0.3);
+            width: 130px;
+            padding: 10px 10px;
+            border-radius: 5px;
+            color:#ffffff;
+            border: 2px solid #888888;
+        }
+        #miss{
+            top: 60px;
+        }
+        #speed{
+            top: 120px;
+        }
+        .Play{
+            width: 800px;
+            height: 500px;
+            text-align: center;
+            border-radius: 10px;
+            border:2px solid #ffffff;
+            background:rgba(255,255,255,0.5);
+            position: absolute;
+            top: 15%;
+            color: #ffffff;
+            left: 100px;
+            padding: 20px 0;
+            font-size: 50px;
+            line-height: 230px;
+        }
+        .Play>button{
+            color: #ffffff;
+            font-size: 30px;
+            width: 200px;
+            height: 50px;
+            border-radius: 5px;
+            border: 2px solid #ffffff;
+            background:rgba(255,255,255,0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="track-0" class="track"></div>
+        <div id="track-1" class="track"></div>
+        <div id="track-2" class="track"></div>
+        <div id="track-3" class="track track-last"></div>
+        <div class="click" id="Click"></div>
+        <h3 id="score">分数：0</h3>
+        <h3 id="miss">miss：0</h3>
+        <h3 id="speed">speed：1</h3>
+        <div class="Play" id="Play">节奏大师<br /><button id="PlayBut">开始游戏</button></div>
+        <audio src="image/Delacey%20-%20Dream%20It%20Possible.mp3" preload="auto" id="music"></audio>
+    </div>
+</body>
+    <script type="text/javascript">
+        var Play = document.getElementById("Play");
+        var PlayBut = document.getElementById("PlayBut");
+        var music = document.getElementById("music");
+        function Diamonds(top,left){
+            this.top = top;
+            this.left = left;
+            this.dom = null;
+            this.backgroundcolor = ["red","black","green","blue","yellow","pink"];
+            this.timer = 0;
+            this.location = null;
+            this.track = 0;
+            this.Click = 0;
+            this.init();
+            this.fall();
+            this.click();
+        }
+        Diamonds.prototype.init = function () {
+            this.Click = document.getElementById("Click");
+            this.track = document.getElementById("track-"+parseInt(Math.random() * 4));
+            this.dom = document.createElement("div");
+            this.dom.style.top = this.top + "px";
+            this.dom.style.left = this.left + "px";
+            this.dom.className = "Diamonds";
+            this.dom.style.background = this.backgroundcolor[parseInt(Math.random() * this.backgroundcolor.length)];
+            this.track.appendChild(this.dom);
+        };
+        Diamonds.prototype.fall = function () {
+            var self = this;
+            this.timer = setInterval(function () {
+                self.top += game.speed;
+                var bodyHeight = document.documentElement.clientHeight || document.body.clientHeight;
+                if(self.top > bodyHeight - 85){
+                    game.miss++;
+                    if(game.miss > 10){
+                        game.GameOver();
+                    }
+                    self.die();
+                }
+                game.missDom.innerText = "miss：" + game.miss;
+                self.dom.style.top = self.top + "px";
+            },10)
+        };
+        Diamonds.prototype.click = function () {
+            var self = this;
+            this.dom.onclick = function () {
+                if(self.dom.offsetTop > self.Click.offsetTop  && self.dom.offsetTop < self.Click.offsetTop + self.Click.offsetHeight){
+                    game.score++;
+                    if(game.score > 60){
+                        game.speed = 9;
+                    }else if(game.score > 40){
+                        game.speed = 6;
+                    }else if(game.score > 20){
+                        game.speed = 3;
+                    }
+                    self.die();
+                }
+                game.speedDom.innerText = "speed：" + game.speed;
+                game.scoreDom.innerText = "分数：" + game.score;
+            };
+        };
+        Diamonds.prototype.die = function () {
+            clearInterval(this.timer);
+            this.track.removeChild(this.dom);
+        };
+        function Game() {
+            this.timer = 0;
+            this.score = 0;
+            this.scoreDom = 0;
+            this.miss = 0;
+            this.missDom = 0;
+            this.speed = 1;
+            this.speedDom = 0;
+            this.output();
+            this.init();
+        }
+        Game.prototype.init = function () {
+            this.missDom = document.getElementById("miss");
+            this.scoreDom = document.getElementById("score");
+            this.speedDom = document.getElementById("speed");
+        };
+        Game.prototype.output = function () {
+            this.timer = setInterval(function () {
+                new Diamonds(0,23);
+            },1000);
+        };
+        Game.prototype.GameOver = function () {
+            clearInterval(this.timer);
+            alert("游戏结束！您的分数是：" + this.score);
+            window.location.reload();
+        };
+        var game;
+        PlayBut.onclick = function () {
+            Play.style.display = "none";
+            music.play();
+            game = new Game();
+        };
+
+    </script>
+</html>
