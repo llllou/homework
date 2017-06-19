@@ -6,24 +6,7 @@
 </head>
 <body>
 <script>
-    function myUnique(arr){
-        var newArr=[];
-        for(var i = 0;i　< arr.length; i++){
-           for(var j = i + 1;j < arr.length; j++){
-               if(arr[i] == arr[j]){
-                   arr.splice(i,1,"");
-               }
-           }
-        }
-        console.log(arr);
-        for(var k = 0;k < arr.length; k++){
-            if(arr[k] !== ""){
-                newArr.push(arr[k])
-            }
-        }
-        return newArr;
-    }
-    myUnique.prototype = function(){
+    Array.prototype.myUnique = function(){
     	  var newArr=[];
         for(var i = 0;i　< arr.length; i++){
            for(var j = i + 1;j < arr.length; j++){
@@ -32,7 +15,6 @@
                }
            }
         }
-        console.log(arr);
         for(var k = 0;k < arr.length; k++){
             if(arr[k] !== ""){
                 newArr.push(arr[k])
