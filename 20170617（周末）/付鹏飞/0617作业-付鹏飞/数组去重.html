@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script type="text/javascript">
+      Array.prototype.k=function () {
+           var p=[];
+           for (var i=0;i<this.length;i++){
+               if (p.indexOf(this[i])==-1){
+                   p.push(this[i]);
+               }
+
+           }
+           return p;
+      }
+
+
+      var u=prompt("请输入一串数字以空格隔开");
+      var un=u.split(" ");
+      console.log(un.k()) ;
+
+      //      var Array=[1,23,1,1,4,5];
+//      console.log(un);
+//      console.log(typeof un);
+
+  </script>
+</body>
+</html>
