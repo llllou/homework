@@ -1,0 +1,314 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>节奏大师</title>
+<style>
+* {
+      padding:0;
+      margin:0;
+    }
+body {
+    background:#fff; 
+    overflow:hidden;
+  }
+input{
+    border:none;
+    background:none;
+  }
+li {
+    list-style:none;
+  }
+
+#div1 {
+  width:400px; 
+  height:550px; 
+  border:5px solid #999; 
+  margin:10px auto; 
+  position:relative; 
+  overflow:hidden;
+}
+#div1 ul { 
+  width:100px; 
+  height:100%; 
+  float:left; 
+  position:relative; 
+  overflow:hidden;
+}
+#div1 .fix { 
+  width:100%; 
+  height:70px; 
+  position:absolute; 
+  left:0; 
+  bottom:0; 
+  z-index:9999;
+}
+#div1 .fix p { 
+  width:90px; 
+  height:60px; 
+  box-shadow:0 0 10px #000; 
+  float:left; 
+  margin:5px; 
+  text-align:center; 
+  line-height:60px; 
+  color:red; 
+  text-shadow:0 0 10px #000; 
+  font-size:30px; 
+  font-weight:bold;
+}
+
+#div1 ul li { 
+  width:90px; 
+  height:60px; 
+  margin:0; 
+  background:#9C0; 
+  margin:5px; 
+  text-align:center; 
+  line-height:60px; 
+  color:#fff; 
+  position:absolute; 
+  border-radius:4px;
+}
+
+#btn1 {
+  padding:0 20px; 
+  background:orange; 
+  font:18px/2 "Microsoft YaHei"; 
+  position:fixed; 
+  right:20px; 
+  top:10px; 
+  color:#FFF;
+}
+#score { 
+  width:60px; 
+  height:30px; 
+  line-height:30px; 
+  text-align:center; 
+  background:#0C0; 
+  position:absolute; 
+  right:20px; 
+  top:100px; 
+  color:#fff;
+}
+#score:before{
+  content:"得分:";
+}
+</style>
+</head>
+<body>
+
+<input type="button" value="开始" id="btn1">
+<div id="score">0</div>
+<div id="div1">
+  <div class="fix">
+      <p>Q</p>
+      <p>W</p>
+      <p>O</p>
+      <p>P</p>
+    </div>
+</div>
+</body>
+<script>
+  var oDiv=document.getElementById('div1');
+  var oBtn=document.getElementById('btn1');
+  var aUl=oDiv.getElementsByTagName('ul');
+  var aP=oDiv.getElementsByTagName('p');
+  var aLi=oDiv.getElementsByTagName('li');
+  var oScore=document.getElementById('score');
+  var iScore=0;
+  var speed=10;
+  var iMore=0;
+  var timer=null;
+  
+  
+  
+  for (var i=0; i<4; i++)
+  {
+    var oUl=document.createElement('ul');
+    
+    oDiv.appendChild(oUl);
+  }
+  
+  oBtn.onclick=fnGame;
+
+  function fnGame()
+  {
+    function make()
+    {
+      var num=rndNum(0, 4);
+      
+      var oLi=document.createElement('li');
+      
+      oLi.style.background=rndColor();
+      
+      aUl[num].appendChild(oLi);
+      
+      move(oLi, 1200, function ()
+      {
+        if (aLi.length>=10)
+        {
+          gotoEnd();
+          
+          alert('游戏失败， 得分'+iScore);
+        }
+      });
+    }
+    
+    make();
+    timer=setInterval(make, 500);
+  }
+  
+
+  function gotoEnd ()
+  {
+    clearInterval(timer);
+    
+    for (var i=0; i<aLi.length; i++)
+    {
+      clearTimeout(aLi[i].timeout);
+    }
+    
+    for (i=0; i<aUl.length; i++)
+    {
+      aUl[i].innerHTML='';
+    }
+    
+    iScore=0;
+    speed=10;
+  }
+  
+  document.onkeydown=function (ev)
+  {
+    var ev=ev||event;
+    
+    if (iScore>20)
+    {
+      speed+=1;
+      
+      document.title=score;
+    }
+
+    //alert(ev.keyCode);
+    function lazy (n)
+    {
+      if (!aUl[n].children.length)
+      {
+        alert('按得太快  得分'+iScore);
+        
+        gotoEnd();
+        
+        return;
+      }
+      
+      if (coll(aUl[n].children[0], aP[n]))
+      {
+        iScore++;
+        
+        aUl[n].removeChild(aUl[n].children[0]);
+        
+        oScore.innerHTML=iScore;
+      }
+      else
+      {
+        alert('失败，得分'+iScore);
+        
+        gotoEnd();
+      }
+    }
+    
+    switch(ev.keyCode)
+    {
+      case 81:
+        lazy(0);
+        break;
+      case 87:
+        lazy(1);
+        break;
+      case 79:
+        lazy(2);
+        break;
+      case 80:
+        lazy(3);
+        break;
+      case 13:
+        fnGame();
+        break;
+    }
+  };
+  
+  
+  function move (obj, iTime, fnEnd, fnDuring)
+  {
+    clearInterval(obj.timer);
+    obj.timer=setInterval(function ()
+    {
+      obj.style.top=obj.offsetTop+speed+'px';
+        
+      fnDuring && fnDuring.call(obj);
+    }, 30);
+    
+    
+    obj.timeout=setTimeout(function ()
+    {
+      clearInterval(obj.timer);
+      obj.timer=null;
+      
+      fnEnd && fnEnd.call(obj);
+    }, iTime);
+  }
+  
+  function rndColor()
+  {
+    var str=parseInt(Math.random()*0xffffff).toString(16);
+    
+    while(str.length<6)
+    {
+      str+='0'+str;
+    }
+    
+    return '#'+str;
+  }
+  
+  function rndNum (m, n)
+  {
+    return parseInt(Math.random()*(n-m)+m);
+  }
+  
+  function getPos (obj)
+  {
+    var left=0;
+    var top=0;
+    
+    while(obj)
+    {
+      left+=obj.offsetLeft;
+      top+=obj.offsetTop;
+      
+      obj=obj.offsetParent
+    }
+    
+    return {'left': left, 'top': top};
+  }
+  
+  function coll (obj1, obj2)
+  {
+    var l1=getPos(obj1).left;
+    var r1=getPos(obj1).left+obj1.offsetWidth;
+    var t1=getPos(obj1).top;
+    var b1=getPos(obj1).top+obj1.offsetHeight;
+    
+    var l2=getPos(obj2).left;
+    var r2=getPos(obj2).left+obj2.offsetWidth;
+    var t2=getPos(obj2).top;
+    var b2=getPos(obj2).top+obj2.offsetHeight;
+    
+    if (l1>r2 || t1>b2 || r1<l2 || b1<t2)
+    {
+      return false;
+    }
+    
+    return true;
+  }
+</script>
+</head>
+</html>
