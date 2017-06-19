@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0
+      }
+      html, body {
+        width: 100%;
+        height: 100%;
+      }
+      #score{width: 120px;height: 60px;background-color:rgba(33, 150, 243, 0.63);position: absolute;
+        top: 120px;font-size: 30px;text-align: center;outline: none;border-radius: 20%;border: none;
+        color: white;}
+      body {
+        background: url(./images/bg.jpg);
+        background-size: cover;
+        overflow: hidden;
+        position:relative;
+      }
+      #count-down{width: 120px;height: 60px;background-color:rgba(244, 67, 54, 0.65);position: absolute;
+        top: 30px;font-size: 24px;text-align: center;outline: none;border-radius: 20%;border: none;
+        color: yellow;}
+      h1{margin-top: 50px;}
+      #zl{margin-top:30px;width: 100px;height: 50px;background-color:#00BCD4;outline: none;border: none;
+        border-radius: 10%;font-size: 19px;font-weight: bold;}
+      #zhegai{
+        display: none;
+        width: 1366px;height: 100%;background-color:rgba(156, 39, 176, 0.46);
+        position: absolute;z-index:200;
+      }
+      #fen2{width: 500px;height: 300px;border-radius: 20%;background-color: rgba(156, 39, 176, 0.62);
+        position: absolute;left:30%;top: 30%;text-align: center;}
+      .qiqiou {
+        background: url(./images/ballon.png) no-repeat;
+        width: 96px;
+        height: 120px;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+  <div id="zhegai">
+    <div id="fen2">
+      <h1 id="fen3"></h1>
+      <h1>小样^O^ 不服再来啊</h1>
+      <a href=""><input type="button"id="zl" value="重新开始" /></a>
+    </div>
+  </div>
+   <input id="score" type="text" value="0" readonly="readonly"/>
+    <input id="count-down" type="text" value="时间：20s" readonly="readonly"/>
+    <audio src="./images/bgm.mp3" autoplay="true"></audio>
+    <audio id="boom" src="./images/c.wav"></audio>
+    <script type="text/javascript">
+      /**
+      气球：
+        属性：
+          速度
+          位置
+          肉身
+          定时器
+          分数
+        方法：
+          出生
+          上飘
+          死亡
+      游戏：
+        属性：
+          定时器（不断生成气球）
+          总分
+          总分的肉体
+        方法：
+          生成气球
+      */
+      function Ballon(left) {//气球
+        this.speed = 10;//速度
+        this.bottom = 0;
+        this.left = left;
+        this.dom = null;
+        this.timer = 0;
+        this.score = 0;//分数
+        this.init();
+        this.fly();
+      }
+      Ballon.prototype.init = function() {//初始化
+          this.dom = document.createElement('div');
+          this.dom.className = "qiqiou";
+          this.dom.style.bottom = this.bottom + 'px';
+          this.dom.style.left = this.left + 'px';
+          document.body.appendChild(this.dom);
+          this.score = parseInt(Math.random() * 12) + 1;
+          var x = - (this.score - 1 ) % 4 * 96;
+          var y = - parseInt((this.score - 1 ) / 4) * 120;
+          this.dom.style.backgroundPositionX = x + 'px';
+          this.dom.style.backgroundPositionY = y + 'px';
+          //绑定事件
+          var self = this;
+          this.dom.onclick = function() {
+            self.die();
+            if( self.score < 9) {
+              game.scoreDom.value=parseInt(game.score += self.score) ;
+            }else if(self.score == 9) {
+              game.scoreDom.value=  parseInt(game.score*= 2);
+            }else if(self.score==10){
+              game.scoreDom.value =parseInt(game.score/= 2) ;
+            } else if(self.score==11){
+               game.scoreDom.value   =parseInt( game.score = 0);
+            }else if(self.score==12) {
+               game.scoreDom.value = parseInt(game.score += 0);
+            }
+          }
+      }
+      Ballon.prototype.fly = function() {
+        var self = this;
+        this.timer = setInterval(function(){
+          self.bottom += (Math.random()*10 + 3);
+          var bodyHeight = document.documentElement.clientHeight || document.body.clientHeight;
+          if (self.bottom > bodyHeight-120) {
+            game.dieBallon(self);
+            game.misscount ++;
+            if (game.misscount > 150) {
+              game.die();
+            }
+          }
+          self.dom.style.bottom = self.bottom + 'px';
+        }, 30);
+      }
+      Ballon.prototype.die = function() {
+        game.music.play();
+        clearInterval(this.timer);
+        document.body.removeChild(this.dom);
+      }
+
+      function Game() {
+        this.countdown = 20;//游戏倒计时器，初始值60秒
+        this.timer = 0;
+        this.timer2 = null;
+        this.score = 0;
+        this.misscount = 0;//漏掉的个数
+        this.scoreDom = null;
+        this.ballons = [];
+        this.music = null;
+        this.djs = document.getElementById("count-down");
+        this.init();
+        this.createBallon();
+      }
+      Game.prototype.init = function() {
+        this.music = document.getElementById('boom');
+        this.scoreDom = document.getElementById("score");
+        this.zhegai=document.getElementById("zhegai");
+       this.fen3=document.getElementById("fen3");
+      }
+      Game.prototype.createBallon = function() {
+        var self = this;
+        this.timer = setInterval(function () {
+          var bodyWidth = document.documentElement.clientWidth || document.body.clientWidth;
+          var ballon = new Ballon((Math.random() * bodyWidth) - 96);
+          self.ballons.push(ballon);
+        }, 500);
+
+        this.timer2 = setInterval(function(){
+          self.countdown--;
+          self.djs.value="时间："+self.countdown+"s";
+          if(self.countdown==0){
+            self.zhegai.style.display="block";
+            self.fen3.innerHTML="本轮得分："+game.scoreDom.value;
+            game.die();
+            Ballon.die();
+          }
+        },1000)
+
+      }
+
+
+
+      Game.prototype.dieBallon = function(ballon) {
+        for (var i = 0; i < this.ballons.length; i++) {
+          if (this.ballons[i] === ballon) {
+            this.ballons[i].die();
+            this.ballons.splice(i, 1);
+            return;
+          }
+        }
+      }
+      Game.prototype.die = function() {
+        clearInterval(this.timer);
+        clearInterval(this.timer2);
+        for (var i = 0; i < this.ballons.length; i++) {
+          this.ballons[i].die();
+          this.ballons.splice(i, 1);
+        }
+
+      }
+      var game = new Game();
+
+    </script>
+  </body>
+</html>

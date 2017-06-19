@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html, body{
+            height:100%;
+        }
+        body{
+            background: url("image/ChMkJlauyluIZ1fXAAmHL8tu9YMAAH8swOZeSsACYdH142.jpg") no-repeat;
+            background-size:100% 100%;
+        }
+        div{
+            width: 96px;
+            height: 120px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background:url("image/ballon.png") no-repeat;
+        }
+        h3{
+            width: 150px;
+            background:rgba(255,255,255,0.3);
+            color: #ffffff;
+            margin: 0 0 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h3 id="score">分数：0</h3>
+    <h3 id="miss">miss：0</h3>
+    <h3 id="speed">speed：1</h3>
+    <audio src="image/bgm.mp3" autoplay="autoplay" ></audio>
+    <audio src="image/b.wav" id="Gameover"></audio>
+    <audio src="image/c.wav" id="broken"></audio>
+</body>
+    <script type="text/javascript">
+        function Ballon(bottom, left) {
+            this.left = left;
+            this.bottom = bottom;
+            this.timer = 0;
+            this.score = 0;
+            this.dom = null;
+            this.init();
+            this.fly();
+            this.click();
+        }
+        Ballon.prototype.init = function () {
+            this.score = parseInt(Math.random() * 11 + 1);
+            this.dom = document.createElement("div");
+            this.dom.style.left = this.left + "px";
+            this.dom.style.bottom = this.bottom + "px";
+            var X = - (this.score - 1) % 4 * 96;
+            var Y = - parseInt((this.score - 1) / 4) * 120;
+            this.dom.style.backgroundPositionX = X + "px";
+            this.dom.style.backgroundPositionY = Y + "px";
+            document.body.appendChild(this.dom);
+        };
+        Ballon.prototype.fly = function () {
+            var self = this;
+            this.timer = setInterval(function () {
+                self.bottom += game.speed;
+                var bodyHeight = document.documentElement.clientHeight || document.body.clientHeight;
+                if(self.bottom > bodyHeight - self.dom.offsetHeight){
+                    if (self.score < 9){
+                        game.miss++;
+                    }
+                    if (game.miss > 9){
+                        game.GameOver();
+                    }
+                    game.missDom.innerText = "miss：" + game.miss;
+                    self.die();
+                }
+                self.dom.style.bottom = self.bottom + "px";
+            },10);
+        };
+        Ballon.prototype.click = function () {
+          var self = this;
+          this.dom.onclick = function () {
+              game.broken.pause();
+              game.broken.currentTime = 0;
+              game.broken.play();
+              if(self.score > 10){
+                  game.score = 0;
+              }else if(self.score > 9){
+                  game.score /= 2;
+              }else if(self.score > 8){
+                  game.score *= 2;
+              }else{
+                  game.score += self.score;
+              }
+              if(game.score >= 100 && game.score <= 200 ){
+                  game.speed = 2;
+              }else if(game.score > 200 && game.score <= 500){
+                  game.speed = 4;
+              }else if (game.score > 500 && game.score <= 1000){
+                  game.speed = 6;
+              }else{
+                  game.speed = 1;
+              }
+              game.speedDom.innerText = "speed" + game.speed;
+              game.scoreDom.innerText = "分数：" + game.score;
+              self.die();
+          }
+        };
+        Ballon.prototype.die = function () {
+            clearInterval(this.timer);
+            document.body.removeChild(this.dom);
+        };
+        function Game() {
+            this.score = 0;
+            this.scoreDom = 0;
+            this.timer = 0;
+            this.speed = 1;
+            this.speedDom = 0;
+            this.miss = 0;
+            this.missDom = 0;
+            this.broken = 0;
+            this.Gameover = 0;
+            this.init();
+            this.output();
+        }
+        Game.prototype.init = function () {
+            this.missDom = document.getElementById("miss");
+            this.scoreDom = document.getElementById("score");
+            this.speedDom = document.getElementById("speed");
+            this.broken = document.getElementById("broken");
+            this.Gameover = document.getElementById("Gameover");
+        };
+        Game.prototype.output = function () {
+          this.timer = setInterval(function () {
+              var bodyWidth = document.documentElement.clientWidth || document.body.clientWidth;
+              new Ballon(0,Math.random() * (bodyWidth - 96));
+          },1000);
+        };
+        Game.prototype.GameOver = function () {
+            clearInterval(this.timer);
+            this.Gameover.play();
+            alert("游戏结束，您的分数是：" + this.score);
+            window.location.reload();
+        };
+        var game = new Game();
+    </script>
+</html>
