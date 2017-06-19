@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+       .bg{
+            width: 500px;
+            height: 600px;
+            background: url("images/timg.jpg");
+            background-size: 700px 600px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .setting{
+            list-style: none;
+            width: 100%;
+            height: 100%;
+        }
+        .setting li{
+            width: 100px;
+            height: 100%;
+            margin-left: 11px;
+            margin-right: 14px;
+            float: left;
+            background: greenyellow;
+            opacity: 0.5;
+            position: relative;
+
+        }
+        span{
+            background: blue;
+            border: 2px solid cyan;
+            position: absolute;
+        }
+        h1{
+            color: #fff;
+            margin-right: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class = "bg">
+        <h1 id = "score">score:</h1>
+        <h1 id = "miss">miss:</h1>
+        <ul class = "setting" id = "setting">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <audio src = "images/bg.mp3" autoplay = "true"></audio>
+        <audio id = "kua" src = "images/b.wav"></audio>
+    </div>
+</body>
+<script>
+    var scores = document.getElementById("score");
+    var missing = document.getElementById("miss");
+    var settLis = document.getElementsByTagName("li");
+    function But(height) {
+        this.dom = null;
+        this.width = 98;
+        this.height = height;
+        this.left = 0;
+        this.top = 0;
+        this.timer = 0;
+        this.score = 0;
+        this.init();
+        this.drop();
+    }
+
+
+    But.prototype.init = function () {
+        this.dom = document.createElement('span');
+        this.dom.style.width = this.width+'px';
+        this.dom.style.height = this.height+'px';
+        this.dom.style.left = this.left+'px';
+        this.dom.style.top = this.top+'px';
+        settLis[parseInt(Math.random()*4)].appendChild(this.dom);
+
+        var self = this;
+        this.dom.onclick=function () {
+            self.score++;
+            self.die();
+            game.score += self.score;
+            scores.innerText = "score:" + game.score;
+        }
+    }
+
+    But.prototype.drop = function () {
+        var self = this;
+        this.timer = setInterval(function () {
+            self.top += 3;
+            if(self.top > settLis[0].clientHeight){
+                game.dieBut(self);
+                game.miss++;
+                missing.innerText = "miss: "+ game.miss;
+                if(game.miss>10){
+                    game.die();
+                }
+
+            }
+            self.dom.style.top = self.top + 'px';
+        },30);
+    }
+
+    But.prototype.die = function () {
+        game.music.play();
+        clearInterval(this.timer);
+        this.dom.parentNode.removeChild(this.dom);
+    }
+
+    function Game() {
+        this.timer = 0;
+        this.score = 0;
+        this.miss = 0;
+        this.music = null;
+        this.butsArr = [];
+
+        this.init();
+        this.createBut();
+    }
+
+    Game.prototype.init = function () {
+        this.music = document.getElementById("kua");
+    }
+
+    Game.prototype.createBut = function () {
+        var self = this;
+        self.timer =setInterval(function () {
+            var but = new But(parseInt(Math.random()*20+40));
+            self.butsArr.push(but);
+        },1000);
+    }
+
+    Game.prototype.dieBut = function () {
+        for(var i = 0; i < this.butsArr.length; i++){
+            if(this.butsArr[i] === but){
+                this.butsArr[i].die();
+                this.butsArr.splice(i,1);
+                return;
+            }
+
+        }
+
+    }
+    Game.prototype.die = function () {
+        clearInterval(this.timer);
+        for(var i = 0; i < this.butsArr.length; i++){
+            this.butsArr[i].die();
+            this.butsArr.splice(i,1);
+        }
+        alert('您的分数是：' + this.score);
+    }
+    var game = new Game();
+</script>
+</html>
