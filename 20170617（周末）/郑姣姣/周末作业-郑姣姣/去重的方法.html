@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+</body>
+<script>
+    //构造一个新的数组存放结果；
+    //for循环每次从数组中取出一个元素，用这个数组循环与结果数组对比；
+    //若结果数组中没有该元素，则存在结果数组中；
+    Array.prototype.weight = function () {
+        var res = [this[0]];
+        for(var i=0; i<this.length; i++){
+            var repeat = false;
+            for(var j=0; j<res.length; j++){
+                if(this[i] == res[j]){
+                    repeat = true;
+                    break;
+                }
+            }
+            if(!repeat){
+                res.push(this[i]);
+            }
+        }
+        return res;
+    }
+    var arrNum1 = [1,5,7,8,9,5,7,3,3,22,22,4,0,1,8,9,5];
+    console.log(arrNum1.weight());
+
+
+
+    //线构建一个临时数组存放结果
+    //循环遍历，判断当前数组下标是否已存入临时数组，存入则跳出，没有存入则存入临时数组
+    Array.prototype.unrepeat = function () {
+        var array=[];
+        for(var i = 0;i<this.length; i++){
+            if(array.indexOf(this[i]) == -1){
+                array.push(this[i]);
+            }
+        }
+        return array;
+    }
+    var arrNum2 = [1,4,1,1,3,5,6,6,7,3,88,77,6,5,88,5];
+    console.log(arrNum2.unrepeat());
+</script>
+</html>
