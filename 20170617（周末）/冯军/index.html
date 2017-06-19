@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style media="screen">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background: url("3056701c32ca456.jpg") no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        #oDiv {
+            width: 100%;
+            height: 600px;
+            position: relative;
+        }
+
+        #oDiv div {
+            width: 398px;
+            height: 600px;
+            border-right: 2px solid green;
+            float: left;
+        }
+
+        span {
+            display: inline-block;
+            width: 200px;
+            height: 80px;
+            background: white;
+            border: 1px solid #cccccc;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            margin-left: 150px;
+        }
+    </style>
+</head>
+<body>
+<!--<div id="oDiv">-->
+    <!--<div id="oDiv0"></div>-->
+    <!--<div id="oDiv1"></div>-->
+    <!--<div id="oDiv2"></div>-->
+<!--</div>-->
+<script type="text/javascript">
+    /**
+     * 长框
+     *     属性：
+     *       长度
+     *       速度
+     *       位置
+     *       分数
+     *       定时器
+     *     方法：
+     *     出生
+     *     死亡
+     *     下落
+     *   游戏：
+     *     属性：
+     *        定时器
+     *        总分
+     *        总分的肉体
+     */
+    var oDiv = document.getElementById("oDiv");
+
+
+    function Box() {
+        this.speed = 10;
+        this.top = 0;
+        this.left = [];
+        this.dom = null;
+        this.timer = 0;
+        this.score = 0;
+        this.run = null;
+        this.leftArry = [ "0px","300px","600px" ];
+        this.train =this.leftArry[parseInt(Math.random()*3)];
+        this.init();
+        this.fall();
+    }
+
+    Box.prototype.init = function () {
+        console.log(this.trainArry);
+        this.run = document.createElement("div");
+        console.log(this.train);
+        console.log(this.run);
+        this.dom = document.createElement("span");
+        this.dom.style.top = this.top + "px";
+        this.dom.style.left = this.train;
+        this.run.appendChild(this.dom);
+        document.body.appendChild(this.run);
+
+
+        this.score = 1;
+
+//           this.dom.style.top=100+"px";
+        var self = this;
+        this.dom.onclick = function () {
+            self.die();
+            Game.score += self.score;
+        }
+    };
+    Box.prototype.fall = function () {
+        var self = this;
+        this.timer = setInterval(function () {
+
+            self.top += 20;
+            if (self.top > 400) {
+                //死亡去除
+                Game.dieBox(self);
+                Game.misscount++;
+                if (Game.misscount > 5) {
+                    Game.die();
+                    self.die();
+                }
+            }
+            self.dom.style.top = self.top + "px";
+        }, 100)
+    };
+    Box.prototype.die = function () {
+        //音乐
+        clearInterval(this.timer);
+        this.run.removeChild(this.dom);
+    };
+    function Game() {
+        this.timer = 0;
+        this.score = 0;
+        this.misscount = 0;
+        this.scoreDom = null;
+        this.bolls = [];
+        //音乐
+
+//          this.init();
+        this.createBroder();
+    }
+    //      Game.prototype.init=function () {
+    //          音乐
+    //      }
+
+    Game.prototype.createBroder = function () {
+
+        var self = this;
+        this.timer = setInterval(function () {
+            var boll = new Box();
+            self.bolls.push(boll);
+        }, 1000)
+    }
+    Game.prototype.dieBox = function (boll) {
+        for (var i = 0; i < this.bolls.length; i++) {
+            if (this.bolls[i] == boll ) {
+                this.bolls[i].die();
+                this.bolls.splice(i, 1);
+                return
+            }
+        }
+    }
+    Game.prototype.die = function () {
+        clearInterval(this.timer);
+
+//        for (var i = 0; i < this.bolls.length; i++) {
+//            this.bolls[i].die();
+//            this.bolls.splice(i, 1);
+//        }
+        alert("您的分数是" + this.score);
+    }
+    var Game = new Game();
+
+</script>
+</body>
+</html>
