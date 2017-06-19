@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    Array.prototype.gsame = function(){
+        for(var i=0;i<this.length;i++){
+            var a = this[i];
+            for(var j=i+1;j<this.length;j++){
+                if(this[j] == a){
+                    this.splice(j,1);
+                }
+            }
+        }
+        return this;
+    }
+
+
+    var arr = [1,45,88,34,1,45,288,34,68,];
+    alert(arr.gsame());
+</script>
+</html>

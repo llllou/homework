@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        h1{
+            position: absolute;
+            top: 0;
+            left: 100px;
+            color:slateblue;
+        }
+        #miss{
+            top:200px;
+        }
+        body{
+            background: url(img/timg.jpg);
+            background-size: cover;
+            overflow: hidden;
+        }
+        .way{
+            width: 100%;
+            height: 100%;
+            margin:0 auto;
+            list-style: none;
+        }
+        .way li{
+            width: 300px;
+            height: 100%;
+            margin-left:150px;
+            float:left;
+            background: #000;
+            opacity: 0.2;
+            position: relative;
+        }
+        div{
+            background: greenyellow;
+            position: absolute;
+
+        }
+    </style>
+
+    <title>Title</title>
+</head>
+<body>
+        <h1 id="scor">得分</h1>
+        <h1 id="miss">错过</h1>
+        <ul class="way" id="way">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <audio src="bgm.mp3" autoplay="true"></audio>
+        <audio id="boom" src="c.wav"></audio>
+</body>
+<script>
+    var sco = document.getElementById("scor");
+    var mis = document.getElementById("miss");
+    var lis = document.getElementsByTagName("li");
+//    创建游戏点击按钮
+    function Butt(width,height){
+        this.dom = null;
+        this.width = width;
+        this.height = height;
+        this.left = 0;
+        this.top = 0;
+        this.timer = 0;
+        this.score = 0;
+        this.init ();
+        this.drop();
+    }
+//    按钮
+    Butt.prototype.init = function(){
+        this.dom = document.createElement("div");
+        this.dom.style.width = this.width+"px";
+        this.dom.style.height = this.height+"px";
+        this.dom.style.left = this.left+"px";
+        this.dom.style.top = this.top+"px";
+        lis[parseInt(Math.random()*3)].appendChild(this.dom);
+
+    //  添加点击事件
+        var self = this;
+        this.dom.onclick = function(){
+            self.score = 1;
+            self.die();
+            game.score +=self.score;
+            sco.innerText = "得分"+game.score;
+        }
+
+    }
+//    按钮原型掉落
+    Butt.prototype.drop = function(){
+        var self = this;
+        this.timer = setInterval(function(){
+            self.top += 3;
+            if(self.top > lis[0].clientHeight){
+                game.dieButt(self);
+                game.miss ++;
+                mis.innerText = "错过"+game.miss;
+                if(game.miss >10){
+                    game.die();
+                }
+
+            }
+            self.dom.style.top = self.top + "px";
+        },30)
+    }
+//    游戏按钮死
+    Butt.prototype.die = function(){
+        game.music.play();
+        clearInterval(this.timer);
+        this.dom.parentNode.removeChild(this.dom);
+    }
+//    创建游戏
+    function Game(){
+        this.timer = 0;
+        this.score = 0;
+        this.miss = 0;
+        this.music = null;
+        this.butts = [];
+
+        this.init();
+        this.createButt();
+    }
+//    游戏内容
+    Game.prototype.init = function(){
+        this.music = document.getElementById("boom");
+    };
+//    游戏按钮
+    Game.prototype.createButt = function(){
+        var self = this;
+        var timer = setInterval(function(){
+            var butt = new Butt(parseInt(Math.random()*100+100),parseInt(Math.random()*100+100));
+            self.butts.push(butt);
+        },1000);
+    }
+//    游戏按钮死亡
+    Game.prototype.dieButt = function(){
+        for(var i = 0;i < this.butts.length;i++){
+            this.butts[i].die();
+            this.butts.splice(i,1);
+            return;
+        }
+//        alert(1);
+//        alert("你的分数是："+this.score);
+    };
+
+//
+    Game.prototype.die = function(){
+        clearInterval(this.timer);
+        for(var i=0;i<this.butts.length;i++){
+            this.butts[i].die();
+            this.butts.splice(i,1);
+        }
+    }
+    var game = new Game();
+
+</script>
+</html>
