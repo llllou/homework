@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+       html, body{
+            height: 100%;
+           width: 100%;
+        }
+        .box{
+            width: 660px;
+            height: 600px;
+            border-radius: 5px;
+            background: black;
+            position: relative;
+            margin: 0 200px;
+        }
+        .score{
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 5px;
+            background: black;
+            position: absolute;
+            color: white;
+            top:20px;
+        }
+        .longdom{
+            width:150px;
+            height:40px;
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+            border: 1px solid black;
+            border-radius: 5px;
+            background: black;
+            position: absolute;
+            top:100px;
+        }
+        div{
+            width: 220px;
+            height: 80px;
+            float: left;
+            border-radius: 5px;
+            background: skyblue;
+            position: absolute;
+        }
+        h1{
+            width: 80px;
+            height: 30px;
+            border: 1px solid #891;
+            coler: white;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function Key(left) {
+            this.dom = null;
+            this.left = left;
+            this.speed = 1;
+            this.top = 0;
+            this.timer = 0;
+            this.init();
+            this.go();
+        }
+
+        Key.prototype.init = function () {
+            this.dom = document.createElement("div")
+            this.dom.style.left = this.left + 'px';
+            this.dom.style.top = this.top + 'px';
+            game.dom.appendChild(this.dom);
+            var  self = this;
+            this.dom.onclick = function () {
+                self.die();
+                game.score++;
+
+            }
+        }
+        Key.prototype.go = function () {
+            var self = this;
+            this.timer = setInterval(
+                function () {
+                    self.top += self.speed;
+                    var bodyheight = document.documentElement.clientHeight || document.body.clientHeight;
+                    if (self.top > bodyheight - 80) {
+                        self.die();
+                        game.keyArr.splice()
+                    }
+                    if (game.long == 0){
+                        self.noneKey();
+                    }
+                    if (game.score > 5) {
+                        self.speed = 1;
+                    }
+                    if (game.score > 10) {
+                        self.speed = 1.5;
+                    }
+                    if (game.score > 15) {
+                        self.speed = 2;
+                    }
+                    if (game.score > 20) {
+                        self.speed = 2.5;
+                    }
+                    self.dom.style.top = self.top + 'px';
+                },5);
+        }
+        Key.prototype.die = function () {
+                clearInterval(this.timer);
+            game.dom.removeChild(this.dom);
+        }
+
+        function Game() {
+            this.dom = null;
+            this.timer = 0;
+            this.long = 60;
+            this.longDom = null;
+            this.score = 0;
+            this.scoreTimer = 0;
+            this.scoreDom = null;
+            this.keyArr = [ ];
+            this.dieKey = 0;
+            this.makeKey();
+            this.makedom();
+        }
+        Game.prototype.makedom = function () {
+            this.dom = document.createElement('div');
+            this.dom.className = "box";
+            document.body.appendChild(this.dom);
+
+            this.scoreDom = document.createElement("div")
+            this.scoreDom.className = "score"
+            this.scoreDom.innerText = 'score      '+this.score;
+            document.body.appendChild(this.scoreDom);
+
+            this.longDom = document.createElement("div")
+            this.longDom.className = "longdom"
+            this.longDom.innerText = 'time      '+this.long;
+            document.body.appendChild(this.longDom);
+
+            var self = this;
+            this.scoreTimer = setInterval(
+                function () {
+                    self.long--;
+                    if (self.long == 0) {
+                        clearInterval(self.scoreTimer);
+                        self.noneKey();
+                    }
+                    self.longDom.innerText = 'time      '+self.long;
+                    self.scoreDom.innerText = 'score      '+self.score;
+                },1000)
+        }
+        Game.prototype.makeKey = function () {
+            var self = this;
+            this.timer = setInterval(
+                function () {
+                    var key = new Key(parseInt( Math.random()*3)*220);
+                    self.keyArr.push(key);
+                },1000)
+        }
+        Game.prototype.noneKey = function () {
+            clearInterval(this.timer)
+            clearInterval(this.scoreTimer)
+            this.keyArr = [];
+        }
+
+        var game = new Game();
+    </script>
+</body>
+</html>
