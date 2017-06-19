@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+	<script>
+	Array.prototype.deletedouble = function() {
+	  var result=[];
+	  for(var i=0; i<this.length; i++){
+	    if(result.indexOf(this[i])==-1){
+	      result.push(this[i]);
+	    }	    
+	  }
+	  this.splice(0,this.length);
+	  for (var i = 0; i < result.length; i++) {
+		this.push(result[i]);  
+	  }  
+	  return this;
+	}
+	var arr=[33,44,55,44,55]      
+	console.log(arr.deletedouble());
+	</script>
+</html>
