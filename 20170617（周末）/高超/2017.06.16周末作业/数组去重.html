@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组去重</title>
+</head>
+<body>
+<script>
+    var arr=[1,1,2,2,3,3];
+//    function fun(arr) {
+        var ar=[];
+        for(var i = 0; i < arr.length; i++){
+//            如果新数组检索旧数组的下标等于-1 则新数组里没有这个数 即尾插入新数组
+            if(ar.indexOf(arr[i]) === -1){
+                ar.push(arr[i]);
+            }
+        }
+//        return ar ;
+//    }
+    console.log(ar);
+</script>
+</body>
+</html>
