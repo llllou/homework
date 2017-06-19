@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    Array.prototype.norpt = function() {
+        var str = null;
+        for(var i = 0;i < this.length;i++) {
+            str = this[i];
+
+            for(var j = i+1;j < this.length;j++) {
+                if(this[j] == str) {
+                    this.splice(j,1);
+                }
+            }
+        }
+        return this;
+    }
+    var arr = [4.5,'grte','po','weq','fr',4,4.5,'dfrge','erfwe','e5ewr','frtry'];
+    console.log(arr.norpt());
+</script>
+</body>
+</html>
