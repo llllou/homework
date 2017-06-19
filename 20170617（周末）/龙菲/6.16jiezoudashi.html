@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		html, body {
+			width: 100%;
+			height: 100%;
+		}
+		span {
+			display: block;
+			width: 100px;
+			height: 100px;
+			background: black;
+			border-radius: 10%;
+			position: absolute;
+		}
+		
+		#odiv1 {
+			width: 100px;
+			height: 800px;
+			position: absolute;
+			left: 100px;
+			top: 0;
+			background: rgba(29, 120, 167, 0.2 );
+		}
+		#odiv2 {
+			width: 100px;
+			height: 800px;
+			position: absolute;
+			left: 400px;
+			top: 0;
+			background: rgba(101, 214, 213, 0.3 );;
+		}
+		#odiv3 {
+			width: 100px;
+			height: 800px;
+			position: absolute;
+			left: 700px;
+			top: 0;
+			background: rgba(41, 111, 110, 0.4 );;
+		}
+	</style>
+</head>
+<body>
+<div id="odiv1"></div>
+<div id="odiv2"></div>
+<div id="odiv3"></div>	
+</body>
+<script type="text/javascript">
+	var odiv1 = document.getElementById('odiv1');
+	var odiv2 = document.getElementById('odiv2');
+	var odiv3 = document.getElementById('odiv3');
+	function Block(left) {
+		this.speed = 10;
+		this.top = 0;
+		this.left = left;
+		this.dom = null;
+		this.timer = 0;
+		this.score = 0;
+
+		this.init();
+		this.drop();
+	}
+	Block.prototype.init = function() {
+		this.dom = document.createElement('span');
+		var arr = [100, 400, 700];
+		this.dom.style.left = arr[parseInt(Math.random() *3)] + 'px';
+		this.dom.style.top = this.top + this.speed + 'px';
+
+		
+		document.body.appendChild(this.dom);
+		 this.score = parseInt(Math.random() * 7) + 1;
+		  var self = this;
+		  
+		  	
+		 this.dom.onclick = function() {
+		 	if (this.dom.style.clientY = 600 + 'px' ) {
+		 	self.die();
+		 	game.score += self.score; }else{
+		 		return;
+		 	}
+		 }
+
+
+		
+	}
+	Block.prototype.drop = function() {
+		var self = this;
+		this.timer = setInterval(function(){
+			self.top += parseInt(Math.random() * 10) + 20;
+			var bodyHeight = document.documentElement.clientHeight || document.body.clientHeight;
+			if (self.top > bodyHeight-67) {
+				game.dieBlock(self);
+				game.misscount ++;
+				if (game.misscount > 15) {
+					game.die();
+				}
+			} 
+			self.dom.style.top = self.top + 'px';
+		}, 100);
+	}
+	Block.prototype.die = function() {
+		clearInterval(this.timer);
+		
+		document.body.removeChild(this.dom);
+	}
+
+
+
+
+	
+
+	function Game() {
+		this.timer = 0;
+		this.score = 0;
+		this.misscount = 0;
+		this.scoreDom = null;
+		this.blocks = [];
+
+		/*this.init();*/
+		this.createBlock();
+	}
+	/*Game.prototype.init = function() {
+
+	}*/
+	Game.prototype.createBlock = function() {
+		var self = this;
+		this.timer = setInterval(function() {
+			var bodyWidth = document.documentElement.clientWidth || document.body.clientWidth;
+			var block = new Block((Math.random() * bodyWidth) - 96);
+          self.blocks.push(block);
+		},500);
+	}
+	Game.prototype.dieBlock = function(block) {
+		for (var i = 0; i < this.blocks.length; i++) {
+			if (this.blocks[i] === block){
+				this.blocks[i].die();
+				this.blocks.splice(i, 1);
+				return;
+			}
+		}
+	}
+	Game.prototype.die = function() {
+		clearInterval(this.timer);
+		for (var i = 0; i < this.blocks.length; i++) {
+			this.blocks[i].die();
+			this.blocks.splice(i, 1);
+		}
+		alert('您的分数是:' + this.score);
+	}
+	var game = new Game();
+;</script>
+</html>

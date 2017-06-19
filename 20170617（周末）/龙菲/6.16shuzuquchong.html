@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function fun(arr) {
+ 		var res = [];
+  		for (var i = 0, iLen = arr.length; i < iLen; i++) {
+    		var item = arr[i]; 
+		for (var j = 0, jLen = res.length; j < jLen; j++) {
+      		if (res[j] === item)
+        	break;
+    }
+		if (j === jLen)
+      	res.push(item);
+  	}
+		return res;
+}
+	var arr = [1, 1, '1', '2', 1, 2, 2, 3, '3'];
+	var arr1 = fun(arr);
+	console.log(arr1); 
+</script>
+</html>
