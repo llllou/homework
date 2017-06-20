@@ -1,0 +1,32 @@
+*{
+	margin: 0;
+	padding:0;
+}
+p
+{
+	height: 20px;
+	width: 20px;
+	background-color: red;
+	position: absolute;
+	border-radius: 50%;
+}
+body
+{
+	max-width: 1366px;
+}
+#stick
+{
+	height: 10px;
+	width: 51px;
+	position: absolute;
+	background-color: brown;
+	bottom:0px;
+}
+#scroce
+{
+	float: left;
+	width: 30px;
+	height: 16px;
+	font-size: 16px;
+	line-height: 16px;
+}
