@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            padding:0;
+            margin:0;
+        }
+        html, body{
+            width:100%;
+            height:100%;
+            background:url("image/075d14f5d9977867f3773a014a6149dd.jpg");
+            background-size: 100% 100%;
+        }
+        .ball{
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            position: absolute;
+            border:2px solid #eeeeee;
+            left: 0;
+            top: 0;
+        }
+        .diamonds{
+            width: 196px;
+            height: 26px;
+            border-radius: 50px;
+            position: absolute;
+            bottom: 100px;
+            border:2px solid #eeeeee;
+            background:#318fe1;
+            cursor: pointer;
+            left:45%;
+        }
+        h3{
+            width: 200px;
+            border-radius: 50px;
+            background:rgba(0,0,0,0.3);
+            text-align: center;
+            padding:10px 20px;
+            margin:10px 0 0 10px;
+            border:2px solid #eeeeee;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="diamonds" id="diamonds"></div>
+    <h3 id="score">分数:0</h3>
+    <h3 id="level">等级:1</h3>
+</body>
+    <script type="text/javascript">
+        function Ball(top, left) {
+            this.top = top;
+            this.left = left;
+            this.backgroundcolor = ["red","blue","green","yellow","pink"];
+            this.timer = 0;
+            this.dom = null;
+            this.b = 50;
+            this.clientX = 5;
+            this.diamonds = 0;
+            this.clientY = 5;
+            this.init();
+            this.render();
+            this.down();
+        }
+        Ball.prototype.init = function () {
+            this.diamonds = document.getElementById("diamonds");
+            this.dom =document.createElement("div");
+            this.dom.style.top = this.top + "px";
+            this.dom.style.left = this.left + "px";
+            this.dom.className = "ball";
+            this.dom.style.background = this.backgroundcolor[parseInt(Math.random() * this.backgroundcolor.length)];
+            document.body.appendChild(this.dom);
+        };
+        Ball.prototype.down = function () {
+            var self = this;
+            this.diamonds.onmousedown = function (event) {
+                event = event || window.event;
+                var Clientx = event.clientX - self.diamonds.offsetLeft;
+                document.onmousemove = function (event) {
+                    event = event || window.event;
+                    var X = event.clientX - Clientx;
+                    var width = document.documentElement.clientWidth || document.body.clientWidth;
+                    if(X < 0) X = 0;
+                    if(X > width - 200) X = width - 200;
+                    self.diamonds.style.left = X + "px";
+                    return false;
+                };
+                document.onmouseup = function () {
+                    document.onmousemove = null;
+                }
+            }
+        };
+        Ball.prototype.render = function () {
+            var self = this;
+            this.timer = setInterval(function () {
+                self.top += self.clientY;
+                self.left += self.clientX;
+                var width = document.documentElement.clientWidth || document.body.clientWidth;
+                var height = document.documentElement.clientHeight || document.body.clientHeight;
+                var Left = self.diamonds.offsetLeft;
+                self.dom.style.top = self.top + "px";
+                self.dom.style.left = self.left + "px";
+                if(self.top <= 0 || self.top >= height - self.b) self.clientY = -self.clientY;
+                if(self.left <= 0 || self.left >= width - self.b - 5) self.clientX = -self.clientX;
+                if(self.dom.offsetTop >= height - self.b) {
+                    clearInterval(self.timer);
+                    game.GameOver();
+                }
+                if(self.top === self.diamonds.offsetTop - self.b ){
+                    if(self.left + 15>= Left && self.left - 15 <= Left + 200 - self.b){
+                        self.clientY = -self.clientY;
+                        game.score += game.deltaScores[game.level];
+                        if(game.score > game.scores[game.level]){
+                            game.level++;
+                            self.render();
+                        }
+                        game.levelDom.innerText = "等级:"+game.level;
+                        game.scoreDom.innerText = "分数:"+game.score;
+                    }
+                }else if(self.top < self.diamonds.offsetTop - self.b && self.top > self.diamonds.offsetTop + 30){
+                    if(self.left + 15 === Left || self.left - 15 === Left + 200 - self.b){
+                        self.clientX = -self.clientX;
+                    }
+                }
+            },game.delta[game.level]);
+        };
+
+        function Game() {
+            this.score = 0;
+            this.scoreDom = 0;
+            this.level = 1;
+            this.levelDom = 0;
+            this.deltaScores = [0,5,30,50,80,100,150,200];
+            this.delta = [0,20,17,14,11,8,7,5];
+            this.scores = [0,10,60,160,310,510,760,1060];
+            this.init();
+        }
+        Game.prototype.init = function () {
+            this.scoreDom = document.getElementById("score");
+            this.levelDom = document.getElementById("level");
+        };
+        Game.prototype.GameOver = function () {
+          alert("游戏结束您的分数是" + this.score);
+          window.location.reload();
+        };
+        var game = new Game();
+        new Ball(0,parseInt(Math.random()*1000 + 20));
+    </script>
+</html>
