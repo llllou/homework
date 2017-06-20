@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html, body {
+        width: 100%;
+        height: 638px;
+      }
+      div {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+      p {
+        border-top: 5px solid lightblue;
+        position: absolute;
+        width: 150px;
+        height: 1px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    分数: <h1 id="score">0</h1>
+    等级: <h2 id="level">1</h2>
+    <script type="text/javascript">
+      //小球
+      /*
+      属性：
+        颜色
+        大小
+      方法：
+        生成
+        显示
+        移动
+      */
+     //定义ball
+      function Ball(left, top, speed, color, deltaX, deltaY) {
+        //每次移动的x的量，y的量
+        this.deltaX = deltaX || 5;
+        this.deltaY = deltaY || 5;
+        this.color = color;//定义颜色
+        this.left = left;//定义左值
+        this.top = top;//定义上值
+        this.d = 30;//直径
+        this.speed = speed;//定义速度
+        this.dom = null;//dom事件
+        this.timer = 0;//定时器
+        this.init();//调用函数
+        this.move();
+      }
+      //ball 原型  init
+      Ball.prototype.init = function() {
+        //创建div
+        this.dom = document.createElement('div');
+        //给div加颜色
+        this.dom.style.backgroundColor = this.color;
+        //创建dom节点
+        document.body.appendChild(this.dom);
+      }
+      //小球的渲染
+      Ball.prototype.render = function() {
+        //小球移动的左值
+        this.dom.style.left = this.left + 'px';
+        //小球移动的上值
+        this.dom.style.top = this.top + 'px';
+      }
+      //移动
+      Ball.prototype.move = function() {
+        //防止取到window
+        var self = this;
+        //取到屏幕的宽度  
+        var width = document.documentElement.clientWidth || document.body.clientWidth;
+        //取到屏幕的高度
+        var height = document.documentElement.clientHeight || document.body.clientHeight;
+        //获得当前等级对应的delta值
+        self.deltaX = self.deltaY = game.delta[game.level];
+        //开启定时器
+        this.timer = setInterval(function(){
+          //小球移动的方位
+          self.top += self.deltaY;
+          self.left += self.deltaX;
+
+          //碰撞检测
+          //如果左值小于或者等于0 或者小球的碰到边距 减去自己的直径
+          if (self.left <= 0 || self.left >= width - self.d) {
+            //就让小球的移动方向改变
+            self.deltaX = -self.deltaX;
+          }
+          //如果上至小于或者等于0 或者小球碰到600px减去自己的直径值
+          if (self.top <= 0 || self.top >= 600-30) {//板的top值
+            //如果在板上则反弹，否则gameover
+            if (self.top === 600-30
+              &&
+              (   //先用左值加上小球的直径小于总共的offsetLeft或者左值大于offsetLeft加上150px
+                (self.left + 30) < board.dom.offsetLeft
+                || self.left > board.dom.offsetLeft + 150
+              )) {
+              //关闭定时器
+              clearInterval(self.timer);
+              //弹出game over
+              alert('game over');
+            } else {
+              //否则让小球反弹回去
+              self.deltaY = -self.deltaY;
+              //加分
+              if (self.top === 600 - 30) {
+                game.addScore();
+              }
+            }
+          }
+
+          self.render();//调用函数
+        }, this.speed);
+      }
+
+      /**
+      档板
+      */
+      function Board() {
+        this.dom = null;//dom事件
+        this.left = 100;//小篮板刚初始的左距离
+        this.top = 600;//小蓝扳距上的距离
+        this.init();//调用函数
+        this.render();
+        this.bindEvent();
+      };
+      Board.prototype.init = function() {
+        //创建小篮板
+        this.dom = document.createElement('p');
+        //添加节点
+        document.body.appendChild(this.dom);
+      };
+      Board.prototype.render = function() {
+        //小篮板移动的距离
+        this.dom.style.left = this.left + 'px';
+        this.dom.style.top = this.top + 'px';
+      };
+      Board.prototype.bindEvent = function() {
+        var self = this;
+        //当鼠标房在上面的时候
+        document.onmousemove = function(event) {
+          //处理兼容
+          event = event || window.event;
+          //小篮板的left值等于鼠标位置
+          self.left = event.clientX;
+          self.render();//调用函数
+        }
+      };
+      var board = new Board();//建立之歌对象
+
+      /*
+      游戏
+      */
+      function Game() {
+        this.score = 0;//得分
+        this.scoreDom = null;//总分
+        this.level = 1;//等级
+        this.levelDom = null;//总共的级数
+        //数组第1个是占位的
+        this.deltaScores = [0, 1, 5, 10, 15, 20, 25, 30, 35, 40, 45];//加的分数
+        this.delta = [0, 5, 10, 15, 20, 25, 30];//叠加的值
+        this.scores = [0, 0, 3, 20, 50, 100, 160, 235, 325, 430, 550];//分数按等级区分
+      };
+      Game.prototype.init = function() {
+        //调用者两个属性
+        this.scoreDom = document.getElementById('score');
+        this.levelDom = document.getElementById('level');
+        //第一小球的位置
+        new Ball(100, 100, 10, "coral", 5, 5);
+        setTimeout(function(){
+          //第二个小球的创建
+        //  new Ball(300, 150, 10, "green", 5, 5);
+        },500);
+      };
+      Game.prototype.addScore = function() {
+        this.score += this.deltaScores[this.level];
+        //根据分值升级
+        //3 20 50 100 160 235 325 430 550
+        
+        for (var i = this.scores.length-1; i > 0; i-- ) {
+          //如果分数等于分数的其中一个
+          if (this.score >= this.scores[i]) {
+            //增加等级
+            this.level = i; 
+            break;
+          }
+        }
+        this.render();//调用函数
+      };
+      Game.prototype.render = function() {
+        //显示出分数
+        this.scoreDom.innerText = this.score;
+        //显示出等级
+        this.levelDom.innerText = this.level;
+      };
+      var game = new Game();//创建这个游戏对象
+      game.init();//调用函数
+
+    </script>
+  </body>
+</html>
