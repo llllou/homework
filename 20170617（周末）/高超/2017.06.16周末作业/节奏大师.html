@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节奏大师</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: black;
+        }
+        #Bor{
+            width: 600px;
+            height: 600px;
+            border: 1px solid darkorange;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        p{
+            width: 100px;
+            height: 50px;
+            background: cornflowerblue;
+            position:absolute;
+            margin-left: 40px;
+            border-radius: 10px;
+            border:1px solid deeppink;
+        }
+        #Bor_link{
+            width: 100%;
+            height: 50px;
+            background-color: royalblue;
+            position: absolute;
+            bottom:0;
+            /*margin-left: 5px;*/
+            border-radius:10px;
+            margin-bottom: 20px;
+            z-index: -1;
+        }
+        .Bor-Br1{
+            display: inline-block;
+            width: 1px;
+            height: 100%;
+            background-color: darkorange;
+            margin-left: 160px;
+        }
+        .Bor-Br2{
+            display: inline-block;
+            width: 1px;
+            height: 100%;
+            background-color: darkorange;
+            margin-left: 135px;
+        }
+        .Bor-Br3{
+            display: inline-block;
+            width: 1px;
+            height: 100%;
+            background-color: darkorange;
+            margin-left: 135px;
+        }
+
+        .Score{
+            color: white;
+            font-size: 20px;
+            display: inline-block;
+        }
+        .Score h5{
+            color: white;
+            /*position: absolute;*/
+            /*top:0;*/
+            display: inline-block;
+        }
+        .Miss{
+            color: white;
+            font-size: 20px;
+            display: inline-block;
+            margin-left: 30px;
+        }
+        .Miss h6{
+            color: white;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div class="Score">得分为：<h5></h5> </div>
+<div class="Miss">MISS：<h6></h6> </div>
+<!--<button>开始游戏</button>-->
+<div id="Bor">
+    <span class="Bor-Br1"></span>
+    <span class="Bor-Br2"></span>
+    <span class="Bor-Br3"></span>
+    <div id="Bor_link"></div>
+</div>
+<script>
+    /*
+    砖头属性
+        肉体
+        位置
+        速度
+        时间
+        绑定事件
+     砖头方法：
+        生成
+        移动
+        消失
+
+     游戏属性：
+        定时器  不断生成砖头
+        计分
+        分数的DOM
+     游戏方法：
+        控制砖头
+        控制游戏结束
+     */
+
+    function Brick(left) {
+        var Bor = document.getElementById('Bor');
+        var Bor_link = document.getElementById('Bor_link');
+        this.dom = null;
+        this.top = 0;
+        this.timer = 0;
+        this.left = left;
+        this.score = 1;
+        this.speed = 50;
+        this.color = ['red','blue','green','pink'];
+
+        this.init();
+        this.move();
+    }
+    Brick.prototype.init =function () {
+        this.dom = document.createElement('p');
+        this.dom.style.top = this.top + 'px';
+        this.dom.style.left = this.left + 'px';
+        this.dom.style.backgroundColor = this.color [parseInt(Math.random() * 4)];
+        Bor.appendChild(this.dom);
+
+//        绑定事件self.top >= 470
+        var self = this;
+        this.dom.onclick = function () {
+            if(self.top >= 470){
+                self.die();
+                game.score += self.score;
+                game.scoreDom.innerText = game.score;
+//                console.log(game.score);
+            }
+
+        }
+    };
+    Brick.prototype.move = function () {
+
+        var self = this;
+        clearInterval(this.timer);
+        this.timer=setInterval(function () {
+
+            self.top += 3;
+            if(self.top > 530 ){
+             self.die();
+             game.miss--;
+                game.missDom.innerText = game.miss;
+             console.log(game.miss);
+            }
+            if(game.miss === 0){
+                game.miss = 0;
+                game.die();
+            }
+            self.dom.style.top = self.top + 'px';
+        },this.speed);
+    };
+    Brick.prototype.die = function () {
+      clearInterval(this.timer);
+      Bor.removeChild(this.dom);
+    };
+
+//    var Bck = new Brick(140 * parseInt((Math.random() * 4)));
+    
+    function Game() {
+        this.time = 0;
+        this.miss = 5;
+        this.missDom = null;
+        this.score = 0;
+        this.scoreDom = null;
+        this.Bricks = [];
+        this.init();
+        this.star();
+    }
+    Game.prototype.init = function () {
+//        this.scoreDom = document.createElement('h1');
+        this.missDom = document.getElementsByTagName('h6')[0];
+        this.scoreDom = document.getElementsByTagName('h5')[0];
+//        document.body.appendChild(this.scoreDom);
+
+    };
+    Game.prototype.star = function () {
+        var self = this;
+        clearInterval(this.time);
+        this.time = setInterval(function() {
+            var Bck = new Brick(140 * parseInt((Math.random() * 4)));
+        },2000);
+        
+     Game.prototype.die = function () {
+         var self = this;
+
+         clearInterval(self.time);
+//         self.missDom.innerText = 0;
+         alert("GAME OVER");
+     } 
+
+    };
+    var game = new Game();
+</script>
+</body>
+</html>

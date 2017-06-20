@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ball-game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html,body {
+            width: 100%;
+            height: 100%;
+        }
+        .bor {
+            width: 1000px;
+            height: 600px;
+            margin: auto;
+            border: 1px solid rosybrown;
+            position: relative;
+        }
+        b{
+            width: 150px;
+            height: 6px;
+            background-color: aqua;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        p{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-block;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bor" id="bor">
+        <h1 id="score">score: 0</h1>
+        <h1 id="level">level: 0</h1>
+    </div>
+</body>
+<script>
+    var bor = document.getElementById("bor");
+    //鼠标移动横线移动
+    function Line() {
+        this.dom = null;
+        this.left = 0;
+        this.bottom = 0;
+        this.init();
+        this.render();
+        this.bindEvent();
+    }
+    Line.prototype.init = function() {
+        this.dom = document.createElement('b');
+        bor.appendChild(this.dom);
+    };
+    Line.prototype.render = function() {
+        this.dom.style.left = this.left + 'px';
+        this.dom.style.bottom = this.bottom + 'px';
+    };
+    Line.prototype.bindEvent = function() {
+        var self = this;
+        document.onmousemove = function(event){
+            event = event || window.event;
+            var newLeft = event.clientX - (document.body.clientWidth - bor.clientWidth)/2;
+            if( newLeft < 0) {
+                newLeft = 0;
+            }else if( newLeft > bor.clientWidth - self.dom.clientWidth) {
+                newLeft = bor.clientWidth - self.dom.clientWidth;
+            }
+            self.left = newLeft;
+            self.render();
+        }
+    }
+    var line = new Line();
+    //创建小球
+    function Ball(left, top, speed, deltaX, deltaY) {
+        this.dom = null;
+        this.left = left;
+        this.top = top;
+        this.speed = speed;
+        this.deltaX = deltaX || 5;//球移动速度
+        this.deltaY = deltaY || 5;
+        this.d = 30;//直径
+        this.timer = 0;
+        this.arr = ["blue","chartreuse","hotpink","yellow","red","plum","gold","fuchsia","magenta"]
+        this.arrs = this.arr[parseInt(Math.random()*9)];
+
+        this.init();
+        this.move();
+    }
+    Ball.prototype.init = function() {
+        this.dom = document.createElement('p');
+        this.dom.style.backgroundColor = this.arrs;
+        this.dom.style.left = this.left + 'px';
+        bor.appendChild(this.dom);
+    };
+    Ball.prototype.render = function() {
+        this.dom.style.left = this.left + 'px';
+        this.dom.style.top = this.top + 'px';
+    };
+    Ball.prototype.move = function() {
+       var self = this;
+        var borWidth = bor.clientWidth;
+        var borHeight = bor.clientHeight;
+
+        self.deltaX = self.deltaY = game.delta[game.level];
+        this.timer = setInterval(function() {
+            self.top += self.deltaY;
+            self.left += self.deltaX;
+
+            if(self.left <= 0 || self.left >= borWidth - self.d) {
+                self.deltaX = -self.deltaX;
+            }
+            if(self.top <= 0 || self.top >= borHeight - self.d) {
+                if(self.top === borHeight - 30 && ((self.left + 30)< line.dom.offsetLeft || self.left > (line.dom.offsetLeft + line.dom.offsetWidth))) {
+                    clearInterval(self.timer);
+                    alert("GAME OVER!");
+                }else {
+                    self.deltaY = -self.deltaY;
+
+                    if (self.top === 600 - 30) {
+                        game.addScore();
+                    }
+                }
+            }
+            self.render();
+        },this.speed)
+    };
+//        var ball1 = new Ball(100, 100, 10, 5, 5);
+    function Game() {
+        this.score = 0;
+        this.scoreDom = null;
+        this.level = 1;
+        this.levelDom = null;
+        this.deltaScores = [0, 1, 5, 10, 15, 20, 25, 30, 35, 40, 45];//加的分数
+        this.delta = [0, 5, 10, 15, 20, 25, 30];//叠加的值
+        this.scores = [0, 0, 3, 20, 50, 100, 160, 235, 325, 430, 550];//分数按等级区分
+
+    }
+    Game.prototype.init = function() {
+        this.scoreDom = document.getElementById('score');
+        this.levelDom = document.getElementById('level');
+        new Ball(100, 100, 10, 5, 5);
+    };
+    Game.prototype.render = function() {
+        this.scoreDom.innerText ="score: " + this.score;
+        this.levelDom.innerText ="level: " + this.level;
+    };
+    Game.prototype.addScore = function() {
+        this.score += this.deltaScores[this.level];
+        //根据分值升级
+        //3 20 50 100 160 235 325 430 550
+        for (var i = this.scores.length-1; i > 0; i-- ) {
+            if (this.score >= this.scores[i]) {
+                this.level = i;
+                break;
+            }
+        }
+        this.render();
+    };
+    var game = new Game();
+    game.init();
+</script>
+</html>

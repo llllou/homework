@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            width: 100%;
+            height: 638px;
+        }
+        div {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        p {
+            position: absolute;
+            width: 150px;
+            height: 20px;
+            display: inline-block;
+            background: url("1.png")  100% 100%;
+        }
+    </style>
+</head>
+<body>
+分数: <h1 id="score">0</h1>
+等级: <h2 id="level">1</h2>
+<script type="text/javascript">
+
+ function Ball(left, top, speed, color, deltaX, deltaY) {
+     this.deltaX = deltaX || 5;
+     this.deltaY = deltaY || 5;
+     this.color = color;
+     this.left = left;
+     this.top = top;
+     this.d = 30;//直径
+     this.speed = speed;
+     this.dom = null;
+     this.timer = 0;
+     this.init();
+     this.move();
+ }
+ Ball.prototype.init = function () {
+     this.dom = document.createElement("div");
+     this.dom.style.backgroundColor = this.color;
+     document.body.appendChild(this.dom);
+ }
+ Ball.prototype.render = function () {
+     this.dom.style.left = this.left + "px";
+     this.dom.style.top = this.top + "px";
+ }
+ Ball.prototype.move = function () {
+     var self = this;
+     var width = document.documentElement.clientWidth || document.body.clientWidth;
+     var Height = document.documentElement.clientHeight || document.body.clientHeight;
+     self.deltaX = self.deltaY = game.delta[game.level];
+     this.timer = setInterval(function () {
+         self.top += self.deltaY;
+         self.left += self.deltaX;
+         if (self.left <= 0 || self.left >= width - self.d) {
+             //就让小球的移动方向改变
+             self.deltaX = -self.deltaX;
+         }
+         if (self.top <= 0 || self.top >= 600-30) {
+             if (self.top === 600-30 && ( (self.left + 30) < board.dom.offsetLeft
+                     || self.left > board.dom.offsetLeft + 150)){
+         clearInterval(self.timer);
+         alert("game over");
+     }else {
+                 self.deltaY = -self.deltaY;
+                 if (self.top === 600 - 30){
+                     game.addScore();
+                 }
+             }
+         }
+         self.render();
+     },this.speed);
+ }
+    function Board() {
+        this.dom = null;//dom事件
+        this.left = 100;//小篮板刚初始的左距离
+        this.top = 600;//小蓝扳距上的距离
+        this.init();//调用函数
+        this.render();
+        this.bindEvent();
+    };
+    Board.prototype.init = function() {
+        //创建小篮板
+        this.dom = document.createElement('p');
+        //添加节点
+        document.body.appendChild(this.dom);
+    };
+    Board.prototype.render = function() {
+        //小篮板移动的距离
+        this.dom.style.left = this.left + 'px';
+        this.dom.style.top = this.top + 'px';
+    };
+    Board.prototype.bindEvent = function() {
+        var self = this;
+        //当鼠标房在上面的时候
+        document.onmousemove = function(event) {
+            //处理兼容
+            event = event || window.event;
+            //小篮板的left值等于鼠标位置
+            self.left = event.clientX;
+            self.render();//调用函数
+        }
+    };
+    var board = new Board();//建立之歌对象
+
+    /*
+     游戏
+     */
+    function Game() {
+        this.score = 0;//得分
+        this.scoreDom = null;//总分
+        this.level = 1;//等级
+        this.levelDom = null;//总共的级数
+        //数组第1个是占位的
+        this.deltaScores = [0, 1, 5, 10, 15, 20, 25, 30, 35, 40, 45];//加的分数
+        this.delta = [0, 5, 10, 15, 20, 25, 30];//叠加的值
+        this.scores = [0, 0, 3, 20, 50, 100, 160, 235, 325, 430, 550];//分数按等级区分
+    };
+    Game.prototype.init = function() {
+        //调用者两个属性
+        this.scoreDom = document.getElementById('score');
+        this.levelDom = document.getElementById('level');
+        //第一小球的位置
+        new Ball(100, 100, 10, "red", 5, 5);
+        setTimeout(function(){
+            new Ball(300, 150, 10, "blue", 5, 5);
+        },500);
+    };
+    Game.prototype.addScore = function() {
+        this.score += this.deltaScores[this.level];
+        //根据分值升级
+        //3 20 50 100 160 235 325 430 550
+
+        for (var i = this.scores.length-1; i > 0; i-- ) {
+            //如果分数等于分数的其中一个
+            if (this.score >= this.scores[i]) {
+                //增加等级
+                this.level = i;
+                break;
+            }
+        }
+        this.render();//调用函数
+    };
+    Game.prototype.render = function() {
+        //显示出分数
+        this.scoreDom.innerText = this.score;
+        //显示出等级
+        this.levelDom.innerText = this.level;
+    };
+    var game = new Game();//创建这个游戏对象
+    game.init();//调用函数
+
+</script>
+</body>
+</html>
