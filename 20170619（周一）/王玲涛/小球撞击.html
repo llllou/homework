@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width:500px;
+            height:500px;
+            border:1px solid red;
+            margin: 0 auto ;
+            position:relative;
+        }
+        .board{
+            display: inline-block;
+            width:100px;
+            height:10px;
+            background: #000;
+            position: absolute;
+            bottom:0;
+        }
+        .ball{
+            display: inline-block;
+            width:30px;
+            height:30px;
+            position:absolute;
+            border-radius:50%;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+
+</div>
+<script src="../../common.js"></script>
+<script>
+    /**
+     *
+     * @constructor Function
+     */
+    function Ball(box, boardDom, speed){
+        this.box = box;
+        this.left = 0;
+        this.top = 0;
+        this.d = 30;
+        this.boardDom = boardDom;
+        this.dom = null;
+        this.timer = 0;
+        this.speed = 40;
+        this.deltaX = 4;
+        this.deltaY = 5;
+        this.ballTop = 0;
+        this.ballLeft = 0;
+        this.init();
+        this.strike();
+    }
+
+    Ball.prototype.init = function(){
+        this.dom = document.createElement('span');
+        this.dom.className = 'ball';
+        this.dom.style.backgroundColor = 'lightgreen';
+        this.box.appendChild(this.dom);
+    };
+    Ball.prototype.strike = function(){
+        var self = this;
+         this.timer = setInterval(function(){
+             self.top += self.deltaY;
+             self.left += self.deltaX;
+             self.ballTop = parseInt(getComputedStyle(self.dom).top);
+             self.ballLeft = parseInt(getComputedStyle(self.dom).left);
+             console.log(self.speed);
+
+             if(self.left <= 0 || self.left >= self.box.clientWidth - 30){
+                 self.deltaX = -self.deltaX;
+             }
+             if(self.top <=0 || self.top >= 460 ){
+                 var boardDomLeft = parseInt(getComputedStyle(self.boardDom).left);
+                 if( self.top === 460 && (self.ballLeft < boardDomLeft || self.ballLeft-30 > boardDomLeft + 100)) {
+                     clearInterval(self.timer);
+                     console.log('you are fail');
+                 }else {
+                     self.deltaY = -self.deltaY;
+                     if(self.top === 460){
+                         game.score += game.levelScore;
+                     }
+
+                     console.log(game.score);
+                 }
+             }
+             self.dom.style.left = self.left +'px';
+             self.dom.style.top = self.top + 'px';
+
+         },this.speed);
+    };
+
+
+
+
+    function Game(){
+        this.box = null;
+        this.borderDom = null;
+        this.ball = null;
+        this.score = 0;
+        this.scoreDom = null;
+        this.levelScore =1 ;
+        this.init();
+        this.createBall();
+        this.boardDrag();
+        this.addSpeed();
+
+
+    }
+    Game.prototype.init = function(){
+        this.box = document.getElementById('box');
+        this.boardDom = document.createElement('span');
+        this.boardDom.className = 'board';
+        this.box.appendChild(this.boardDom);
+    };
+    Game.prototype.createBall = function(){
+        this.ball = new Ball(this.box,this.boardDom);
+    };
+    Game.prototype.boardDrag = function(){
+        var self = this;
+        this.boardDom.onmousedown = function(eve){
+            var event = eve || window.event;
+            var deltaX =event.clientX-self.boardDom.offsetLeft;
+            self.box.onmousemove = function(eve){
+                var event = eve || window.event;
+                var X = eve.clientX - deltaX;
+                if(X < 0){
+                    X = 0;
+                }
+                if(X > self.box.clientWidth-self.boardDom.clientWidth){
+                    X = self.box.clientWidth-self.boardDom.clientWidth;
+                }
+                self.boardDom.style.left = X +'px';
+            };
+            document.onmouseup = function(){
+              self.box.onmousemove = null;
+            }
+        }
+    };
+    Game.prototype.addSpeed = function(){
+        switch (this.score){
+            case 10:
+                this.ball.speed -=10;
+                break;
+            case 20:
+                this.ball.speed -=10;
+                break;
+            case 30:
+                this.ball.speed -=10;
+                break;
+        }
+    };
+    Game.prototype.addScore = function(){
+
+
+    };
+
+    var game = new Game();
+    console.log(game);
+</script>
+</body>
+</html>
