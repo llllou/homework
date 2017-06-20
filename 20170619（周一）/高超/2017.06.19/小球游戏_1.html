@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小球游戏</title>
+</head>
+<body>
+<script>
+    function Ball(left, top, speed, color, deltaX, deltaY) {
+        //每次移动的距离
+        this.deltaX =  deltaX || 5;
+        this.deltaY =  deltaY ||5;
+        this.dom = null;
+        //初始位置
+        this.left = left;
+        this.top = top;
+        this.speed = speed;
+        this.timer = 0;
+        this.color = color ;
+
+    }
+    Ball.prototype.init = function () {
+        this.dom = document.createElement('div');
+        this.dom.style.color = this.color;
+        document.body.push(this.dom);
+    };
+    Ball.prototype.render = function () {
+        this.dom.style.left = this.left + "px";
+        this.dom.style.top = this.top + "px";
+    };
+    Ball.prototype.move = function () {
+        var self = this;
+        var width = document.documentElement.clientWidth || document.body.clientWidth;
+        this.timer = setInterval(function () {
+            self.top += self.deltaY;
+            self.left += self.deltaX;
+            if(self.left <= 0 || self.left >= width - 30){
+                self.deltaX = -self.deltaX;
+            }
+            if(self.top <= 0 || self.top >= 600 - 50){
+//                规定宽高距离
+                if(self.top === 600-50 &&  ((self.left+50) < board.dom.offsetLeft || self.left > doard.dom.offsetLeft + 300)){
+                    clearInterval(self.timer);
+
+                }
+            }
+        },this.speed);
+    }
+</script>
+</body>
+</html>
