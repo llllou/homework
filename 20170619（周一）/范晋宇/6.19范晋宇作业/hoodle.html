@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            html,body{
+                width: 100%;
+                height: 640px;
+                background-color: black;
+            }
+            div{
+                width: 30px;
+                height: 30px;
+                background-color:#0ff;
+                border-radius: 50%;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+            span{
+                display: inline-block;
+                width: 200px;
+                height: 40px;
+                background:url(111.png) no-repeat;
+                background-size: 100% 100%;
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+    </body>
+    <script>
+            function Hoodle(top, left, speed,deltaX,deltaY){
+              this.deltaX = deltaX || 5;
+                this.deltaY = deltaY || 5;
+                this.left = left;
+                this.top = top;
+                this.dom = null;
+                this.timer =0; 
+                this.speed = speed;
+
+                this.play();
+                this.exercise();
+            }
+
+            Hoodle.prototype.play = function() {
+                this.dom = document.createElement("div");
+                document.body.appendChild(this.dom);
+            }
+
+            Hoodle.prototype.exercise = function() {
+                var self = this;
+                var width = document.documentElement.clientWidth || document.body.clientWidth;
+                var height = document.documentElement.clientHidth || document.body.clientHeight;
+                this.timer = setInterval(function(){
+                    self.top += self.deltaY;
+                    self.left += self.deltaX;
+
+                    if (self.left <= 0 || self.left >= width - self.d) {
+                        self.deltaX = -self.deltaX;
+                     }
+                    if (self.top <= 0 || self.top >= 600-30) {
+                        if (self.top === 600-30&&((self.left + 30) < board.dom.offsetLeft || self.left > board.dom.offsetLeft + 200)) {
+                              clearInterval(self.timer);
+                              alert('game over');
+                        } else {
+                              self.deltaY = -self.deltaY;
+                        }
+                    }
+                          self.dom.style.top = self.top + "px";
+                          self.dom.style.left = self.left + "px";
+                   },this.speed);
+           }
+
+
+            new Hoodle(100,100,10,5,5);
+
+            function Board() {
+                this.dom = null;
+                this.left = 100;
+                this.top = 600;
+                this.plays();
+                this.borderMove();
+            }
+            Board.prototype.plays = function() {
+                this.dom = document.createElement("span");
+                document.body.appendChild(this.dom);
+            }
+            Board.prototype.borderMove = function() {
+                var self = this;
+                document.onmousemove= function(event) {
+                    event = event || window.event;
+                    self.lefts = event.clientX;
+                    // if(self.lefts <= 0) {
+                    //     self.lefts = 0;
+                    // }
+                    self.dom.style.left = self.lefts+ "px";
+                    self.dom.style.top = self.top + 'px';
+                }
+            }
+            var board = new Board();
+    </script>
+</html>
