@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            background: lightblue;
+            margin:0 auto;
+        }
+        tr,td{
+            border:1px solid #000;
+            width: 20px;
+            height: 20px;
+        }
+        .snake{
+            background: red;
+        }
+        .food{
+            background: green;
+        }
+
+    </style>
+</head>
+<body>
+<script>
+    function Map(row, col){
+        this.row = row;
+        this.col = col;
+        this.dom = null;
+        this.mapArr = [];
+        this.direction = '';
+        this.init();
+
+    }
+    Map.prototype.init = function(){
+        /**
+         * 用table表格做出地图
+         * 用二维数组存储地图数据，一行是一个一维数组元素
+         * @type {Element}
+         */
+        this.dom = document.createElement('table');
+        document.body.appendChild(this.dom);
+        for(var i = 0; i <　this.row; i++){
+            var thisRowTr = document.createElement('tr');
+            var trs = [];
+            for(var j = 0; j < this.col;j++){
+                var thisColTd = document.createElement('td');
+                thisRowTr.appendChild(thisColTd);
+                trs.push(thisColTd);
+            }
+            this.mapArr.push(trs);
+            this.dom.appendChild(thisRowTr);
+        }
+    };
+
+    function Snake(){
+        this.dom = null;
+        this.timer = 0;
+        this.speed = 1000;
+        this.currentDirection = '';
+        this.directions = null;
+        this.init();
+        this.bindEvent();
+    }
+
+    Snake.prototype.init = function(){
+        this.dom = [
+            {x : 3, y : 5},
+            {x : 3, y : 4},
+            {x : 3, y : 3}
+        ];
+        this.directions = {
+            left : 1,
+            right :　2,
+            up : 3,
+            down : 4
+        };
+        this.currentDirection = this.directions.right;
+    };
+    Snake.prototype.vendor = function(){
+            for(var i = 0; i< map.row ; i++){
+                for(var j = 0; j < map.col; j++ ){
+                    map.mapArr[i][j].className ='';
+                }
+            }
+            for(var i = 0;i < this.dom.length ;i++){
+                map.mapArr[this.dom[i].x][this.dom[i].y].className = 'snake';
+            }
+
+    };
+    Snake.prototype.move = function(){
+            this.head = this.dom[0];
+            newHead = this.confirmDirection();
+            if(newHead.x >= map.row  || newHead.x < 0 || newHead.y < 0 || newHead.y > map.col){
+                game.over();
+                return;
+            }
+            for(var i = 0;i < this.dom.length;i++){
+                if(this.dom[i].x === newHead.x && this.dom[i].y === newHead.y){
+                    console.log(newHead);
+                    console.log(this.dom[i]);
+//                    console.log(i);
+//                    console.log(this.dom[i].y );
+//                    console.log(newHead.y);
+                    game.over();
+                    return ;
+                }
+            }
+            this.dom.unshift(newHead);
+            if(newHead.x === food.x && newHead.y === food.y) {
+                food.init();
+            }else{
+                this.dom.pop();
+            }
+
+    };
+    Snake.prototype.confirmDirection = function () {
+        var newhead = {};
+        switch(this.currentDirection){
+            case this.directions.left:
+                newhead = { x : this.head.x, y : this.head.y - 1};
+                break;
+            case this.directions.up:
+                newhead = { x : this.head.x - 1, y : this.head.y };
+                break;
+            case this.directions.right:
+                 newhead = { x : this.head.x, y : this.head.y + 1 };
+                break;
+            case this.directions.down:
+                 newhead = { x : this.head.x + 1, y : this.head.y  };
+                break;
+        }
+        return newhead;
+    };
+    Snake.prototype.bindEvent = function(){
+        var self = this;
+        document.onkeydown = function(event){
+            event = event || window.event;
+            switch(event.keyCode){
+                case 37:
+                    if( self.currentDirection != self.directions.right){
+                        self.currentDirection = self.directions.left;
+                    }
+                    break;
+                case 38:
+                    if( self.currentDirection != self.directions.down){
+                        self.currentDirection = self.directions.up;
+                    }
+                    break;
+                case 39:
+                    if( self.currentDirection != self.directions.left){
+                        self.currentDirection = self.directions.right;
+                    }
+                    break;
+                case 40:
+                    if( self.currentDirection != self.directions.up){
+                        self.currentDirection = self.directions.down;
+                    }
+                    break;
+            }
+        };
+    };
+
+    function Food(){
+        this.x = 0;
+        this.y = 0;
+        this.init();
+    }
+    Food.prototype.init = function(){
+        this.x = parseInt(Math.random()*map.row);
+        this.y = parseInt(Math.random()*map.col);
+
+        for(var i = 0; i < snake.dom.length ; i++){
+            if(snake.dom[i].x == this.x && snake.dom[i].y == this.y){
+                this.init();
+                return;
+            }
+        }
+    };
+    Food.prototype.vendor = function(){
+        map.mapArr[this.x][this.y].className = 'food';
+    };
+
+    function Game(){
+        this.score = 0;
+        this.scoreDom  = null;
+        this.timer = 0;
+        this.speed = 100;
+        this.init();
+    }
+    Game.prototype.init = function(){
+        this.scoreDom = document.createElement('div');
+        document.body.appendChild(this.scoreDom);
+        this.timer = setInterval(function(){
+            snake.move();
+            snake.vendor();
+            food.vendor();
+        }, this.speed);
+    };
+    Game.prototype.over = function(){
+        clearInterval(game.timer);
+        alert('game over');
+    };
+
+    var map = new Map(20, 20);
+    var snake = new Snake();
+    var food = new Food();
+    var game = new Game();
+
+</script>
+</body>
+</html>
