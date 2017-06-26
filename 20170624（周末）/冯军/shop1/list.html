@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/list.css">
+</head>
+<body>
+       <!--<div class="nav">-->
+     <!--<ul id="nac-ul"></ul>-->
+     <!--</div>-->
+
+       <script type="text/javascript">
+           var nav = document.createElement("nav");
+           document.body.appendChild(nav);
+
+
+           var div1 = document.createElement("div");
+           div1.className = "nav-top";
+           nav.appendChild(div1);
+       </script>
+
+
+
+     <script type="text/mingliang" id="nav-li-template">
+
+      <li class="item {className}"><a href='list.html?cat_id={cat_id}' title="{cat_name}">{cat_name}</a></li>
+    </script>
+
+
+     <script src="scripts/changkun.js" charset="utf-8"></script>
+     <script src="scripts/common.js" charset="utf-8"></script>
+     <script src="scripts/list.js" charset="utf-8"></script>
+</body>
+</html>
